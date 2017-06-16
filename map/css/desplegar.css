@@ -293,8 +293,8 @@ div#title-header
     color: white;
     border-radius: 15px;
     background-color: #c3d03c;
-        margin-right: 22%;
-    margin-left: -16%;
+    margin-right: 7%;
+    margin-left: -2%;
 }
 .navbar-inverse
 {
@@ -433,7 +433,8 @@ div#title-header {
     border-radius: 15px;
     background-color: #c3d03c;
     margin-right: 9%;
-    margin-left: -26%;
+    margin-left: -3%;
+
     width: 105%;
 }
 }
