@@ -1149,8 +1149,14 @@ function showPropiedades(latitude, longitude) {
         success: function (response) {
             if (response.propiedades.length > 0) {
                 $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades</p>");
+                $("#title-header").css({
+                  "padding": "1.5%"
+                });
             } else {
                 $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en esta ubicación</p>");
+                $("#title-header").css({
+                  "padding": "1.5%"
+                });
             }
         },
         error: function (respuesta) {
@@ -1206,8 +1212,14 @@ function showPropiedadesBySearch(ubicacion) {
 
     if (total > 0) {
         $("#title-header").html("<h3>" + total + " propiedades en " + $("#pac-input").val() + "</h3>");
+        $("#title-header").css({
+          "padding": "1.5%"
+        });
     } else {
         $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciòn</h3>");
+        $("#title-header").css({
+          "padding": "1.5%"
+        });
     }
 }
 
@@ -1239,9 +1251,15 @@ function showPropiedadesByEstado(estado) {
             if (response.propiedades.length > 0) {
                 var esta = $("#country option[value='" + estado + "']").text();
                 $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades en el estado de " + esta + "</p>");
+                $("#title-header").css({
+                  "padding": "1.5%"
+                });
             } else {
                 var esta = $("#country option[value='" + estado + "']").text();
                 $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el estado de " + esta + "</p");
+                $("#title-header").css({
+                  "padding": "1.5%"
+                });
             }
             showOnlySomeCards(response.propiedades, "search");
         },
@@ -1281,15 +1299,27 @@ function showPropiedadesByPrecio(min, max) {
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con precio de $" + min + " de $" + max + "</p>");
+
+
+                    $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con precio de $" + min + " de $" + max + "</p>");
+
+                    $("#title-header").css({
+                      "padding": "1.5%"
+                    });
                     }
 
                     if (min && !max) {
                         $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con precio mayor a $" + min + "</p>");
+                        $("#title-header").css({
+                          "padding": "1.5%"
+                        });
                     }
 
                     if (max && !min) {
                         $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un costo menor a $" + max + "</p>");
+                        $("#title-header").css({
+                          "padding": "1.5%"
+                        });
                     }
                     hideCurrentDescription();
                     setDefaulBehaviorMarkers();
@@ -1297,14 +1327,23 @@ function showPropiedadesByPrecio(min, max) {
 
                     if (min && max) {
                         $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el rango de $" + min + " de $" + max + "</p>");
+                        $("#title-header").css({
+                          "padding": "1.5%"
+                        });
                     }
 
                     if (min && !max) {
                         $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con precio mayor $" + min + "</p>");
+                        $("#title-header").css({
+                          "padding": "1.5%"
+                        });
                     }
 
                     if (max && !min) {
                         $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con precio menor $" + max + "</p>");
+                        $("#title-header").css({
+                          "padding": "1.5%"
+                        });
                     }
                 }
                 showOnlySomeCards(response.propiedades, "precio");
