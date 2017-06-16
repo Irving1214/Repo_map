@@ -1,0 +1,439 @@
+@font-face
+{
+    font-family: 'gotham-rounded-book';
+
+    src: url(../../fonts/gotham-rounded-book.otf) format('truetype');
+}
+
+body
+{
+    font-family: gotham-rounded-book;
+    font-style: normal;
+}
+div.scroll
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    height: 100%;
+}
+
+.IconTarjeta
+{
+    width: 42px;
+}
+
+.numTarjeta
+{
+    font-size: x-large;
+}
+
+#map
+{
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail
+{
+    font-size: 15px;
+    line-height: 1.42857143;
+
+    margin-bottom: 0;
+    padding: 4px;
+
+    -webkit-transition: border .2s ease-in-out;
+         -o-transition: border .2s ease-in-out;
+
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.imagenres
+{
+    width: 100%;
+    height: 200px;
+}
+
+@media (min-width: 768px)
+{
+    .thumbnail
+    {
+        font-size: 15px;
+        line-height: 1.42857143;
+
+        margin-bottom: 25px;
+        padding: 5px 4px;
+
+        -webkit-transition: border .2s ease-in-out;
+             -o-transition: border .2s ease-in-out;
+
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    .imagenres
+    {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+div#house_description
+{
+    margin-left: 15%;
+}
+
+#promotor
+{
+    width: 40%;
+}
+
+
+
+p#info-pro
+{
+    margin-top: -58%;
+    margin-left: 43%;
+}
+
+p.bg-primary.casa
+{
+    width: 300px;
+    padding-left: 33%;
+}
+
+.lugares
+{
+    margin-top: 5%;
+    margin-left: -10%;
+}
+
+img.imgt
+{
+    height: 300px !important;
+
+    object-fit: cover;
+}
+
+.loading
+{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
+}
+
+.col-md-8.pos
+{
+    margin-left: 17%;
+}
+
+/* M O D A L - P D F */
+h4
+{
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-top: 15px;
+}
+.direccion
+{
+    color: #012967;
+}
+.precio
+{
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #012967;
+}
+.separador
+{
+    margin-top: 5px;
+}
+.azulRevimex
+{
+    background: #012967;
+}
+.verdeRevimex
+{
+    background: #e5f38f;
+}
+
+.arenaRevimex
+{
+    background: #e7ad47;
+}
+
+.revimexBlue
+{
+    color: #002e6d;
+}
+.arenaClara
+{
+    background: #ffd082;
+}
+
+.titulo
+{
+    font-size: 25px;
+    font-weight: bold;
+
+    padding-top: 15px;
+
+    color: #012967;
+}
+
+.descripcion
+{
+    font-size: 20px;
+
+    color: #012967;
+}
+
+.des-propiedad
+{
+    font-weight: bold;
+
+    text-align: center;
+}
+.revimexImagen
+{
+    height: 50px;
+}
+
+.imagen-modal {
+    height: 40%;
+    width: auto;
+}
+
+.casitaImagen
+{
+    width: 35px;
+    height: auto;
+}
+
+.sm-icon
+{
+    width: 20px;
+    height: auto;
+}
+
+.highlight
+{
+    text-align: center;
+
+    border: 4px solid #4db1e0;
+}
+
+@media (min-width: 768px)
+{
+    .modal-dialog
+    {
+        width: 1100px;
+        margin: 30px auto;
+    }
+    .modal-content
+    {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+    .modal-sm
+    {
+        width: 300px;
+    }
+}
+
+.aviso
+{
+    font-size: 20px;
+
+    margin: 0 0 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.capitalize
+{
+    text-transform: capitalize;
+}
+
+.logos
+{
+    width: 10%;
+}
+
+.imagenres
+{
+    width: 90%;
+    height: 100px;
+}
+
+@media (min-width: 768px)
+{
+    .imagenres
+    {
+        width: 90%;
+        height: 25%;
+    }
+}
+
+div#title-header
+{
+    margin-bottom: 0;
+    padding: 0 20px;
+
+    color: white;
+    border-radius: 15px;
+    background-color: #c3d03c;
+        margin-right: 22%;
+    margin-left: -16%;
+}
+.navbar-inverse
+{
+
+    background-color: rgba(0, 41, 103, .52)!important;
+}
+.tipo
+{
+    font-size: 14px;
+    font-weight: bold;
+
+    color: white;
+}
+
+.thumbnail
+{
+    border: 4px solid #46beef;
+}
+
+.button_borde
+{
+    padding: 2px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    text-decoration: none;
+
+    color: #fff;
+    border: 2px solid #49beef;
+    background-color: #49beef;
+}
+
+.img_borde
+{
+    height: 60px;
+    padding: 2px;
+
+    text-decoration: none;
+
+
+    border-radius: 33px;
+}
+
+.boton_detalles_auto
+{
+    padding-right: 30px;
+    padding-left: 30px;
+
+    text-decoration: none;
+
+    color: #fff;
+    border: 2px solid #49beef;
+    background-color: #49beef;
+}
+
+.input_borde
+{
+    padding: 2px;
+    width: 120%;
+    margin-left: -13%;
+
+    text-decoration: none;
+
+    border: 2px solid #cfdb00;
+}
+
+.navbar
+{
+    position: relative;
+
+    min-height: 80px;
+    margin-bottom: 0;
+
+    border: 1px solid transparent;
+}
+
+.navbar-brand-sp
+{
+    font-size: 18px;
+    line-height: 20px;
+
+    float: left;
+
+    height: 50px;
+    padding: 0 15px;
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+    color: #f5f5f5;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover
+{
+    color: #CCCCCC;
+}
+
+.carousel,
+.item,
+.active
+{
+    height: 36%;
+}
+@media (min-width: 1500px) {
+
+  textarea.input_borde
+  {
+    width: 270%;
+  height: 76px;
+  margin-top: 4%;
+
+  margin-left: -169%;
+
+  }
+
+   }
+
+
+
+textarea.input_borde
+{
+  width: 269%;
+    height: 76px;
+    margin-top: 9%;
+    margin-left: -162%;
+
+}
+
+
+
+        @media (max-width: 1500px) {
+div#title-header {
+    margin-bottom: 0;
+    padding: 0 20px;
+    color: white;
+    border-radius: 15px;
+    background-color: #c3d03c;
+    margin-right: 9%;
+    margin-left: -26%;
+    width: 105%;
+}
+}
