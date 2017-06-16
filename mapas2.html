@@ -188,17 +188,93 @@
         .divButton .estiloBton:hover {
             background-color: #CFDB00;
         }
+         /* The side navigation menu */
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: absolute; 
+    z-index: +10; 
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 41, 103, .52)!important; /* azul */
+    overflow-x: hidden; 
+    padding-top: 60px;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s
+        z-index: 10;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 10;
+}
+        p{
+         
+        }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
     </style>
+     <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "210px";
+}
+        
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+    </script>
 </head>
 
 <body>
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <img style="height: 80px !important; " src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
+                                                          alt="" class="logo">     
+  <a href="http://www.revimex.mx/"><h5>CONÓCENOS </h5></a>
+ <a href="http://www.revimex.mx/sitio/propiedades.php"><h5>PROPIEDADES </h5></a>
+  <a href="http://www.revimex.mx/inversionistas.php"><h5>INVERSIONISTAS</h5> </a>
+  <a href="http://www.revimex.mx/sitio/recomendadores.php"><h5>RECOMENDADORES</h5></a>
+        <a href="http://revimex.mx/casos.php"><h5>CASOS DE ÉXITO </h5></a>
+        <a href="http://revimex.mx/sitio/vacantes.php"><h5>VACANTES </h5></a>
+</div>
 <div id="top"></div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+        <div onclick="openNav()" class="navbar-header">
+            <button onclick="openNav()" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

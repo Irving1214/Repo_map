@@ -300,6 +300,7 @@ div#title-header
 {
 
     background-color: rgba(0, 41, 103, .52)!important;
+    z-index: 0;
 }
 .tipo
 {
