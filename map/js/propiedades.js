@@ -682,7 +682,7 @@ function load_propiedades(latitud, longitud) {
                         '<li><b style="font-weight:35px;"><strong>ID:</storng> </b> ' + propiedad.oferta + '</li>' +
                         '<li><b><strong>Precio:</storng> </b> $' + propiedad.PrecioVenta__c + '</li>' +
 
-                        '<li><b><storng>Terreno:</strong> </b> ' + propiedad.Terreno_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
+                        '<li><b><storng>Terreno:</strong> </b> ' + propiedad.Terreno_m2__c + '&nbsp;<sup>m</sup><sup>2</sup>' + '</li>' +
                         '<li><b><storng>Construcción:</strong> </b> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
                         '<li><b><storng>Niveles:</strong> </b> ' + propiedad.Niveles_Plantas__c + '</li>' +
 
