@@ -1281,11 +1281,11 @@ function showPropiedadesByPrecio(min, max) {
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un precio entre de $" + min + " y $" + max + "</p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con precio de $" + min + " de $" + max + "</p>");
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un precio mayor a $" + min + "</p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con precio mayor a $" + min + "</p>");
                     }
 
                     if (max && !min) {
@@ -1296,15 +1296,15 @@ function showPropiedadesByPrecio(min, max) {
                 } else {
 
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el rango de $" + min + " y $" + max + "</p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el rango de $" + min + " de $" + max + "</p>");
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con un precio mayor $" + min + "</p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con precio mayor $" + min + "</p>");
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con un precio menor $" + max + "</p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con precio menor $" + max + "</p>");
                     }
                 }
                 showOnlySomeCards(response.propiedades, "precio");
