@@ -367,13 +367,13 @@ function initMap() {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
-                map.setZoom(13);
+                map.setZoom(12);
             }
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
-                map.setZoom(13);
+                map.setZoom(12);
             } else {
                 map.setZoom(17);
             }
