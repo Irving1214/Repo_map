@@ -366,9 +366,10 @@ function initMap() {
         if (place.geometry.viewport) {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
-            //Gómez palacios, Torreón y Aguascalientes
+            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY") { 
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ" 
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8") {  
                 map.setZoom(12);
             }
 
@@ -386,12 +387,20 @@ function initMap() {
             }
 
             //Los Cabos
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){ 
 
                 map.setZoom(10);
 
             }
 
+
+            //Matamoros Coahuila
+            if(ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs" 
+            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs"){ 
+
+                map.setZoom(14);
+
+            }
 
         } else {
             console.log(place.geometry.location);
@@ -416,7 +425,7 @@ function initMap() {
             }
 
             //Los Cabos, Chiapas
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){ 
 
                 map.setZoom(10);
 
