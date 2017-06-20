@@ -366,13 +366,16 @@ function initMap() {
         if (place.geometry.viewport) {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
-            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
+            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw") { 
                 map.setZoom(12);
             }
+
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
-            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
+            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw") {
                 map.setZoom(12);
             } else {
                 map.setZoom(17);
@@ -677,7 +680,7 @@ function load_propiedades(latitud, longitud) {
                         '<div class="col-md-6"><br>' +
 
                         '<div class="row">' +
-                        '<p class="bg-primary" align="center">CaracterÃ­sticas</p>' +
+                        '<p class="bg-primary" align="center">Características</p>' +
                         '<ul><br>' +
                         '<li><b style="font-weight:35px;"><strong>ID:</storng> </b> ' + propiedad.oferta + '</li>' +
                         '<li><b><strong>Precio:</storng> </b> $' + propiedad.PrecioVenta__c + '</li>' +
