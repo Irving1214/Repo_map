@@ -1150,8 +1150,18 @@ function showPropiedades(latitude, longitude) {
         success: function (response) {
             if (response.propiedades.length > 0) {
                 $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades</center></p>");
+                $("#title-header").css({
+                      "padding-top": ".5%",
+                    "padding-bottom": ".5%",
+
+                });
             } else {
                 $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en esta ubicación</center></p>");
+                $("#title-header").css({
+                      "padding-top": ".5%",
+                    "padding-bottom": ".5%",
+
+                });
             }
         },
         error: function (respuesta) {
@@ -1206,9 +1216,20 @@ function showPropiedadesBySearch(ubicacion) {
     }
 
     if (total > 0) {
-        $("#title-header").html("<h3>" + total + " propiedades en " + $("#pac-input").val() + "</h3>");
+
+        $("#title-header").html("<h3><center>" + total + " propiedades en " + $("#pac-input").val() + "</center></h3>");
+        $("#title-header").css({
+            "padding-top": ".5%",
+            "padding-bottom": ".5%",
+
+        });
     } else {
-        $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciÃ²n</h3>");
+        $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicaciòn</center></h3>");
+        $("#title-header").css({
+              "padding-top": ".5%",
+            "padding-bottom": ".5%",
+
+        });
     }
 }
 
