@@ -1224,7 +1224,7 @@ function showPropiedadesBySearch(ubicacion) {
 
         });
     } else {
-        $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicaciòn</center></h3>");
+        $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicación</center></h3>");
         $("#title-header").css({
               "padding-top": ".5%",
             "padding-bottom": ".5%",
