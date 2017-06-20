@@ -1,0 +1,320 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Revimex</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="map/css/bootstrap.css" rel="stylesheet">
+    <link href="map/css/full-slider.css" rel="stylesheet">
+    <link href="map/css/animate.css" rel="stylesheet">
+    <link href="map/css/desplegar.css" rel="stylesheet">
+    <link href="map/css/nouislider.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="map/js/jquery.js"></script>
+    <style>
+    b,strong {
+    font-weight: 35px !important;
+    }
+    .noUi-connect {
+    background: #002967 !important;
+    }
+
+
+
+
+    .logos.redes_sociales{
+        margin-right: 13%;
+    }
+
+        @media (max-width: 1500px) {
+                #pac-input {
+          width: 101% !important;
+
+         margin-left: -35% !important;
+
+           }
+
+
+            h3, .h3 {
+        font-size: 20px;
+         }
+
+          div.scroll {
+            width: 105% !important;
+            margin-left: -3% !important;
+        }
+        
+       .col-md-6.como_estas {
+    width: 25%;
+    /* margin-left: 10%; */
+    margin-right: 1%;
+    /* height: 700px; */
+    /* padding-left: 13%; */
+    padding-right: -18%;
+    }
+    .col-md-6.hola_description {
+       width: 41%;
+      margin-left: -1% !important;
+      }
+
+
+
+
+
+        }
+    .col-md-4.col-md-offset-4.detelle{
+      margin-top: 5%;
+    }
+    .glyphicon-chevron-left:before {
+    content: "\e079";
+    color: #48BEEF;
+    /* margin-right: 17%; */
+     }
+     .glyphicon-chevron-right:before {
+    content: "\e080";
+    color: #48BEEF;
+     }
+
+   div.scroll {
+     overflow-x: hidden;
+ overflow-y: scroll;
+ height:  85%;
+ width: 100%;
+ 
+ margin-top: 2%;
+}
+       .col-md-6.como_estas {
+    width: 25%;
+    /* margin-left: 10%; */
+    margin-right: -1%;
+    /* height: 700px; */
+    }
+      .col-md-6.hola_description{
+     width: 44%;
+     margin-left: 5%;
+    }
+
+
+
+
+     .col-md-6.hola_description{
+       width: 41%;
+   margin-left: 10%;
+
+
+     }
+
+
+    @media (min-width: 1500px) {
+      
+
+
+       .col-md-6.hola_description{
+      width: 38%;
+         margin-left: -1%;
+     }
+
+
+     }
+     
+
+
+        .loading {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+
+            display: none;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
+        }
+
+       
+
+        .cajaDos {
+
+            width: 25%;
+            height: auto;
+            border: 3px solid green;
+            padding: 25px;
+            margin: 25px;
+        }
+        .imagenCajaDo{
+            width: 100%;
+            height: auto;
+        }
+        .divButton .estiloBton {
+            background-color: #002967; /* blue */
+            border: 1px;
+            color: white;
+            padding: 8px 39px;
+            text-align: center;
+
+            font-size: 13px;
+        }
+        .divButton .estiloBton:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        .divButton .estiloBton:hover {
+            background-color: #CFDB00;
+        }
+         /* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: +10;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 41, 103, .52)!important; /* azul */
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s
+        z-index: 10;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 10;
+}
+        p{
+
+        }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+        @media screen and (min-width: 800px) {
+  div#mySidenav {display: none;}
+
+  }
+}
+    </style>
+     <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "210px";
+}
+
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+    </script>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <img style="height: 80px !important; " src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
+                                                          alt="" class="logo">
+  <a href="http://www.revimex.mx/"><h5>CONÓCENOS </h5></a>
+ <a href="http://www.revimex.mx/sitio/propiedades.php"><h5>PROPIEDADES </h5></a>
+  <a href="http://www.revimex.mx/inversionistas.php"><h5>INVERSIONISTAS</h5> </a>
+  <a href="http://www.revimex.mx/sitio/recomendadores.php"><h5>RECOMENDADORES</h5></a>
+        <a href="http://revimex.mx/casos.php"><h5>CASOS DE ÉXITO </h5></a>
+        <a href="http://revimex.mx/sitio/vacantes.php"><h5>VACANTES </h5></a>
+</div>
+<div id="top"></div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div onclick="openNav()" class="navbar-header">
+            <button onclick="openNav()" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <li class="tipo"><a href="http://www.revimex.mx/">CONÓCENOS </a></li>
+                <li class="tipo"><a href="http://www.revimex.mx/sitio/propiedades.php">PROPIEDADES </a></li>
+                <li class="tipo"><a href="http://www.revimex.mx/inversionistas.php">INVERSIONISTAS </a></li>
+            </ul>
+
+            <a class="navbar-brand-sp logo" href="http://www.revimex.mx/"><img style="height: 80px !important; " src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
+                                                          alt="" class="logo"></a>
+
+            <ul class="nav navbar-nav navbar-center">
+                <li class="tipo"><a href="http://www.revimex.mx/sitio/recomendadores.php">RECOMENDADORES </a></li>
+                <li class="tipo"><a href="http://revimex.mx/casos.php">CASOS DE ÉXITO </a></li>
+                <li class="tipo"><a href="http://revimex.mx/sitio/vacantes.php">VACANTES </a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+
+<div class="row" >
+        
+  
+        <div class="col-md-f" id="house_cards">
+            
+            <div class="scroll" id="casas">
+            </div>
+        </div>
+        <div id="description-casas"></div>
+    </div>
+    
+
+
+<!-- MODAL  -->
+<div class="modal fade" role="dialog" id="pdf-modal"></div>
+<!-- Bootstrap Core JavaScript -->
+<script src="map/js/bootstrap.min.js"></script>
+<script src="map/js/printThis.js"></script>
+<script src="map/js/nouislider.min.js"></script>
+<script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6cDizVt_aD3GPH7murcfwz-vh140lpg&libraries=places&callback=initMap"></script>
+<script src="map/js/wNumb.js"></script>
+
+    <script src="favoritos.js"></script>
+<div class="loading" id="wait"></div>
+
+
+</body>
+</html>
