@@ -367,13 +367,13 @@ function initMap() {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
-                map.setZoom(12);
+                map.setZoom(13);
             }
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI") {
-                map.setZoom(12);
+                map.setZoom(13);
             } else {
                 map.setZoom(17);
             }
@@ -545,7 +545,7 @@ function load_propiedades(latitud, longitud) {
                         '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="http://revimex.mx/' + main_photo + '" src="http://revimex.mx/' + main_photo + '" >' +
 
                         '<div class="caption">' +
-                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">'+ propiedad.Plaza__c + '</span> </div></div><br><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">'+ propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
                         '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
                         '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
                         '</div>' +
@@ -581,7 +581,7 @@ function load_propiedades(latitud, longitud) {
                     modal_casa = modal_casa +
                         '</ol>' +
 
-                        '<!-- Corazón de Like -->' +
+                        '<!-- CorazÃ³n de Like -->' +
                         '<div style="position: absolute; z-index: 4; padding-right: : 10px; padding-top: 15px; margin-left: 90%">' +
                         '<img height="13%" id="heart_' + index + '" src="images/ICON-PIC-HEART.png" "></i>' +
                         '</div>' +
@@ -677,17 +677,17 @@ function load_propiedades(latitud, longitud) {
                         '<div class="col-md-6"><br>' +
 
                         '<div class="row">' +
-                        '<p class="bg-primary" align="center">Características</p>' +
+                        '<p class="bg-primary" align="center">CaracterÃ­sticas</p>' +
                         '<ul><br>' +
                         '<li><b style="font-weight:35px;"><strong>ID:</storng> </b> ' + propiedad.oferta + '</li>' +
                         '<li><b><strong>Precio:</storng> </b> $' + propiedad.PrecioVenta__c + '</li>' +
 
-                        '<li><b><storng>Terreno:</strong> </b> ' + propiedad.Terreno_m2__c + '&nbsp;<sup>m</sup><sup>2</sup>' + '</li>' +
-                        '<li><b><storng>Construcción:</strong> </b> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
+                        '<li><b><storng>Terreno:</strong> </b> ' + propiedad.Terreno_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
+                        '<li><b><storng>ConstrucciÃ³n:</strong> </b> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
                         '<li><b><storng>Niveles:</strong> </b> ' + propiedad.Niveles_Plantas__c + '</li>' +
 
                         '<li><b><strong>Habitaciones: </strong></b> ' + propiedad.N_de_Habitaciones__c + '</li>' +
-                        '<li><b><strong>Baños: </storng></b> ' + propiedad.N_de_Ba_os__c + '</li>' +
+                        '<li><b><strong>BaÃ±os: </storng></b> ' + propiedad.N_de_Ba_os__c + '</li>' +
                         '<li><b><strong>Estacionamientos: </strong></b> ' + propiedad.Estacionamiento__c + '</li>' +
 
                         '</li>' +
@@ -804,7 +804,7 @@ function load_propiedades(latitud, longitud) {
                         '<br><br>' +
                         '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2">' +
                         '<br></br>' +
-                        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Teléfono" aria-describedby="sizing-addon2">' +
+                        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  TelÃ©fono" aria-describedby="sizing-addon2">' +
                         '<br></br>' +
                         '<input type="text" class="input_borde" class="form-control" placeholder="  E-mail" id="form_email_' + propiedad.Id + '" aria-describedby="sizing-addon2">' +
                         '<br></br></br>' +
@@ -926,9 +926,10 @@ function addMarkers(propiedades) {
         });
 
         var marker = new google.maps.Marker({
+
             position: Latlng,
             map: map,
-            animation: google.maps.Animation.DROP,
+
             title: propiedad.Plaza__c + ", " + propiedad.Estado2__c,
             id: 'marker' + index,
             icon: marker_color,
@@ -1149,14 +1150,8 @@ function showPropiedades(latitude, longitude) {
         success: function (response) {
             if (response.propiedades.length > 0) {
                 $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades</p>");
-                $("#title-header").css({
-                  "padding": "1.5%"
-                });
             } else {
-                $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en esta ubicación</p>");
-                $("#title-header").css({
-                  "padding": "1.5%"
-                });
+                $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en esta ubicaciÃ³n</p>");
             }
         },
         error: function (respuesta) {
@@ -1211,15 +1206,9 @@ function showPropiedadesBySearch(ubicacion) {
     }
 
     if (total > 0) {
-        $("#title-header").html("<h3><center>" + total + " propiedades en " + $("#pac-input").val() + "</center></h3>");
-        $("#title-header").css({
-          "padding": "1.5%"
-        });
+        $("#title-header").html("<h3>" + total + " propiedades en " + $("#pac-input").val() + "</h3>");
     } else {
-        $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicaciòn</center></h3>");
-        $("#title-header").css({
-          "padding": "1.5%"
-        });
+        $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciÃ²n</h3>");
     }
 }
 
@@ -1250,16 +1239,10 @@ function showPropiedadesByEstado(estado) {
         success: function (response) {
             if (response.propiedades.length > 0) {
                 var esta = $("#country option[value='" + estado + "']").text();
-                $("#title-header").html("<p class='aviso animated fadeInRight'> <center>" + response.propiedades.length + " propiedades en el estado de " + esta + "</center></p>");
-                $("#title-header").css({
-                  "padding": "1.5%"
-                });
+                $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades en el estado de " + esta + "</p>");
             } else {
                 var esta = $("#country option[value='" + estado + "']").text();
-                $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en el estado de " + esta + "</center></p");
-                $("#title-header").css({
-                  "padding": "1.5%"
-                });
+                $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el estado de " + esta + "</p");
             }
             showOnlySomeCards(response.propiedades, "search");
         },
@@ -1299,51 +1282,30 @@ function showPropiedadesByPrecio(min, max) {
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
-
-
-                    $("#title-header").html("<p class='aviso animated fadeInRight'> <center>" + response.propiedades.length + " propiedades con precio de $" + min + " de $" + max + "</center></p>");
-
-                    $("#title-header").css({
-                      "padding": "1.5%"
-                    });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un precio entre de $" + min + " y $" + max + "</p>");
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades con precio mayor a $" + min + "</center></p>");
-                        $("#title-header").css({
-                          "padding": "1.5%"
-                        });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un precio mayor a $" + min + "</p>");
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'> <center>" + response.propiedades.length + " propiedades con un costo menor a $" + max + "</center></p>");
-                        $("#title-header").css({
-                          "padding": "1.5%"
-                        });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> " + response.propiedades.length + " propiedades con un costo menor a $" + max + "</p>");
                     }
                     hideCurrentDescription();
                     setDefaulBehaviorMarkers();
                 } else {
 
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en el rango de $" + min + " de $" + max + "</center></p>");
-                        $("#title-header").css({
-                          "padding": "1.5%"
-                        });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades en el rango de $" + min + " y $" + max + "</p>");
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con precio mayor $" + min + "</center></p>");
-                        $("#title-header").css({
-                          "padding": "1.5%"
-                        });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con un precio mayor $" + min + "</p>");
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con precio menor $" + max + "</center></p>");
-                        $("#title-header").css({
-                          "padding": "1.5%"
-                        });
+                        $("#title-header").html("<p class='aviso animated fadeInRight'>Por el momento no encontramos propiedades con un precio menor $" + max + "</p>");
                     }
                 }
                 showOnlySomeCards(response.propiedades, "precio");
@@ -1484,7 +1446,7 @@ function notificaction(msg, type) {
 
 function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
     $("#pdf-modal").html("");
-    // si el valor de folio es null -> el campo debe de estar vacìo s
+    // si el valor de folio es null -> el campo debe de estar vacÃ¬o s
     if (folio == 'null') {
         folio = '';
     }
@@ -1548,7 +1510,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '<div class="col-xs-9 style="padding: 0px 0px;"" align="center">' +
         '<div class="separador"></div>' +
-        '<p class="descripcion">Descripción de propiedad</p>' +
+        '<p class="descripcion">DescripciÃ³n de propiedad</p>' +
         '</div>' +
         '</div>' +
 
