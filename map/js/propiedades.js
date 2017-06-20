@@ -366,17 +366,63 @@ function initMap() {
         if (place.geometry.viewport) {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
+            //Gómez palacios, Torreón y Aguascalientes
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw") { 
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY") { 
                 map.setZoom(12);
             }
+
+            //Baja California Norte y Sur
+            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){ 
+
+                map.setZoom(7);
+
+            }
+            //Comondu BCS, Mulege BCS
+            if(ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
+
+                map.setZoom(9);
+
+            }
+
+            //Los Cabos
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){
+
+                map.setZoom(10);
+
+            }
+
 
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
+            //Gómez palacios, Torreón y Aguascalientes
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw") {
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY") {
                 map.setZoom(12);
+
+            //Baja California Norte y Sur
+            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){ 
+
+                map.setZoom(7);
+
+            }
+
+            //Comondu (BCS)
+            if(ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"){
+
+                map.setZoom(9);
+
+            }
+
+            //Los Cabos, Chiapas
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
+
+                map.setZoom(10);
+
+            }
+
+
             } else {
                 map.setZoom(17);
             }
