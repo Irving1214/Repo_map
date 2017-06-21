@@ -420,7 +420,7 @@ function initMap() {
             {
               map.setZoom(15);
             }
-        
+
 
         } else {
             console.log(place.geometry.location);
@@ -960,7 +960,7 @@ function load_propiedades(latitud, longitud) {
                         '<br><br>' +
                         '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2">' +
                         '<br></br>' +
-                        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  TelÃ©fono" aria-describedby="sizing-addon2">' +
+                        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Telefono" aria-describedby="sizing-addon2">' +
                         '<br></br>' +
                         '<input type="text" class="input_borde" class="form-control" placeholder="  E-mail" id="form_email_' + propiedad.Id + '" aria-describedby="sizing-addon2">' +
                         '<br></br></br>' +
@@ -1729,7 +1729,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '<div class="col-xs-9 style="padding: 0px 0px;"" align="center">' +
         '<div class="separador"></div>' +
-        '<p class="descripcion">DescripciÃ³n de propiedad</p>' +
+        '<p class="descripcion">Descripción de propiedad</p>' +
         '</div>' +
         '</div>' +
 
