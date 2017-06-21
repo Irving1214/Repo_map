@@ -9,6 +9,8 @@ var propiedades = [];
 var infoWindows = [];
 var click = false;
 
+var radius = 5000;
+
 $(document).ready(function () {
     var slider = document.getElementById('slider');
 
@@ -339,6 +341,8 @@ function initMap() {
                 ]
             }
         ]
+
+
     });
 
     load_propiedades(null, null);
@@ -457,6 +461,84 @@ function initMap() {
             $('#icon_pic_return_container').css('display', 'none');
         }
     });
+
+
+
+    var service = new google.maps.places.PlacesService(map);
+
+    service.nearbySearch({
+      location: mx,
+      radius: radius,
+      types: ['school']
+    }, processResultsEscuelas);
+
+
+
+    function processResultsEscuelas(results, status, pagination) {
+              if (status !== google.maps.places.PlacesServiceStatus.OK) {
+
+                return;
+              } else {
+                createMarkersEscuelas(results);
+
+                if (pagination.hasNextPage) {
+                  var moreButton = document.getElementById('more2');
+
+                  moreButton.disabled = false;
+
+                  moreButton.addEventListener('click', function() {
+                    moreButton.disabled = true;
+                    pagination.nextPage();
+                  });
+                }
+              }
+            }
+
+            function createMarkersEscuelas(places) {
+
+              var bounds = new google.maps.LatLngBounds();
+
+              for (var i = 0, place; place = places[i]; i++) {
+                var image = {
+                  url: place.icon,
+                  size: new google.maps.Size(71, 71),
+                  origin: new google.maps.Point(0, 0),
+                  anchor: new google.maps.Point(17, 34),
+                  scaledSize: new google.maps.Size(25, 25)
+                };
+
+                var marker = new google.maps.Marker({
+                  map: map,
+                  icon: image,
+                  title: place.name,
+                  position: place.geometry.location
+                });
+
+
+                bounds.extend(place.geometry.location);
+              }
+              map.fitBounds(bounds);
+            }
+
+
+       $("#escuelas").click(function(){
+         processResultsEscuelas();
+
+       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /*
