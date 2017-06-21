@@ -772,29 +772,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="restaurantes"class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="escuelas" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="hospitales" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="cormercio" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="super" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="parques" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
