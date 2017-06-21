@@ -368,13 +368,13 @@ function initMap() {
             map.fitBounds(place.geometry.viewport);
             //Gómez palacios, Torreón, Aguascalientes, Ciudad de México
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ" 
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8") {  
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8") {
                 map.setZoom(12);
             }
 
             //Baja California Norte y Sur
-            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){ 
+            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){
 
                 map.setZoom(7);
 
@@ -387,7 +387,7 @@ function initMap() {
             }
 
             //Los Cabos
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){ 
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){
 
                 map.setZoom(10);
 
@@ -395,8 +395,8 @@ function initMap() {
 
 
             //Matamoros Coahuila
-            if(ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs" 
-            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs"){ 
+            if(ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
+            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs"){
 
                 map.setZoom(14);
 
@@ -411,7 +411,7 @@ function initMap() {
                 map.setZoom(12);
 
             //Baja California Norte y Sur
-            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){ 
+            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){
 
                 map.setZoom(7);
 
@@ -425,7 +425,7 @@ function initMap() {
             }
 
             //Los Cabos, Chiapas
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){ 
+            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
 
                 map.setZoom(10);
 
@@ -772,29 +772,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"><i class="numTarjeta"></i>' +
+                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +

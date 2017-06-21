@@ -3024,7 +3024,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+    padding: 1px 0px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -3080,8 +3080,8 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+background-color: #fff;
+border-color: rgba(204, 204, 204, 0);
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3091,8 +3091,8 @@ fieldset[disabled] a.btn {
 }
 .btn-default:hover {
   color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+background-color: #fff;
+border-color: rgba(204, 204, 204, 0);
 }
 .btn-default:active,
 .btn-default.active,
