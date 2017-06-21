@@ -401,6 +401,16 @@ function initMap() {
                 map.setZoom(14);
 
             }
+            //tlaquepaque Tlajomulco de Zúñiga
+            if (ubicacion.place_id=="ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id=="ChIJk0R9BvdTL4QRL95OIvTG3_k")
+            {
+              map.setZoom(13);
+            }
+            //cabo corrientes
+            if (ubicacion.place_id=="ChIJ32f63CPeI4QRXw0LQ0pIuxA")
+            {
+              map.setZoom(11)
+            }
 
         } else {
             console.log(place.geometry.location);
@@ -772,29 +782,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
