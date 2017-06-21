@@ -610,7 +610,7 @@ function load_propiedades(latitud, longitud) {
                     $("#casas").append(
                         '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
                         '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
-                        '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="http://revimex.mx/' + main_photo + '" src="http://revimex.mx/' + main_photo + '" >' +
+                        '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
                         '<div class="caption">' +
                         '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">'+ propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
@@ -670,7 +670,7 @@ function load_propiedades(latitud, longitud) {
                                     modal_casa = modal_casa +
                                         '<div class="item active">' +
                                         '<center>' +
-                                        '<img class="imgt" src="http://revimex.mx/' + file.linkPublico + '" alt="' + file.nombre + '">' +
+                                        '<img class="imgt" src="' + file.linkPublico + '" alt="' + file.nombre + '">' +
                                         '<center>' +
                                         '<div class="carousel-caption">' +
                                         '</div>' +
@@ -679,7 +679,7 @@ function load_propiedades(latitud, longitud) {
                                     modal_casa = modal_casa +
                                         '<div class="item">' +
                                         '<center>' +
-                                        '<img class="imgt" src="http://revimex.mx/' + file.linkPublico + '" alt="' + file.nombre + '">' +
+                                        '<img class="imgt" src="' + file.linkPublico + '" alt="' + file.nombre + '">' +
                                         '</center>' +
                                         '<div class="carousel-caption">' +
                                         '</div>' +
@@ -845,7 +845,7 @@ function load_propiedades(latitud, longitud) {
 
 
 
-                        '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:lizbeth.ordonez@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
+                        '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
 
                         '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
 
@@ -1619,7 +1619,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
 
         '<div class="row">' +
         '<div class="col-xs-7">' +
-        '<img class="imagen-modal" src="http://revimex.mx/' + imagen + '">' +
+        '<img class="imagen-modal" src="' + imagen + '">' +
         '</div>' +
 
         '<div class="col-xs-5" style="padding: 0px 0px;">' +
