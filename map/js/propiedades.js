@@ -1453,7 +1453,23 @@ function showPropiedadesByPrecio(min, max) {
             t = t + 1;
         }
     }
+//comas de los precios
+                function num(comas){
+        			if(comas>999999){
+        			  conPunto = comas.substring(0, comas.length-6);
+        			  conPunto2 = max.substring(comas.length-6, comas.length-3);
+        			  conPunto3 = max.substring(comas.length-3, comas.length);
+        			  comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
+        			}else{
+        				if(comas>999){
+        				  conPunto = comas.substring(0, comas.length-3);
+        				  conPunto2 = comas.substring( comas.length-3, comas.length);
+        				  comas = conPunto + ',' + conPunto2;
+        				}
+        			}
 
+        			return comas;
+            }
     if (min || max) {
         $.ajax({
             url: url + "/propiedades/searchbyprecio",
@@ -1471,7 +1487,7 @@ function showPropiedadesByPrecio(min, max) {
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades con un precio entre de $" + min + " y $" + max + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades con un precio entre de $" + num(min) + " y $" + num(max) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
@@ -1480,7 +1496,7 @@ function showPropiedadesByPrecio(min, max) {
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades con un precio mayor a $" + min + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades con un precio mayor a $" + num(min) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
@@ -1489,7 +1505,7 @@ function showPropiedadesByPrecio(min, max) {
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'> <center>" + response.propiedades.length + " propiedades con un costo menor a $" + max + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'> <center>" + response.propiedades.length + " propiedades con un costo menor a $" + num(max) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
@@ -1501,7 +1517,7 @@ function showPropiedadesByPrecio(min, max) {
                 } else {
 
                     if (min && max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en el rango de $" + min + " y $" + max + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en el rango de $" + num(min) + " y $" + num(max) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
@@ -1511,7 +1527,7 @@ function showPropiedadesByPrecio(min, max) {
                     }
 
                     if (min && !max) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con un precio mayor $" + min + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con un precio mayor $" + num(min) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
@@ -1520,7 +1536,7 @@ function showPropiedadesByPrecio(min, max) {
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con un precio menor $" + max + "</center></p>");
+                        $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades con un precio menor $" + num(max) + "</center></p>");
                         $("#title-header").css({
 
                             "padding-bottom": ".5%",
