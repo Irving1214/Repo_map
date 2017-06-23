@@ -370,10 +370,10 @@ function initMap() {
         if (place.geometry.viewport) {
             console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
-            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México
+            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Tecamac(Estado de México)
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8") {
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id== "ChIJhbc-7drs0YURlEUtP8V7oU8") {
                 map.setZoom(12);
             }
 
@@ -398,20 +398,24 @@ function initMap() {
             }
 
 
-            //Matamoros Coahuila,Atizapán(Estado de México)
+            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal,Valle de Chalco Solidaridad,Nicolás Romero,Tlalnepantla de Baz),
             if(ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
-            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id== "ChIJ__vTAocc0oUR4MjngvxrWsU"){
+            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id== "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id=="ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id== "ChIJF5S1SyPp0YURTS8DzT9iSOg"
+            || ubicacion.place_id== "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id== "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id== "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id== "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id== "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+            || ubicacion.place_id== "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id== "ChIJYxCNbHb40YUR9s1Fdr8kGJk")
+            {
 
                 map.setZoom(14);
 
             }
-            //tlaquepaque, Tlajomulco de Zúñiga (jalisco)
-            if (ubicacion.place_id=="ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id=="ChIJk0R9BvdTL4QRL95OIvTG3_k")
+            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Atenco, Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos)
+            if (ubicacion.place_id=="ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id=="ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJReN4bmzh0YURFUI1P18AqsM"
+            || ubicacion.place_id== "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id== "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id== "ChIJSXRXRqn80YURSM_kDwcjHXk"|| ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
             {
               map.setZoom(13);
             }
             //cabo corrientes(jalisco)
-            if (ubicacion.place_id=="ChIJ32f63CPeI4QRXw0LQ0pIuxA")
+            if (ubicacion.place_id=="ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id== "ChIJ74hS7tlp0oURTL_vhuAJEhM")
             {
               map.setZoom(11);
             }
@@ -420,8 +424,11 @@ function initMap() {
             {
               map.setZoom(15);
             }
-
-
+            /*/ pruebas Ecatepec de Morelos, Estado de México
+            if(ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
+            {
+              map.setZoom(13);
+            }**/
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
@@ -477,6 +484,74 @@ function initMap() {
             $('#icon_pic_return_container').css('display', 'none');
         }
     });
+
+
+
+    var service = new google.maps.places.PlacesService(map);
+
+    service.nearbySearch({
+      location: mx,
+      radius: radius,
+      types: ['school']
+    }, processResultsEscuelas);
+
+
+
+    function processResultsEscuelas(results, status, pagination) {
+              if (status !== google.maps.places.PlacesServiceStatus.OK) {
+
+                return;
+              } else {
+                createMarkersEscuelas(results);
+
+                if (pagination.hasNextPage) {
+                  var moreButton = document.getElementById('more2');
+
+                  moreButton.disabled = false;
+
+                  moreButton.addEventListener('click', function() {
+                    moreButton.disabled = true;
+                    pagination.nextPage();
+                  });
+                }
+              }
+            }
+
+            function createMarkersEscuelas(places) {
+
+              var bounds = new google.maps.LatLngBounds();
+
+              for (var i = 0, place; place = places[i]; i++) {
+                var image = {
+                  url: place.icon,
+                  size: new google.maps.Size(71, 71),
+                  origin: new google.maps.Point(0, 0),
+                  anchor: new google.maps.Point(17, 34),
+                  scaledSize: new google.maps.Size(25, 25)
+                };
+
+                var marker = new google.maps.Marker({
+                  map: map,
+                  icon: image,
+                  title: place.name,
+                  position: place.geometry.location
+                });
+
+
+                bounds.extend(place.geometry.location);
+              }
+              map.fitBounds(bounds);
+            }
+
+
+       $("#escuelas").click(function(){
+         processResultsEscuelas();
+
+       });
+
+
+
+
 
 
 
@@ -1392,6 +1467,7 @@ function showPropiedadesByPrecio(min, max) {
             beforeSend: function () {
                 $("#wait").show();
             },
+
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
