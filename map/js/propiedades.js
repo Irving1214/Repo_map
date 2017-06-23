@@ -753,12 +753,6 @@ function load_propiedades(latitud, longitud) {
                         '</div>' +
                         '</div>' +
 
-
-
-
-
-
-
                         // INFORMACION CASAS
                         '<div class="row revimexBlue">' +
                         // Caracteristicas
@@ -767,18 +761,17 @@ function load_propiedades(latitud, longitud) {
                         '<div class="row">' +
                         '<p class="bg-primary" align="center">Características</p>' +
                         '<ul><br>' +
-                        '<li><b style="font-weight:35px;"><strong>ID:</storng> </b> ' + propiedad.oferta + '</li>' +
-                        '<li><b><strong>Precio:</storng> </b> $' + propiedad.PrecioVenta__c + '</li>' +
+                        '<li><strong>ID: </strong>' + propiedad.oferta + '</li>' +
+                        '<li><strong>Precio:</strong> $' + propiedad.PrecioVenta__c + '</li>' +
 
-                        '<li><b><storng>Terreno:</strong> </b> ' + propiedad.Terreno_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
-                        '<li><b><storng>Construcción:</strong> </b> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
-                        '<li><b><storng>Niveles:</strong> </b> ' + propiedad.Niveles_Plantas__c + '</li>' +
+                        '<li><div><strong> Terreno:</strong> ' + propiedad.Terreno_m2__c + '&nbsp;m<sup>2</sup></div>' + '</li>' +
+                        '<li><strong>Construcción:</strong> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
+                        '<li><strong>Niveles:</strong> ' + propiedad.Niveles_Plantas__c + '</li>' +
 
-                        '<li><b><strong>Habitaciones: </strong></b> ' + propiedad.N_de_Habitaciones__c + '</li>' +
-                        '<li><b><strong>Baños: </storng></b> ' + propiedad.N_de_Ba_os__c + '</li>' +
-                        '<li><b><strong>Estacionamientos: </strong></b> ' + propiedad.Estacionamiento__c + '</li>' +
+                        '<li><strong>Habitaciones: </strong>' + propiedad.N_de_Habitaciones__c + '</li>' +
+                        '<li><strong>Baños: </strong>' + propiedad.N_de_Ba_os__c + '</li>' +
+                        '<li><strong>Estacionamientos: </strong> ' + propiedad.Estacionamiento__c + '</li>' +
 
-                        '</li>' +
                         '</ul>' +
                         '</div>' +
 
