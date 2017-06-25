@@ -1075,6 +1075,7 @@ function addMarkers(propiedades) {
 
         marker.index = index;
         marker.propiedad = propiedad.Id;
+        marker.precio = propiedad.PrecioVenta__c;
 
         allMarkers.push(marker);
         infoWindows.push(infowindow);
@@ -1305,10 +1306,15 @@ function showPropiedadesBySearch(ubicacion) {
     var total = 0;
     hideCajas("search");
 
+    var priceRange = slider.noUiSlider.get();
+
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
             total += 1;
-            $("#caja_" + allMarkers[i].index).show();
+
+            if ((allMarkers[i].precio >= priceRange[0]) && (allMarkers[i].precio <= priceRange[1])) {
+                $("#caja_" + allMarkers[i].index).show();
+            }
         }
     }
 
@@ -1384,6 +1390,24 @@ function showPropiedadesByEstado(estado) {
     });
 }
 
+//comas de los precios
+function num(comas) {
+    if (comas > 999999) {
+        conPunto = comas.substring(0, comas.length - 6);
+        conPunto2 = max.substring(comas.length - 6, comas.length - 3);
+        conPunto3 = max.substring(comas.length - 3, comas.length);
+        comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
+    } else {
+        if (comas > 999) {
+            conPunto = comas.substring(0, comas.length - 3);
+            conPunto2 = comas.substring(comas.length - 3, comas.length);
+            comas = conPunto + ',' + conPunto2;
+        }
+    }
+
+    return comas;
+}
+
 function showPropiedadesByPrecio(min, max) {
     var ids = [];
     var t = 0;
@@ -1393,23 +1417,6 @@ function showPropiedadesByPrecio(min, max) {
             ids.push(allMarkers[i].propiedad);
             t = t + 1;
         }
-    }
-    //comas de los precios
-    function num(comas) {
-        if (comas > 999999) {
-            conPunto = comas.substring(0, comas.length - 6);
-            conPunto2 = max.substring(comas.length - 6, comas.length - 3);
-            conPunto3 = max.substring(comas.length - 3, comas.length);
-            comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
-        } else {
-            if (comas > 999) {
-                conPunto = comas.substring(0, comas.length - 3);
-                conPunto2 = comas.substring(comas.length - 3, comas.length);
-                comas = conPunto + ',' + conPunto2;
-            }
-        }
-
-        return comas;
     }
 
     if (min || max) {
