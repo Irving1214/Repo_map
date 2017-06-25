@@ -8,8 +8,7 @@ var allLayers = [];
 var propiedades = [];
 var infoWindows = [];
 var click = false;
-var markerPlaces = [];
-var places;
+var service;
 
 var radius = 5000;
 
@@ -374,7 +373,6 @@ function initMap() {
         // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
         var ubicacion = place;
         if (place.geometry.viewport) {
-            console.log(place.geometry.location);
             map.fitBounds(place.geometry.viewport);
             //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Tecamac(Estado de México)
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
@@ -432,7 +430,6 @@ function initMap() {
              map.setZoom(13);
              }**/
         } else {
-            console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón y Aguascalientes
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
@@ -490,68 +487,7 @@ function initMap() {
     });
 
 
-    var service = new google.maps.places.PlacesService(map);
-
-    service.nearbySearch({
-        location: mx,
-        radius: radius,
-        types: ['school']
-    }, processResultsEscuelas);
-
-
-    function processResultsEscuelas(results, status, pagination) {
-        if (status !== google.maps.places.PlacesServiceStatus.OK) {
-
-            return;
-        } else {
-            createMarkersEscuelas(results);
-
-            if (pagination.hasNextPage) {
-                var moreButton = document.getElementById('more2');
-
-                moreButton.disabled = false;
-
-                moreButton.addEventListener('click', function () {
-                    moreButton.disabled = true;
-                    pagination.nextPage();
-                });
-            }
-        }
-    }
-
-    function createMarkersEscuelas(places) {
-
-        var bounds = new google.maps.LatLngBounds();
-
-        for (var i = 0, place; place = places[i]; i++) {
-            var image = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
-            };
-
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: image,
-                title: place.name,
-                position: place.geometry.location
-            });
-
-
-            bounds.extend(place.geometry.location);
-        }
-        map.fitBounds(bounds);
-    }
-
-
-    $("#escuelas").click(function () {
-        processResultsEscuelas();
-
-    });
-
-
+    service = new google.maps.places.PlacesService(map);
 }
 
 /*
@@ -860,29 +796,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="restaurantes" onClick="search(\'restaurants\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="restaurantes_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="escuelas" onClick="search(\'school\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="escuelas_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="hospitales" onClick="search(\'hospital\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="hospitales_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="cormercio" onClick="search(\'store\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="cormercio_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="super" onClick="search(\'shopping_mall\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="super_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="parques" onClick="search(\'park\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="parques_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -1032,6 +968,56 @@ function boxListeners() {
             aiDi = aiDi.split("_");
 
             iLikeIt(aiDi[1]);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="escuelas_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 1);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="restaurantes_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 2);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="hospitales_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 5);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="cormercio_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 6);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="parques_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 7);
         });
     });
 }
@@ -1205,6 +1191,68 @@ function getMarker(id) {
 
             map.panTo(allMarkers[i].getPosition());
             map.setZoom(17);
+            break;
+        }
+    }
+}
+
+function getMarkersPlace(id, action) {
+    for (var i = 0; i < allMarkers.length; i++) {
+        var ij = "marker" + id;
+
+        if (ij == allMarkers[i].id) {
+            var latLng = new google.maps.LatLng(allMarkers[i].getPosition().lat(), allMarkers[i].getPosition().lng());
+
+            switch (action) {
+                case 1: // Escuelas
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['school']
+                    }, processResultsEscuelas);
+                    break;
+                case 2: //Restauran
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['cafe', 'restaurant']
+                    }, processResultsResta);
+                    break;
+                case 3: //Servicios
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['bank', 'library', 'police', 'bus_station', 'airport']
+                    }, processResultsServicios);
+                    break;
+                case 4: //Tiendas
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['shopping_mall', 'store']
+                    }, processResultsTiendas);
+                    break;
+                case 5: //Hospitales
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['hospital', 'pharmacy']
+                    }, processResults);
+                    break;
+                case 6: //Tiendas
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['shopping_mall', 'store']
+                    }, processResultsTiendas);
+                    break;
+                case 7: // Parkes
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        type: ['amusement_park', 'aquarium', 'movie_theater', 'museum', 'park', 'stadium', 'zoo']
+                    }, processResultsRecreo);
+            }
             break;
         }
     }
@@ -1425,7 +1473,6 @@ function showPropiedadesByPrecio(min, max) {
     var t = 0;
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
-            console.log(allMarkers[i].propiedad);
             ids.push(allMarkers[i].propiedad);
             t = t + 1;
         }
@@ -1794,96 +1841,194 @@ function envio_pdf(calle, colonia, municipio, estado, terreno, constru, habitaci
         '</div>');
 }
 
-function search(type) {
-    var search = {
-        bounds: map.getBounds()
-    };
-
-    if (type != 'establishment') {
-        search.types = type;
-    }
-
-    places.search(search, function (results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            //clearResults();
-            clearMarkers();
-            for (var i = 0; i < results.length; i++) {
-                markerPlaces[i] = new google.maps.Marker({
-                    position: results[i].geometry.location,
-                    animation: google.maps.Animation.DROP
-                });
-                google.maps.event.addListener(markerPlaces[i], 'click', getDetails(results[i], i));
-                setTimeout(dropMarker(i), i * 100);
-                //addResult(results[i], i);
-            }
-        }
-    })
-}
-
-function clearMarkers() {
-    for (var i = 0; i < markerPlaces.length; i++) {
-        if (markerPlaces[i]) {
-            markerPlaces[i].setMap(null);
-            markerPlaces[i] == null;
-        }
+function processResultsEscuelas(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkersEscuelas(results);
     }
 }
 
-function dropMarker(i) {
-    return function () {
-        markerPlaces[i].setMap(map);
+function createMarkersEscuelas(places) {
+
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsResta(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkersRes(results);
     }
 }
 
-function addResult(result, i) {
-    var results = document.getElementById("results");
-    var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 == 0 ? '#F0F0F0' : '#FFFFFF');
-    tr.onclick = function () {
-        google.maps.event.trigger(markers[i], 'click');
-    };
+function createMarkersRes(places) {
+    var bounds = new google.maps.LatLngBounds();
 
-    var iconTd = document.createElement('td');
-    var nameTd = document.createElement('td');
-    var icon = document.createElement('img');
-    icon.src = result.icon;
-    icon.setAttribute("class", "placeIcon");
-    icon.setAttribute("className", "placeIcon");
-    var name = document.createTextNode(result.name);
-    iconTd.appendChild(icon);
-    nameTd.appendChild(name);
-    tr.appendChild(iconTd);
-    tr.appendChild(nameTd);
-    results.appendChild(tr);
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
 }
 
-function clearResults() {
-    var results = document.getElementById("results");
-    while (results.childNodes[0]) {
-        results.removeChild(results.childNodes[0]);
+function processResultsServicios(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers6(results);
     }
 }
 
-function getDetails(result, i) {
-    return function () {
-        places.getDetails({
-            reference: result.reference
-        }, showInfoWindow(i));
+function createMarkers6(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsTiendas(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers7(results);
     }
 }
 
-function showInfoWindow(i) {
-    return function (place, status) {
-        if (iw) {
-            iw.close();
-            iw = null;
-        }
+function createMarkers7(places) {
+    var bounds = new google.maps.LatLngBounds();
 
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            iw = new google.maps.InfoWindow({
-                content: getIWContent(place)
-            });
-            iw.open(map, markers[i]);
-        }
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        bounds.extend(place.geometry.location);
     }
+    map.fitBounds(bounds);
+}
+
+function processResultsRecreo(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers4(results);
+    }
+}
+
+function createMarkers4(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResults(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers(results);
+    }
+}
+
+function createMarkers(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
 }
