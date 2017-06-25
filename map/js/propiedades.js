@@ -980,57 +980,59 @@ function load_propiedades(latitud, longitud) {
             console.log(respuesta);
         },
         complete: function () {
-
-            var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
-            others.forEach(function (item) {
-                $(item).mouseover(function () {
-                    var aiDi = $(item).attr('id');
-                    aiDi = aiDi.split("_");
-                    hover(aiDi[1]);
-                });
-
-                $(item).mouseout(function () {
-                    var aiDi = $(item).attr('id');
-                    aiDi = aiDi.split("_");
-                    out(aiDi[1]);
-
-                });
-
-                $(item).click(function () {
-                    var aiDi = $(item).attr('id');
-                    aiDi = aiDi.split("_");
-                    $("#house_description_" + aiDi[1]).show();
-                    $("#house_cards").hide();
-
-                    getMarker(aiDi[1]);
-                });
-            });
-
-            others = Array.from(document.querySelectorAll('*[id^="card_cubes_"]'));
-            others.forEach(function (item) {
-                $(item).click(function () {
-                    var aiDi = $(item).attr('id');
-                    aiDi = aiDi.split("_");
-                    $("#house_cards").show();
-                    $("#house_description_" + aiDi[2]).hide();
-                    setDefaulBehaviorMarkers();
-                    reCentrar();
-                    changePlazaToColonia(false);
-                });
-            });
-
-            others = Array.from(document.querySelectorAll('*[id^="heart_"]'));
-            others.forEach(function (item) {
-                $(item).click(function () {
-                    var aiDi = $(item).attr('id');
-                    aiDi = aiDi.split("_");
-
-                    iLikeIt(aiDi[1]);
-                });
-            });
-
+            boxListeners();
             $("#wait").hide();
         }
+    });
+}
+
+function boxListeners() {
+    var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
+    others.forEach(function (item) {
+        $(item).mouseover(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+            hover(aiDi[1]);
+        });
+
+        $(item).mouseout(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+            out(aiDi[1]);
+
+        });
+
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+            $("#house_description_" + aiDi[1]).show();
+            $("#house_cards").hide();
+
+            getMarker(aiDi[1]);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="card_cubes_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+            $("#house_cards").show();
+            $("#house_description_" + aiDi[2]).hide();
+            setDefaulBehaviorMarkers();
+            reCentrar();
+            changePlazaToColonia(false);
+        });
+    });
+
+    others = Array.from(document.querySelectorAll('*[id^="heart_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            iLikeIt(aiDi[1]);
+        });
     });
 }
 
@@ -1114,18 +1116,28 @@ function addMarkers(propiedades) {
             var index_id = marker_id.replace("marker", "");
 
             //CENTRAR SCROLL
+            /*
             var casasContainer = $("#casas");
             var casaScroll = $("#img-thumbnail_" + index_id);
             casasContainer.animate({
                 scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
-            }, 'fast', 'linear');
+            }, 'fast', 'linear');*/
             //FIN CENTRAR SCROLL
+
             marker.setIcon(markerGreen);
             $("#img-thumbnail_" + index_id).css({
                 "posistion": "relative",
                 "z-index": "1032",
                 "border-color": "#CFDB00"
             });
+
+            // Mover arriba a la izquierda
+            var house_selected = $("#caja_" + index_id).html();
+            $("#caja_" + index_id).hide();
+            var back = $("#casas").html();
+
+            $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected  + '</div>' + back);
+            boxListeners();
         });
 
         google.maps.event.addListener(marker, "mouseout", function () {
