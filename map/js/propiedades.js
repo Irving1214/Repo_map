@@ -8,6 +8,8 @@ var allLayers = [];
 var propiedades = [];
 var infoWindows = [];
 var click = false;
+var markerPlaces = [];
+var places;
 
 var radius = 5000;
 
@@ -23,15 +25,19 @@ $(document).ready(function () {
         },
         step: 50000,
         orientation: 'horizontal',
-        tooltips: [ wNumb({ thousand: ',',
-                            prefix: '$',
-                            decimals: 0 }),
-                    wNumb({ thousand: ',',
-                            prefix: '$ ',
-                            decimals: 0 }) ]
+        tooltips: [wNumb({
+            thousand: ',',
+            prefix: '$',
+            decimals: 0
+        }),
+            wNumb({
+                thousand: ',',
+                prefix: '$ ',
+                decimals: 0
+            })]
     });
 
-    slider.noUiSlider.on('change', function(values){
+    slider.noUiSlider.on('change', function (values) {
         showPropiedadesByPrecio(values[0].replace(".00", ""), values[1].replace(".00", ""));
     });
 });
@@ -373,25 +379,25 @@ function initMap() {
             //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Tecamac(Estado de México)
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id== "ChIJhbc-7drs0YURlEUtP8V7oU8") {
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8") {
                 map.setZoom(12);
             }
 
             //Baja California Norte y Sur
-            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){
+            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E") {
 
                 map.setZoom(7);
 
             }
             //Comondu BCS, Mulege BCS
-            if(ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
+            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8") {
 
                 map.setZoom(9);
 
             }
 
             //Los Cabos
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"){
+            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c") {
 
                 map.setZoom(10);
 
@@ -399,36 +405,32 @@ function initMap() {
 
 
             //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal,Valle de Chalco Solidaridad,Nicolás Romero,Tlalnepantla de Baz),
-            if(ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
-            || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id== "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id=="ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id== "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-            || ubicacion.place_id== "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id== "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id== "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id== "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id== "ChIJ7z-C0zUczoURDvbvTV8zbJE"
-            || ubicacion.place_id== "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id== "ChIJYxCNbHb40YUR9s1Fdr8kGJk")
-            {
+            if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
+                || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
+                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk") {
 
                 map.setZoom(14);
 
             }
             //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Atenco, Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos)
-            if (ubicacion.place_id=="ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id=="ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJReN4bmzh0YURFUI1P18AqsM"
-            || ubicacion.place_id== "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id== "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id== "ChIJSXRXRqn80YURSM_kDwcjHXk"|| ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
-            {
-              map.setZoom(13);
+            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
+                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew") {
+                map.setZoom(13);
             }
             //cabo corrientes(jalisco)
-            if (ubicacion.place_id=="ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id== "ChIJ74hS7tlp0oURTL_vhuAJEhM")
-            {
-              map.setZoom(11);
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM") {
+                map.setZoom(11);
             }
             //Tonanitla, (Estado México)
-            if(ubicacion.place_id== "ChIJ9ahdi_3y0YURnRVIwHqIKkU")
-            {
-              map.setZoom(15);
+            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU") {
+                map.setZoom(15);
             }
             /*/ pruebas Ecatepec de Morelos, Estado de México
-            if(ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
-            {
-              map.setZoom(13);
-            }**/
+             if(ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
+             {
+             map.setZoom(13);
+             }**/
         } else {
             console.log(place.geometry.location);
             map.setCenter(place.geometry.location);
@@ -437,26 +439,26 @@ function initMap() {
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY") {
                 map.setZoom(12);
 
-            //Baja California Norte y Sur
-            if( ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E"){
+                //Baja California Norte y Sur
+                if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E") {
 
-                map.setZoom(7);
+                    map.setZoom(7);
 
-            }
+                }
 
-            //Comondu (BCS)
-            if(ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"){
+                //Comondu (BCS)
+                if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE") {
 
-                map.setZoom(9);
+                    map.setZoom(9);
 
-            }
+                }
 
-            //Los Cabos, Chiapas
-            if(ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"){
+                //Los Cabos, Chiapas
+                if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8") {
 
-                map.setZoom(10);
+                    map.setZoom(10);
 
-            }
+                }
 
 
             } else {
@@ -467,6 +469,8 @@ function initMap() {
 
         showPropiedadesBySearch(ubicacion);
     });
+
+    places = new google.maps.places.PlacesService(map);
 
     map.addListener('zoom_changed', function () {
         if (map.getZoom() < 7) {
@@ -486,80 +490,66 @@ function initMap() {
     });
 
 
-
     var service = new google.maps.places.PlacesService(map);
 
     service.nearbySearch({
-      location: mx,
-      radius: radius,
-      types: ['school']
+        location: mx,
+        radius: radius,
+        types: ['school']
     }, processResultsEscuelas);
 
 
-
     function processResultsEscuelas(results, status, pagination) {
-              if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        if (status !== google.maps.places.PlacesServiceStatus.OK) {
 
-                return;
-              } else {
-                createMarkersEscuelas(results);
+            return;
+        } else {
+            createMarkersEscuelas(results);
 
-                if (pagination.hasNextPage) {
-                  var moreButton = document.getElementById('more2');
+            if (pagination.hasNextPage) {
+                var moreButton = document.getElementById('more2');
 
-                  moreButton.disabled = false;
+                moreButton.disabled = false;
 
-                  moreButton.addEventListener('click', function() {
+                moreButton.addEventListener('click', function () {
                     moreButton.disabled = true;
                     pagination.nextPage();
-                  });
-                }
-              }
-            }
-
-            function createMarkersEscuelas(places) {
-
-              var bounds = new google.maps.LatLngBounds();
-
-              for (var i = 0, place; place = places[i]; i++) {
-                var image = {
-                  url: place.icon,
-                  size: new google.maps.Size(71, 71),
-                  origin: new google.maps.Point(0, 0),
-                  anchor: new google.maps.Point(17, 34),
-                  scaledSize: new google.maps.Size(25, 25)
-                };
-
-                var marker = new google.maps.Marker({
-                  map: map,
-                  icon: image,
-                  title: place.name,
-                  position: place.geometry.location
                 });
-
-
-                bounds.extend(place.geometry.location);
-              }
-              map.fitBounds(bounds);
             }
+        }
+    }
+
+    function createMarkersEscuelas(places) {
+
+        var bounds = new google.maps.LatLngBounds();
+
+        for (var i = 0, place; place = places[i]; i++) {
+            var image = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+
+            var marker = new google.maps.Marker({
+                map: map,
+                icon: image,
+                title: place.name,
+                position: place.geometry.location
+            });
 
 
-       $("#escuelas").click(function(){
-         processResultsEscuelas();
-
-       });
-
-
+            bounds.extend(place.geometry.location);
+        }
+        map.fitBounds(bounds);
+    }
 
 
+    $("#escuelas").click(function () {
+        processResultsEscuelas();
 
-
-
-
-
-
-
-
+    });
 
 
 }
@@ -623,10 +613,10 @@ function reCentrar() {
 }
 
 function nombreMunicipio(estado) {
-    if(estado==''){
+    if (estado == '') {
         return ''
     } else {
-        return estado +', '
+        return estado + ', '
     }
 }
 
@@ -708,7 +698,7 @@ function load_propiedades(latitud, longitud) {
                         '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
                         '<div class="caption">' +
-                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">'+ propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
                         '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
                         '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
                         '</div>' +
@@ -811,20 +801,20 @@ function load_propiedades(latitud, longitud) {
                         '<span class="sr-only">Siguiente</span>' +
                         '</a>' +
                         '</div>' +
-                        '<center>'+
+                        '<center>' +
                         '<div class="revimexBlue"><br>' +
 
-                        '<i class="capitalize">' + nombreMunicipio(propiedad.Municipio__c)+ propiedad.Estado__c + '<br>' +
+                        '<i class="capitalize">' + nombreMunicipio(propiedad.Municipio__c) + propiedad.Estado__c + '<br>' +
                         '' + propiedad.Calle__c +
                         ', Col. ' + propiedad.Colonia__c + '<br>' +
 
                         '</div>' +
-                        '</center>'+
+                        '</center>' +
                         '</div>' +
 
                         '<div class="row" align="center">' +
                         '<div class="col-md-4 col-md-offset-4 detelle">' +
-                        '<button class="boton_detalles_auto"  class="btn btn-primary" onclick="modal_variables" data-toggle="modal" id="card_cubes_' + index + '" style="    margin-bottom: 4%;">Regresar</button>' +
+                        '<button class="boton_detalles_auto"  class="btn btn-primary" data-toggle="modal" id="card_cubes_' + index + '" style="    margin-bottom: 4%;">Regresar</button>' +
                         '</div>' +
                         '</div>' +
 
@@ -870,29 +860,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="restaurantes"class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="restaurantes" onClick="search(\'restaurants\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="escuelas" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="escuelas" onClick="search(\'school\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="hospitales" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="hospitales" onClick="search(\'hospital\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="cormercio" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="cormercio" onClick="search(\'store\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="super" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="super" onClick="search(\'shopping_mall\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="parques" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="parques" onClick="search(\'park\')" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -930,9 +920,6 @@ function load_propiedades(latitud, longitud) {
                         '<p  style="font-size: 15px; margin-top:13%;">' +
 
 
-
-
-
                         '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
 
                         '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
@@ -944,9 +931,6 @@ function load_propiedades(latitud, longitud) {
                         '<b><img id="twitter" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-TWITTER.png"">' +
 
                         '<b><img id="youtube" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-YOUTUBE.png"">' +
-
-
-
 
 
                         '<br>' +
@@ -1066,15 +1050,12 @@ function addMarkers(propiedades) {
         var contentString =
 
 
-
-
             '<div >' +
             '<p style="font-size: 10px; padding:0px;"><i>' +
 
-            'Calle: ' + propiedad.Calle__c + '<br />' +' Colonia: ' + propiedad.Colonia__c +
+            'Calle: ' + propiedad.Calle__c + '<br />' + ' Colonia: ' + propiedad.Colonia__c +
             '</p></i>' +
             '</div>';
-
 
 
         var infowindow = new google.maps.InfoWindow({
@@ -1138,7 +1119,7 @@ function addMarkers(propiedades) {
                 scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
             }, 'fast', 'linear');
             //FIN CENTRAR SCROLL
-              marker.setIcon(markerGreen);
+            marker.setIcon(markerGreen);
             $("#img-thumbnail_" + index_id).css({
                 "posistion": "relative",
                 "z-index": "1032",
@@ -1149,7 +1130,7 @@ function addMarkers(propiedades) {
         google.maps.event.addListener(marker, "mouseout", function () {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
-             marker.setIcon(markerRed);
+            marker.setIcon(markerRed);
             $("#img-thumbnail_" + index_id).css({
                 "box-shadow": "",
                 "border-width": "",
@@ -1163,7 +1144,7 @@ function addMarkers(propiedades) {
         google.maps.event.addListener(marker, "mouseout", function () {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
-             marker.setIcon(markerBlue);
+            marker.setIcon(markerBlue);
             $("#letrasImagen" + index_id).css({
 
                 "opacity": "0",
@@ -1288,46 +1269,6 @@ function out(id) {
     }
 }
 
-/*
- * Muestra las propiedades por filtro de coordenadas
- */
-function showPropiedades(latitude, longitude) {
-    $.ajax({
-        url: url + "/propiedades/coordenadas",
-        type: "POST",
-        data: {
-            latitud: latitude,
-            longitud: longitude
-        },
-        dataType: "JSON",
-        beforeSend: function () {
-            $("#wait").show();
-        },
-        success: function (response) {
-            if (response.propiedades.length > 0) {
-                $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades</center></p>");
-                $("#title-header").css({
-                      "padding-top": ".5%",
-                    "padding-bottom": ".5%",
-
-                });
-            } else {
-                $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en esta ubicación</center></p>");
-                $("#title-header").css({
-                      "padding-top": ".5%",
-                    "padding-bottom": ".5%",
-
-                });
-            }
-        },
-        error: function (respuesta) {
-            console.log(respuesta);
-        },
-        complete: function () {
-            $("#wait").hide();
-        }
-    });
-}
 function setDefaulBehaviorMarkers() {
     for (var cont = 0; cont < allMarkers.length; cont++) {
         allMarkers[cont].setAnimation(null);
@@ -1343,7 +1284,7 @@ function changePlazaToColonia(plazas) {
         others.forEach(function (item) {
             $(item).hide();
             $("#display_colonia_" + index).css('display', 'block');
-            index = index+1;
+            index = index + 1;
         });
     } else {
         var others = Array.from(document.querySelectorAll('*[id^="display_colonia_"]'));
@@ -1352,7 +1293,7 @@ function changePlazaToColonia(plazas) {
         others.forEach(function (item) {
             $(item).hide();
             $("#display_plaza_" + index).css('display', 'block');
-            index = index+1;
+            index = index + 1;
         });
     }
 }
@@ -1382,7 +1323,7 @@ function showPropiedadesBySearch(ubicacion) {
     } else {
         $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicación</center></h3>");
         $("#title-header").css({
-              "padding-top": ".5%",
+            "padding-top": ".5%",
             "padding-bottom": ".5%",
 
         });
@@ -1418,11 +1359,11 @@ function showPropiedadesByEstado(estado) {
                 var esta = $("#country option[value='" + estado + "']").text();
 
                 $("#title-header").html("<p class='aviso animated fadeInRight'><center> " + response.propiedades.length + " propiedades en el estado de " + esta + "</center></p>");
-                  $("#title-header").css({
+                $("#title-header").css({
 
-                      "padding-bottom": ".5%",
+                    "padding-bottom": ".5%",
 
-                  });
+                });
             } else {
                 var esta = $("#country option[value='" + estado + "']").text();
                 $("#title-header").html("<p class='aviso animated fadeInRight'><center>Por el momento no encontramos propiedades en el estado de " + esta + "</center></p");
@@ -1453,23 +1394,24 @@ function showPropiedadesByPrecio(min, max) {
             t = t + 1;
         }
     }
-//comas de los precios
-                function num(comas){
-        			if(comas>999999){
-        			  conPunto = comas.substring(0, comas.length-6);
-        			  conPunto2 = max.substring(comas.length-6, comas.length-3);
-        			  conPunto3 = max.substring(comas.length-3, comas.length);
-        			  comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
-        			}else{
-        				if(comas>999){
-        				  conPunto = comas.substring(0, comas.length-3);
-        				  conPunto2 = comas.substring( comas.length-3, comas.length);
-        				  comas = conPunto + ',' + conPunto2;
-        				}
-        			}
-
-        			return comas;
+    //comas de los precios
+    function num(comas) {
+        if (comas > 999999) {
+            conPunto = comas.substring(0, comas.length - 6);
+            conPunto2 = max.substring(comas.length - 6, comas.length - 3);
+            conPunto3 = max.substring(comas.length - 3, comas.length);
+            comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
+        } else {
+            if (comas > 999) {
+                conPunto = comas.substring(0, comas.length - 3);
+                conPunto2 = comas.substring(comas.length - 3, comas.length);
+                comas = conPunto + ',' + conPunto2;
             }
+        }
+
+        return comas;
+    }
+
     if (min || max) {
         $.ajax({
             url: url + "/propiedades/searchbyprecio",
@@ -1680,7 +1622,7 @@ function notificaction(msg, type) {
     }, 800);
 }
 
-function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
+function envio_pdf(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
     $("#pdf-modal").html("");
     // si el valor de folio es null -> el campo debe de estar vacÃ¬o s
     if (folio == 'null') {
@@ -1831,16 +1773,98 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '</div>' +
         '</div>');
-
 }
 
-function envio_pdf() {
+function search(type) {
+    var search = {
+        bounds: map.getBounds()
+    };
 
-    $('#pdf-modal').printThis({
+    if (type != 'establishment') {
+        search.types = type;
+    }
 
-        importCSS: true,
-        loadCSS: "/Users/maquina27/Desktop/revimexmap/css/desplegar.css",
+    places.search(search, function (results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            //clearResults();
+            clearMarkers();
+            for (var i = 0; i < results.length; i++) {
+                markerPlaces[i] = new google.maps.Marker({
+                    position: results[i].geometry.location,
+                    animation: google.maps.Animation.DROP
+                });
+                google.maps.event.addListener(markerPlaces[i], 'click', getDetails(results[i], i));
+                setTimeout(dropMarker(i), i * 100);
+                //addResult(results[i], i);
+            }
+        }
+    })
+}
 
-    });
+function clearMarkers() {
+    for (var i = 0; i < markerPlaces.length; i++) {
+        if (markerPlaces[i]) {
+            markerPlaces[i].setMap(null);
+            markerPlaces[i] == null;
+        }
+    }
+}
 
+function dropMarker(i) {
+    return function () {
+        markerPlaces[i].setMap(map);
+    }
+}
+
+function addResult(result, i) {
+    var results = document.getElementById("results");
+    var tr = document.createElement('tr');
+    tr.style.backgroundColor = (i % 2 == 0 ? '#F0F0F0' : '#FFFFFF');
+    tr.onclick = function () {
+        google.maps.event.trigger(markers[i], 'click');
+    };
+
+    var iconTd = document.createElement('td');
+    var nameTd = document.createElement('td');
+    var icon = document.createElement('img');
+    icon.src = result.icon;
+    icon.setAttribute("class", "placeIcon");
+    icon.setAttribute("className", "placeIcon");
+    var name = document.createTextNode(result.name);
+    iconTd.appendChild(icon);
+    nameTd.appendChild(name);
+    tr.appendChild(iconTd);
+    tr.appendChild(nameTd);
+    results.appendChild(tr);
+}
+
+function clearResults() {
+    var results = document.getElementById("results");
+    while (results.childNodes[0]) {
+        results.removeChild(results.childNodes[0]);
+    }
+}
+
+function getDetails(result, i) {
+    return function () {
+        places.getDetails({
+            reference: result.reference
+        }, showInfoWindow(i));
+    }
+}
+
+function showInfoWindow(i) {
+    return function (place, status) {
+        if (iw) {
+            iw.close();
+            iw = null;
+        }
+
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            iw = new google.maps.InfoWindow({
+                content: getIWContent(place)
+            });
+            iw.open(map, markers[i]);
+        }
+    }
 }
