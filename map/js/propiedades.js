@@ -1454,8 +1454,8 @@ function showPropiedadesByEstado(estado) {
 function num(comas) {
     if (comas > 999999) {
         conPunto = comas.substring(0, comas.length - 6);
-        conPunto2 = max.substring(comas.length - 6, comas.length - 3);
-        conPunto3 = max.substring(comas.length - 3, comas.length);
+        conPunto2 = comas.substring(comas.length - 6, comas.length - 3);
+        conPunto3 = comas.substring(comas.length - 3, comas.length);
         comas = conPunto + ',' + conPunto2 + ',' + conPunto3;
     } else {
         if (comas > 999) {
