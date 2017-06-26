@@ -172,7 +172,10 @@
 <div class="divMap">
     <div id="map_canvas"></div>
 </div>
+<input type="text" id="x" value="19.3631457">
+<input type="text" id="y" value="-99.2353887">
   <input id="radius" type="text" value="1" placeholder="radio"/>
+  <button onclick="search();">Buscar</button>
 <div id="locationField">
     <input id="autocomplete" type="text" value="" placeholder="Search by business name, address, .. For see near."/>
 </div>
@@ -302,6 +305,8 @@
     var map, places, iw;
     var markers = [];
     var autocomplete;
+    var x = $("#x").val();
+    var y = $("#y").val();
 
     var delay = (function () {
         var timer = 0;
@@ -312,12 +317,6 @@
     })();
 
     $(document).ready(function () {
-      $("#radius").keyup(function() { delay(function() {
-        if($("#radius").val()>0){
-          search();
-        }
-
-      }, 1000 ); });
 
     });
 
@@ -667,7 +666,7 @@
     }
 
     function search() {
-      if($("#radius").val()>0 ){
+      if($("#radius").val()>0 && $("#x").val() && $("#y").val()){
 
         var type;
         for (var i = 0; i < document.controls.type.length; i++) {
@@ -677,7 +676,8 @@
         }
 
         autocomplete.setBounds(map.getBounds());
-        var latLng = new google.maps.LatLng(map.getCenter().lat(), map.getCenter().lng());
+        var latLng = new google.maps.LatLng($("#x").val(), $("#y").val());
+        map.panTo(latLng);
         var search = {
             //bounds: map.getBounds()
             // Ponlo aqui
