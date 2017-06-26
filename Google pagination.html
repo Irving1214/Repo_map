@@ -658,15 +658,19 @@
 
         autocomplete.setBounds(map.getBounds());
 
+        var latLng = new google.maps.LatLng(map.getBounds().f.f, map.getBounds().b.b);
         var search = {
-            bounds: map.getBounds()
+            //bounds: map.getBounds()
+            // Ponlo aqui
+            location: latLng,
+            radius: 100
         };
 
         if (type != 'establishment') {
             search.types = [type];
         }
 
-        places.search(search, function (results, status) {
+        places.nearbySearch(search, function (results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 clearResults();
                 clearMarkers();
