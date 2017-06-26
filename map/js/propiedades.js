@@ -642,7 +642,6 @@ function load_propiedades(latitud, longitud) {
                     '</div>';
 
                     $("#casas").append(casa_card);
-                    $("#casas_cercanas").append(casa_card);
 
                     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: none">' +
 
@@ -950,6 +949,7 @@ function boxListeners() {
             }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
+            $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
 
             getMarker(aiDi[1]);
@@ -961,8 +961,9 @@ function boxListeners() {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
-            $("#house_cards").show();
+            $('#casas').appendTo('#house_cards');
             $("#house_description_" + aiDi[2]).hide();
+            $("#house_cards").show();
             $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
             reCentrar();
