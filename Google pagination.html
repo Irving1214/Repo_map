@@ -172,7 +172,10 @@
 <div class="divMap">
     <div id="map_canvas"></div>
 </div>
-
+<input type="text" id="x" value="19.3631457">
+<input type="text" id="y" value="-99.2353887">
+  <input id="radius" type="text" value="1" placeholder="radio"/>
+  <button onclick="search();">Buscar</button>
 <div id="locationField">
     <input id="autocomplete" type="text" value="" placeholder="Search by business name, address, .. For see near."/>
 </div>
@@ -293,7 +296,7 @@
 </div>
 
 <script src="/bootstrap/3.3.7/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/js/jquery/3.1.1/jquery.min.js"></script>
+<script src="map/js/jquery.js"></script>
 
 
 <script type="text/javascript"
@@ -302,6 +305,20 @@
     var map, places, iw;
     var markers = [];
     var autocomplete;
+    var x = $("#x").val();
+    var y = $("#y").val();
+
+    var delay = (function () {
+        var timer = 0;
+        return function (callback, ms) {
+            clearTimeout(timer);
+            timer = setTimeout(callback, ms);
+        };
+    })();
+
+    $(document).ready(function () {
+
+    });
 
     function initialize() {
         var myLatlng = new google.maps.LatLng(19.4357, -99.1439);
@@ -649,6 +666,8 @@
     }
 
     function search() {
+      if($("#radius").val()>0 && $("#x").val() && $("#y").val()){
+
         var type;
         for (var i = 0; i < document.controls.type.length; i++) {
             if (document.controls.type[i].checked) {
@@ -657,16 +676,21 @@
         }
 
         autocomplete.setBounds(map.getBounds());
-
+        var latLng = new google.maps.LatLng($("#x").val(), $("#y").val());
+        map.panTo(latLng);
         var search = {
-            bounds: map.getBounds()
+            //bounds: map.getBounds()
+            // Ponlo aqui
+            location: latLng,
+            radius: ($("#radius").val() * 1000)
+
         };
 
         if (type != 'establishment') {
             search.types = [type];
         }
 
-        places.search(search, function (results, status) {
+        places.nearbySearch(search, function (results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 clearResults();
                 clearMarkers();
@@ -681,6 +705,7 @@
                 }
             }
         })
+      }
     }
 
     function clearMarkers() {

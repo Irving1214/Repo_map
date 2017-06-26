@@ -32,13 +32,13 @@
     }
 
     @media (max-width: 800px) {
-                
+
             h3, .h3 {
             font-size: 20px;
             }
 
             div.scroll {
-            width: 100% ;  
+            width: 100% ;
             }
 
             .col-md-6.como_estas {
@@ -57,7 +57,7 @@
     .glyphicon-chevron-left:before {
         content: "\e079";
         color: #48BEEF;
-    
+
      }
     .glyphicon-chevron-right:before {
         content: "\e080";
@@ -69,12 +69,11 @@
         height:  120%;
         width: 100%;
         margin-top: 2%;
-        
+
     }
     .col-md-6.como_estas {
         width: 25%;
-        height: 100%;
-        
+
         padding: 1em;
     }
     .col-md-6.otro1 {
@@ -84,29 +83,30 @@
         padding: 1em;
         height: inherit;
     }
-        
+
     .col-md-6.otro3 {
         width: 25%;
         margin-left: 4.166666666667%;
         margin-right: 4.166666666667%;
-           
-        
+
+
     }
-    
+
     .col-md-6.otro2 {
         width: 25%;
          margin-left: 12.5%;
         margin-right: 12.5%;
         padding: 1em;
     }
-    
+
     .col-md-6.hola_description{
         width: 44%;
         margin-left: 5%;
     }
     .col-md-6.hola_description{
-       width: 41%;
-       margin-left: 10%;
+       width: 42%;
+       margin-left: 28%;
+       margin-top:5%;
     }
 
 
@@ -115,16 +115,16 @@
                     width: 60%;
                     margin-left: 20%;
                     }
-                   
+
                     .col-md-6.otro3 {
                         width: 60%;
                         margin-left: 20%;
-                        
+
                     }
         .col-md-6.otro1 {
                         width: 60%;
                         margin-left: 20%;
-                        
+
                     }
                     .col-md-6.otro2 {
                         width: 60%;
@@ -135,7 +135,7 @@
                         margin-left: 20%;
                      }
      }
-     
+
     .loading {
             position: fixed;
             z-index: 1000;
@@ -147,19 +147,19 @@
             background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
     }
 
-       
+
 
         .cajaDos {
 
             width: 25%;
-            
+
             border: 3px solid green;
             padding: 25px;
             margin: 25px;
         }
         .imagenCajaDo{
             width: 100%;
-            
+
         }
         .divButton .estiloBton {
             background-color: #002967; /* blue */
@@ -214,7 +214,7 @@
             margin-left: 50px;
             z-index: 10;
         }
-                
+
 
         #main {
             transition: margin-left .5s;
@@ -295,16 +295,14 @@ function closeNav() {
 
 
 
-        
-  
-        <div class="col-md-f" >
-            
-            <div class="scroll" id="casas">
-            </div>
+
+
+        <div class="col-md-f" id="house_cards" >
+            <div class="scroll" id="casas"></div>
         </div>
         <div id="description-casas"></div>
-  
-    
+
+
 
 
 <!-- MODAL  -->
@@ -313,9 +311,6 @@ function closeNav() {
 <script src="map/js/bootstrap.min.js"></script>
 <script src="map/js/printThis.js"></script>
 <script src="map/js/nouislider.min.js"></script>
-<script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6cDizVt_aD3GPH7murcfwz-vh140lpg&libraries=places&callback=initMap"></script>
-<script src="map/js/wNumb.js"></script>
 
     <script src="favoritos.js"></script>
 <div class="loading" id="wait"></div>

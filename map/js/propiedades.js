@@ -377,25 +377,31 @@ function initMap() {
             //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Tecamac(Estado de México)
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8") {
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8" || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" ) {
                 map.setZoom(12);
             }
 
-            //Baja California Norte y Sur
-            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E") {
+            //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
+            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" ||ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM"||ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0"|| ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
 
                 map.setZoom(7);
 
             }
-            //Comondu BCS, Mulege BCS
-            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8") {
+            //Comondu BCS, Mulege BCS, Michoacan , queretaro , 
+            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
 
                 map.setZoom(9);
 
             }
+            //veracruz ,sinaloa"",chiapas
+            if ( ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg"|| ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"|| ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
 
-            //Los Cabos
-            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c") {
+                map.setZoom(8);
+
+            }
+
+            //Los Cabos , Nuevo leon, yucatan, Hidalgo
+            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"|| ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE") {
 
                 map.setZoom(10);
 
@@ -405,7 +411,7 @@ function initMap() {
             //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal,Valle de Chalco Solidaridad,Nicolás Romero,Tlalnepantla de Baz),
             if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
                 || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE" 
                 || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk") {
 
                 map.setZoom(14);
@@ -413,15 +419,15 @@ function initMap() {
             }
             //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Atenco, Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos)
             if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
-                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew") {
+                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" ) {
                 map.setZoom(13);
             }
-            //cabo corrientes(jalisco)
-            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM") {
+            //cabo corrientes(jalisco), Monterrey,tlaxcala,nayarit
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ"  || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg") {
                 map.setZoom(11);
             }
             //Tonanitla, (Estado México)
-            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU") {
+            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
                 map.setZoom(15);
             }
             /*/ pruebas Ecatepec de Morelos, Estado de México
@@ -429,6 +435,8 @@ function initMap() {
              {
              map.setZoom(13);
              }**/
+            
+            
         } else {
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón y Aguascalientes
@@ -444,14 +452,14 @@ function initMap() {
                 }
 
                 //Comondu (BCS)
-                if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE") {
+                if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" ) {
 
                     map.setZoom(9);
 
                 }
 
                 //Los Cabos, Chiapas
-                if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8") {
+                if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" ) {
 
                     map.setZoom(10);
 
@@ -575,6 +583,7 @@ function load_propiedades(latitud, longitud) {
             if (Object.keys(respuesta.propiedades).length > 0) {
                 $("#casas").html("");
                 $("#description-casas").html("");
+                $('#casas_cercanas').html("");
 
 
                 respuesta.propiedades.forEach(function (propiedad) {
@@ -628,24 +637,24 @@ function load_propiedades(latitud, longitud) {
 
                     var re = /(?:\.([^.]+))?$/;
 
-                    $("#casas").append(
-                        '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
-                        '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
-                        '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
+                    var casa_card = '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
+                    '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
+                    '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
-                        '<div class="caption">' +
-                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
-                        '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
-                        '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>');
+                    '<div class="caption">' +
+                    '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                    '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
+                    '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
+                    $("#casas").append(casa_card);
 
                     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: none">' +
 
                         '<div class="col-md-12">' +
                         '<div id="myCarousel_' + index + '" class="carousel slide" data-ride="carousel">' +
-
                         '<!-- Indicators -->' +
                         '<ol class="carousel-indicators">';
 
@@ -941,8 +950,15 @@ function boxListeners() {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
+            for (var i = 0; i < others.length; i++) {
+              if ($("#house_description_" + i).css('display') == "block") {
+                $("#house_description_" + i).hide();
+              }
+            }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
+            $('#casas').appendTo('#casas_cercanas');
+            $('#casas_cercanas').show();
 
             getMarker(aiDi[1]);
         });
@@ -953,8 +969,10 @@ function boxListeners() {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
-            $("#house_cards").show();
+            $('#casas').appendTo('#house_cards');
             $("#house_description_" + aiDi[2]).hide();
+            $("#house_cards").show();
+            $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
             reCentrar();
             changePlazaToColonia(false);
@@ -2031,4 +2049,158 @@ function createMarkers(places) {
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
+}
+
+function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
+    $("#pdf-modal").html("");
+    // si el valor de folio es null -> el campo debe de estar vacÃ¬o s
+    if (folio == 'null') {
+        folio = '';
+    }
+
+
+    $("#pdf-modal").append('<div class="modal-dialog">' +
+
+        '<div class="modal-content">' +
+
+        '<div class="modal-body">' +
+        '<div id="pdf" class="div">' +
+        '<div class="row">' +
+        '<div class="col-xs-7" style="padding: 0px 0px;">' +
+        '<div class="row azulRevimex" align="center">' +
+        '<img  class="revimexImagen" src="images/revimex-logo.png">' +
+        '</div>' +
+
+        '<div class="row arenaRevimex" align="center">' +
+        '<div class="separador"></div>' +
+        '<span class="titulo" style="margin-top: 80px;">Detalles</span>' +
+        '<div class="separador"></div>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="col-xs-5" style="padding: 0px 0px;">' +
+        '<div class="row arenaRevimex" align="center">' +
+        '<h4>Contacto: 01 800 200 04440</h4>' +
+        '</div>' +
+
+        '<div class="row arenaClara" align="center">' +
+        '<div class="separador"></div>' +
+        '<span class="titulo">' + folio + '</span>' +
+        '<div class="separador"></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+
+        '<div class="row">' +
+        '<div class="col-xs-7">' +
+        '<img class="imagen-modal" src="' + imagen + '">' +
+        '</div>' +
+
+        '<div class="col-xs-5" style="padding: 0px 0px;">' +
+        '<div class="row arenaClara">' +
+        '<br>' +
+        '<p class="direccion" align="center">' +
+        'Calle: ' + calle +
+        ' Colonia: ' + colonia +
+        ' Municipio: ' + municipio +
+        ' Estado: ' + estado +
+        '</p>' +
+        '</div>' +
+
+        '<div class="row highlight">' +
+        '<div class="separador"></div>' +
+        '<div class="col-xs-2">' +
+        '<img class="casitaImagen" src="images/icono-casa-modal.png">' +
+        '<div class="separador"></div>' +
+        '</div>' +
+        '<div class="col-xs-9 style="padding: 0px 0px;"" align="center">' +
+        '<div class="separador"></div>' +
+        '<p class="descripcion">Descripción de propiedad</p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2 style="padding: 0px 0px;""></div>' +
+        '<div class="col-xs-8 style="padding: 0px 0px;"">' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/terreno.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + terreno + ' m<sup>2</sup></p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/construccion.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + constru + ' m<sup>2</sup></p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/habitaciones.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + habitaciones + '</p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/banios.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + banos + '</p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/patio.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + patios + '</p>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row">' +
+        '<div class="col-xs-2" style="padding: 0px 0px;">' +
+        '<img class="sm-icon" src="images/iconoModal/estacionamiento.png">' +
+        '</div>' +
+        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
+        '<p class="des-propiedad">' + estacionamientos + '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+
+        '<div class="col-xs-2" style="padding: 0px 0px;"></div>' +
+        '</div>' +
+
+        '<div class="separador"></div>' +
+        '<div class="row arenaClara">' +
+        '<br>' +
+        '<p class="precio" align="center">' +
+        '$ ' + precio +
+        '</p>' +
+        '<div class="separador"></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>');
+
 }
