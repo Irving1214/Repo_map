@@ -1,6 +1,6 @@
 var url = "http://api.revimex.mx";
 var propiedades = [];
-var favoritos = ["a00i000000V7P3fAAF", "a00i000000V7PA3AAN", "a00i000000V7P3fAAF"]; // carga las ids de la BD
+var favoritos = ["a00i000000V7P3fAAF", "a00i000000V7PA3AAN",  "a00i000000V7P4VAAV"]; // carga las ids de la BD
 var click = false;
 
 

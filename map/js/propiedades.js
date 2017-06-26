@@ -575,6 +575,7 @@ function load_propiedades(latitud, longitud) {
             if (Object.keys(respuesta.propiedades).length > 0) {
                 $("#casas").html("");
                 $("#description-casas").html("");
+                $('#casas_cercanas').html("");
 
 
                 respuesta.propiedades.forEach(function (propiedad) {
@@ -628,18 +629,20 @@ function load_propiedades(latitud, longitud) {
 
                     var re = /(?:\.([^.]+))?$/;
 
-                    $("#casas").append(
-                        '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
-                        '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
-                        '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
+                    var casa_card = '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
+                    '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
+                    '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
-                        '<div class="caption">' +
-                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
-                        '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
-                        '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>');
+                    '<div class="caption">' +
+                    '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                    '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
+                    '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
+                    $("#casas").append(casa_card);
+                    $("#casas_cercanas").append(casa_card);
 
                     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: none">' +
 
@@ -940,8 +943,14 @@ function boxListeners() {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
+            for (var i = 0; i < others.length; i++) {
+              if ($("#house_description_" + i).css('display') == "block") {
+                $("#house_description_" + i).hide();
+              }
+            }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
+            $('#casas_cercanas').show();
 
             getMarker(aiDi[1]);
         });
@@ -954,6 +963,7 @@ function boxListeners() {
             aiDi = aiDi.split("_");
             $("#house_cards").show();
             $("#house_description_" + aiDi[2]).hide();
+            $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
             reCentrar();
             changePlazaToColonia(false);
