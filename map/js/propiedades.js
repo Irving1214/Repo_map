@@ -374,10 +374,11 @@ function initMap() {
         var ubicacion = place;
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
-            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Tecamac(Estado de México)
+            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota)
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8" || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" ) {
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
+                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" ) {
                 map.setZoom(12);
             }
 
@@ -387,7 +388,7 @@ function initMap() {
                 map.setZoom(7);
 
             }
-            //Comondu BCS, Mulege BCS, Michoacan , queretaro , 
+            //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
             if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
 
                 map.setZoom(9);
@@ -411,7 +412,7 @@ function initMap() {
             //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal,Valle de Chalco Solidaridad,Nicolás Romero,Tlalnepantla de Baz),
             if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
                 || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE" 
+                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
                 || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk") {
 
                 map.setZoom(14);
@@ -430,13 +431,13 @@ function initMap() {
             if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
                 map.setZoom(15);
             }
-            /*/ pruebas Ecatepec de Morelos, Estado de México
-             if(ubicacion.place_id== "ChIJoXf3chzy0YURgGayQgpU1Ew")
+            /*/ pruebas Chapa de Mota	, Estado de México
+             if(ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA")
              {
-             map.setZoom(13);
-             }**/
-            
-            
+             map.setZoom(12);
+           }**/
+
+
         } else {
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón y Aguascalientes
