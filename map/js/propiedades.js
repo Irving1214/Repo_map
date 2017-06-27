@@ -1388,7 +1388,6 @@ function showPropiedadesBySearch(ubicacion) {
 
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
-            total += 1;
 
             var costo = allMarkers[i].precio;
             costo = costo.replace(',','');
@@ -1398,14 +1397,15 @@ function showPropiedadesBySearch(ubicacion) {
             var precio_min = priceRange[0];
             precio_min = precio_min.replace(',','');
             precio_min = precio_min.replace('.','');
-            precio_min = parseInt(precio_min);
+            precio_min = parseInt(precio_min)/100;
 
             var precio_max = priceRange[1];
             precio_max = precio_max.replace(',','');
             precio_max = precio_max.replace('.','');
-            precio_max = parseInt(precio_max);
+            precio_max = parseInt(precio_max)/100;
 
             if ((costo >= precio_min) && (costo <=precio_max)) {
+                total += 1;
                 $("#caja_" + allMarkers[i].index).show();
             }
         }
@@ -1420,7 +1420,7 @@ function showPropiedadesBySearch(ubicacion) {
 
         });
     } else {
-        $("#title-header").html("<h3><center>Por el momento no encontramos propiedades en esta ubicación</center></h3>");
+        $("#title-header").html("<h3><center>No hay propiedades en esta ubicación</center></h3>");
         $("#title-header").css({
             "padding-top": ".5%",
             "padding-bottom": ".5%",
