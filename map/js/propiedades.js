@@ -378,7 +378,7 @@ function initMap() {
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
                 || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" ) {
+                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc" ) {
                 map.setZoom(12);
             }
 
@@ -431,10 +431,10 @@ function initMap() {
             if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
                 map.setZoom(15);
             }
-            /*/ pruebas Compostela,	Nayarit
-             if(ubicacion.place_id== "ChIJJ4Va1DIoJ4QRTDrhW8PqszA")
+            /*/ pruebas Huimilpan	 Queretaro
+             if(ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc")
              {
-             map.setZoom(13);
+             map.setZoom(12);
            }**/
 
 
@@ -1297,15 +1297,15 @@ function hover(id) {
     });
 
     click = false;
-    
+
     if (map.getZoom() > 10){
         console.log("si");
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         }
     else{
          for (var i = 0; i < allMarkers.length; i++) {
@@ -1324,7 +1324,7 @@ function hover(id) {
     }
          console.log("no");
     }
-   
+
 }
 
 function out(id) {
