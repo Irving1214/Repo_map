@@ -956,13 +956,17 @@ function boxListeners() {
             for (var i = 0; i < others.length; i++) {
               if ($("#house_description_" + i).css('display') == "block") {
                 $("#house_description_" + i).hide();
+                  
               }
             }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
+            $("#caja_" + aiDi[1]).hide();
+        
+           
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-
+            
             getMarker(aiDi[1]);
         });
     });
