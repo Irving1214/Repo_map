@@ -1372,7 +1372,22 @@ function showPropiedadesBySearch(ubicacion) {
         if (bounds.contains(allMarkers[i].getPosition())) {
             total += 1;
 
-            if ((allMarkers[i].precio >= priceRange[0]) && (allMarkers[i].precio <= priceRange[1])) {
+            var costo = allMarkers[i].precio;
+            costo = costo.replace(',','');
+            costo = costo.replace('.','');
+            costo = parseInt(costo);
+
+            var precio_min = priceRange[0];
+            precio_min = precio_min.replace(',','');
+            precio_min = precio_min.replace('.','');
+            precio_min = parseInt(precio_min);
+
+            var precio_max = priceRange[1];
+            precio_max = precio_max.replace(',','');
+            precio_max = precio_max.replace('.','');
+            precio_max = parseInt(precio_max);
+
+            if ((costo >= precio_min) && (costo <=precio_max)) {
                 $("#caja_" + allMarkers[i].index).show();
             }
         }
