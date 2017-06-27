@@ -960,7 +960,7 @@ function boxListeners() {
             $("#house_cards").hide();
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-
+var cent=true;
             getMarker(aiDi[1]);
         });
     });
@@ -977,6 +977,7 @@ function boxListeners() {
             setDefaulBehaviorMarkers();
             reCentrar();
             changePlazaToColonia(false);
+            var cent=false;
         });
     });
 
@@ -1296,7 +1297,18 @@ function hover(id) {
     });
 
     click = false;
-    for (var i = 0; i < allMarkers.length; i++) {
+    
+    if (map.getZoom() > 10){
+        console.log("si");
+        
+        
+        
+        
+        
+        
+        }
+    else{
+         for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerRed);
             allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
@@ -1310,6 +1322,9 @@ function hover(id) {
             break;
         }
     }
+         console.log("no");
+    }
+   
 }
 
 function out(id) {
