@@ -960,7 +960,7 @@ function boxListeners() {
             $("#house_cards").hide();
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-var cent=true;
+
             getMarker(aiDi[1]);
         });
     });
@@ -1107,6 +1107,8 @@ function addMarkers(propiedades) {
 
             $("#house_description_" + index_id).show();
             $("#house_cards").hide();
+            $('#casas').appendTo('#casas_cercanas');
+            $('#casas_cercanas').show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
             for (var cont = 0; cont < allMarkers.length; cont++) {
                 allMarkers[cont].setAnimation(null);
