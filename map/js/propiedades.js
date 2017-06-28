@@ -374,11 +374,12 @@ function initMap() {
         var ubicacion = place;
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
-          //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro,
+          //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro, Veracruz Jáltipan
           if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
               || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
               || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-              || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc" ) {
+              || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc"
+              || ubicacion.place_id== "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
               map.setZoom(12);
           }
 
@@ -426,22 +427,16 @@ function initMap() {
               || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id== "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
               map.setZoom(13);
           }
-          //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo)
+          //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
           if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
-              || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0") {
+              || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id== "ChIJxXjKRUJBw4URmwE26ULWpBg") {
               map.setZoom(11);
           }
           //Tonanitla, (Estado México)
           if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
               map.setZoom(15);
           }
-          /*/ pruebas Veracruz
-           if(ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0")
-           {
-           map.setZoom(11);
-         }**/
-
-
+          
         } else {
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón y Aguascalientes
