@@ -396,7 +396,7 @@ div#title-header
 .item,
 .active
 {
-    height: 36%;
+    height: 25%;
 }
 @media (min-width: 1500px) {
 
