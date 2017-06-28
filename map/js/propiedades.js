@@ -373,71 +373,73 @@ function initMap() {
         // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
         var ubicacion = place;
         if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro,
-            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc" ) {
-                map.setZoom(12);
-            }
+          map.fitBounds(place.geometry.viewport);
+          //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro,
+          if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
+              || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
+              || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
+              || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc" ) {
+              map.setZoom(12);
+          }
 
-            //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
-            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" ||ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM"||ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0"|| ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
+          //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
+          if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" ||ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM"||ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0"|| ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
 
-                map.setZoom(7);
+              map.setZoom(7);
 
-            }
-            //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
-            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
+          }
+          //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
+          if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
 
-                map.setZoom(9);
+              map.setZoom(9);
 
-            }
-            //veracruz ,sinaloa"",chiapas
-            if ( ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg"|| ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"|| ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
+          }
+          //veracruz ,sinaloa"",chiapas
+          if ( ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg"|| ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"|| ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
 
-                map.setZoom(8);
+              map.setZoom(8);
 
-            }
+          }
 
-            //Los Cabos , Nuevo leon, yucatan, Hidalgo
-            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"|| ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE") {
+          //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
+          if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id== "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
+              || ubicacion.place_id== "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id== "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id== "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id== "ChIJxeIgXHJPyIYROn_m0017jiY") {
 
-                map.setZoom(10);
+              map.setZoom(10);
 
-            }
+          }
 
 
-            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
-            if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
-                || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
-                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
-                || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE") {
+          //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
+          if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
+              || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
+              || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+              || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
+              || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id== "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
 
-                map.setZoom(14);
+              map.setZoom(14);
 
-            }
-            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP Zaragoza,
-            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
-                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
-                || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk") {
-                map.setZoom(13);
-            }
-            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan)
-            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg" || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM") {
-                map.setZoom(11);
-            }
-            //Tonanitla, (Estado México)
-            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
-                map.setZoom(15);
-            }
-            /*/ pruebas SLP Zaragoza
-             if(ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk")
-             {
-             map.setZoom(13);
-           }**/
+          }
+          //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
+          if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
+              || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
+              || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id== "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
+              map.setZoom(13);
+          }
+          //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo)
+          if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
+              || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0") {
+              map.setZoom(11);
+          }
+          //Tonanitla, (Estado México)
+          if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
+              map.setZoom(15);
+          }
+          /*/ pruebas Veracruz
+           if(ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0")
+           {
+           map.setZoom(11);
+         }**/
 
 
         } else {
