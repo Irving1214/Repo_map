@@ -555,7 +555,7 @@ function reCentrar() {
     });
     changePlazaToColonia(false);
 
-    map.setCenter(new google.maps.LatLng(19.694304, -100.5560111));
+    map.setCenter(new google.maps.LatLng(24.2436666, -102.4551421));
     map.setZoom(5);
 }
 
