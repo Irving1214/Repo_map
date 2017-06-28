@@ -436,7 +436,7 @@ function initMap() {
           if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
               map.setZoom(15);
           }
-          
+
         } else {
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón y Aguascalientes
@@ -1732,6 +1732,27 @@ function iLikeIt(id) {
         heart.removeClass("iDontLoveIt");
         heart.addClass("iloveit");
         heart.css("color", "rgba(255, 0, 0, 0.62)");
+
+        $.ajax({
+          url: url + '/favoritos/store',
+          type: 'POST',
+          data:  {
+            id: id
+          },
+          dataType: 'JSON',
+          beforeSend: function () {
+              $("#wait").show();
+          },
+          success: function (respuesta) {
+              notificaction(respuesta.mensaje, "success");
+          },
+          error: function (respuesta) {
+              notificaction(respuesta.mensaje, "danger");
+          },
+          complete: function () {
+              $("#wait").hide();
+          }
+        });
     }
 }
 
