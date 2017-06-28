@@ -1209,10 +1209,37 @@ function getMarker(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            map.setZoom(17);
+            stateCenter(i);
+
+            //map.setZoom(17);
             break;
         }
     }
+}
+
+function stateCenter(index){
+      var latlng = {lat: allMarkers[index].getPosition().lat(),lng: allMarkers[index].getPosition().lng() };
+      var geo = new google.maps.Geocoder();
+      var state = "";
+      geo.geocode({'location': latlng}, function(results, status) {
+       if (status === 'OK') {
+         if (results[1]) {
+           state = results[0].address_components[5].long_name;
+              geo.geocode({ 'address': state }, function(results, status){
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    map.setZoom(7);
+                } else {
+                    alert("Could not find location: " + location);
+                }
+            });
+         } else {
+           window.alert('No results found');
+         }
+       } else {
+         window.alert('Geocoder failed due to: ' + status);
+       }
+     });
 }
 
 function getMarkersPlace(id, action) {
