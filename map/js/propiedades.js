@@ -401,8 +401,9 @@ function initMap() {
 
             }
 
-            //Los Cabos , Nuevo leon, yucatan, Hidalgo
-            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c"|| ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE") {
+            //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
+            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id== "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
+                || ubicacion.place_id== "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id== "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id== "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id== "ChIJxeIgXHJPyIYROn_m0017jiY") {
 
                 map.setZoom(10);
 
@@ -414,29 +415,30 @@ function initMap() {
                 || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
                 || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
                 || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
-                || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE") {
+                || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id== "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
 
                 map.setZoom(14);
 
             }
-            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP Zaragoza,
+            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
             if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
                 || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
-                || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk") {
+                || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id== "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
                 map.setZoom(13);
             }
-            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan)
-            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg" || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM") {
+            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo)
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
+                || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0") {
                 map.setZoom(11);
             }
             //Tonanitla, (Estado México)
             if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
                 map.setZoom(15);
             }
-            /*/ pruebas SLP Zaragoza
-             if(ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk")
+            /*/ pruebas Veracruz
+             if(ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0")
              {
-             map.setZoom(13);
+             map.setZoom(11);
            }**/
 
 
@@ -956,17 +958,17 @@ function boxListeners() {
             for (var i = 0; i < others.length; i++) {
               if ($("#house_description_" + i).css('display') == "block") {
                 $("#house_description_" + i).hide();
-                  
+
               }
             }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
-        
-           
+
+
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-            
+
             getMarker(aiDi[1]);
         });
     });
@@ -1296,7 +1298,7 @@ function getMarkersPlace(id, action) {
                         types: ['shopping_mall', 'store']
                     }, processResultsTiendas);
                     break;
-               
+
                 case 5: //Hospitales
                     service.nearbySearch({
                         location: latLng,
@@ -1304,7 +1306,7 @@ function getMarkersPlace(id, action) {
                         types: ['hospital', 'pharmacy']
                     }, processResults);
                     break;
-                
+
                 case 7: // Parkes
                     service.nearbySearch({
                         location: latLng,
@@ -1313,7 +1315,7 @@ function getMarkersPlace(id, action) {
                     }, processResultsRecreo);
                     break;
              }
-            
+
         }
     }
 }
