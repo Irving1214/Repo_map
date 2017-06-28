@@ -555,7 +555,7 @@ function reCentrar() {
     });
     changePlazaToColonia(false);
 
-    map.setCenter(new google.maps.LatLng(19.694304, -100.5560111));
+    map.setCenter(new google.maps.LatLng(24.2436666, -102.4551421));
     map.setZoom(5);
 }
 
@@ -956,17 +956,17 @@ function boxListeners() {
             for (var i = 0; i < others.length; i++) {
               if ($("#house_description_" + i).css('display') == "block") {
                 $("#house_description_" + i).hide();
-                  
+
               }
             }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
-        
-           
+
+
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-            
+
             getMarker(aiDi[1]);
         });
     });
@@ -1242,7 +1242,13 @@ function stateCenter(index){
       geo.geocode({'location': latlng}, function(results, status) {
        if (status === 'OK') {
          if (results[1]) {
-           state = results[0].address_components[5].long_name;
+          var data = results[0].address_components;
+          for(var i in data){
+              if(data[i].types.includes("administrative_area_level_1")){
+                state = data[i].long_name;
+                break;
+              }
+          }
               geo.geocode({ 'address': state }, function(results, status){
                 if (status == google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
@@ -1296,7 +1302,7 @@ function getMarkersPlace(id, action) {
                         types: ['shopping_mall', 'store']
                     }, processResultsTiendas);
                     break;
-               
+
                 case 5: //Hospitales
                     service.nearbySearch({
                         location: latLng,
@@ -1304,7 +1310,7 @@ function getMarkersPlace(id, action) {
                         types: ['hospital', 'pharmacy']
                     }, processResults);
                     break;
-                
+
                 case 7: // Parkes
                     service.nearbySearch({
                         location: latLng,
@@ -1313,7 +1319,7 @@ function getMarkersPlace(id, action) {
                     }, processResultsRecreo);
                     break;
              }
-            
+
         }
     }
 }
