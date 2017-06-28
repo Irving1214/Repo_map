@@ -374,11 +374,11 @@ function initMap() {
         var ubicacion = place;
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
-            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota)
+            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro,
             if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
                 || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
                 || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" ) {
+                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc" ) {
                 map.setZoom(12);
             }
 
@@ -409,32 +409,34 @@ function initMap() {
             }
 
 
-            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal,Valle de Chalco Solidaridad,Nicolás Romero,Tlalnepantla de Baz),
+            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
             if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
                 || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
                 || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
-                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk") {
+                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
+                || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE") {
 
                 map.setZoom(14);
 
             }
-            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Atenco, Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos)
-            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
-                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" ) {
+            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP Zaragoza,
+            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
+                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
+                || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk") {
                 map.setZoom(13);
             }
-            //cabo corrientes(jalisco), Monterrey,tlaxcala,nayarit
-            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ"  || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg") {
+            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan)
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg" || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM") {
                 map.setZoom(11);
             }
             //Tonanitla, (Estado México)
             if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
                 map.setZoom(15);
             }
-            /*/ pruebas Chapa de Mota	, Estado de México
-             if(ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA")
+            /*/ pruebas SLP Zaragoza
+             if(ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk")
              {
-             map.setZoom(12);
+             map.setZoom(13);
            }**/
 
 
@@ -954,13 +956,17 @@ function boxListeners() {
             for (var i = 0; i < others.length; i++) {
               if ($("#house_description_" + i).css('display') == "block") {
                 $("#house_description_" + i).hide();
+                  
               }
             }
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
+            $("#caja_" + aiDi[1]).hide();
+        
+           
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
-
+            
             getMarker(aiDi[1]);
         });
     });
@@ -977,6 +983,7 @@ function boxListeners() {
             setDefaulBehaviorMarkers();
             reCentrar();
             changePlazaToColonia(false);
+            var cent=false;
         });
     });
 
@@ -1037,6 +1044,15 @@ function boxListeners() {
             aiDi = aiDi.split("_");
 
             getMarkersPlace(aiDi[1], 7);
+        });
+    });
+      others = Array.from(document.querySelectorAll('*[id^="super_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 8);
         });
     });
 }
@@ -1106,6 +1122,8 @@ function addMarkers(propiedades) {
 
             $("#house_description_" + index_id).show();
             $("#house_cards").hide();
+            $('#casas').appendTo('#casas_cercanas');
+            $('#casas_cercanas').show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
             for (var cont = 0; cont < allMarkers.length; cont++) {
                 allMarkers[cont].setAnimation(null);
@@ -1264,20 +1282,21 @@ function getMarkersPlace(id, action) {
                         types: ['cafe', 'restaurant']
                     }, processResultsResta);
                     break;
-                case 3: //Servicios
+                case 6: //Servicios
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         types: ['bank', 'library', 'police', 'bus_station', 'airport']
                     }, processResultsServicios);
                     break;
-                case 4: //Tiendas
+                case 8: //Tiendas
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         types: ['shopping_mall', 'store']
                     }, processResultsTiendas);
                     break;
+               
                 case 5: //Hospitales
                     service.nearbySearch({
                         location: latLng,
@@ -1285,21 +1304,16 @@ function getMarkersPlace(id, action) {
                         types: ['hospital', 'pharmacy']
                     }, processResults);
                     break;
-                case 6: //Tiendas
-                    service.nearbySearch({
-                        location: latLng,
-                        radius: radius,
-                        types: ['shopping_mall', 'store']
-                    }, processResultsTiendas);
-                    break;
+                
                 case 7: // Parkes
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
-                        type: ['amusement_park', 'aquarium', 'movie_theater', 'museum', 'park', 'stadium', 'zoo']
+                        type: ['park']
                     }, processResultsRecreo);
-            }
-            break;
+                    break;
+             }
+            
         }
     }
 }
@@ -1323,7 +1337,18 @@ function hover(id) {
     });
 
     click = false;
-    for (var i = 0; i < allMarkers.length; i++) {
+
+    if (map.getZoom() > 10){
+        console.log("si");
+
+
+
+
+
+
+        }
+    else{
+         for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerRed);
             allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
@@ -1337,6 +1362,9 @@ function hover(id) {
             break;
         }
     }
+         console.log("no");
+    }
+
 }
 
 function out(id) {
@@ -1916,7 +1944,7 @@ function createMarkersEscuelas(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -1947,7 +1975,7 @@ function createMarkersRes(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_RESTAURANTES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -1979,7 +2007,7 @@ function createMarkers6(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_COMERCIAL.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2011,7 +2039,7 @@ function createMarkers7(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_SUPER.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2043,7 +2071,7 @@ function createMarkers4(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_PARQUES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2075,7 +2103,7 @@ function createMarkers(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
