@@ -1046,6 +1046,15 @@ function boxListeners() {
             getMarkersPlace(aiDi[1], 7);
         });
     });
+      others = Array.from(document.querySelectorAll('*[id^="super_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+
+            getMarkersPlace(aiDi[1], 8);
+        });
+    });
 }
 
 function addMarkers(propiedades) {
@@ -1246,20 +1255,21 @@ function getMarkersPlace(id, action) {
                         types: ['cafe', 'restaurant']
                     }, processResultsResta);
                     break;
-                case 3: //Servicios
+                case 6: //Servicios
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         types: ['bank', 'library', 'police', 'bus_station', 'airport']
                     }, processResultsServicios);
                     break;
-                case 4: //Tiendas
+                case 8: //Tiendas
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         types: ['shopping_mall', 'store']
                     }, processResultsTiendas);
                     break;
+               
                 case 5: //Hospitales
                     service.nearbySearch({
                         location: latLng,
@@ -1267,21 +1277,16 @@ function getMarkersPlace(id, action) {
                         types: ['hospital', 'pharmacy']
                     }, processResults);
                     break;
-                case 6: //Tiendas
-                    service.nearbySearch({
-                        location: latLng,
-                        radius: radius,
-                        types: ['shopping_mall', 'store']
-                    }, processResultsTiendas);
-                    break;
+                
                 case 7: // Parkes
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
-                        type: ['amusement_park', 'aquarium', 'movie_theater', 'museum', 'park', 'stadium', 'zoo']
+                        type: ['park']
                     }, processResultsRecreo);
-            }
-            break;
+                    break;
+             }
+            
         }
     }
 }
@@ -1912,7 +1917,7 @@ function createMarkersEscuelas(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -1943,7 +1948,7 @@ function createMarkersRes(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_RESTAURANTES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -1975,7 +1980,7 @@ function createMarkers6(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_COMERCIAL.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2007,7 +2012,7 @@ function createMarkers7(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_SUPER.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2039,7 +2044,7 @@ function createMarkers4(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_PARQUES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -2071,7 +2076,7 @@ function createMarkers(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-            url: place.icon,
+            url: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png",
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
