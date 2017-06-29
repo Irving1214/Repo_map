@@ -2330,4 +2330,125 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '</div>');
 
+
+
+
+
 }
+
+
+
+$( "#uno_carlos" ).mouseover(function() {
+
+  $( "#uno_carlos" ).css({
+
+      "background-color": "#002967",
+      "height": "78px"
+
+  });
+});
+   $("#uno_carlos").mouseleave(function(){
+     $( "#uno_carlos" ).css({
+
+         "background-color": "rgba(0, 41, 103, 0)",
+
+
+     });
+
+
+   });
+   $( "#dos_carlos" ).mouseover(function() {
+
+     $( "#dos_carlos" ).css({
+
+         "background-color": "#002967",
+         "height": "78px"
+
+     });
+   });
+      $("#dos_carlos").mouseleave(function(){
+        $( "#dos_carlos" ).css({
+
+            "background-color": "rgba(0, 41, 103, 0)",
+
+
+        });
+
+
+      });
+      $( "#tres_carlos" ).mouseover(function() {
+
+        $( "#tres_carlos" ).css({
+
+            "background-color": "#002967",
+            "height": "78px"
+
+        });
+      });
+         $("#tres_carlos").mouseleave(function(){
+           $( "#tres_carlos" ).css({
+
+               "background-color": "rgba(0, 41, 103, 0)",
+
+
+           });
+
+
+         });
+         $( "#cuatro_carlos" ).mouseover(function() {
+
+           $( "#cuatro_carlos" ).css({
+
+               "background-color": "#002967",
+               "height": "78px"
+
+           });
+         });
+            $("#cuatro_carlos").mouseleave(function(){
+              $( "#cuatro_carlos" ).css({
+
+                  "background-color": "rgba(0, 41, 103, 0)",
+
+
+              });
+
+
+            });
+            $( "#cinco_carlos" ).mouseover(function() {
+
+              $( "#cinco_carlos" ).css({
+
+                  "background-color": "#002967",
+                  "height": "78px"
+
+              });
+            });
+               $("#cinco_carlos").mouseleave(function(){
+                 $( "#cinco_carlos" ).css({
+
+                     "background-color": "rgba(0, 41, 103, 0)",
+
+
+                 });
+
+
+               });
+               $( "#seis_carlos" ).mouseover(function() {
+
+                 $( "#seis_carlos" ).css({
+
+                     "background-color": "#002967",
+                     "height": "78px"
+
+                 });
+               });
+                  $("#seis_carlos").mouseleave(function(){
+                    $( "#seis_carlos" ).css({
+
+                        "background-color": "rgba(0, 41, 103, 0)",
+
+
+                    });
+
+
+                  });
