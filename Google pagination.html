@@ -172,8 +172,8 @@
 <div class="divMap">
     <div id="map_canvas"></div>
 </div>
-<input type="text" id="x" value="19.3631457">
-<input type="text" id="y" value="-99.2353887">
+<input type="text" id="x" value="19.4357">
+<input type="text" id="y" value="-99.1439">
   <input id="radius" type="text" value="1" placeholder="radio"/>
   <button onclick="search();">Buscar</button>
 <div id="locationField">
@@ -586,13 +586,17 @@
             }
         }
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map
+        });
         places = new google.maps.places.PlacesService(map);
         google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
         autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             showSelectedPlace();
         });
-
+        
 
     }
 
@@ -638,19 +642,105 @@
             radius: ($("#radius").val() * 1000)
 
         };
-
+        
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+        });
         if (type != 'establishment') {
             search.types = [type];
         }
-
+        
         places.nearbySearch(search, function (results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 clearResults();
                 clearMarkers();
+                var icons = {
+                    airport:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    convenience_store:{
+                        icon: "images/PIN-PROPIEDADES-WEB_SUPER.png"  
+                    },
+                    bank:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    fire_station:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    shopping_mall:{
+                        icon: "images/PIN-PROPIEDADES-WEB_SUPER.png"
+                    },
+                    car_dealer:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    movie_theater:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    bus_station:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    embassy:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    school:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    stadium:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    taxi_stand:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    train_station:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    gas_station:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    hospital:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    place_of_worship:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    subway_station:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    },
+                    museum:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    local_government_office:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    park:{
+                        icon: "images/PIN-PROPIEDADES-WEB_PARQUES.png"
+                    },
+                    city_hall:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    courthouse:{
+                        icon: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    restaurant:{
+                        icon: "images/PIN-PROPIEDADES-WEB_PARQUES.png"
+                    },
+                    grocery_or_supermarket:{
+                        icon: "images/PIN-PROPIEDADES-WEB_SUPER.png"
+                    },
+                    university:{
+                        icon: "imgaes/PIN-PROPIEDADES-WEB_ESCUELAS.png"
+                    },
+                    zoo:{
+                        icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                    }
+                };
                 for (var i = 0; i < results.length; i++) {
                     markers[i] = new google.maps.Marker({
                         position: results[i].geometry.location,
-                        animation: google.maps.Animation.DROP
+                        animation: google.maps.Animation.DROP,
+                        //icon: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png"
+                        icon: icons[type].icon
                     });
                     google.maps.event.addListener(markers[i], 'click', getDetails(results[i], i));
                     setTimeout(dropMarker(i), i * 100);
