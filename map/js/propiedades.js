@@ -1100,7 +1100,7 @@ function boxListeners() {
     others = Array.from(document.querySelectorAll('*[id^="GoToFavorites_"]'));
     others.forEach(function (item) {
         $(item).click(function () {
-            window.location.href='favoritos.html';
+            window.location.href='../../favoritos.html';
         });
     });
     others = Array.from(document.querySelectorAll('*[id^="KeepWhatching_"]'));

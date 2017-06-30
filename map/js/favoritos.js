@@ -133,7 +133,7 @@ var click = false;
 
                           '<!-- Regreso a Cards -->' +
                           '<div style="position: absolute; z-index: 4; padding-left: 15px; padding-top: 15px;">' +
-                          '<img height="13%" id="card_cubes_' + index + '" src="images/ICON-PIC-RETURN.png" "></i>' +
+                          '<img height="13%" id="card_cubes_' + index + '" src="../../images/ICON-PIC-RETURN.png" "></i>' +
                           '</div>' +
 
                           '<!-- Wrapper for slides -->' +
@@ -172,7 +172,7 @@ var click = false;
                               '<div class="item active">' +
                               '<center>' +
 
-                              '<img class="imgt" src="images/700x420.jpg" alt="Imagen no disponible">' +
+                              '<img class="imgt" src="../../images/700x420.jpg" alt="Imagen no disponible">' +
                               '<center>' +
                               '<div class="carousel-caption">' +
                               '</div>' +
