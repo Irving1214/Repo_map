@@ -3,6 +3,9 @@ var propiedades = [];
 var favoritos = ["a00i000000V7P3fAAF", "a00i000000V7PA3AAN",  "a00i000000V7P4VAAV"]; // carga las ids de la BD
 var click = false;
 
+    $(document).ready(function () {
+        $("#modalEmail").modal({backdrop: 'static', keyboard: false}).show();
+    });
 
   load_favoritos(null, null);
 
@@ -522,31 +525,6 @@ var click = false;
               }
           }
       }
-  }
-
-  function out(id) {
-      $("#img-thumbnail_" + id).css({
-          "box-shadow": "",
-          "border-width": "",
-          "font-size": "",
-          "display": "block",
-          "background": "#FFF",
-          "filter": "brightness(100%)",
-          "border": "4px solid #46BEEF"
-      });
-
-      $("#image_main_thumbnail_" + id).css({
-          "filter": ""
-      });
-
-      $("#letrasImagen" + id).css({
-          "opacity": "0",
-          "position": "absolute",
-          "top": "30%",
-          "left": "50%",
-          "transform": "translate(-50%, -50%)",
-      });
-
   }
 
   function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
