@@ -901,13 +901,13 @@ function load_propiedades(latitud, longitud) {
 
                         '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
 
-                        '<b><img id="facebook" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-FACEBOOK.png"">' +
+                        '<b><a target="_blank" href="https://www.facebook.com/REVIMEXOFICIAL/"><img id="facebook" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-FACEBOOK.png""></a>' +
 
-                        '<b><img id="instagram" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-INSTAGRAM.png"">' +
+                        '<b><a target="_blank" href="https://www.instagram.com/revimex_oficial/"><img id="instagram" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-INSTAGRAM.png""></a>' +
 
-                        '<b><img id="twitter" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-TWITTER.png"">' +
+                        '<b><a target="_blank" href="https://twitter.com/oficialrevimex"><img id="twitter" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-TWITTER.png""></a>' +
 
-                        '<b><img id="youtube" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-YOUTUBE.png"">' +
+                        '<b><a target="_blank" href="https://www.youtube.com/channel/UCdn2VMwAvrJ_Te9nJqFYHYg/videos"><img id="youtube" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-YOUTUBE.png""></a>' +
 
 
                         '<br>' +
