@@ -1184,8 +1184,8 @@ function addMarkers(propiedades) {
             for (var cont = 0; cont < allMarkers.length; cont++) {
                 allMarkers[cont].setAnimation(null);
                 allMarkers[cont].setIcon(markerBlue);
-            }
             marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
             marker.setIcon(markerRed);
 
         });
