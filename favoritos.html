@@ -16,6 +16,13 @@
     <link href="map/css/nouislider.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="map/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#myModal').modal('show');
+        });
+    </script>
+
     <style>
         *{
   box-sizing: border-box;
@@ -297,11 +304,30 @@ function closeNav() {
 
 
 
-        <div class="col-md-f" id="house_cards" >
+        <div class="col-md-f" id="pdf-modal" >
             <div class="scroll" id="casas"></div>
         </div>
         <div id="description-casas"></div>
 
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Ingresa tus datos para recibir tus propiedades</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

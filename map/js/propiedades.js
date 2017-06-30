@@ -722,8 +722,20 @@ function load_propiedades(latitud, longitud) {
                         '</div>' +
 
                         '<!-- Wrapper for slides -->' +
-                        '<div class="carousel-inner">';
-
+                        '<div class="carousel-inner">'+
+                        
+                        '<div class="caption" id="modalFavoritos' + index+ '" style="background-color:White;display:none;position:absolute;z-index:3;margin-left: 38%;margin-top:8%; height:200px;width:180px;border-style:solid;border-color:#49BEEF">' +
+                            '<center>' +
+                                '<br>' +
+                                        '<button id = "GoToFavorites_' + index + '" class="bg-primary">Ir a favoritos</button>' + 
+                                '<br>' +
+                                '<br>' +
+                                '<br>' +
+                                '<br>' +
+                                '<br>' +
+                                        '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
+                            '</center>' +
+                        '</div>';
                     if (propiedad.files.length > 0) {
                         ind = 0;
                         propiedad.files.forEach(function (file) {
@@ -764,7 +776,7 @@ function load_propiedades(latitud, longitud) {
                             '</div>';
                     }
 
-
+                   
                     modal_casa = modal_casa +
                         '</div>' +
                         '<!-- Left and right controls -->' +
@@ -1013,6 +1025,7 @@ function boxListeners() {
             reCentrar();
             changePlazaToColonia(false);
             var cent=false;
+             $("#modalFavoritos" + aiDi[2]).hide();
         });
     });
 
@@ -1082,6 +1095,20 @@ function boxListeners() {
             aiDi = aiDi.split("_");
 
             getMarkersPlace(aiDi[1], 8);
+        });
+    });
+    others = Array.from(document.querySelectorAll('*[id^="GoToFavorites_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            window.location.href='favoritos.html';
+        });
+    });
+    others = Array.from(document.querySelectorAll('*[id^="KeepWhatching_"]'));
+    others.forEach(function (item) {
+        $(item).click(function () {
+            var aiDi = $(item).attr('id');
+            aiDi = aiDi.split("_");
+            $("#modalFavoritos" + aiDi[1]).hide();
         });
     });
 }
@@ -1353,7 +1380,7 @@ function getMarkersPlace(id, action) {
     }
 }
 
-function hover(id) {
+function hover(id) {    
     $("#img-thumbnail_" + id).css({
         "posistion": "relative",
         "z-index": "1032",
@@ -1754,38 +1781,42 @@ var delay = (function () {
 })();
 
 function iLikeIt(id) {
-    var heart = $("#heart_" + id);
-    // TODO remover de favoritos
-    if (heart.hasClass("iloveit")) {
-        heart.removeClass("iloveit");
-        heart.addClass("iDontLoveIt");
-        heart.css("color", "rgba(255, 255, 255, 0.62)");
-    } else { // TODO agregar a favoritos
-        heart.removeClass("iDontLoveIt");
-        heart.addClass("iloveit");
-        heart.css("color", "rgba(255, 0, 0, 0.62)");
+    // $('#modalFavoritos' + id).css({
+    //     display: 'block'
+    // });
+    $('#modalFavoritos' + id).show();
+    // var heart = $("#heart_" + id);
+    // // TODO remover de favoritos
+    // if (heart.hasClass("iloveit")) {
+    //     heart.removeClass("iloveit");
+    //     heart.addClass("iDontLoveIt");
+    //     heart.css("color", "rgba(255, 255, 255, 0.62)");
+    // } else { // TODO agregar a favoritos
+    //     heart.removeClass("iDontLoveIt");
+    //     heart.addClass("iloveit");
+    //     heart.css("color", "rgba(255, 0, 0, 0.62)");
 
-        $.ajax({
-          url: url + '/favoritos/store',
-          type: 'POST',
-          data:  {
-            id: id
-          },
-          dataType: 'JSON',
-          beforeSend: function () {
-              $("#wait").show();
-          },
-          success: function (respuesta) {
-              notificaction(respuesta.mensaje, "success");
-          },
-          error: function (respuesta) {
-              notificaction(respuesta.mensaje, "danger");
-          },
-          complete: function () {
-              $("#wait").hide();
-          }
-        });
-    }
+    //     $.ajax({
+    //       url: url + '/favoritos/store',
+    //       type: 'POST',
+    //       data:  {
+    //         id: id
+    //       },
+    //       dataType: 'JSON',
+    //       beforeSend: function () {
+    //           $("#wait").show();
+    //       },
+    //       success: function (respuesta) {
+    //           notificaction(respuesta.mensaje, "success");
+    //       },
+    //       error: function (respuesta) {
+    //           notificaction(respuesta.mensaje, "danger");
+    //       },
+    //       complete: function () {
+    //           $("#wait").hide();
+    //       }
+    //     });
+    // }
 }
 
 function sendMail(propiedad_id) {
