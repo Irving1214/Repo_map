@@ -9,6 +9,7 @@ var propiedades = [];
 var infoWindows = [];
 var click = false;
 var service;
+var markesrsSerives = [];
 
 var radius = 5000;
 
@@ -2026,8 +2027,13 @@ function processResultsEscuelas(results, status, pagination) {
 }
 
 function createMarkersEscuelas(places) {
-
     var bounds = new google.maps.LatLngBounds();
+
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -2044,6 +2050,9 @@ function createMarkersEscuelas(places) {
             title: place.name,
             position: place.geometry.location
         });
+
+        markesrsSerives.push(marker);
+
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
@@ -2059,6 +2068,12 @@ function processResultsResta(results, status, pagination) {
 
 function createMarkersRes(places) {
     var bounds = new google.maps.LatLngBounds();
+
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -2076,6 +2091,8 @@ function createMarkersRes(places) {
             position: place.geometry.location
         });
 
+        markesrsSerives.push(marker);
+
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
@@ -2091,6 +2108,12 @@ function processResultsServicios(results, status, pagination) {
 
 function createMarkers6(places) {
     var bounds = new google.maps.LatLngBounds();
+
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -2108,6 +2131,8 @@ function createMarkers6(places) {
             position: place.geometry.location
         });
 
+        markesrsSerives.push(marker);
+
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
@@ -2123,6 +2148,12 @@ function processResultsTiendas(results, status, pagination) {
 
 function createMarkers7(places) {
     var bounds = new google.maps.LatLngBounds();
+
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -2140,6 +2171,8 @@ function createMarkers7(places) {
             position: place.geometry.location
         });
 
+        markesrsSerives.push(marker);
+
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
@@ -2155,6 +2188,12 @@ function processResultsRecreo(results, status, pagination) {
 
 function createMarkers4(places) {
     var bounds = new google.maps.LatLngBounds();
+
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -2172,6 +2211,8 @@ function createMarkers4(places) {
             position: place.geometry.location
         });
 
+        markesrsSerives.push(marker);
+
         bounds.extend(place.geometry.location);
     }
     map.fitBounds(bounds);
@@ -2188,6 +2229,12 @@ function processResults(results, status, pagination) {
 function createMarkers(places) {
     var bounds = new google.maps.LatLngBounds();
 
+    if ( markesrsSerives.length > 0 ) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
             url: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png",
@@ -2203,6 +2250,8 @@ function createMarkers(places) {
             title: place.name,
             position: place.geometry.location
         });
+
+        markesrsSerives.push(marker);
 
         bounds.extend(place.geometry.location);
     }
