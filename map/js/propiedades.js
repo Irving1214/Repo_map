@@ -1224,9 +1224,11 @@ function addMarkers(propiedades) {
             for (var cont = 0; cont < allMarkers.length; cont++) {
                 allMarkers[cont].setAnimation(null);
                 allMarkers[cont].setIcon(markerBlue);
-            marker.setAnimation(google.maps.Animation.BOUNCE);
             }
+            marker.setAnimation(google.maps.Animation.BOUNCE);
             marker.setIcon(markerRed);
+
+            console.log("PERFECT!");
 
         });
 
@@ -1320,8 +1322,11 @@ function getMarker(id) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerRed);
 
+
+            allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
+            console.log("PERFEC!");
             map.panTo(allMarkers[i].getPosition());
             stateCenter(i);
 
@@ -1440,31 +1445,27 @@ function hover(id) {
 
     click = false;
 
-    if (map.getZoom() > 10){
+    if (map.getZoom() > 10) {
         console.log("si");
-
-
-
-
-
-
-        }
-    else{
-         for (var i = 0; i < allMarkers.length; i++) {
-        if ("marker" + id == allMarkers[i].id) {
-            allMarkers[i].setIcon(markerRed);
-            allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-            $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
-            infoWindows[i].open(map, allMarkers[i]);
-
-            if (map.getZoom() > 16) {
-                map.panTo(allMarkers[i].getPosition());
-                map.setZoom(17);
-            }
-            break;
-        }
     }
-         console.log("no");
+
+    else    {
+        for (var i = 0; i < allMarkers.length; i++) {
+            if ("marker" + id == allMarkers[i].id) {
+                allMarkers[i].setIcon(markerRed);
+                //allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
+                //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
+                infoWindows[i].open(map, allMarkers[i]);
+
+                if (map.getZoom() > 16) {
+                    map.panTo(allMarkers[i].getPosition());
+                    map.setZoom(17);
+                }
+                
+                break;
+            }
+        }
+        console.log("LOSE");
     }
 
 }
