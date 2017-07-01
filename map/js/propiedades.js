@@ -1006,8 +1006,9 @@ function boxListeners() {
             $("#caja_" + aiDi[1]).hide();
 
 
-            $('#casas').appendTo('#casas_cercanas');
-            $('#casas_cercanas').show();
+            //$('#casas').appendTo('#casas_cercanas');
+            //$('#casas_cercanas').show();
+            propiedadesCercanas(aiDi[1]);
 
             getMarker(aiDi[1]);
         });
@@ -1112,6 +1113,44 @@ function boxListeners() {
             $("#modalFavoritos" + aiDi[1]).hide();
         });
     });
+}
+
+function propiedadesCercanas(id) {
+
+    var propiedad_id = null;
+    for (var i = 0; i < allMarkers.length; i++) {
+        if ("marker" + id == allMarkers[i].id) {
+            propiedad_id = allMarkers[i].propiedad;
+            break;
+        }
+    }
+
+    $.ajax({
+        url: url + "/propiedades/cercanas",
+        type: "POST",
+        data: {
+            id: propiedad_id
+        },
+        dataType: "JSON",
+        beforeSend: function () {
+            $("#wait").show();
+        },
+
+        success: function (response) {
+            if (response.propiedades.length > 0) {
+                showOnlySomeCards(response.propiedades, "cerca");
+            }
+        },
+        error: function (respuesta) {
+            console.log(respuesta);
+        },
+        complete: function () {
+            $("#wait").hide();
+        }
+    });
+
+    $('#casas').appendTo('#casas_cercanas');
+    $('#casas_cercanas').show();
 }
 
 function addMarkers(propiedades) {
@@ -1723,7 +1762,7 @@ function hideCajas(className) {
             $(item).removeClass(className);
         }
 
-        if (!$(item).hasClass("search") || !$(item).hasClass("precio")) {
+        if (!$(item).hasClass("search") || !$(item).hasClass("precio") || !$(item).hasClass("cerca")) {
             $(item).hide();
         } else {
             $(item).show();
@@ -1749,7 +1788,7 @@ function showOnlySomeCards(propies, className) {
         for (var i = j; i < propiedades.length; i++) {
             var box = $("#caja_" + propiedades[i].index);
 
-            if (box.hasClass("search") || box.hasClass("precio")) {
+            if (box.hasClass("search") || box.hasClass("precio") || box.hasClass("cerca")) {
                 if (box.is(":visible")) {
                     if (propies[j].Id == propiedades[i].Id) {
                         //box.show();
