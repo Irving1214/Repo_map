@@ -1009,7 +1009,7 @@ function boxListeners() {
             //$('#casas').appendTo('#casas_cercanas');
             //$('#casas_cercanas').show();
             propiedadesCercanas(aiDi[1]);
-
+$("#titulocercanas").show();
             getMarker(aiDi[1]);
         });
     });
@@ -1024,6 +1024,7 @@ function boxListeners() {
             $("#house_cards").show();
             $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
+            $("#titulocercanas").hide();
             reCentrar();
             changePlazaToColonia(false);
             var cent=false;
