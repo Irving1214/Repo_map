@@ -1,1 +1,31 @@
 .idea/
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### SublimeText ###
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+*.sublime-workspace
+*.sublime-project
