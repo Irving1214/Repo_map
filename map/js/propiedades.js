@@ -1239,6 +1239,10 @@ function addMarkers(propiedades) {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
 
+
+
+            console.log("DEBE BRINCAR ESTE CARAVERGA");
+
             //CENTRAR SCROLL
             /*
              var casasContainer = $("#casas");
@@ -1250,7 +1254,7 @@ function addMarkers(propiedades) {
 
             marker.setIcon(markerGreen);
             $("#img-thumbnail_" + index_id).css({
-                "posistion": "relative",
+                "position": "relative",
                 "z-index": "1032",
                 "border-color": "#CFDB00"
             });
@@ -1262,6 +1266,10 @@ function addMarkers(propiedades) {
 
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             boxListeners();
+
+
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
         });
 
         google.maps.event.addListener(marker, "mouseout", function () {
@@ -1277,6 +1285,7 @@ function addMarkers(propiedades) {
                 "filter": "brightness(100%)",
                 "border": "4px solid #46BEEF"
             });
+             marker.setAnimation(google.maps.Animation.NONE);
         });
         google.maps.event.addListener(marker, "mouseout", function () {
             var marker_id = marker.id;
