@@ -374,134 +374,134 @@ function initMap() {
         // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
         var ubicacion = place;
         if (place.geometry.viewport) {
-          map.fitBounds(place.geometry.viewport);
-          //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro, Veracruz Jáltipan
-          if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-              || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-              || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-              || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc"
-              || ubicacion.place_id== "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
-              map.setZoom(12);
-          }
+            map.fitBounds(place.geometry.viewport);
+            //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro, Veracruz Jáltipan
+            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
+                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id == "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id == "ChIJ8c3K9m9A04URxv09vLG_wYc"
+                || ubicacion.place_id == "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
+                map.setZoom(12);
+            }
 
-          //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
-          if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" ||ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM"||ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0"|| ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
+            //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
+            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" || ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM" || ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0" || ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
 
-              map.setZoom(7);
+                map.setZoom(7);
 
-          }
-          //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
-          if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
+            }
+            //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
+            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs" || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek") {
 
-              map.setZoom(9);
+                map.setZoom(9);
 
-          }
-          //veracruz ,sinaloa"",chiapas
-          if ( ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg"|| ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"|| ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
+            }
+            //veracruz ,sinaloa"",chiapas
+            if (ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg" || ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8" || ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
 
-              map.setZoom(8);
+                map.setZoom(8);
 
-          }
+            }
 
-          //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
-          if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id== "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
-              || ubicacion.place_id== "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id== "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id== "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id== "ChIJxeIgXHJPyIYROn_m0017jiY") {
+            //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
+            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id == "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
+                || ubicacion.place_id == "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id == "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id == "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id == "ChIJxeIgXHJPyIYROn_m0017jiY") {
 
-              map.setZoom(10);
+                map.setZoom(10);
 
-          }
+            }
 
 
-          //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
-          if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
-              || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-              || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
-              || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
-              || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id== "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
+            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
+            if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
+                || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
+                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id == "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id == "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id == "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
+                || ubicacion.place_id == "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id == "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
 
-              map.setZoom(14);
+                map.setZoom(14);
 
-          }
-          //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
-          if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
-              || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
-              || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id== "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
-              map.setZoom(13);
-          }
-          //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
-          if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
-              || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id== "ChIJxXjKRUJBw4URmwE26ULWpBg") {
-              map.setZoom(11);
-          }
-          //Tonanitla, (Estado México)
-          if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
-              map.setZoom(15);
-          }
+            }
+            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
+            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
+                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ"
+                || ubicacion.place_id == "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id == "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
+                map.setZoom(13);
+            }
+            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
+                || ubicacion.place_id == "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id == "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id == "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id == "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg") {
+                map.setZoom(11);
+            }
+            //Tonanitla, (Estado México)
+            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU") {
+                map.setZoom(15);
+            }
 
         } else {
             map.setCenter(place.geometry.location);
             //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan  Queretaro, Veracruz Jáltipan
-          if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
-              || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
-              || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
-              || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id== "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id== "ChIJ8c3K9m9A04URxv09vLG_wYc"
-              || ubicacion.place_id== "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
-              map.setZoom(12);
-          }
+            if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
+                || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
+                || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
+                || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id == "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id == "ChIJ8c3K9m9A04URxv09vLG_wYc"
+                || ubicacion.place_id == "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
+                map.setZoom(12);
+            }
 
-          //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
-          if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" ||ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM"||ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0"|| ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
+            //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
+            if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" || ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM" || ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0" || ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
 
-              map.setZoom(7);
+                map.setZoom(7);
 
-          }
-          //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
-          if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE"  || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs"  || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek"  ) {
+            }
+            //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
+            if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs" || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek") {
 
-              map.setZoom(9);
+                map.setZoom(9);
 
-          }
-          //veracruz ,sinaloa"",chiapas
-          if ( ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg"|| ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8"|| ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
+            }
+            //veracruz ,sinaloa"",chiapas
+            if (ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg" || ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8" || ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
 
-              map.setZoom(8);
+                map.setZoom(8);
 
-          }
+            }
 
-          //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
-          if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id== "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
-              || ubicacion.place_id== "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id== "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id== "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id== "ChIJxeIgXHJPyIYROn_m0017jiY") {
+            //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
+            if (ubicacion.place_id == "ChIJS5Kav3Bor4YRLVXbc_dWi_c" || ubicacion.place_id == "ChIJXbClooSVYoYRxrtsw0L0HXA" || ubicacion.place_id == "ChIJ7QTWqvgPVI8RCj0IMXUhzMw" || ubicacion.place_id == "ChIJ5y_OIgQK0YURG3hAeb_FUoE" || ubicacion.place_id == "ChIJT9hqL5uVgYYR9WTjtjI2pgE"
+                || ubicacion.place_id == "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id == "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id == "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id == "ChIJxeIgXHJPyIYROn_m0017jiY") {
 
-              map.setZoom(10);
+                map.setZoom(10);
 
-          }
+            }
 
 
-          //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
-          if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
-              || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
-              || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
-              || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id== "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id== "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id== "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
-              || ubicacion.place_id== "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id== "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
+            //Matamoros Coahuila,Estado de México(Atizapán,San Martín de las Pirámides, Tezoyuca, Teotihuacán, Cuautitlán, La Paz, Coacalco de Berriozabal, Valle de Chalco Solidaridad, Nicolás Romero, Tlalnepantla de Baz, Atenco, Chimalhuacán), SLP (San Nicolás Tolentino, Armadillo de los Infante),
+            if (ubicacion.place_id == "ChIJg8a6tSrBj4YRh7lkZj_TyB0" || ubicacion.place_id == "ChIJX_RmQYnYj4YRaO-E7cVHm-I" || ubicacion.place_id == "6bK4QRH1Ybg9VQKQs"
+                || ubicacion.place_id == "ChIJ94hqw-6bK4QRH1Ybg9VQKQs" || ubicacion.place_id == "ChIJ__vTAocc0oUR4MjngvxrWsU" || ubicacion.place_id == "ChIJfbgR0SnA0YURqQWY-TBkb84" || ubicacion.place_id == "ChIJF5S1SyPp0YURTS8DzT9iSOg"
+                || ubicacion.place_id == "ChIJPZLKHuPq0YURATNi5_pvM0k" || ubicacion.place_id == "ChIJcRh0VXX10YUR6W9HLTCTeWI" || ubicacion.place_id == "ChIJrS6bGbHg0YURxsO9CVT1-2U" || ubicacion.place_id == "ChIJPTF2Pcbz0YURha_3SsBjLRM" || ubicacion.place_id == "ChIJ7z-C0zUczoURDvbvTV8zbJE"
+                || ubicacion.place_id == "ChIJBYowjGMZ0oUR2NFMw95vx8E" || ubicacion.place_id == "ChIJYxCNbHb40YUR9s1Fdr8kGJk" || ubicacion.place_id == "ChIJtdHh1Dfv0YURxQPuxebxw40" || ubicacion.place_id == "ChIJmdc6XHDj0YUR94fvy-Tt4Ok" || ubicacion.place_id == "ChIJQcVvE5mqKoQRwtU4I8A-PsY"
+                || ubicacion.place_id == "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id == "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
 
-              map.setZoom(14);
+                map.setZoom(14);
 
-          }
-          //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
-          if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
-              || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id== "ChIJ46edsqILLYQRIIacZ3hpAQQ"
-              || ubicacion.place_id== "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id== "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
-              map.setZoom(13);
-          }
-          //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
-          if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
-              || ubicacion.place_id== "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id== "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id== "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id== "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id== "ChIJxXjKRUJBw4URmwE26ULWpBg") {
-              map.setZoom(11);
-          }
-          //Tonanitla, (Estado México)
-          if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU" ) {
-              map.setZoom(15);
-          }
+            }
+            //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
+            if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
+                || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ"
+                || ubicacion.place_id == "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id == "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
+                map.setZoom(13);
+            }
+            //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
+            if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
+                || ubicacion.place_id == "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id == "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id == "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id == "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg") {
+                map.setZoom(11);
+            }
+            //Tonanitla, (Estado México)
+            if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU") {
+                map.setZoom(15);
+            }
             //map.setZoom(17);  // Why 17? Because it looks good.
         }
 
@@ -671,16 +671,16 @@ function load_propiedades(latitud, longitud) {
                     var re = /(?:\.([^.]+))?$/;
 
                     var casa_card = '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
-                    '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
-                    '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
+                        '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
+                        '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
-                    '<div class="caption">' +
-                    '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
-                    '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
-                    '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
+                        '<div class="caption">' +
+                        '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                        '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
+                        '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
 
                     $("#casas").append(casa_card);
 
@@ -723,19 +723,19 @@ function load_propiedades(latitud, longitud) {
                         '</div>' +
 
                         '<!-- Wrapper for slides -->' +
-                        '<div class="carousel-inner">'+
-                        
-                        '<div class="caption" id="modalFavoritos' + index+ '" style="background-color:White;display:none;position:absolute;z-index:3;margin-left: 38%;margin-top:8%; height:200px;width:180px;border-style:solid;border-color:#49BEEF">' +
-                            '<center>' +
-                                '<br>' +
-                                        '<button id = "GoToFavorites_' + index + '" class="bg-primary">Ir a favoritos</button>' + 
-                                '<br>' +
-                                '<br>' +
-                                '<br>' +
-                                '<br>' +
-                                '<br>' +
-                                        '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
-                            '</center>' +
+                        '<div class="carousel-inner">' +
+
+                        '<div class="caption" id="modalFavoritos' + index + '" style="background-color:White;display:none;position:absolute;z-index:3;margin-left: 38%;margin-top:8%; height:200px;width:180px;border-style:solid;border-color:#49BEEF">' +
+                        '<center>' +
+                        '<br>' +
+                        '<button id = "GoToFavorites_' + index + '" class="bg-primary">Ir a favoritos</button>' +
+                        '<br>' +
+                        '<br>' +
+                        '<br>' +
+                        '<br>' +
+                        '<br>' +
+                        '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
+                        '</center>' +
                         '</div>';
                     if (propiedad.files.length > 0) {
                         ind = 0;
@@ -777,7 +777,7 @@ function load_propiedades(latitud, longitud) {
                             '</div>';
                     }
 
-                   
+
                     modal_casa = modal_casa +
                         '</div>' +
                         '<!-- Left and right controls -->' +
@@ -850,29 +850,29 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="restaurantes_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="restaurantes_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="escuelas_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="escuelas_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="hospitales_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="hospitales_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</br></br>' +
                         '<div class="row" align="center">' +
                         '<div class="col-md-4">' +
-                        '<button id="cormercio_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="cormercio_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="super_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="super_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
 
                         '<div class="col-md-4">' +
-                        '<button id="parques_' + index +'" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
+                        '<button id="parques_' + index + '" class="btn btn-default"><img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -996,20 +996,20 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             for (var i = 0; i < others.length; i++) {
-              if ($("#house_description_" + i).css('display') == "block") {
-                $("#house_description_" + i).hide();
+                if ($("#house_description_" + i).css('display') == "block") {
+                    $("#house_description_" + i).hide();
 
-              }
+                }
             }
+
             $("#house_description_" + aiDi[1]).show();
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
-
             //$('#casas').appendTo('#casas_cercanas');
             //$('#casas_cercanas').show();
             propiedadesCercanas(aiDi[1]);
-$("#titulocercanas").show();
+            $("#titulocercanas").show();
             getMarker(aiDi[1]);
         });
     });
@@ -1027,8 +1027,8 @@ $("#titulocercanas").show();
             $("#titulocercanas").hide();
             reCentrar();
             changePlazaToColonia(false);
-            var cent=false;
-             $("#modalFavoritos" + aiDi[2]).hide();
+            var cent = false;
+            $("#modalFavoritos" + aiDi[2]).hide();
         });
     });
 
@@ -1091,7 +1091,7 @@ $("#titulocercanas").show();
             getMarkersPlace(aiDi[1], 7);
         });
     });
-      others = Array.from(document.querySelectorAll('*[id^="super_"]'));
+    others = Array.from(document.querySelectorAll('*[id^="super_"]'));
     others.forEach(function (item) {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
@@ -1100,12 +1100,14 @@ $("#titulocercanas").show();
             getMarkersPlace(aiDi[1], 8);
         });
     });
+
     others = Array.from(document.querySelectorAll('*[id^="GoToFavorites_"]'));
     others.forEach(function (item) {
         $(item).click(function () {
-            window.location.href='../../favoritos.html';
+            window.location.href = 'favoritos.html';
         });
     });
+
     others = Array.from(document.querySelectorAll('*[id^="KeepWhatching_"]'));
     others.forEach(function (item) {
         $(item).click(function () {
@@ -1239,11 +1241,11 @@ function addMarkers(propiedades) {
 
             //CENTRAR SCROLL
             /*
-            var casasContainer = $("#casas");
-            var casaScroll = $("#img-thumbnail_" + index_id);
-            casasContainer.animate({
-                scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
-            }, 'fast', 'linear');*/
+             var casasContainer = $("#casas");
+             var casaScroll = $("#img-thumbnail_" + index_id);
+             casasContainer.animate({
+             scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
+             }, 'fast', 'linear');*/
             //FIN CENTRAR SCROLL
 
             marker.setIcon(markerGreen);
@@ -1258,7 +1260,7 @@ function addMarkers(propiedades) {
             $("#caja_" + index_id).hide();
             var back = $("#casas").html();
 
-            $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected  + '</div>' + back);
+            $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             boxListeners();
         });
 
@@ -1337,35 +1339,35 @@ function getMarker(id) {
     }
 }
 
-function stateCenter(index){
-      var latlng = {lat: allMarkers[index].getPosition().lat(),lng: allMarkers[index].getPosition().lng() };
-      var geo = new google.maps.Geocoder();
-      var state = "";
-      geo.geocode({'location': latlng}, function(results, status) {
-       if (status === 'OK') {
-         if (results[1]) {
-          var data = results[0].address_components;
-          for(var i in data){
-              if(data[i].types.includes("administrative_area_level_1")){
-                state = data[i].long_name;
-                break;
-              }
-          }
-              geo.geocode({ 'address': state }, function(results, status){
-                if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
-                    map.setZoom(7);
-                } else {
-                    alert("Could not find location: " + location);
+function stateCenter(index) {
+    var latlng = {lat: allMarkers[index].getPosition().lat(), lng: allMarkers[index].getPosition().lng()};
+    var geo = new google.maps.Geocoder();
+    var state = "";
+    geo.geocode({'location': latlng}, function (results, status) {
+        if (status === 'OK') {
+            if (results[1]) {
+                var data = results[0].address_components;
+                for (var i in data) {
+                    if (data[i].types.includes("administrative_area_level_1")) {
+                        state = data[i].long_name;
+                        break;
+                    }
                 }
-            });
-         } else {
-           window.alert('No results found');
-         }
-       } else {
-         window.alert('Geocoder failed due to: ' + status);
-       }
-     });
+                geo.geocode({'address': state}, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        map.setZoom(7);
+                    } else {
+                        alert("Could not find location: " + location);
+                    }
+                });
+            } else {
+                window.alert('No results found');
+            }
+        } else {
+            window.alert('Geocoder failed due to: ' + status);
+        }
+    });
 }
 
 function getMarkersPlace(id, action) {
@@ -1420,13 +1422,13 @@ function getMarkersPlace(id, action) {
                         type: ['park']
                     }, processResultsRecreo);
                     break;
-             }
+            }
 
         }
     }
 }
 
-function hover(id) {    
+function hover(id) {
     $("#img-thumbnail_" + id).css({
         "posistion": "relative",
         "z-index": "1032",
@@ -1450,7 +1452,7 @@ function hover(id) {
         console.log("si");
     }
 
-    else    {
+    else {
         for (var i = 0; i < allMarkers.length; i++) {
             if ("marker" + id == allMarkers[i].id) {
                 allMarkers[i].setIcon(markerRed);
@@ -1462,7 +1464,7 @@ function hover(id) {
                     map.panTo(allMarkers[i].getPosition());
                     map.setZoom(17);
                 }
-                
+
                 break;
             }
         }
@@ -1550,21 +1552,21 @@ function showPropiedadesBySearch(ubicacion) {
         if (bounds.contains(allMarkers[i].getPosition())) {
 
             var costo = allMarkers[i].precio;
-            costo = costo.replace(',','');
-            costo = costo.replace('.','');
+            costo = costo.replace(',', '');
+            costo = costo.replace('.', '');
             costo = parseInt(costo);
 
             var precio_min = priceRange[0];
-            precio_min = precio_min.replace(',','');
-            precio_min = precio_min.replace('.','');
-            precio_min = parseInt(precio_min)/100;
+            precio_min = precio_min.replace(',', '');
+            precio_min = precio_min.replace('.', '');
+            precio_min = parseInt(precio_min) / 100;
 
             var precio_max = priceRange[1];
-            precio_max = precio_max.replace(',','');
-            precio_max = precio_max.replace('.','');
-            precio_max = parseInt(precio_max)/100;
+            precio_max = precio_max.replace(',', '');
+            precio_max = precio_max.replace('.', '');
+            precio_max = parseInt(precio_max) / 100;
 
-            if ((costo >= precio_min) && (costo <=precio_max)) {
+            if ((costo >= precio_min) && (costo <= precio_max)) {
                 total += 1;
                 $("#caja_" + allMarkers[i].index).show();
             }
@@ -1823,42 +1825,49 @@ var delay = (function () {
 })();
 
 function iLikeIt(id) {
-    // $('#modalFavoritos' + id).css({
-    //     display: 'block'
-    // });
-    $('#modalFavoritos' + id).show();
-    // var heart = $("#heart_" + id);
-    // // TODO remover de favoritos
-    // if (heart.hasClass("iloveit")) {
-    //     heart.removeClass("iloveit");
-    //     heart.addClass("iDontLoveIt");
-    //     heart.css("color", "rgba(255, 255, 255, 0.62)");
-    // } else { // TODO agregar a favoritos
-    //     heart.removeClass("iDontLoveIt");
-    //     heart.addClass("iloveit");
-    //     heart.css("color", "rgba(255, 0, 0, 0.62)");
+    var heart = $("#heart_" + id);
+    // TODO remover de favoritos
+    if (heart.hasClass("iloveit")) {
+        heart.removeClass("iloveit");
+        heart.addClass("iDontLoveIt");
+        heart.css("color", "rgba(255, 255, 255, 0.62)");
+    } else { // agregar a favoritos
+        heart.removeClass("iDontLoveIt");
+        heart.addClass("iloveit");
+        heart.css("color", "rgba(255, 0, 0, 0.62)");
 
-    //     $.ajax({
-    //       url: url + '/favoritos/store',
-    //       type: 'POST',
-    //       data:  {
-    //         id: id
-    //       },
-    //       dataType: 'JSON',
-    //       beforeSend: function () {
-    //           $("#wait").show();
-    //       },
-    //       success: function (respuesta) {
-    //           notificaction(respuesta.mensaje, "success");
-    //       },
-    //       error: function (respuesta) {
-    //           notificaction(respuesta.mensaje, "danger");
-    //       },
-    //       complete: function () {
-    //           $("#wait").hide();
-    //       }
-    //     });
-    // }
+        var propiedad_id = null;
+        for (var i = 0; i < allMarkers.length; i++) {
+            if ("marker" + id == allMarkers[i].id) {
+                propiedad_id = allMarkers[i].propiedad;
+                break;
+            }
+        }
+
+        console.log("id" + id);
+        console.log("propiedad" + propiedad_id);
+
+        $.ajax({
+            url: url + '/favoritos/store',
+            type: 'POST',
+            data: {
+                id: propiedad_id
+            },
+            dataType: 'JSON',
+            beforeSend: function () {
+                $("#wait").show();
+            },
+            success: function (respuesta) {
+                $('#modalFavoritos' + id).show();
+            },
+            error: function (respuesta) {
+                console.log(respuesta);
+            },
+            complete: function () {
+                $("#wait").hide();
+            }
+        });
+    }
 }
 
 function sendMail(propiedad_id) {
@@ -2070,7 +2079,7 @@ function processResultsEscuelas(results, status, pagination) {
 function createMarkersEscuelas(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2110,7 +2119,7 @@ function processResultsResta(results, status, pagination) {
 function createMarkersRes(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2150,7 +2159,7 @@ function processResultsServicios(results, status, pagination) {
 function createMarkers6(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2190,7 +2199,7 @@ function processResultsTiendas(results, status, pagination) {
 function createMarkers7(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2230,7 +2239,7 @@ function processResultsRecreo(results, status, pagination) {
 function createMarkers4(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2270,7 +2279,7 @@ function processResults(results, status, pagination) {
 function createMarkers(places) {
     var bounds = new google.maps.LatLngBounds();
 
-    if ( markesrsSerives.length > 0 ) {
+    if (markesrsSerives.length > 0) {
         for (var i = 0; i < markesrsSerives.length; i++) {
             markesrsSerives[i].setMap(null);
         }
@@ -2452,124 +2461,120 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>');
 
 
-
-
-
 }
 
 
+$("#uno_carlos").mouseover(function () {
 
-$( "#uno_carlos" ).mouseover(function() {
+    $("#uno_carlos").css({
 
-  $( "#uno_carlos" ).css({
+        "background-color": "#002967",
+        "height": "78px"
 
-      "background-color": "#002967",
-      "height": "78px"
-
-  });
+    });
 });
-   $("#uno_carlos").mouseleave(function(){
-     $( "#uno_carlos" ).css({
+$("#uno_carlos").mouseleave(function () {
+    $("#uno_carlos").css({
 
-         "background-color": "rgba(0, 41, 103, 0)",
-
-
-     });
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-   });
-   $( "#dos_carlos" ).mouseover(function() {
-
-     $( "#dos_carlos" ).css({
-
-         "background-color": "#002967",
-         "height": "78px"
-
-     });
-   });
-      $("#dos_carlos").mouseleave(function(){
-        $( "#dos_carlos" ).css({
-
-            "background-color": "rgba(0, 41, 103, 0)",
+    });
 
 
-        });
+});
+$("#dos_carlos").mouseover(function () {
+
+    $("#dos_carlos").css({
+
+        "background-color": "#002967",
+        "height": "78px"
+
+    });
+});
+$("#dos_carlos").mouseleave(function () {
+    $("#dos_carlos").css({
+
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-      });
-      $( "#tres_carlos" ).mouseover(function() {
-
-        $( "#tres_carlos" ).css({
-
-            "background-color": "#002967",
-            "height": "78px"
-
-        });
-      });
-         $("#tres_carlos").mouseleave(function(){
-           $( "#tres_carlos" ).css({
-
-               "background-color": "rgba(0, 41, 103, 0)",
+    });
 
 
-           });
+});
+$("#tres_carlos").mouseover(function () {
+
+    $("#tres_carlos").css({
+
+        "background-color": "#002967",
+        "height": "78px"
+
+    });
+});
+$("#tres_carlos").mouseleave(function () {
+    $("#tres_carlos").css({
+
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-         });
-         $( "#cuatro_carlos" ).mouseover(function() {
-
-           $( "#cuatro_carlos" ).css({
-
-               "background-color": "#002967",
-               "height": "78px"
-
-           });
-         });
-            $("#cuatro_carlos").mouseleave(function(){
-              $( "#cuatro_carlos" ).css({
-
-                  "background-color": "rgba(0, 41, 103, 0)",
+    });
 
 
-              });
+});
+$("#cuatro_carlos").mouseover(function () {
+
+    $("#cuatro_carlos").css({
+
+        "background-color": "#002967",
+        "height": "78px"
+
+    });
+});
+$("#cuatro_carlos").mouseleave(function () {
+    $("#cuatro_carlos").css({
+
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-            });
-            $( "#cinco_carlos" ).mouseover(function() {
-
-              $( "#cinco_carlos" ).css({
-
-                  "background-color": "#002967",
-                  "height": "78px"
-
-              });
-            });
-               $("#cinco_carlos").mouseleave(function(){
-                 $( "#cinco_carlos" ).css({
-
-                     "background-color": "rgba(0, 41, 103, 0)",
+    });
 
 
-                 });
+});
+$("#cinco_carlos").mouseover(function () {
+
+    $("#cinco_carlos").css({
+
+        "background-color": "#002967",
+        "height": "78px"
+
+    });
+});
+$("#cinco_carlos").mouseleave(function () {
+    $("#cinco_carlos").css({
+
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-               });
-               $( "#seis_carlos" ).mouseover(function() {
-
-                 $( "#seis_carlos" ).css({
-
-                     "background-color": "#002967",
-                     "height": "78px"
-
-                 });
-               });
-                  $("#seis_carlos").mouseleave(function(){
-                    $( "#seis_carlos" ).css({
-
-                        "background-color": "rgba(0, 41, 103, 0)",
+    });
 
 
-                    });
+});
+$("#seis_carlos").mouseover(function () {
+
+    $("#seis_carlos").css({
+
+        "background-color": "#002967",
+        "height": "78px"
+
+    });
+});
+$("#seis_carlos").mouseleave(function () {
+    $("#seis_carlos").css({
+
+        "background-color": "rgba(0, 41, 103, 0)",
 
 
-                  });
+    });
+
+
+});
