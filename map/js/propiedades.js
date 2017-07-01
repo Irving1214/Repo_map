@@ -1476,8 +1476,8 @@ function hover(id) {
         for (var i = 0; i < allMarkers.length; i++) {
             if ("marker" + id == allMarkers[i].id) {
                 allMarkers[i].setIcon(markerRed);
-                //allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-                //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
+                allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
+                $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
                 infoWindows[i].open(map, allMarkers[i]);
 
                 if (map.getZoom() > 16) {
