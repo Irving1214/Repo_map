@@ -1329,7 +1329,7 @@ function getMarker(id) {
             allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
-            console.log("PERFEC!");
+            console.log("CLICK VERGAZ!");
             map.panTo(allMarkers[i].getPosition());
             stateCenter(i);
 
@@ -1343,6 +1343,16 @@ function stateCenter(index) {
     var latlng = {lat: allMarkers[index].getPosition().lat(), lng: allMarkers[index].getPosition().lng()};
     var geo = new google.maps.Geocoder();
     var state = "";
+
+    /*  EJEMPLO DE CENTRADO
+    var mx = {lat: 24.2436666, lng: -102.4551421};
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: mx
+    }
+    */
+    console.log(latlng);
+
     geo.geocode({'location': latlng}, function (results, status) {
         if (status === 'OK') {
             if (results[1]) {
@@ -1355,7 +1365,8 @@ function stateCenter(index) {
                 }
                 geo.geocode({'address': state}, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-                        map.setCenter(results[0].geometry.location);
+                        //map.setCenter(results[0].geometry.location);
+                        map.setCenter(latlng);
                         map.setZoom(7);
                     } else {
                         alert("Could not find location: " + location);
