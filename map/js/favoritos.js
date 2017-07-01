@@ -194,7 +194,7 @@ function load_favoritos() {
 
                         '<!-- Regreso a Cards -->' +
                         '<div style="position: absolute; z-index: 4; padding-left: 15px; padding-top: 15px;">' +
-                        '<img height="13%" id="card_cubes_' + index + '" src="../../images/ICON-PIC-RETURN.png" "></i>' +
+                        '<img height="13%" id="card_cubes_' + index + '" src="images/ICON-PIC-RETURN.png" "></i>' +
                         '</div>' +
 
                         '<!-- Wrapper for slides -->' +
@@ -454,7 +454,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             $("#house_description_" + aiDi[1]).show();
-            $("#house_cards").hide();
+            $("#casas").hide();
 
         });
     });
@@ -464,7 +464,7 @@ function boxListeners() {
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
-            $("#house_cards").show();
+            $("#casas").show();
             $("#house_description_" + aiDi[2]).hide();
         });
     });
@@ -570,18 +570,6 @@ function out(id) {
         "transform": "translate(-50%, -50%)",
     });
 
-
-    if (click === false) {
-        for (var i = 0; i < allMarkers.length; i++) {
-            if ("marker" + id == allMarkers[i].id) {
-                allMarkers[i].setIcon(markerBlue);
-                allMarkers[i].setAnimation(null);
-                infoWindows[i].close();
-                $("#markerLayer" + i).css("animation", "none");
-                break;
-            }
-        }
-    }
 }
 
 function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
