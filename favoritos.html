@@ -327,12 +327,15 @@
     </div>
 </nav>
 
+<div id="noti"></div>
 
-<div class="col-md-f" id="pdf-modal">
+<div class="col-md-12" id="pdf-modal">
     <div class="scroll" id="casas"></div>
 </div>
 <div id="description-casas"></div>
 
+<button id="byEmail" class="btn btn-lg btn-info" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Enviar por correo</button>
+<a class="btn btn-lg btn-info" href="mapas2.html" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Regresar</a>
 
 <!-- MODAL  -->
 <div class="modal fade" role="dialog"></div>
@@ -344,30 +347,25 @@
 <script src="map/js/favoritos.js"></script>
 <div class="loading" id="wait"></div>
 
-<div class="modal fade" id="modalEmail" role="">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="modalEmail"  style="background-color: #585858" role="">
+    <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header" align="center">
                 <h4 class="modal-title">Ingresa tus datos para recibir tus propiedades</h4>
             </div>
 
             <div class="modal-body" align="center">
-                <br><br><br>
-                <div class="col-md-2"></div>
-                <div class="form-group">
-                    <div class="col-md-4">
-                        <label for="email">Ingresa tu correo electronico:</label>
-                    </div>
-                    <div class="col-md-4">
-                    <input type="email" class="form-control" id="email">
-                    </div>
+                <br>
+                <div class="col-md-12">
+                    <div id="error"></div>
+                    <label for="email">Ingresa tu correo electronico:</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
                 </div>
-                <div class="col-md-2"></div>
 
             </div>
             <div class="modal-footer" align="center">
                 <br><br><br>
-                <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Enviar</button>
+                <button type="button" id="enviar" class="btn btn-info btn-lg" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Entrar</button>
             </div>
         </div>
     </div>
