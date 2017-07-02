@@ -51,6 +51,10 @@ $(document).ready(function () {
 });
 
 function sendByEmail() {
+    $("#error").fadeIn(1000, function () {
+        $("#error").html("");
+    });
+
     $.ajax({
         url: url + "/sendPDF",
         type: "POST",

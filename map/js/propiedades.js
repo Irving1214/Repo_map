@@ -732,8 +732,6 @@ function load_propiedades(latitud, longitud) {
                         '<br>' +
                         '<br>' +
                         '<br>' +
-                        '<br>' +
-                        '<br>' +
                         '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
                         '</center>' +
                         '</div>';
@@ -1006,8 +1004,6 @@ function boxListeners() {
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
-            //$('#casas').appendTo('#casas_cercanas');
-            //$('#casas_cercanas').show();
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
             getMarker(aiDi[1]);
@@ -1048,6 +1044,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 1);
         });
     });
@@ -1058,6 +1055,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 2);
         });
     });
@@ -1068,6 +1066,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 5);
         });
     });
@@ -1078,6 +1077,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 6);
         });
     });
@@ -1088,6 +1088,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 7);
         });
     });
@@ -1097,6 +1098,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
 
+            changeButtonColor(item.id, aiDi[1]);
             getMarkersPlace(aiDi[1], 8);
         });
     });
@@ -1116,6 +1118,19 @@ function boxListeners() {
             $("#modalFavoritos" + aiDi[1]).hide();
         });
     });
+}
+
+function changeButtonColor(id, index) {
+    var button = ["restaurantes_", "escuelas_", "hospitales_", "cormercio_", "super_", "parques_"];
+
+    for (var i = 0; i < button.length; i++) {
+        var pos = button[i] + index;
+        if (id == pos) {
+            $("#" + pos).css("background-color", "#CFDB00");
+        } else {
+            $("#" + pos).css("background-color", "");
+        }
+    }
 }
 
 function propiedadesCercanas(id) {
@@ -1338,7 +1353,6 @@ function getMarker(id) {
             allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
-            console.log("CLICK VERGAZ!");
             map.panTo(allMarkers[i].getPosition());
             stateCenter(i);
 
@@ -1866,9 +1880,6 @@ function iLikeIt(id) {
             }
         }
 
-        console.log("id" + id);
-        console.log("propiedad" + propiedad_id);
-
         $.ajax({
             url: url + '/favoritos/store',
             type: 'POST',
@@ -1880,6 +1891,7 @@ function iLikeIt(id) {
                 $("#wait").show();
             },
             success: function (respuesta) {
+                notificaction("La propiedad se agrego a tus favoritos", "success");
                 $('#modalFavoritos' + id).show();
             },
             error: function (respuesta) {
