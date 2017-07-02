@@ -12,6 +12,7 @@ var service;
 var markesrsSerives = [];
 
 var radius = 5000;
+var jumping = null;
 
 $(document).ready(function () {
     var slider = document.getElementById('slider');
@@ -975,6 +976,16 @@ function load_propiedades(latitud, longitud) {
     });
 }
 
+function jumpMarker(index) {
+    //Brincar marker
+    for (var k = 0; k < allMarkers.length; k++) {
+        if ("marker" + index == allMarkers[k].id) {
+            allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
+            break;
+        }
+    }
+}
+
 function boxListeners() {
     var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
     others.forEach(function (item) {
@@ -982,13 +993,23 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             hover(aiDi[1]);
+
+            jumping = setInterval(function() {
+                jumpMarker(aiDi[1]);
+            }, 1000);
         });
+
+
 
         $(item).mouseout(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             out(aiDi[1]);
 
+            if (jumping) {
+                clearInterval(jumping);
+                jumping = null;
+            }
         });
 
         $(item).click(function () {
@@ -1006,12 +1027,7 @@ function boxListeners() {
             $("#caja_" + aiDi[1]).hide();
 
             //Brincar marker
-            for (var k = 0; k < allMarkers.length; k++) {
-                if ("marker" + aiDi[1] == allMarkers[k].id) {
-                    allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
-                    break;
-                }
-            }
+            jumpMarker(aiDi[1]);
             //marker.setAnimation(google.maps.Animation.BOUNCE);
 
             propiedadesCercanas(aiDi[1]);
@@ -1488,7 +1504,6 @@ function hover(id) {
                 infoWindows[i].open(map, allMarkers[i]);
 
                 //  AQUI DEBE IR ESTE PUTO PERO NO FUNCIONA
-
                 //allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
                 //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
