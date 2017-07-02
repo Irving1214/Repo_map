@@ -735,6 +735,7 @@ function load_propiedades(latitud, longitud) {
                         '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
                         '</center>' +
                         '</div>';
+
                     if (propiedad.files.length > 0) {
                         ind = 0;
                         propiedad.files.forEach(function (file) {
@@ -1004,6 +1005,15 @@ function boxListeners() {
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
+            //Brincar marker
+            for (var k = 0; k < allMarkers.length; k++) {
+                if ("marker" + aiDi[1] == allMarkers[k].id) {
+                    allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
+                    break;
+                }
+            }
+            //marker.setAnimation(google.maps.Animation.BOUNCE);
+
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
             getMarker(aiDi[1]);
@@ -1185,8 +1195,6 @@ function addMarkers(propiedades) {
         }
 
         var contentString =
-
-
             '<div >' +
             '<p style="font-size: 10px; padding:0px;"><i>' +
 
@@ -1194,16 +1202,13 @@ function addMarkers(propiedades) {
             '</p></i>' +
             '</div>';
 
-
         var infowindow = new google.maps.InfoWindow({
             content: contentString
         });
 
         var marker = new google.maps.Marker({
-
             position: Latlng,
             map: map,
-
             title: propiedad.Plaza__c + ", " + propiedad.Estado2__c,
             id: 'marker' + index,
             icon: marker_color,
@@ -1245,18 +1250,11 @@ function addMarkers(propiedades) {
             }
             marker.setAnimation(google.maps.Animation.BOUNCE);
             marker.setIcon(markerRed);
-
-            console.log("PERFECT!");
-
         });
 
         google.maps.event.addListener(marker, "mouseover", function () {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
-
-
-
-            console.log("DEBE BRINCAR ESTE CARAVERGA");
 
             //CENTRAR SCROLL
             /*
@@ -1307,13 +1305,11 @@ function addMarkers(propiedades) {
             var index_id = marker_id.replace("marker", "");
             marker.setIcon(markerBlue);
             $("#letrasImagen" + index_id).css({
-
                 "opacity": "0",
                 "position": "absolute",
                 "top": "30%",
                 "left": "50%",
                 "transform": "translate(-50%, -50%)",
-
             });
 
             $("#image_main_thumbnail_" + index_id).css({
@@ -1326,7 +1322,6 @@ function addMarkers(propiedades) {
             var index_id = marker_id.replace("marker", "");
 
             $("#letrasImagen" + index_id).css({
-
                 "opacity": "1",
                 "color": "#fff",
                 "posistion": "relative",
