@@ -101,6 +101,7 @@ function load_favoritos() {
 
 
             if (Object.keys(respuesta.propiedades).length > 0) {
+                $('#byEmail').prop('disabled', false);
                 $("#casas").html("");
                 $("#description-casas").html("");
                 respuesta.propiedades.forEach(function (propiedad) {
@@ -424,7 +425,8 @@ function load_favoritos() {
                     $("#description-casas").append(modal_casa);
                     index = index + 1;
                 });
-
+            } else {
+                $('#byEmail').prop('disabled', true);
             }
 
         },

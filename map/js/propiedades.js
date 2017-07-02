@@ -986,6 +986,15 @@ function jumpMarker(index) {
     }
 }
 
+function stopOthersMarkers(index) {
+    for (var k = 0; k < allMarkers.length; k++) {
+        allMarkers[k].setIcon(markerBlue);
+        allMarkers[k].setAnimation(null);
+        infoWindows[k].close();
+        $("#markerLayer" + k).css("animation", "none");
+    }
+}
+
 function boxListeners() {
     var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
     others.forEach(function (item) {
@@ -1026,6 +1035,8 @@ function boxListeners() {
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
+            // Para los demas markers
+            stopOthersMarkers(aiDi[1]);
             //Brincar marker
             jumpMarker(aiDi[1]);
             //marker.setAnimation(google.maps.Animation.BOUNCE);
