@@ -1476,9 +1476,12 @@ function hover(id) {
         for (var i = 0; i < allMarkers.length; i++) {
             if ("marker" + id == allMarkers[i].id) {
                 allMarkers[i].setIcon(markerRed);
-                allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-                $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
                 infoWindows[i].open(map, allMarkers[i]);
+
+                //  AQUI DEBE IR ESTE PUTO PERO NO FUNCIONA
+
+                //allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
+                //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
                 if (map.getZoom() > 16) {
                     map.panTo(allMarkers[i].getPosition());
@@ -1488,7 +1491,6 @@ function hover(id) {
                 break;
             }
         }
-        console.log("LOSE");
     }
 
 }
