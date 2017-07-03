@@ -139,4 +139,31 @@ function propiedadesCercanas(id) {
             break;
         }
     }
-  }
+
+    $.ajax({
+        url: url + "/propiedades/cercanas",
+        type: "POST",
+        data: {
+            id: propiedad_id
+        },
+        dataType: "JSON",
+        beforeSend: function () {
+            $("#wait").show();
+        },
+
+        success: function (response) {
+            if (response.propiedades.length > 0) {
+                showOnlySomeCards(response.propiedades, "cerca");
+            }
+        },
+        error: function (respuesta) {
+            console.log(respuesta);
+        },
+        complete: function () {
+            $("#wait").hide();
+        }
+    });
+
+    $('#casas').appendTo('#casas_cercanas');
+    $('#casas_cercanas').show();
+}

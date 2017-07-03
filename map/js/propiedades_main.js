@@ -58,8 +58,6 @@ function load_propiedades(latitud, longitud) {
         },
         success: function (respuesta) {
             var index = 1;
-
-
             if (Object.keys(respuesta.propiedades).length > 0) {
                 $("#casas").html("");
                 $("#description-casas").html("");

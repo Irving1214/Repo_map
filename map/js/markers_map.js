@@ -76,15 +76,6 @@ function addMarkers(propiedades) {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
 
-            //CENTRAR SCROLL
-            /*
-             var casasContainer = $("#casas");
-             var casaScroll = $("#img-thumbnail_" + index_id);
-             casasContainer.animate({
-             scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
-             }, 'fast', 'linear');*/
-            //FIN CENTRAR SCROLL
-
             marker.setIcon(markerGreen);
             $("#img-thumbnail_" + index_id).css({
                 "position": "relative",
