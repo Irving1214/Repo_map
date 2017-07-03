@@ -205,3 +205,316 @@ function getMarker(id) {
         }
     }
 }
+
+
+function notificaction(msg, type) {
+    var div = $("#msg");
+    div.html("");
+    div.html('<div class="alert alert-' + type + '"> &nbsp; ' + msg + '</div>');
+
+    setTimeout(function () {
+        div.html("");
+    }, 5000);
+
+    $('html, body').animate({
+        scrollTop: $("#top").offset().top
+    }, 800);
+}
+
+function processResultsEscuelas(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkersEscuelas(results);
+    }
+}
+
+function createMarkersEscuelas(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_ESCUELAS.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsResta(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkersRes(results);
+    }
+}
+
+function createMarkersRes(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_RESTAURANTES.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsServicios(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers6(results);
+    }
+}
+
+function createMarkers6(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_COMERCIAL.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsTiendas(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers7(results);
+    }
+}
+
+function createMarkers7(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_SUPER.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResultsRecreo(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers4(results);
+    }
+}
+
+function createMarkers4(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_PARQUES.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function processResults(results, status, pagination) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+    } else {
+        createMarkers(results);
+    }
+}
+
+function createMarkers(places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    if (markesrsSerives.length > 0) {
+        for (var i = 0; i < markesrsSerives.length; i++) {
+            markesrsSerives[i].setMap(null);
+        }
+    }
+
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: "images/PIN-PROPIEDADES-WEB_HOSPITALES.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+
+        markesrsSerives.push(marker);
+
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+
+function getMarkersPlace(id, action) {
+    for (var i = 0; i < allMarkers.length; i++) {
+        var ij = "marker" + id;
+
+        if (ij == allMarkers[i].id) {
+            var latLng = new google.maps.LatLng(allMarkers[i].getPosition().lat(), allMarkers[i].getPosition().lng());
+
+            switch (action) {
+                case 1: // Escuelas
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['school']
+                    }, processResultsEscuelas);
+                    break;
+                case 2: //Restauran
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['cafe', 'restaurant']
+                    }, processResultsResta);
+                    break;
+                case 6: //Servicios
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['bank', 'library', 'police', 'bus_station', 'airport']
+                    }, processResultsServicios);
+                    break;
+                case 8: //Tiendas
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['shopping_mall', 'store']
+                    }, processResultsTiendas);
+                    break;
+
+                case 5: //Hospitales
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        types: ['hospital', 'pharmacy']
+                    }, processResults);
+                    break;
+
+                case 7: // Parkes
+                    service.nearbySearch({
+                        location: latLng,
+                        radius: radius,
+                        type: ['park']
+                    }, processResultsRecreo);
+                    break;
+            }
+
+        }
+    }
+}

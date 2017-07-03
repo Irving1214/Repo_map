@@ -362,3 +362,46 @@ function modalListeners(index) {
             $("#modalFavoritos" + index).hide();
         });
 }
+
+function changeButtonColor(id, index) {
+    var button = ["restaurantes_", "escuelas_", "hospitales_", "cormercio_", "super_", "parques_"];
+
+
+    if ("restaurantes_" + index == id) {
+        console.log(10);
+        $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-ON.png");
+    } else {
+        console.log(20);
+        $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png");
+    }
+
+    if ("escuelas_" + index == id) {
+        $("#img_escuelas_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-ON.png");
+    } else {
+        $("#img_escuelas_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png");
+    }
+
+    if ("hospitales_" + index == id) {
+        $("#img_hospitales_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-ON.png");
+    } else {
+        $("#img_hospitales_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png");
+    }
+
+    if ("cormercio_" + index == id) {
+        $("#img_cormercio_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-ON.png");
+    } else {
+        $("#img_cormercio_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png");
+    }
+
+    if ("super_" + index == id) {
+        $("#img_super_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-ON.png");
+    } else {
+        $("#img_super_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png");
+    }
+
+    if ("parques_" + index == id) {
+        $("#img_parques_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-ON.png");
+    } else {
+        $("#img_parques_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png");
+    }
+}
