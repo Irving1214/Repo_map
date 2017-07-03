@@ -60,6 +60,7 @@ function addMarkers(propiedades) {
             $("#house_cards").hide();
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
+            $("#titulocercanas").show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
             stopOthersMarkers();
 
