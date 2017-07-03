@@ -987,6 +987,10 @@ function jumpMarker(index) {
 }
 
 function stopOthersMarkers(index) {
+    if (jumping) {
+        clearInterval(jumping);
+    }
+
     for (var k = 0; k < allMarkers.length; k++) {
         allMarkers[k].setIcon(markerBlue);
         allMarkers[k].setAnimation(null);
@@ -1038,7 +1042,9 @@ function boxListeners() {
             // Para los demas markers
             stopOthersMarkers(aiDi[1]);
             //Brincar marker
-            jumpMarker(aiDi[1]);
+            jumping = setInterval(function() {
+                jumpMarker(aiDi[1]);
+            }, 1000);
             //marker.setAnimation(google.maps.Animation.BOUNCE);
 
             propiedadesCercanas(aiDi[1]);
