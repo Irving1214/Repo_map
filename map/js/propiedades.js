@@ -698,11 +698,18 @@ function load_propiedades(latitud, longitud) {
 
 function jumpMarker(index) {
     //Brincar marker
+    var flag = 0;
     for (var k = 0; k < allMarkers.length; k++) {
         if ("marker" + index == allMarkers[k].id) {
             allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
+            flag = 1;
             break;
         }
+    }
+
+    if (flag == 1) {
+        console.log(index);
+        console.log(allMarkers[index].id);
     }
 }
 
@@ -712,7 +719,6 @@ function stopOthersMarkers(index) {
     }
 
     for (var k = 0; k < allMarkers.length; k++) {
-        console.log("Prueba" + k);
         allMarkers[k].setIcon(markerBlue);
         allMarkers[k].setAnimation(null);
         infoWindows[k].close();
@@ -760,6 +766,7 @@ function boxListeners() {
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
+            console.log(jumping);
             // Para los demas markers
             stopOthersMarkers(aiDi[1]);
 
@@ -767,6 +774,7 @@ function boxListeners() {
             jumping = setInterval(function() {
                 jumpMarker(aiDi[1]);
             }, 1000);
+            console.log(jumping);
 
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
@@ -920,10 +928,8 @@ function addMarkers(propiedades) {
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
-            for (var cont = 0; cont < allMarkers.length; cont++) {
-                allMarkers[cont].setAnimation(null);
-                allMarkers[cont].setIcon(markerBlue);
-            }
+            stopOthersMarkers();
+            
             //marker.setAnimation(google.maps.Animation.BOUNCE);
             jumping = setInterval(function() {
                 jumpMarker(index_id);
