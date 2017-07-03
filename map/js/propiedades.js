@@ -712,6 +712,7 @@ function stopOthersMarkers(index) {
     }
 
     for (var k = 0; k < allMarkers.length; k++) {
+        console.log("Prueba" + k);
         allMarkers[k].setIcon(markerBlue);
         allMarkers[k].setAnimation(null);
         infoWindows[k].close();
@@ -913,7 +914,8 @@ function addMarkers(propiedades) {
             map.setZoom(17);
             map.setCenter(marker.getPosition());
 
-            $("#house_description_" + index_id).show();
+            //$("#house_description_" + index_id).show();
+            createModal(propiedades[index_id-1], index_id);
             $("#house_cards").hide();
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();

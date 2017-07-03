@@ -9,6 +9,8 @@ var re = /(?:\.([^.]+))?$/;
  + Construe el modal para una propiedad
  */
 function createModal(propiedad, index) {
+    $("#description-casas").html("");
+
     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: block">' +
 
         '<div class="col-md-12">' +
@@ -285,6 +287,7 @@ function createModal(propiedad, index) {
         '</br>';
 
     $("#description-casas").append(modal_casa);
+    modalListeners(index);
 }
 
 /*
@@ -303,10 +306,9 @@ function nombreMunicipio(estado) {
  */
 function modalListeners(index) {
         $("#card_cubes_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
+
             $('#casas').appendTo('#house_cards');
-            $("#house_description_" + aiDi[2]).hide();
+            $("#house_description_" + index).hide();
             $("#house_cards").show();
             $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
@@ -314,63 +316,42 @@ function modalListeners(index) {
             reCentrar();
             changePlazaToColonia(false);
             var cent = false;
-            $("#modalFavoritos" + aiDi[2]).hide();
+            $("#modalFavoritos" + index).hide();
         });
 
         $("#heart_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            iLikeIt(aiDi[1]);
+            iLikeIt(index);
         });
 
         $("#escuelas_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 1);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 1);
         });
 
 
         $("#restaurantes_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 2);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 2);
         });
 
         $("#hospitales_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 5);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 5);
         });
 
         $("#cormercio_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 6);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 6);
         });
 
         $("#parques_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 7);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 7);
         });
 
         $("#super_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-
-            changeButtonColor(item.id, aiDi[1]);
-            getMarkersPlace(aiDi[1], 8);
+            changeButtonColor(this.id, index);
+            getMarkersPlace(index, 8);
         });
 
         $("#GoToFavorites_" + index).click(function () {
@@ -378,8 +359,6 @@ function modalListeners(index) {
         });
 
         $("#KeepWhatching_" + index).click(function () {
-            var aiDi = $(item).attr('id');
-            aiDi = aiDi.split("_");
-            $("#modalFavoritos" + aiDi[1]).hide();
+            $("#modalFavoritos" + index).hide();
         });
 }
