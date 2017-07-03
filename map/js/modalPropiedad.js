@@ -135,7 +135,7 @@ function createModal(propiedad, index) {
 
         '<div class="row" align="center">' +
         '<div class="col-md-4 col-md-offset-4 detelle">' +
-        '<button class="boton_detalles_auto"  class="btn btn-primary" data-toggle="modal" id="card_cubes_' + index + '" style="    margin-bottom: 4%;">Regresar</button>' +
+        '<button class="boton_detalles_auto"  class="btn btn-primary" data-toggle="modal" id="back_to_' + index + '" style="    margin-bottom: 4%;">Regresar</button>' +
         '</div>' +
         '</div>' +
 
@@ -305,7 +305,7 @@ function nombreMunicipio(estado) {
  * Activa los listeners del modal
  */
 function modalListeners(index) {
-        $("#card_cubes_" + index).click(function () {
+        $("#card_cubes_" + index + ", #back_to_" + index).click(function () {
 
             $('#casas').appendTo('#house_cards');
             $("#house_description_" + index).hide();
