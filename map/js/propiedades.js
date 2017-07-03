@@ -1766,6 +1766,13 @@ function showPropiedadesByPrecio(min, max) {
         }
     }
 
+    if ($('#casas_cercanas').is(":visible") || ('#titulocercanas').is(":visible")) {
+        // Cierra las similares y muestra las normales
+        $("#titulocercanas").hide();
+        $('#casas').appendTo('#house_cards');
+        $('#casas_cercanas').hide();
+    }
+
     if (min || max) {
         $.ajax({
             url: url + "/propiedades/searchbyprecio",
