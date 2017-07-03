@@ -922,14 +922,13 @@ function addMarkers(propiedades) {
             map.setZoom(17);
             map.setCenter(marker.getPosition());
 
-            //$("#house_description_" + index_id).show();
             createModal(propiedades[index_id-1], index_id);
             $("#house_cards").hide();
             $('#casas').appendTo('#casas_cercanas');
             $('#casas_cercanas').show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
             stopOthersMarkers();
-            
+
             //marker.setAnimation(google.maps.Animation.BOUNCE);
             jumping = setInterval(function() {
                 jumpMarker(index_id);
@@ -1635,159 +1634,6 @@ function notificaction(msg, type) {
     $('html, body').animate({
         scrollTop: $("#top").offset().top
     }, 800);
-}
-
-function envio_pdf(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
-    $("#pdf-modal").html("");
-    // si el valor de folio es null -> el campo debe de estar vacÃ¬o s
-    if (folio == 'null') {
-        folio = '';
-    }
-
-
-    $("#pdf-modal").append('<div class="modal-dialog">' +
-
-        '<div class="modal-content">' +
-
-        '<div class="modal-body">' +
-        '<div id="pdf" class="div">' +
-        '<div class="row">' +
-        '<div class="col-xs-7" style="padding: 0px 0px;">' +
-        '<div class="row azulRevimex" align="center">' +
-        '<img  class="revimexImagen" src="images/revimex-logo.png">' +
-        '</div>' +
-
-        '<div class="row arenaRevimex" align="center">' +
-        '<div class="separador"></div>' +
-        '<span class="titulo" style="margin-top: 80px;">Detalles</span>' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="col-xs-5" style="padding: 0px 0px;">' +
-        '<div class="row arenaRevimex" align="center">' +
-        '<h4>Contacto: 01 800 200 04440</h4>' +
-        '</div>' +
-
-        '<div class="row arenaClara" align="center">' +
-        '<div class="separador"></div>' +
-        '<span class="titulo">' + folio + '</span>' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-
-        '<div class="row">' +
-        '<div class="col-xs-7">' +
-        '<img class="imagen-modal" src="' + imagen + '">' +
-        '</div>' +
-
-        '<div class="col-xs-5" style="padding: 0px 0px;">' +
-        '<div class="row arenaClara">' +
-        '<br>' +
-        '<p class="direccion" align="center">' +
-        'Calle: ' + calle +
-        ' Colonia: ' + colonia +
-        ' Municipio: ' + municipio +
-        ' Estado: ' + estado +
-        '</p>' +
-        '</div>' +
-
-        '<div class="row highlight">' +
-        '<div class="separador"></div>' +
-        '<div class="col-xs-2">' +
-        '<img class="casitaImagen" src="images/icono-casa-modal.png">' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '<div class="col-xs-9 style="padding: 0px 0px;"" align="center">' +
-        '<div class="separador"></div>' +
-        '<p class="descripcion">Descripción de propiedad</p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2 style="padding: 0px 0px;""></div>' +
-        '<div class="col-xs-8 style="padding: 0px 0px;"">' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/terreno.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + terreno + ' m<sup>2</sup></p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/construccion.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + constru + ' m<sup>2</sup></p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/habitaciones.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + habitaciones + '</p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/banios.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + banos + '</p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/patio.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + patios + '</p>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/estacionamiento.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + estacionamientos + '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-
-        '<div class="col-xs-2" style="padding: 0px 0px;"></div>' +
-        '</div>' +
-
-        '<div class="separador"></div>' +
-        '<div class="row arenaClara">' +
-        '<br>' +
-        '<p class="precio" align="center">' +
-        '$ ' + precio +
-        '</p>' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>');
 }
 
 function processResultsEscuelas(results, status, pagination) {
