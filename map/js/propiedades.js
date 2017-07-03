@@ -1031,7 +1031,6 @@ function boxListeners() {
             for (var i = 0; i < others.length; i++) {
                 if ($("#house_description_" + i).css('display') == "block") {
                     $("#house_description_" + i).hide();
-
                 }
             }
 
@@ -1045,7 +1044,6 @@ function boxListeners() {
             jumping = setInterval(function() {
                 jumpMarker(aiDi[1]);
             }, 1000);
-            //marker.setAnimation(google.maps.Animation.BOUNCE);
 
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
@@ -1432,7 +1430,6 @@ function stateCenter(index) {
         center: mx
     }
     */
-    console.log(latlng);
 
     geo.geocode({'location': latlng}, function (results, status) {
         if (status === 'OK') {
@@ -1641,6 +1638,11 @@ function showPropiedadesBySearch(ubicacion) {
 
     var priceRange = slider.noUiSlider.get();
 
+    // Cierra las similares y muestra las normales
+    $("#titulocercanas").hide();
+    $('#casas').appendTo('#house_cards');
+    $('#casas_cercanas').hide();
+
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
 
@@ -1671,15 +1673,13 @@ function showPropiedadesBySearch(ubicacion) {
         $("#title-header").html("<h3><center>" + total + " propiedades en " + $("#pac-input").val() + "</center></h3>");
         $("#title-header").css({
             "padding-top": ".5%",
-            "padding-bottom": ".5%",
-
+            "padding-bottom": ".5%"
         });
     } else {
         $("#title-header").html("<h3><center>No hay propiedades en esta ubicación</center></h3>");
         $("#title-header").css({
             "padding-top": ".5%",
-            "padding-bottom": ".5%",
-
+            "padding-bottom": ".5%"
         });
     }
 }
