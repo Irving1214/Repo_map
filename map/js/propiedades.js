@@ -1309,7 +1309,11 @@ function addMarkers(propiedades) {
                 allMarkers[cont].setAnimation(null);
                 allMarkers[cont].setIcon(markerBlue);
             }
-            marker.setAnimation(google.maps.Animation.BOUNCE);
+            //marker.setAnimation(google.maps.Animation.BOUNCE);
+            jumping = setInterval(function() {
+                jumpMarker(index_id);
+            }, 1000);
+
             marker.setIcon(markerRed);
         });
 
@@ -1404,7 +1408,6 @@ function getMarker(id) {
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerRed);
-
 
             allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
