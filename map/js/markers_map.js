@@ -85,8 +85,9 @@ function addMarkers(propiedades) {
 
             // Mover arriba a la izquierda
             var house_selected = $("#caja_" + index_id).html();
-            $("#caja_" + index_id).hide();
+            $("#caja_" + index_id).remove();
             var back = $("#casas").html();
+            //$("#caja_" + index_id).remove();
 
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             boxListeners();
@@ -111,6 +112,7 @@ function addMarkers(propiedades) {
             });
              marker.setAnimation(google.maps.Animation.NONE);
         });
+
         google.maps.event.addListener(marker, "mouseout", function () {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
