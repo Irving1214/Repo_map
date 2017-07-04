@@ -190,9 +190,19 @@ function getMarker(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            stateCenter(i);
+            
+            
+            if(map.getZoom()<6){
+                
+                stateCenter(i);
+                
+            }
+            else{
+                
+                map.setZoom(17);
+            }
 
-            //map.setZoom(17);
+           
             break;
         }
     }
