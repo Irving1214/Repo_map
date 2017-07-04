@@ -6,7 +6,7 @@ function boxListeners() {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             hover(aiDi[1]);
-
+stopOthersMarkers();
             jumping = setInterval(function() {
                 jumpMarker(aiDi[1]);
             }, 1000);
