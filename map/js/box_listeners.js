@@ -75,6 +75,7 @@ function hover(id) {
         for (var i = 0; i < allMarkers.length; i++) {
             if ("marker" + id == allMarkers[i].id) {
                 allMarkers[i].setIcon(markerRed);
+                 
                 infoWindows[i].open(map, allMarkers[i]);
 
                 //  AQUI DEBE IR ESTE PUTO PERO NO FUNCIONA

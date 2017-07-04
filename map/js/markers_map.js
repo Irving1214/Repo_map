@@ -68,7 +68,7 @@ function addMarkers(propiedades) {
             jumping = setInterval(function() {
                 jumpMarker(index_id);
             }, 1000);
-
+allMarkers[i].setIcon(markerRed);
             marker.setIcon(markerRed);
         });
 
@@ -168,7 +168,9 @@ function jumpMarker(index) {
         if ("marker" + index == allMarkers[k].id) {
             allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
             flag = 1;
+             allMarkers[k].setIcon(markerRed);
             break;
+            
         }
     }
 
