@@ -58,7 +58,7 @@ function addMarkers(propiedades) {
 
             createModal(propiedades[index_id-1], index_id);
             $("#house_cards").hide();
-            $('#casas').appendTo('#casas_cercanas');
+           propiedadesCercanas(index_id);
             $('#casas_cercanas').show();
             $("#titulocercanas").show();
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
