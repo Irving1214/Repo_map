@@ -317,6 +317,12 @@ function modalListeners(index) {
             changePlazaToColonia(false);
             var cent = false;
             $("#modalFavoritos" + index).hide();
+
+            if (markesrsSerives.length > 0) {
+                for (var i = 0; i < markesrsSerives.length; i++) {
+                    markesrsSerives[i].setMap(null);
+                }
+            }
         });
 
         $("#heart_" + index).click(function () {
