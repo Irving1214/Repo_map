@@ -306,7 +306,8 @@ function nombreMunicipio(estado) {
  */
 function modalListeners(index) {
         $("#card_cubes_" + index + ", #back_to_" + index).click(function () {
-
+            map.getStreetView().setVisible(false);
+            
             $('#casas').appendTo('#house_cards');
             $("#house_description_" + index).hide();
             $("#house_cards").show();
