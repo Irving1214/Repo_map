@@ -11,6 +11,7 @@ var infoWindows = [];
 var click = false;
 var service;
 var markesrsSerives = [];
+var slider = null;
 
 $(document).ready(function(){
   set_sliderPrecio();
@@ -18,7 +19,7 @@ $(document).ready(function(){
 });
 
 function set_sliderPrecio() {
-  var slider = document.getElementById('slider');
+  slider = document.getElementById('slider');
 
   noUiSlider.create(slider, {
       start: [0, 1500000],
@@ -40,6 +41,7 @@ function set_sliderPrecio() {
               decimals: 0
           })]
   });
+
   slider.noUiSlider.on('change', function (values) {
       // Validacion de precios iguales
       values[0] = values[0].replace(".00", "");

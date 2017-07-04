@@ -306,8 +306,14 @@ function nombreMunicipio(estado) {
  */
 function modalListeners(index) {
         $("#card_cubes_" + index + ", #back_to_" + index).click(function () {
+            // Sale de la vista de Street maps
             map.getStreetView().setVisible(false);
-            
+
+            // Resetea el slider
+            slider.noUiSlider.updateOptions({
+                start: [0, 1500000]
+            });
+
             $('#casas').appendTo('#house_cards');
             $("#house_description_" + index).hide();
             $("#house_cards").show();
