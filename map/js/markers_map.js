@@ -100,7 +100,7 @@ function addMarkers(propiedades) {
         google.maps.event.addListener(marker, "mouseout", function () {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
-            marker.setIcon(markerRed);
+
             $("#img-thumbnail_" + index_id).css({
                 "box-shadow": "",
                 "border-width": "",
@@ -110,12 +110,9 @@ function addMarkers(propiedades) {
                 "filter": "brightness(100%)",
                 "border": "4px solid #46BEEF"
             });
-             marker.setAnimation(google.maps.Animation.NONE);
-        });
 
-        google.maps.event.addListener(marker, "mouseout", function () {
-            var marker_id = marker.id;
-            var index_id = marker_id.replace("marker", "");
+            marker.setAnimation(null);
+
             marker.setIcon(markerBlue);
             $("#letrasImagen" + index_id).css({
                 "opacity": "0",
