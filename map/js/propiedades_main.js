@@ -1,4 +1,5 @@
 var url = "http://api.revimex.mx";
+//url = "http://127.0.0.1:8000";
 var marker = null;
 var markerBlue = "images/blue1.png";
 var markerRed = "images/red1.png";
@@ -40,7 +41,31 @@ function set_sliderPrecio() {
           })]
   });
   slider.noUiSlider.on('change', function (values) {
-      showPropiedadesByPrecio(values[0].replace(".00", ""), values[1].replace(".00", ""));
+      // Validacion de precios iguales
+      values[0] = values[0].replace(".00", "");
+      values[1] = values[1].replace(".00", "");
+
+      if ( values[0] == 0 && values[1] == 0 ) {
+          values[1] = 50000;
+      }
+
+      if ( values[0] == 1500000 && values[1] == 1500000 ) {
+          values[0] = 1450000;
+      }
+
+      if ( (values[0] == values[1]) && (values[0] != 0 && values[1] != 1500000)) {
+          values[0] = values[0] - 50000;
+      }
+
+      if (!isNaN(values[0])) {
+          values[0] = values[0].toString();
+      }
+
+      if (!isNaN(values[1])) {
+          values[1] = values[1].toString();
+      }
+
+      showPropiedadesByPrecio(values[0], values[1]);
     });
 }
 
