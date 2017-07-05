@@ -320,15 +320,9 @@ function modalListeners(index) {
             $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
             $("#titulocercanas").hide();
-            if(map.getZoom()==17){
-                stateCenter(index);
-                
-                
-                
-            }
-            else{
+          
                 reCentrar();
-            }
+           
             changePlazaToColonia(false);
             var cent = false;
             $("#modalFavoritos" + index).hide();
