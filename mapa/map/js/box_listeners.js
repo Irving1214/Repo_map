@@ -61,7 +61,6 @@ function hover(id) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerGreen);
             allMarkers[i].setZIndex(9999999);
-            infoWindows[i].open(map, allMarkers[i]);
             map.panTo(allMarkers[i].getPosition());
 
             break;

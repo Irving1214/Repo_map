@@ -285,8 +285,8 @@ function createModal(propiedad, index) {
         '</div>' +
 
         '</br>';
-
     $("#description-casas").append(modal_casa);
+
     modalListeners(index);
 }
 
@@ -337,7 +337,7 @@ function modalListeners(index) {
             }
 
             stopOthersMarkers();
-            stopOthersClickedMarkers();
+            stopOthersClickedMarkers()
         });
 
         $("#heart_" + index).click(function () {

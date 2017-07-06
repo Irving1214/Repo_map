@@ -233,6 +233,7 @@ function getMarker(id) {
         jumpClickedMarker(id);
     }, 800);
 
+
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             map.panTo(allMarkers[i].getPosition());
