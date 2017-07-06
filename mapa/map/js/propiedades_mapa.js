@@ -10,7 +10,7 @@ function initMap() {
         center: mx,
         scrollwheel: false,
         disableDoubleClickZoom: true,
-        zoomControl: false,
+        zoomControl: true,
         styles: [
             {
                 "featureType": "all",
