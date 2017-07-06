@@ -503,7 +503,7 @@ function showPropiedadesBySearch(ubicacion) {
         // despeus de 3 segunda se desapareces este resumen
         $("#title-header").html("");
         $("#title-header").css({"padding": "0"});
-    },3000);
+    },6000);
 }
 
 function hideCurrentDescription() {
