@@ -489,7 +489,7 @@ function caracteresTelValido(telefono){
     }
 }
 function caracteresNombreValido(nombre){
-    var caract = new RegExp(/^([a-zA-Z]{2,140})+$/);
+    var caract = new RegExp(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g);
     if (caract.test(nombre) == false){
 
         return false;
@@ -498,7 +498,7 @@ function caracteresNombreValido(nombre){
     }
 }
 function sendMail(propiedad_id) {
-  //  event.preventDefault();
+    event.preventDefault();
     if (!$("#form_nombre_" + propiedad_id).val() || !$("#form_telefono_" + propiedad_id).val() ||
     !$("#form_email_" + propiedad_id).val() || !$("#form_mensaje_" + propiedad_id).val()) {
       notificaction("Completa todos los campos", "warning");
