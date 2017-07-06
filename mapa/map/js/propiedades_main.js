@@ -184,7 +184,17 @@ function load_propiedades(latitud, longitud) {
     });
 }
 
+function restoreMarkers(){
+    for(var m = 0; m< allMarkers.length ; m++){
+            allMarkers[m].setMap(map);
+    }
+}
+
 function showPropiedadesByPrecio(min, max) {
+    // quitamos todos los markers para despeus solo poner los de la busqueda
+    for(var m = 0; m< allMarkers.length ; m++){
+            allMarkers[m].setMap(null);
+    }
     var ids = [];
     var t = 0;
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
@@ -241,6 +251,18 @@ function showPropiedadesByPrecio(min, max) {
 
                         });
                     }
+                    // apartamos el arreglo de propiedades obtenidas
+                    var propiedades = response.propiedades;
+                    //iteramos los marker
+                    for(var m = 0; m< allMarkers.length ; m++){
+                        //iteramso las propiedades
+                        for(var p=0; p< propiedades.length ; p++){
+                            // comparamos para que solo se meustren los markers del resultado de la busqueda
+                            if(propiedades[p].Id == allMarkers[m].propiedad){
+                                allMarkers[m].setMap(map);
+                            }
+                        }
+                    }
                     hideCurrentDescription();
                     setDefaulBehaviorMarkers();
                 } else {
@@ -277,7 +299,7 @@ function showPropiedadesByPrecio(min, max) {
                     // despeus de 3 segunda se desapareces este resumen
                     $("#title-header").html("");
                     $("#title-header").css({"padding": "0"});
-                },3000);
+                },3500);
 
                 showOnlySomeCards(response.propiedades, "precio");
             },

@@ -490,6 +490,7 @@ function initMap() {
 }
 
 function showPropiedadesBySearch(ubicacion) {
+    restoreMarkers();
     hideCurrentDescription();
     setDefaulBehaviorMarkers();
     changePlazaToColonia(true);

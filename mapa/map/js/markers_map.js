@@ -521,3 +521,5 @@ function getMarkersPlace(id, action) {
         }
     }
 }
+
+
