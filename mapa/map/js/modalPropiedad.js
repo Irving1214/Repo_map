@@ -237,6 +237,7 @@ function createModal(propiedad, index) {
         '<div class="col-md-12" style="margin-top: -3%;">' +
         '<p class="bg-primary" align="center">Ejecutivo de Ventas</p>' +
         '<div class="row revimexBlue" style="margin-top: -4%;">' +
+        '<br><div id="msg_form"></div>' +
         '<div class="col-md-7" style="padding-left: 0%;">' +
         '<p  style="font-size: 15px; margin-top:13%;">' +
 

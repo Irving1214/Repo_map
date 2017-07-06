@@ -513,7 +513,7 @@ function caracteresCorreoValido(email){
     }
 }
 function caracteresTelValido(telefono){
-    var caract = new RegExp(/^([a-zA-Z0-9]{10,10})+$/);
+    var caract = new RegExp(/^([0-9]{10,10})+$/);
     if (caract.test(telefono) == false){
         return false;
     } else {
@@ -531,26 +531,30 @@ function caracteresNombreValido(nombre){
 }
 function sendMail(propiedad_id) {
     event.preventDefault();
-    if (!$("#form_nombre_" + propiedad_id).val() || !$("#form_telefono_" + propiedad_id).val() ||
-    !$("#form_email_" + propiedad_id).val() || !$("#form_mensaje_" + propiedad_id).val()) {
-      notificaction("Completa todos los campos", "warning");
+    var mensaje = '';
+    if (!$("#form_nombre_" + propiedad_id).val() && !$("#form_telefono_" + propiedad_id).val()) {
+      mensaje = '<span>*Escribe tu nombre completo </span> <br>'
+      mensaje += '<span>*Escribe tu número de teléfono</span>';
+      notificaction(mensaje, "warning", 1);
     } else {
-      var mensaje = '\t\t\t¡DATOS INCORRECTOS!\n';
+
       var form_ok = true;
       if (!caracteresNombreValido( $("#form_nombre_" + propiedad_id).val() )) {
-        mensaje += "\n- Escriba su nombre correctamente.";
+        mensaje += "<span>*Escribe tu nombre correctamente</span><br>";
         $("#form_nombre_" + propiedad_id).val('');
         form_ok = false;
       }
       if (!caracteresTelValido( $("#form_telefono_" + propiedad_id).val() )) {
-        mensaje += "\n- Escriba su telefono correctamente.";
+        mensaje += "<span>*Escribe correctamente tu número de teléfono, al menos 10 dígitos </span><br>";
         form_ok = false;
         $("#form_telefono_" + propiedad_id).val('')
       }
-      if (!caracteresCorreoValido( $("#form_email_" + propiedad_id).val() )){
-        mensaje += "\n- Escriba su e-mail correctamente.";
-        $("#form_email_" + propiedad_id).val('');
-        form_ok = false;
+      if($("#form_email_" + propiedad_id).val().length > 0) {
+        if (!caracteresCorreoValido( $("#form_email_" + propiedad_id).val() )){
+          mensaje += "<span>*Escribe correctamente tu correo electrónico</span><br>";
+          $("#form_email_" + propiedad_id).val('');
+          form_ok = false;
+        }
       }
       if (form_ok) {
         $.ajax({
@@ -568,33 +572,40 @@ function sendMail(propiedad_id) {
             },
             success: function (respuesta) {
               $('#form_EjecutivoVtas')[0].reset();
-              notificaction(respuesta.mensaje, "success");
+              notificaction(respuesta.mensaje, "success", 0 );
             },
             error: function (respuesta) {
-                notificaction(respuesta.mensaje, "danger");
+                notificaction(respuesta.mensaje, "danger", 0);
             },
             complete: function () {
                 $("#wait").hide();
             }
         });
       } else {
-        alert(mensaje);
+        notificaction(mensaje, "warning", 1);
       }
     }
 }
 
-function notificaction(msg, type) {
-    var div = $("#msg");
+function notificaction(msg, type, flag) {
+  var div = '';
+  if(flag == 1) {
+    div = $('#msg_form');
+  }
+  if (flag == 0) {
+    div = $('#msg');
+  }
     div.html("");
     div.html('<div class="alert alert-' + type + '"> &nbsp; ' + msg + '</div>');
 
     setTimeout(function () {
         div.html("");
     }, 5000);
-
-    $('html, body').animate({
-        scrollTop: $("#top").offset().top
-    }, 800);
+    if (flag == 0) {
+      $('html, body').animate({
+          scrollTop: $("#top").offset().top
+      }, 800);
+    }
 }
 
 function modal_variables(calle, colonia, municipio, estado, terreno, constru, habitaciones, banos, patios, estacionamientos, precio, imagen, folio) {
