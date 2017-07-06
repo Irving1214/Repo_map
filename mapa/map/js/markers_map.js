@@ -1,4 +1,6 @@
 var clicked = false;
+var markerClicked = null;
+var jumpingClicked = null;
 
 function addMarkers(propiedades) {
 
@@ -55,9 +57,10 @@ function addMarkers(propiedades) {
 
             //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
             // Que vote constantemente
+            stopOthersClickedMarkers();
             stopOthersMarkers();
-            jumping = setInterval(function() {
-                jumpMarker(index_id);
+            jumpingClicked = setInterval(function() {
+                jumpClickedMarker(index_id);
             }, 800);
 
             var others = Array.from(document.querySelectorAll('*[id^="house_description_"]'));
@@ -175,7 +178,7 @@ function closeOthersInfoWindow() {
 /*
  * Detiene de brincar todos los markeers
  */
-function stopOthersMarkers(index) {
+function stopOthersMarkers() {
     if (jumping) {
         clearInterval(jumping);
     }
@@ -189,20 +192,41 @@ function stopOthersMarkers(index) {
 }
 
 function jumpMarker(index) {
-    console.log(index);
-    console.log(clicked);
     //Brincar marker
     for (var k = 0; k < allMarkers.length; k++) {
         if ("marker" + index == allMarkers[k].id) {
             allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
-            if ( clicked ) {
-                console.log("Brinca bastardo!");
-                allMarkers[k].setIcon(markerRed);
-            } else {
-                allMarkers[k].setIcon(markerGreen);
-            }
+            allMarkers[k].setIcon(markerGreen);
             break;
-            
+        }
+    }
+}
+
+/*
+ * Detiene de brincar todos los markeers
+ */
+function stopOthersClickedMarkers() {
+    if (jumpingClicked) {
+        clearInterval(jumpingClicked);
+    }
+
+    for (var k = 0; k < allMarkers.length; k++) {
+        allMarkers[k].setIcon(markerBlue);
+        allMarkers[k].setAnimation(null);
+        infoWindows[k].close();
+        $("#markerLayer" + k).css("animation", "none");
+    }
+}
+
+function jumpClickedMarker(index) {
+    //Brincar marker
+    for (var k = 0; k < allMarkers.length; k++) {
+        if ("marker" + index == allMarkers[k].id) {
+            allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
+            allMarkers[k].setIcon(markerRed);
+            markerClicked = allMarkers[k].id;
+            break;
+
         }
     }
 }
