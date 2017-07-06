@@ -326,8 +326,7 @@ function initMap() {
         var place = autocomplete.getPlace();
         autocomplete.setComponentRestrictions({'country': 'mx'});
         if (!place.geometry) {
-            window.alert("No existe el lugar: '" + place.name + "'");
-            return;
+            getmaploc();
         }
         // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
         var ubicacion = place;
