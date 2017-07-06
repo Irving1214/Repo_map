@@ -17,22 +17,9 @@ var var_min = 0, var_max = 1500000;
 $(document).ready(function(){
   set_sliderPrecio();
   load_propiedades(null, null);
-/*
-  $('#form_ejVentas').validate({
-    rules: {
-      txt_nombre: {required: true, minlength:10, maxlength: 140},
-      txt_telefono: {required: true, minlength: 7, maxlength: 10},
-      txt_email: { required:true, email: true}
-      //txt_comentarios: {required: true; minlength:0, maxlength: 900}
-    },
-    messages: {
-      txt_nombre: "Debe introducir un nombre",
-      txt_telefono: "Debe introducir un numero de telefono valido",
-      txt_email: "Debe introducir un email valido"
-    }
-    //  submitHandler: // <- aqui va una funcion
-  });
-  */
+  $("#lupaSearch").click(function() {
+        clickOnSearch();
+   });
 });
 
 /*
@@ -239,7 +226,7 @@ function load_propiedades(latitud, longitud) {
 
         },
         error: function (respuesta) {
-        //    console.log(respuesta);
+            console.log(respuesta);
         },
         complete: function () {
             boxListeners();
@@ -363,7 +350,7 @@ function showPropiedadesByPrecio(min, max) {
                     // despeus de 3 segunda se desapareces este resumen
                     $("#title-header").html("");
                     $("#title-header").css({"padding": "0"});
-                },3500);
+                },6000);
 
                 showOnlySomeCards(response.propiedades, "precio");
             },
