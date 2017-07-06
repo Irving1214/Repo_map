@@ -30,16 +30,6 @@ function boxListeners() {
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
-            console.log(jumping);
-            // Para los demas markers
-            stopOthersMarkers(aiDi[1]);
-
-            //Brincar marker
-            jumping = setInterval(function() {
-                jumpMarker(aiDi[1]);
-            }, 1000);
-            console.log(jumping);
-
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
             getMarker(aiDi[1]);
@@ -67,31 +57,16 @@ function hover(id) {
 
     click = false;
 
-    if (map.getZoom() > 10) {
-        console.log("si");
-    }
+    for (var i = 0; i < allMarkers.length; i++) {
+        if ("marker" + id == allMarkers[i].id) {
+            allMarkers[i].setIcon(markerGreen);
+            allMarkers[i].setZIndex(9999999);
+            infoWindows[i].open(map, allMarkers[i]);
+            map.panTo(allMarkers[i].getPosition());
 
-    else {
-        for (var i = 0; i < allMarkers.length; i++) {
-            if ("marker" + id == allMarkers[i].id) {
-                allMarkers[i].setIcon(markerRed);
-                 
-                infoWindows[i].open(map, allMarkers[i]);
-
-                //  AQUI DEBE IR ESTE PUTO PERO NO FUNCIONA
-                //allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-                //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
-
-                if (map.getZoom() > 16) {
-                    map.panTo(allMarkers[i].getPosition());
-                    map.setZoom(17);
-                }
-
-                break;
-            }
+            break;
         }
     }
-
 }
 
 function out(id) {
@@ -123,6 +98,7 @@ function out(id) {
             if ("marker" + id == allMarkers[i].id) {
                 allMarkers[i].setIcon(markerBlue);
                 allMarkers[i].setAnimation(null);
+                allMarkers[i].setZIndex(0);
                 infoWindows[i].close();
                 $("#markerLayer" + i).css("animation", "none");
                 break;

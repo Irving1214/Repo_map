@@ -133,14 +133,6 @@ function addMarkers(propiedades) {
                 "border": "4px solid #46BEEF"
             });
 
-            /*
-            if (clicked) {
-                marker.setIcon(markerRed);
-            } else {
-                marker.setIcon(markerBlue);
-            }
-            */
-
             $("#letrasImagen" + index_id).css({
                 "opacity": "0",
                 "position": "absolute",
@@ -234,13 +226,15 @@ function jumpClickedMarker(index) {
 function getMarker(id) {
     click = true;
     clicked = true;
+
+    stopOthersClickedMarkers();
+    stopOthersMarkers();
+    jumpingClicked = setInterval(function() {
+        jumpClickedMarker(id);
+    }, 800);
+
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
-            allMarkers[i].setIcon(markerRed);
-
-            allMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
-            $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
-
             map.panTo(allMarkers[i].getPosition());
             
             if (map.getZoom() < 6) {
@@ -252,7 +246,6 @@ function getMarker(id) {
         }
     }
 }
-
 
 function notificaction(msg, type) {
     var div = $("#msg");
