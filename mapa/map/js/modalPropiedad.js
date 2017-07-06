@@ -335,6 +335,9 @@ function modalListeners(index) {
                     markesrsSerives[i].setMap(null);
                 }
             }
+
+            stopOthersMarkers();
+            stopOthersClickedMarkers();
         });
 
         $("#heart_" + index).click(function () {
