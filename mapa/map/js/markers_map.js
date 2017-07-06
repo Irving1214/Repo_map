@@ -244,19 +244,6 @@ function getMarker(id) {
     }
 }
 
-function notificaction(msg, type) {
-    var div = $("#msg");
-    div.html("");
-    div.html('<div class="alert alert-' + type + '"> &nbsp; ' + msg + '</div>');
-
-    setTimeout(function () {
-        div.html("");
-    }, 5000);
-
-    $('html, body').animate({
-        scrollTop: $("#top").offset().top
-    }, 800);
-}
 
 function processResultsEscuelas(results, status, pagination) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -567,5 +554,3 @@ function getMarkersPlace(id, action) {
         }
     }
 }
-
-
