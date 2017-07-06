@@ -1,0 +1,81 @@
+@font-face {
+	font-family: historietasmx;
+	src: url(comix.ttf);
+}
+
+@font-face {
+	font-family: historietamx;
+	src: url(comic.otf);
+}
+
+.comix	{
+	font-family: historietasmx;
+}
+
+
+.comic	{
+	font-family: historietamx;
+}
+
+.comic_btn	{
+ 	background-color: transparent;
+ 	border-color: #000;
+ 	font-size: 15px;
+}
+
+@media (min-width: 768px) {
+	.comic_btn	{
+	 	background-color: transparent;
+	 	border-color: #000;
+	 	font-size: 20px;
+	}
+}
+
+h1{
+	font-size: 30px;
+}
+
+h2 {
+		font-size: 20px;
+	}
+h3 {
+		font-size: 18px;
+	}	
+
+@media (min-width: 768px){
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+	h3 {
+		font-size: 24px;
+	}
+}
+
+
+#atascate {
+         width: 120px;   
+        }
+
+@media (min-width: 768px) {
+	#atascate {
+		width: 200px;
+	}
+}
+
+/* Muestra.php */
+.letras{
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+	.letras{
+	font-size: 23px;
+	margin-top: 0px;
+	}	
+}
+
