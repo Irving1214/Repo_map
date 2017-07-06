@@ -557,7 +557,15 @@ function reCentrar() {
 }
 
 function stateCenter(index) {
-    var latlng = {lat: allMarkers[index].getPosition().lat(), lng: allMarkers[index].getPosition().lng()};
+    var latlng = null;
+
+    for (var i = 0; i < allMarkers.length; i++) {
+        if ("marker" + index == allMarkers[i].id) {
+            latlng = {lat: allMarkers[i].getPosition().lat(), lng: allMarkers[i].getPosition().lng()};
+            break;
+        }
+    }
+
     var geo = new google.maps.Geocoder();
     var state = "";
 
