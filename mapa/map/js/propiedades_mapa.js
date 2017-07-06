@@ -561,14 +561,6 @@ function stateCenter(index) {
     var geo = new google.maps.Geocoder();
     var state = "";
 
-    /*  EJEMPLO DE CENTRADO
-    var mx = {lat: 24.2436666, lng: -102.4551421};
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 5,
-        center: mx
-    }
-    */
-
     geo.geocode({'location': latlng}, function (results, status) {
         if (status === 'OK') {
             if (results[1]) {

@@ -31,7 +31,7 @@ function clickOnSearch() {
      * Al dar click en la lupa de busqueda si esta vacia, resetea el mapa
      */
     if (!$("#pac-input").val()) {
-        reCentrar();
+        location.reload();
     } else {
         getmaploc();
     }
