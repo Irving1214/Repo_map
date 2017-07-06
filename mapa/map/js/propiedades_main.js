@@ -47,8 +47,6 @@ function getmaploc() {
         address : $("#pac-input").val()
     }, function(results, status) {
         if(status == google.maps.GeocoderStatus.OK) {
-            //map.setCenter(results[0].geometry.location);
-            console.log(results[0]);
             if (results[0].geometry.viewport) {
                 map.fitBounds(results[0].geometry.viewport);
                 zoomLevels(results[0]);
@@ -222,7 +220,7 @@ function load_propiedades(latitud, longitud) {
 
         },
         error: function (respuesta) {
-        //    console.log(respuesta);
+            console.log(respuesta);
         },
         complete: function () {
             boxListeners();

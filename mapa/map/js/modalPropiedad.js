@@ -320,16 +320,14 @@ function modalListeners(index) {
             $('#casas_cercanas').hide();
             setDefaulBehaviorMarkers();
             $("#titulocercanas").hide();
-            /*
+
             if(map.getZoom() == 17){
                 stateCenter(index);
             } else {
                 reCentrar();
             }
-            */
-            reCentrar();
+
             changePlazaToColonia(false);
-            var cent = false;
             $("#modalFavoritos" + index).hide();
 
             if (markesrsSerives.length > 0) {
@@ -388,10 +386,8 @@ function changeButtonColor(id, index) {
 
 
     if ("restaurantes_" + index == id) {
-        console.log(10);
         $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-ON.png");
     } else {
-        console.log(20);
         $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png");
     }
 

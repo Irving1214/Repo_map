@@ -52,6 +52,14 @@ function addMarkers(propiedades) {
             clicked = true;
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
+
+            //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
+            // Que vote constantemente
+            stopOthersMarkers();
+            jumping = setInterval(function() {
+                jumpMarker(index_id);
+            }, 800);
+
             var others = Array.from(document.querySelectorAll('*[id^="house_description_"]'));
             others.forEach(function (item) {
                 $(item).hide();
@@ -61,18 +69,9 @@ function addMarkers(propiedades) {
 
             createModal(propiedades[index_id-1], index_id);
             $("#house_cards").hide();
-           propiedadesCercanas(index_id);
+            propiedadesCercanas(index_id);
             $('#casas_cercanas').show();
             $("#titulocercanas").show();
-            //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle     border: 4px solid #46BEEF;
-            stopOthersMarkers();
-
-            //marker.setAnimation(google.maps.Animation.BOUNCE);
-            jumping = setInterval(function() {
-                jumpMarker(index_id);
-            }, 1000);
-
-            marker.setIcon(markerRed);
         });
 
         google.maps.event.addListener(marker, "mouseover", function () {
@@ -80,7 +79,12 @@ function addMarkers(propiedades) {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
 
-            marker.setIcon(markerGreen);
+            // Que vote constantemente
+            stopOthersMarkers();
+            jumping = setInterval(function() {
+                jumpMarker(index_id);
+            }, 800);
+
             $("#img-thumbnail_" + index_id).css({
                 "position": "relative",
                 "z-index": "1032",
@@ -91,8 +95,6 @@ function addMarkers(propiedades) {
             var house_selected = $("#caja_" + index_id).html();
             $("#caja_" + index_id).remove();
             var back = $("#casas").html();
-            //$("#caja_" + index_id).remove();
-
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             boxListeners();
 
@@ -107,8 +109,11 @@ function addMarkers(propiedades) {
                 "filter": "brightness(0.30)"
             });
 
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-            //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
+            /*
+             * Mostrar la información básica de * **[PROPIEDADES]** *
+             */
+            closeOthersInfoWindow();
+            infowindow.open(map, marker);
         });
 
         google.maps.event.addListener(marker, "mouseout", function () {
@@ -125,13 +130,14 @@ function addMarkers(propiedades) {
                 "border": "4px solid #46BEEF"
             });
 
-            marker.setAnimation(null);
-
+            /*
             if (clicked) {
                 marker.setIcon(markerRed);
             } else {
                 marker.setIcon(markerBlue);
             }
+            */
+
             $("#letrasImagen" + index_id).css({
                 "opacity": "0",
                 "position": "absolute",
@@ -143,12 +149,32 @@ function addMarkers(propiedades) {
             $("#image_main_thumbnail_" + index_id).css({
                 "filter": ""
             });
+
+            /*
+             * Cierra todos los infowindow y para todos los markers
+             */
+            if (!clicked) {
+                stopOthersMarkers();
+                closeOthersInfoWindow();
+            }
         });
 
         index += 1;
     });
 }
 
+/*
+ * Cierra todos los infowindow
+ */
+function closeOthersInfoWindow() {
+    for (var k = 0; k < infoWindows.length; k++) {
+        infoWindows[k].close();
+    }
+}
+
+/*
+ * Detiene de brincar todos los markeers
+ */
 function stopOthersMarkers(index) {
     if (jumping) {
         clearInterval(jumping);
@@ -163,26 +189,27 @@ function stopOthersMarkers(index) {
 }
 
 function jumpMarker(index) {
+    console.log(index);
+    console.log(clicked);
     //Brincar marker
-    var flag = 0;
     for (var k = 0; k < allMarkers.length; k++) {
         if ("marker" + index == allMarkers[k].id) {
             allMarkers[k].setAnimation(google.maps.Animation.BOUNCE);
-            flag = 1;
-             allMarkers[k].setIcon(markerRed);
+            if ( clicked ) {
+                console.log("Brinca bastardo!");
+                allMarkers[k].setIcon(markerRed);
+            } else {
+                allMarkers[k].setIcon(markerGreen);
+            }
             break;
             
         }
-    }
-
-    if (flag == 1) {
-        console.log(index);
-        console.log(allMarkers[index].id);
     }
 }
 
 function getMarker(id) {
     click = true;
+    clicked = true;
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerRed);
@@ -192,18 +219,11 @@ function getMarker(id) {
 
             map.panTo(allMarkers[i].getPosition());
             
-            
-            if(map.getZoom()<6){
-                
+            if (map.getZoom() < 6) {
                 stateCenter(i);
-                
-            }
-            else{
-                
+            } else {
                 map.setZoom(17);
             }
-
-           
             break;
         }
     }
