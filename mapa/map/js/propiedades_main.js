@@ -17,10 +17,22 @@ var var_min = 0, var_max = 1500000;
 $(document).ready(function(){
   set_sliderPrecio();
   load_propiedades(null, null);
-
-  $("#lupaSearch").click(function() {
-      clickOnSearch();
+/*
+  $('#form_ejVentas').validate({
+    rules: {
+      txt_nombre: {required: true, minlength:10, maxlength: 140},
+      txt_telefono: {required: true, minlength: 7, maxlength: 10},
+      txt_email: { required:true, email: true}
+      //txt_comentarios: {required: true; minlength:0, maxlength: 900}
+    },
+    messages: {
+      txt_nombre: "Debe introducir un nombre",
+      txt_telefono: "Debe introducir un numero de telefono valido",
+      txt_email: "Debe introducir un email valido"
+    }
+    //  submitHandler: // <- aqui va una funcion
   });
+  */
 });
 
 /*
@@ -121,7 +133,7 @@ function set_sliderPrecio() {
 
       // VALIDACION DISTANCIA MINIMA 100 000
       var distancia = values[1] - values[0];
-      
+
       if(distancia < 100000){
         // modificamso el segundo valor para que se mueva y alcanzar la distancia minima
         var segundoModificado = Number(values[0]) + Number(100000);
@@ -227,7 +239,7 @@ function load_propiedades(latitud, longitud) {
 
         },
         error: function (respuesta) {
-            console.log(respuesta);
+        //    console.log(respuesta);
         },
         complete: function () {
             boxListeners();
@@ -351,7 +363,7 @@ function showPropiedadesByPrecio(min, max) {
                     // despeus de 3 segunda se desapareces este resumen
                     $("#title-header").html("");
                     $("#title-header").css({"padding": "0"});
-                },6000);
+                },3500);
 
                 showOnlySomeCards(response.propiedades, "precio");
             },
@@ -473,12 +485,52 @@ function iLikeIt(id) {
         });
     }
 }
-
-function sendMail(propiedad_id) {
-    event.preventDefault();
-    if (!$("#form_nombre_" + propiedad_id).val() || !$("#form_telefono_" + propiedad_id).val() || !$("#form_email_" + propiedad_id).val()) {
-        notificaction("Completa todos los campos requeridos", "warning");
+function caracteresCorreoValido(email){
+    var caract = new RegExp(/^([a-zA-Z])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+    if (caract.test(email) == false){
+        return false;
     } else {
+      return true;
+    }
+}
+function caracteresTelValido(telefono){
+    var caract = new RegExp(/^([a-zA-Z0-9]{10,10})+$/);
+    if (caract.test(telefono) == false){
+        return false;
+    } else {
+      return true;
+    }
+}
+function caracteresNombreValido(nombre){
+    var caract = new RegExp(/^([a-zA-Z]{2,140})+$/);
+    if (caract.test(nombre) == false){
+
+        return false;
+    } else {
+      return true;
+    }
+}
+function sendMail(propiedad_id) {
+  //  event.preventDefault();
+    if (!$("#form_nombre_" + propiedad_id).val() || !$("#form_telefono_" + propiedad_id).val() ||
+    !$("#form_email_" + propiedad_id).val() || !$("#form_mensaje_" + propiedad_id).val()) {
+      notificaction("Completa todos los campos", "warning");
+    } else {
+      var mensaje = '\t\t\t¡DATOS INCORRECTOS!\n';
+      var form_ok = true;
+      if (!caracteresNombreValido( $("#form_nombre_" + propiedad_id).val() )) {
+        mensaje += "\n- Verifique que su nombre esté escrito correctamente.";
+        form_ok = false;
+      }
+      if (!caracteresTelValido( $("#form_telefono_" + propiedad_id).val() )) {
+        mensaje += "\n- Verifique que su telefono esté escrito correctamente.";
+        form_ok = false;
+      }
+      if (!caracteresCorreoValido( $("#form_email_" + propiedad_id).val() )){
+        mensaje += "\n- Verifique que su e-mail esté escrito correctamente.";
+        form_ok = false;
+      }
+      if (form_ok) {
         $.ajax({
             url: url + "/contactar",
             type: "POST",
@@ -502,6 +554,9 @@ function sendMail(propiedad_id) {
                 $("#wait").hide();
             }
         });
+      } else {
+        alert(mensaje);
+      }
     }
 }
 
@@ -525,8 +580,6 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
     if (folio == 'null') {
         folio = '';
     }
-
-
     $("#pdf-modal").append('<div class="modal-dialog">' +
 
         '<div class="modal-content">' +
