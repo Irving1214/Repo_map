@@ -58,7 +58,7 @@ function getmaploc() {
 
             showPropiedadesBySearch(results[0]);
         } else {
-            alert("No encontramos la ciudad ingresada");
+            alert("No encontramos la ubicación ingresada");
         }
     });
 }
