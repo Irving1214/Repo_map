@@ -263,13 +263,13 @@ function createModal(propiedad, index) {
         '<form>' +
         '<div class="form-group">' +
         '<br><br>' +
-        '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2">' +
+        '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2" maxlength="140">' +
         '<br></br>' +
-        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Telefono" aria-describedby="sizing-addon2">' +
+        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Telefono" aria-describedby="sizing-addon2" maxlength="10">' +
         '<br></br>' +
         '<input type="text" class="input_borde" class="form-control" placeholder="  E-mail" id="form_email_' + propiedad.Id + '" aria-describedby="sizing-addon2">' +
         '<br></br></br>' +
-        '<textarea class="input_borde" class="form-control" placeholder="  Comentarios" id="form_mensaje_' + propiedad.Id + '"></textarea><br>' +
+        '<textarea class="input_borde" class="form-control" placeholder="  Comentarios" id="form_mensaje_' + propiedad.Id + '" maxlength="900"></textarea><br>' +
         '</div>' +
         '</form>' +
         '</div>' +
