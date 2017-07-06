@@ -8,6 +8,9 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 5,
         center: mx,
+        scrollwheel: false,
+        disableDoubleClickZoom: true,
+        zoomControl: false,
         styles: [
             {
                 "featureType": "all",
@@ -307,10 +310,7 @@ function initMap() {
                 ]
             }
         ]
-
-
     });
-
 
     $('#country').on('change', function () {
         var estado = $(this).val();

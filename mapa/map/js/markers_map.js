@@ -1,3 +1,5 @@
+var clicked = false;
+
 function addMarkers(propiedades) {
 
     var index = 1;
@@ -47,6 +49,7 @@ function addMarkers(propiedades) {
         myoverlay.setMap(map);
 
         google.maps.event.addListener(marker, "click", function () {
+            clicked = true;
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
             var others = Array.from(document.querySelectorAll('*[id^="house_description_"]'));
@@ -68,11 +71,12 @@ function addMarkers(propiedades) {
             jumping = setInterval(function() {
                 jumpMarker(index_id);
             }, 1000);
-allMarkers[i].setIcon(markerRed);
+
             marker.setIcon(markerRed);
         });
 
         google.maps.event.addListener(marker, "mouseover", function () {
+            clicked = false;
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
 
@@ -92,6 +96,16 @@ allMarkers[i].setIcon(markerRed);
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             boxListeners();
 
+            $("#letrasImagen" + index_id).css({
+                "opacity": "1",
+                "color": "#fff",
+                "posistion": "relative",
+                "z-index": "1033"
+            });
+
+            $("#image_main_thumbnail_" + index_id).css({
+                "filter": "brightness(0.30)"
+            });
 
             marker.setAnimation(google.maps.Animation.BOUNCE);
             //$("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
@@ -113,7 +127,11 @@ allMarkers[i].setIcon(markerRed);
 
             marker.setAnimation(null);
 
-            marker.setIcon(markerBlue);
+            if (clicked) {
+                marker.setIcon(markerRed);
+            } else {
+                marker.setIcon(markerBlue);
+            }
             $("#letrasImagen" + index_id).css({
                 "opacity": "0",
                 "position": "absolute",
@@ -125,23 +143,6 @@ allMarkers[i].setIcon(markerRed);
             $("#image_main_thumbnail_" + index_id).css({
                 "filter": ""
             });
-        });
-
-        google.maps.event.addListener(marker, "mouseover", function () {
-            var marker_id = marker.id;
-            var index_id = marker_id.replace("marker", "");
-
-            $("#letrasImagen" + index_id).css({
-                "opacity": "1",
-                "color": "#fff",
-                "posistion": "relative",
-                "z-index": "1033"
-            });
-
-            $("#image_main_thumbnail_" + index_id).css({
-                "filter": "brightness(0.30)"
-            });
-
         });
 
         index += 1;
