@@ -421,6 +421,38 @@ function showOnlySomeCards(propies, className) {
     displayboxes(className);
 }
 
+function showOnlyCercanas(propies, className) {
+    hideCajas(className);
+
+    for (var j = 0; j < propies.length; j++) {
+        for (var i = j; i < propiedades.length; i++) {
+            var box = $("#caja_" + propiedades[i].index);
+
+            if (box.hasClass("search") || box.hasClass("precio") || box.hasClass("cerca")) {
+                if (box.is(":visible")) {
+                    if (propies[j].Id == propiedades[i].Id) {
+                        //box.show();
+                        box.addClass(className);
+                        break;
+                    } else {
+                        box.removeClass(className);
+                        //box.hide();
+                    }
+                }
+            } else {
+                if (propies[j].Id == propiedades[i].Id) {
+                    //box.show();
+                    box.addClass(className);
+                    break;
+                }
+            }
+        }
+    }
+
+    changePlazaToColonia(true);
+    displayboxes(className);
+}
+
 var delay = (function () {
     var timer = 0;
     return function (callback, ms) {

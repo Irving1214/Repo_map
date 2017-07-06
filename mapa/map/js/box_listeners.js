@@ -129,7 +129,7 @@ function propiedadesCercanas(id) {
 
         success: function (response) {
             if (response.propiedades.length > 0) {
-                showOnlySomeCards(response.propiedades, "cerca");
+                showOnlyCercanas(response.propiedades, "cerca");
             }
         },
         error: function (respuesta) {
