@@ -16,7 +16,54 @@ var slider = null;
 $(document).ready(function(){
   set_sliderPrecio();
   load_propiedades(null, null);
+
+  $("#lupaSearch").click(function() {
+      clickOnSearch();
+  });
 });
+
+/*
+ * Cuando se le da click e la lupa de Busqueda, si esta vacia, retorna al pais
+ * Si tiene un valor, lo busca y carga los resultaos
+ */
+function clickOnSearch() {
+    /*
+     * Al dar click en la lupa de busqueda si esta vacia, resetea el mapa
+     */
+    if (!$("#pac-input").val()) {
+        reCentrar();
+    } else {
+        getmaploc();
+    }
+}
+
+/*
+ * Carga el parametro del usuario, en una busqueda de google y carga los resultados
+ */
+function getmaploc() {
+    geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({
+        address : $("#pac-input").val()
+    }, function(results, status) {
+        if(status == google.maps.GeocoderStatus.OK) {
+            //map.setCenter(results[0].geometry.location);
+            console.log(results[0]);
+            if (results[0].geometry.viewport) {
+                map.fitBounds(results[0].geometry.viewport);
+                zoomLevels(results[0]);
+
+            } else {
+                map.setCenter(results[0].geometry.location);
+                zoomLevels(results[0]);
+            }
+
+            showPropiedadesBySearch(results[0]);
+        } else {
+            alert("No encontramos la ciudad ingresada");
+        }
+    });
+}
 
 function set_sliderPrecio() {
   slider = document.getElementById('slider');
