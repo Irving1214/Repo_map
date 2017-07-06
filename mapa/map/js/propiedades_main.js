@@ -344,7 +344,7 @@ function showPropiedadesByPrecio(min, max) {
                     // despeus de 3 segunda se desapareces este resumen
                     $("#title-header").html("");
                     $("#title-header").css({"padding": "0"});
-                },6500);
+                },6000);
 
                 showOnlySomeCards(response.propiedades, "precio");
             },
