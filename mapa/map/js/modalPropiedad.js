@@ -345,34 +345,57 @@ function modalListeners(index) {
         });
 
         $("#escuelas_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 1);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 1);
+            }
         });
 
-
         $("#restaurantes_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 2);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 2);
+            }
         });
 
         $("#hospitales_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 5);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 5);
+            }
         });
 
         $("#cormercio_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 6);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 6);
+            }
         });
 
         $("#parques_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 7);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 7);
+            }
         });
 
         $("#super_" + index).click(function () {
-            changeButtonColor(this.id, index);
-            getMarkersPlace(index, 8);
+            if (markesrsSerives.length > 0) {
+                clearServicesAndReCenter(index);
+            } else {
+                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 8);
+            }
         });
 
         $("#GoToFavorites_" + index).click(function () {
@@ -384,10 +407,35 @@ function modalListeners(index) {
         });
 }
 
+function clearServicesAndReCenter(id) {
+    offAllButtons(id); // Devuelve los botones a su color original
+
+    for (var i = 0; i < markesrsSerives.length; i++) {
+        markesrsSerives[i].setMap(null);
+    }
+
+    markesrsSerives = [];
+
+    for (i = 0; i < allMarkers.length; i++) {
+        var ij = "marker" + id;
+
+        if (ij == allMarkers[i].id) {
+            map.setZoom(17);
+            map.setCenter(allMarkers[i].getPosition());
+        }
+    }
+}
+
+function offAllButtons(index) {
+    $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png");
+    $("#img_escuelas_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png");
+    $("#img_hospitales_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png");
+    $("#img_cormercio_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png");
+    $("#img_super_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png");
+    $("#img_parques_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png");
+}
+
 function changeButtonColor(id, index) {
-    var button = ["restaurantes_", "escuelas_", "hospitales_", "cormercio_", "super_", "parques_"];
-
-
     if ("restaurantes_" + index == id) {
         $("#img_restaurantes_" + index).attr("src", "images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-ON.png");
     } else {

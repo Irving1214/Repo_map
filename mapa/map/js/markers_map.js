@@ -237,12 +237,8 @@ function getMarker(id) {
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             map.panTo(allMarkers[i].getPosition());
-            
-            if (map.getZoom() < 6) {
-                stateCenter(i);
-            } else {
-                map.setZoom(17);
-            }
+
+            map.setZoom(17);
             break;
         }
     }
@@ -278,6 +274,8 @@ function createMarkersEscuelas(places) {
             markesrsSerives[i].setMap(null);
         }
     }
+
+    markesrsSerives = [];
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -319,6 +317,8 @@ function createMarkersRes(places) {
         }
     }
 
+    markesrsSerives = [];
+
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
             url: "images/PIN-PROPIEDADES-WEB_RESTAURANTES.png",
@@ -358,6 +358,8 @@ function createMarkers6(places) {
             markesrsSerives[i].setMap(null);
         }
     }
+
+    markesrsSerives = [];
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
@@ -399,6 +401,8 @@ function createMarkers7(places) {
         }
     }
 
+    markesrsSerives = [];
+
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
             url: "images/PIN-PROPIEDADES-WEB_SUPER.png",
@@ -439,6 +443,8 @@ function createMarkers4(places) {
         }
     }
 
+    markesrsSerives = [];
+
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
             url: "images/PIN-PROPIEDADES-WEB_PARQUES.png",
@@ -478,6 +484,8 @@ function createMarkers(places) {
             markesrsSerives[i].setMap(null);
         }
     }
+
+    markesrsSerives = [];
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
