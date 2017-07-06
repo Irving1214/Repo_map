@@ -12,6 +12,7 @@ var click = false;
 var service;
 var markesrsSerives = [];
 var slider = null;
+var var_min = 0, var_max = 1500000;
 
 $(document).ready(function(){
   set_sliderPrecio();
@@ -31,7 +32,13 @@ function clickOnSearch() {
      * Al dar click en la lupa de busqueda si esta vacia, resetea el mapa
      */
     if (!$("#pac-input").val()) {
-        location.reload();
+        var prices = slider.noUiSlider.get();
+        if (prices[0] != var_min || prices[1] != var_max) {
+            reCentrar();
+            showPropiedadesByPrecio(prices[0], prices[1]);
+        } else {
+            location.reload();
+        }
     } else {
         getmaploc();
     }
@@ -67,11 +74,11 @@ function set_sliderPrecio() {
   slider = document.getElementById('slider');
 
   noUiSlider.create(slider, {
-      start: [0, 1500000],
+      start: [var_min, var_max],
       connect: true,
       range: {
-          'min': 0,
-          'max': 1500000
+          'min': var_min,
+          'max': var_max
       },
       step: 50000,
       orientation: 'horizontal',
@@ -92,15 +99,15 @@ function set_sliderPrecio() {
       values[0] = values[0].replace(".00", "");
       values[1] = values[1].replace(".00", "");
 
-      if ( values[0] == 0 && values[1] == 0 ) {
+      if ( values[0] == var_min && values[1] == var_min ) {
           values[1] = 50000;
       }
 
-      if ( values[0] == 1500000 && values[1] == 1500000 ) {
-          values[0] = 1450000;
+      if ( values[0] == var_max && values[1] == var_max ) {
+          values[0] = var_max - 50000;
       }
 
-      if ( (values[0] == values[1]) && (values[0] != 0 && values[1] != 1500000)) {
+      if ( (values[0] == values[1]) && (values[0] != 0 && values[1] != var_max)) {
           values[0] = values[0] - 50000;
       }
 
