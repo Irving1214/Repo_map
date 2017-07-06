@@ -67,6 +67,18 @@ function set_sliderPrecio() {
           values[1] = values[1].toString();
       }
 
+      // VALIDACION DISTANCIA MINIMA 100 000
+      var distancia = values[1] - values[0];
+      
+      if(distancia < 100000){
+        // modificamso el segundo valor para que se mueva y alcanzar la distancia minima
+        var segundoModificado = Number(values[0]) + Number(100000);
+        // Ahora seteamos el primer valor y el segundo ya modificado para que se ajuste el slider
+        slider.noUiSlider.set([values[0],segundoModificado]);
+        // por ultimo modificamos el valor para la busqueda
+        values[1] = segundoModificado.toString();
+      }
+
       showPropiedadesByPrecio(values[0], values[1]);
     });
 }
@@ -261,6 +273,12 @@ function showPropiedadesByPrecio(min, max) {
                         });
                     }
                 }
+                setTimeout(function(){
+                    // despeus de 3 segunda se desapareces este resumen
+                    $("#title-header").html("");
+                    $("#title-header").css({"padding": "0"});
+                },3000);
+
                 showOnlySomeCards(response.propiedades, "precio");
             },
             error: function (respuesta) {
