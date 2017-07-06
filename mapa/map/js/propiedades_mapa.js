@@ -327,16 +327,17 @@ function initMap() {
         autocomplete.setComponentRestrictions({'country': 'mx'});
         if (!place.geometry) {
             getmaploc();
-        }
-        // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
-        var ubicacion = place;
-        if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-            zoomLevels(ubicacion);
-
         } else {
-            map.setCenter(place.geometry.location);
-            zoomLevels(ubicacion);
+            // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
+            var ubicacion = place;
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+                zoomLevels(ubicacion);
+
+            } else {
+                map.setCenter(place.geometry.location);
+                zoomLevels(ubicacion);
+            }
         }
 
         showPropiedadesBySearch(ubicacion);
