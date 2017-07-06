@@ -321,11 +321,14 @@ function modalListeners(index) {
             setDefaulBehaviorMarkers();
             $("#titulocercanas").hide();
 
+            stateCenter(index);
+            /*
             if(map.getZoom() == 17){
                 stateCenter(index);
             } else {
                 reCentrar();
             }
+            */
 
             changePlazaToColonia(false);
             $("#modalFavoritos" + index).hide();
