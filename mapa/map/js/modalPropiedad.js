@@ -260,7 +260,7 @@ function createModal(propiedad, index) {
         '</div>' +
 
         '<div class="col-md-5">' +
-        '<form>' +
+        '<form id="form_EjecutivoVtas">' +
         '<div class="form-group">' +
         '<br><br>' +
         '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2" maxlength="140">' +

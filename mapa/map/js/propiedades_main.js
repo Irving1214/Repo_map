@@ -473,7 +473,7 @@ function iLikeIt(id) {
     }
 }
 function caracteresCorreoValido(email){
-    var caract = new RegExp(/^([a-zA-Z])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+    var caract = new RegExp(/^([a-zA-Z0-9\._-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
     if (caract.test(email) == false){
         return false;
     } else {
@@ -489,7 +489,7 @@ function caracteresTelValido(telefono){
     }
 }
 function caracteresNombreValido(nombre){
-    var caract = new RegExp(/^([a-zA-Z]{2,140})+$/);
+    var caract = new RegExp(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g);
     if (caract.test(nombre) == false){
 
         return false;
@@ -498,7 +498,7 @@ function caracteresNombreValido(nombre){
     }
 }
 function sendMail(propiedad_id) {
-  //  event.preventDefault();
+    event.preventDefault();
     if (!$("#form_nombre_" + propiedad_id).val() || !$("#form_telefono_" + propiedad_id).val() ||
     !$("#form_email_" + propiedad_id).val() || !$("#form_mensaje_" + propiedad_id).val()) {
       notificaction("Completa todos los campos", "warning");
@@ -506,15 +506,18 @@ function sendMail(propiedad_id) {
       var mensaje = '\t\t\t¡DATOS INCORRECTOS!\n';
       var form_ok = true;
       if (!caracteresNombreValido( $("#form_nombre_" + propiedad_id).val() )) {
-        mensaje += "\n- Verifique que su nombre esté escrito correctamente.";
+        mensaje += "\n- Escriba su nombre correctamente.";
+        $("#form_nombre_" + propiedad_id).val('');
         form_ok = false;
       }
       if (!caracteresTelValido( $("#form_telefono_" + propiedad_id).val() )) {
-        mensaje += "\n- Verifique que su telefono esté escrito correctamente.";
+        mensaje += "\n- Escriba su telefono correctamente.";
         form_ok = false;
+        $("#form_telefono_" + propiedad_id).val('')
       }
       if (!caracteresCorreoValido( $("#form_email_" + propiedad_id).val() )){
-        mensaje += "\n- Verifique que su e-mail esté escrito correctamente.";
+        mensaje += "\n- Escriba su e-mail correctamente.";
+        $("#form_email_" + propiedad_id).val('');
         form_ok = false;
       }
       if (form_ok) {
@@ -532,7 +535,8 @@ function sendMail(propiedad_id) {
                 $("#wait").show();
             },
             success: function (respuesta) {
-                notificaction(respuesta.mensaje, "success");
+              $('#form_EjecutivoVtas')[0].reset();
+              notificaction(respuesta.mensaje, "success");
             },
             error: function (respuesta) {
                 notificaction(respuesta.mensaje, "danger");
