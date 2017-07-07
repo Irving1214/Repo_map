@@ -106,6 +106,7 @@ function addMarkers(propiedades) {
             casasContainer.animate({
                 scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
                 }, 'slow', 'linear');
+            
             boxListeners();
 
             $("#letrasImagen" + index_id).css({
