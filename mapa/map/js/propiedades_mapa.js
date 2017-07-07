@@ -464,15 +464,19 @@ function showPropiedadesBySearch(ubicacion) {
 
             var costo = allMarkers[i].precio;
             costo = costo.replace(',', '');
+
+            costo = costo.replace(',', '');
             costo = costo.replace('.', '');
             costo = parseInt(costo);
 
             var precio_min = priceRange[0];
             precio_min = precio_min.replace(',', '');
+            precio_min = precio_min.replace(',', '');
             precio_min = precio_min.replace('.', '');
             precio_min = parseInt(precio_min) / 100;
 
             var precio_max = priceRange[1];
+            precio_max = precio_max.replace(',', '');
             precio_max = precio_max.replace(',', '');
             precio_max = precio_max.replace('.', '');
             precio_max = parseInt(precio_max) / 100;
