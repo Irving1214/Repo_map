@@ -588,7 +588,7 @@ function sendMail(propiedad_id) {
 }
 
 function notificaction(msg, type, flag) {
-  var div = '';
+  var div = $("#msg");
   if(flag == 1) {
     div = $('#msg_form');
   }
