@@ -4,6 +4,7 @@ var jumpingClicked = null;
 $(document).ready(function(){
     // EVENTOS MAPA
 
+/*
     google.maps.event.addListener(map, "bounds_changed", function () {
         // OBTENEMOS elos bounds cuando el mapa cambi , se meuva o zommee
         var bounds = map.getBounds();
@@ -21,7 +22,7 @@ $(document).ready(function(){
         }
     
     });
-
+*/
 });
 function addMarkers(propiedades) {
 
