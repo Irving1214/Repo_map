@@ -100,12 +100,20 @@ function addMarkers(propiedades) {
             var back = $("#casas").html();
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
             */
-            // Mover scroll y poner focus la a propiedad
-            var casasContainer = $("#casas");
-            var casaScroll = $("#img-thumbnail_" + index_id);
-            casasContainer.animate({
-                scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
-                }, 'slow', 'linear');
+            
+            //CENTRAR SCROLL 
+            
+             var casasContainer = $("#casas");
+             var casaScroll = $("#img-thumbnail_" + index_id);
+             // SIN ANIMACION SCROLL
+             casasContainer.scrollTop(casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop())
+             
+             //CON ANIMACION SCROLL
+             /*casasContainer.animate({
+             scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
+             }, 'fast', 'linear');*/
+             
+            //FIN CENTRAR SCROLL
             
             boxListeners();
 
@@ -562,3 +570,7 @@ function getMarkersPlace(id, action) {
         }
     }
 }
+
+/*google.maps.event.addListener(map, "bounds_changed", function () {
+    console.log("EL MAPA CAMBIO");
+});*/
