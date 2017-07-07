@@ -942,12 +942,13 @@ function addMarkers(propiedades) {
             var index_id = marker_id.replace("marker", "");
 
             //CENTRAR SCROLL
-            /*
+            
              var casasContainer = $("#casas");
              var casaScroll = $("#img-thumbnail_" + index_id);
              casasContainer.animate({
              scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
-             }, 'fast', 'linear');*/
+             }, 'fast', 'linear');
+             
             //FIN CENTRAR SCROLL
 
             marker.setIcon(markerGreen);

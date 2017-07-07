@@ -95,10 +95,17 @@ function addMarkers(propiedades) {
             });
 
             // Mover arriba a la izquierda
-            var house_selected = $("#caja_" + index_id).html();
+           /* var house_selected = $("#caja_" + index_id).html();
             $("#caja_" + index_id).remove();
             var back = $("#casas").html();
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
+            */
+            // Mover scroll y poner focus la a propiedad
+            var casasContainer = $("#casas");
+            var casaScroll = $("#img-thumbnail_" + index_id);
+            casasContainer.animate({
+                scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
+                }, 'slow', 'linear');
             boxListeners();
 
             $("#letrasImagen" + index_id).css({
