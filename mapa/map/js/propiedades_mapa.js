@@ -417,10 +417,10 @@ function zoomLevels(ubicacion) {
 
         map.setZoom(14);
     }
-    //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,
+    //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,cancun
     if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
         || ubicacion.place_id == "ChIJZ0Krr9Qd0oURiE3bnk3X6Aw" || ubicacion.place_id == "ChIJ7y7PWEkB0oURn-ssxjwYNsA" || ubicacion.place_id == "ChIJSXRXRqn80YURSM_kDwcjHXk" || ubicacion.place_id == "ChIJoXf3chzy0YURgGayQgpU1Ew" || ubicacion.place_id == "ChIJ46edsqILLYQRIIacZ3hpAQQ"
-        || ubicacion.place_id == "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id == "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY") {
+        || ubicacion.place_id == "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id == "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY"|| ubicacion.place_id == "ChIJ51aIjKdQr4YRTlrn2oWX7t0"|| ubicacion.place_id == "ChIJoQjlifNKr4YRaLiiwWLfpEs" || ubicacion.place_id == "ChIJ21P2rgUrTI8Ris1fYjy3Ms4") {
         zoom_default = false;
 
         map.setZoom(13);
