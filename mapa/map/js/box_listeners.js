@@ -3,13 +3,24 @@ function boxListeners() {
     var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
     others.forEach(function (item) {
         $(item).mouseover(function () {
-            var aiDi = $(item).attr('id');
+             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             hover(aiDi[1]);
             stopOthersMarkers();
+            if(map.getZoom()==17){
+                
+            //anular hover en cercanas
+            
+           
+            }
+            
+            
+            
+            else{
             jumping = setInterval(function() {
                 jumpMarker(aiDi[1]);
             }, 1000);
+            }
         });
 
         $(item).mouseout(function () {
@@ -21,6 +32,9 @@ function boxListeners() {
                 clearInterval(jumping);
                 jumping = null;
             }
+            
+            
+            
         });
 
         $(item).click(function () {
@@ -56,7 +70,11 @@ function hover(id) {
     });
 
     click = false;
-
+    if(map.getZoom()==17){
+        
+        //anular hover en cercanas
+    }
+else{
     for (var i = 0; i < allMarkers.length; i++) {
         if ("marker" + id == allMarkers[i].id) {
             allMarkers[i].setIcon(markerGreen);
@@ -66,6 +84,8 @@ function hover(id) {
             break;
         }
     }
+    }
+      
 }
 
 function out(id) {

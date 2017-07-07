@@ -102,6 +102,13 @@ function addMarkers(propiedades) {
             clicked = false;
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
+            
+            
+            
+           
+                
+                
+            
 
             // Que vote constantemente
             stopOthersMarkers();
@@ -154,6 +161,10 @@ function addMarkers(propiedades) {
              */
             closeOthersInfoWindow();
             infowindow.open(map, marker);
+            
+            
+            
+            
         });
 
         google.maps.event.addListener(marker, "mouseout", function () {
