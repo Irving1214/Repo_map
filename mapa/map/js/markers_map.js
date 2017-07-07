@@ -1,7 +1,27 @@
 var clicked = false;
 var markerClicked = null;
 var jumpingClicked = null;
+$(document).ready(function(){
+    // EVENTOS MAPA
+    google.maps.event.addListener(map, "bounds_changed", function () {
+        // OBTENEMOS elos bounds cuando el mapa cambi , se meuva o zommee
+        var bounds = map.getBounds();
+        // iteramso markers y solo mostramos los que estan dentro de lso limites
+        for (var i = 0; i< allMarkers.length ; i++) {
 
+            var marker_id = allMarkers[i].id;
+            var index_id = marker_id.replace("marker", "");
+
+            if (bounds.contains(allMarkers[i].getPosition())) {
+                $("#caja_" + index_id).show();
+            }else{
+                $("#caja_" + index_id).hide();
+            }
+        }
+    
+    });
+
+});
 function addMarkers(propiedades) {
 
     var index = 1;
@@ -571,6 +591,3 @@ function getMarkersPlace(id, action) {
     }
 }
 
-/*google.maps.event.addListener(map, "bounds_changed", function () {
-    console.log("EL MAPA CAMBIO");
-});*/
