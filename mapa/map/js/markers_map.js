@@ -127,7 +127,7 @@ function addMarkers(propiedades) {
             $("#caja_" + index_id).remove();
             var back = $("#casas").html();
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
-            
+
             //CENTRAR SCROLL 
             
              var casasContainer = $("#casas");

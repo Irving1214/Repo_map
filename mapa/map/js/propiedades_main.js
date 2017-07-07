@@ -436,7 +436,6 @@ function showOnlyCercanas(propies, className) {
                         break;
                     } else {
                         box.removeClass(className);
-                        //box.hide();
                     }
                 }
             } else {
@@ -444,6 +443,8 @@ function showOnlyCercanas(propies, className) {
                     //box.show();
                     box.addClass(className);
                     break;
+                } else {
+                    box.removeClass(className);
                 }
             }
         }
