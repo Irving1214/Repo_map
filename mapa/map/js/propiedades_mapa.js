@@ -484,7 +484,12 @@ function showPropiedadesBySearch(ubicacion) {
             precio_max = precio_max.replace('.', '');
             precio_max = parseInt(precio_max) / 100;
 
-            if ((costo >= precio_min) && (costo <= precio_max)) {
+            /*
+             * Valida que este dentro del rango de precio, si el rango no se ha movido no lo considera
+             */
+            console.log(precio_min + " vs " + var_min);
+            console.log(precio_min + " vs " + var_min);
+            if ( ((costo >= precio_min) && (costo <= precio_max)) || ((precio_min == var_min) && (precio_max == var_max)) ) {
                 total += 1;
                 $("#caja_" + allMarkers[i].index).show();
             }
