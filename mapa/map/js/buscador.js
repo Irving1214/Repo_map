@@ -1,7 +1,7 @@
 /**
  * Created by @HackeaMesta on 10/07/17.
  */
-var ciuades=[];
+var excepciones = ['Vallarta ', 'La Paz '];
 $(document).ready(function () {
 
     $("#pac-input").on("keydown", function (event) {
@@ -93,19 +93,22 @@ function moveMap(lat, lng, zoom) {
             }
 
             showPropiedadesBySearch(results[0]);
+            excepciones.forEach(function(ciudad){
+              if (ciudad == $("#pac-input").val() ) {
+                myMoveMap(lat,lng, zoom, results);
+              }
+            });
         } else {
-            map.setCenter(new google.maps.LatLng(lat, lng));
-            map.setZoom(zoom);
-
-            showPropiedadesBySearch(results[0]);
+          myMoveMap(lat,lng, zoom, results);
         }
     });
 }
 
-
-
-
-
+function myMoveMap(lat, lng, zoom, results) {
+  map.setCenter(new google.maps.LatLng(lat, lng));
+  map.setZoom(zoom);
+  showPropiedadesBySearch(results[0]);
+}
 
 
 function Ciuadades(Plaza__c,latitude , longitude, zoom){
@@ -120,17 +123,14 @@ function Ciuadades(Plaza__c,latitude , longitude, zoom){
         },
         dataType: "JSON",
         beforeSend: function () {
-           
+
         },
         success: function (respuesta) {
-        
+
     respuesta.ciudades.forEach(function (ciudad) {
     ciudad.index=index;
     ciudades.push=ciudad;
-        
-        
-        
-    var ciudad: [
+    var ciudad = [
 
 
 
@@ -449,7 +449,7 @@ function Ciuadades(Plaza__c,latitude , longitude, zoom){
                                     },
                                     {
                                         "Plaza__c": "Vallarta ",
-                                        "center": { 
+                                        "center": {
                                             "latitude": 20.653407,
                                             "longitude": -105.2253316,
                                             "zoom": 13
@@ -468,11 +468,6 @@ function Ciuadades(Plaza__c,latitude , longitude, zoom){
                                  ];//arreglo
 
                             }
-    
-                 )};
-        
+                 )}
     });//ajax
 }//funcion
-
-
-
