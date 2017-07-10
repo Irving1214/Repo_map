@@ -1,25 +1,17 @@
-
 function boxListeners() {
     var others = Array.from(document.querySelectorAll('*[id^="img-thumbnail"]'));
     others.forEach(function (item) {
         $(item).mouseover(function () {
-             var aiDi = $(item).attr('id');
+            var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
             hover(aiDi[1]);
             stopOthersMarkers();
-            if(map.getZoom()==17){
-                
-            //anular hover en cercanas
-            
-           
-            }
-            
-            
-            
-            else{
-            jumping = setInterval(function() {
-                jumpMarker(aiDi[1]);
-            }, 1000);
+            if (map.getZoom() == 17) {
+                //anular hover en cercanas
+            } else {
+                jumping = setInterval(function () {
+                    jumpMarker(aiDi[1]);
+                }, 1000);
             }
         });
 
@@ -32,21 +24,20 @@ function boxListeners() {
                 clearInterval(jumping);
                 jumping = null;
             }
-            
-            
-            
         });
 
         $(item).click(function () {
             var aiDi = $(item).attr('id');
             aiDi = aiDi.split("_");
-            createModal(propiedades[aiDi[1]-1], aiDi[1]);
+            createModal(propiedades[aiDi[1] - 1], aiDi[1]);
             $("#house_cards").hide();
             $("#caja_" + aiDi[1]).hide();
 
             propiedadesCercanas(aiDi[1]);
             $("#titulocercanas").show();
             getMarker(aiDi[1]);
+
+            $("html, body").animate({ scrollTop: 90 }, "slow");
         });
     });
 }
@@ -70,22 +61,20 @@ function hover(id) {
     });
 
     click = false;
-    if(map.getZoom()==17){
-        
+    if (map.getZoom() == 17) {
         //anular hover en cercanas
-    }
-else{
-    for (var i = 0; i < allMarkers.length; i++) {
-        if ("marker" + id == allMarkers[i].id) {
-            allMarkers[i].setIcon(markerGreen);
-            allMarkers[i].setZIndex(9999999);
-            map.panTo(allMarkers[i].getPosition());
+    } else {
+        for (var i = 0; i < allMarkers.length; i++) {
+            if ("marker" + id == allMarkers[i].id) {
+                allMarkers[i].setIcon(markerGreen);
+                allMarkers[i].setZIndex(9999999);
+                map.panTo(allMarkers[i].getPosition());
 
-            break;
+                break;
+            }
         }
     }
-    }
-      
+
 }
 
 function out(id) {
