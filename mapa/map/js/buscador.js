@@ -28,8 +28,10 @@ $(document).ready(function () {
             // add placeholder to get the comma-and-space at the end
             terms.push("");
             this.value = terms.join("");
-            var paciente = ui.item.value.split(" - ")[0];
-            $("#paciente").val(paciente);
+
+            console.log(ui);
+            moveMap(ui.item.lat, ui.item.lng);
+
             return false;
         }
     });
@@ -46,7 +48,12 @@ function getCiudadesSalesForce(response) {
         dataType: "JSON",
         success: function (data) {
             response($.map(data.ciudades, function (el) {
-                return el.Plaza__c;
+                return {
+                    label: el.Plaza__c,
+                    value: el.center.Plaza__c,
+                    lat: el.center.latitude,
+                    lng: el.center.longitude
+                };
             }));
         }
     });
@@ -54,4 +61,9 @@ function getCiudadesSalesForce(response) {
 
 function getColoniasSalesForce() {
 
+}
+
+function moveMap(lat, lng) {
+    map.setCenter(new google.maps.LatLng(lat, lng));
+    map.setZoom(11);
 }
