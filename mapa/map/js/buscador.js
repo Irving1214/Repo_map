@@ -83,7 +83,7 @@ function moveMap(lat, lng) {
         } else {
             map.setCenter(new google.maps.LatLng(lat, lng));
             map.setZoom(11);
-            
+
             showPropiedadesBySearch(results[0]);
         }
     });
