@@ -64,6 +64,27 @@ function getColoniasSalesForce() {
 }
 
 function moveMap(lat, lng) {
-    map.setCenter(new google.maps.LatLng(lat, lng));
-    map.setZoom(11);
+    geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({
+        address : $("#pac-input").val()
+    }, function(results, status) {
+        if(status == google.maps.GeocoderStatus.OK) {
+            if (results[0].geometry.viewport) {
+                map.fitBounds(results[0].geometry.viewport);
+                zoomLevels(results[0]);
+
+            } else {
+                map.setCenter(results[0].geometry.location);
+                zoomLevels(results[0]);
+            }
+
+            showPropiedadesBySearch(results[0]);
+        } else {
+            map.setCenter(new google.maps.LatLng(lat, lng));
+            map.setZoom(11);
+            
+            showPropiedadesBySearch(results[0]);
+        }
+    });
 }
