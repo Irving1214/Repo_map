@@ -10,12 +10,9 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }).autocomplete({
+        minLength: 2,
         source: function (request, response) {
-            if (map.getZoom() >= 10) {
-              getColoniasSalesForce(response);
-            } else {
-              getCiudadesSalesForce(response);
-            }
+            getPlaces(response);
         },
         focus: function () {
             // prevent value inserted on focus
@@ -31,60 +28,56 @@ $(document).ready(function () {
             // add placeholder to get the comma-and-space at the end
             terms.push("");
             this.value = terms.join("");
-
-            console.log(ui);
-            moveMap(ui.item.lat, ui.item.lng);
+            moveMap(ui.item.lat, ui.item.lng, ui.item.zoom);
 
             return false;
         }
     });
 });
 
-function getCiudadesSalesForce(response) {
+function getPlaces(response) {
     $.ajax({
         type: 'POST',
-        post: 'autoSearch',
-        url: url + "/propiedades/ciudades",
+        url: url + "/propiedades/places",
         data: {
             search: $("#pac-input").val()
         },
         dataType: "JSON",
         success: function (data) {
-            response($.map(data.ciudades, function (el) {
-                return {
-                    label: el.Plaza__c,
-                    value: el.center.Plaza__c,
-                    lat: el.center.latitude,
-                    lng: el.center.longitude
-                };
+            response($.map(data.places, function (el) {
+                if (el.is_plaza == 1) {
+                    return returnCity(el);
+                } else {
+                    return returnColonia(el);
+                }
             }));
         }
     });
 }
 
-function getColoniasSalesForce(response) {
-  $.ajax({
-      type: 'POST',
-      post: 'autoSearch',
-      url: url + "/propiedades/colonias",
-      data: {
-          search: $("#pac-input").val()
-      },
-      dataType: "JSON",
-      success: function (data) {
-          response($.map(data.colonias, function (el) {
-              return {
-                  label: el.Colonia__c,
-                  value: el.center.Colonia__c,
-                  lat: el.center.latitude,
-                  lng: el.center.longitude
-              };
-          }));
-      }
-  });
+function returnCity(el) {
+    return {
+        label: el.place,
+        value: el.place,
+        is_plaza: el.is_plaza,
+        zoom: 13,
+        lat: el.latitude,
+        lng: el.longitude
+    };
 }
 
-function moveMap(lat, lng) {
+function returnColonia(el) {
+    return {
+        label: el.place,
+        value: el.place,
+        is_plaza: el.is_plaza,
+        zoom: 5,
+        lat: el.latitude,
+        lng: el.longitude
+    };
+}
+
+function moveMap(lat, lng, zoom) {
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({
         address : $("#pac-input").val()
@@ -102,7 +95,7 @@ function moveMap(lat, lng) {
             showPropiedadesBySearch(results[0]);
         } else {
             map.setCenter(new google.maps.LatLng(lat, lng));
-            map.setZoom(11);
+            map.setZoom(zoom);
 
             showPropiedadesBySearch(results[0]);
         }
