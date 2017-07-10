@@ -10,9 +10,12 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }).autocomplete({
-        minLength: 0,
         source: function (request, response) {
-            getCiudadesSalesForce(response);
+            if (map.getZoom() >= 10) {
+              getColoniasSalesForce(response);
+            } else {
+              getCiudadesSalesForce(response);
+            }
         },
         focus: function () {
             // prevent value inserted on focus
@@ -59,13 +62,30 @@ function getCiudadesSalesForce(response) {
     });
 }
 
-function getColoniasSalesForce() {
-
+function getColoniasSalesForce(response) {
+  $.ajax({
+      type: 'POST',
+      post: 'autoSearch',
+      url: url + "/propiedades/colonias",
+      data: {
+          search: $("#pac-input").val()
+      },
+      dataType: "JSON",
+      success: function (data) {
+          response($.map(data.colonias, function (el) {
+              return {
+                  label: el.Colonia__c,
+                  value: el.center.Colonia__c,
+                  lat: el.center.latitude,
+                  lng: el.center.longitude
+              };
+          }));
+      }
+  });
 }
 
 function moveMap(lat, lng) {
     geocoder = new google.maps.Geocoder();
-
     geocoder.geocode({
         address : $("#pac-input").val()
     }, function(results, status) {
