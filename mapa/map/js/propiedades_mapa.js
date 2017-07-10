@@ -318,7 +318,9 @@ function initMap() {
     });
 
 
+
     var input = /** @type {!HTMLInputElement} */(document.getElementById('pac-input'));
+    /*
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
     autocomplete.setComponentRestrictions({'country': 'mx'});
@@ -342,6 +344,7 @@ function initMap() {
 
         showPropiedadesBySearch(ubicacion);
     });
+    */
 
     places = new google.maps.places.PlacesService(map);
 
