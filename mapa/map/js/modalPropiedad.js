@@ -75,7 +75,7 @@ function createModal(propiedad, index) {
                 if (ind === 0) {
                     modal_casa = modal_casa +
                         '<div class="item active">' +
-                        '<center>' +
+                        '<center style="padding: 6%;">' +
                         '<img class="imgt" src="' + file.linkPublico + '" alt="' + file.nombre + '">' +
                         '<center>' +
                         '<div class="carousel-caption">' +
@@ -84,7 +84,7 @@ function createModal(propiedad, index) {
                 } else {
                     modal_casa = modal_casa +
                         '<div class="item">' +
-                        '<center>' +
+                        '<center style="padding: 6%;">' +
                         '<img class="imgt" src="' + file.linkPublico + '" alt="' + file.nombre + '">' +
                         '</center>' +
                         '<div class="carousel-caption">' +
@@ -369,7 +369,7 @@ function modalListeners(index) {
                 getMarkersPlace(index, 2);
             }
         });
-    
+
     //barrido
 
         $("#hospitales_" + index).click(function () {
