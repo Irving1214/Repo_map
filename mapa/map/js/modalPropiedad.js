@@ -8,6 +8,7 @@ var re = /(?:\.([^.]+))?$/;
 /*
  + Construe el modal para una propiedad
  */
+ var mrkrPlace = '';
 function createModal(propiedad, index) {
     $("#description-casas").html("");
 
@@ -306,6 +307,7 @@ function nombreMunicipio(estado) {
  * Activa los listeners del modal
  */
 function modalListeners(index) {
+  var ctrlPlaces = false;
         $("#card_cubes_" + index + ", #back_to_" + index).click(function () {
             // Sale de la vista de Street maps
             map.getStreetView().setVisible(false);
@@ -350,25 +352,31 @@ function modalListeners(index) {
 
         $("#escuelas_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 1) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 1);
-                  changeButtonColor(this.id, index);
-            } else {
-
                 changeButtonColor(this.id, index);
-                getMarkersPlace(index, 1);
+              }
+            } else {
+              changeButtonColor(this.id, index);
+              getMarkersPlace(index, 1);
             }
         });
 
         $("#restaurantes_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 2) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 2);
-                  changeButtonColor(this.id, index);
-            } else {
-
                 changeButtonColor(this.id, index);
-                getMarkersPlace(index, 2);
+              }
+            } else {
+              changeButtonColor(this.id, index);
+              getMarkersPlace(index, 2);
             }
         });
 
@@ -376,36 +384,44 @@ function modalListeners(index) {
 
         $("#hospitales_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 5) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 5);
                 changeButtonColor(this.id, index);
+              }
             } else {
-
-                changeButtonColor(this.id, index);
-                getMarkersPlace(index, 5);
-
+              changeButtonColor(this.id, index);
+              getMarkersPlace(index, 5);
             }
         });
 
         $("#cormercio_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 6) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 6);
-                  changeButtonColor(this.id, index);
-            } else {
-
                 changeButtonColor(this.id, index);
-                getMarkersPlace(index, 6);
+              }
+            } else {
+              changeButtonColor(this.id, index);
+              getMarkersPlace(index, 6);
             }
         });
 
         $("#parques_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 7) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 7);
-                  changeButtonColor(this.id, index);
+                changeButtonColor(this.id, index);
+              }
             } else {
-
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 7);
             }
@@ -413,11 +429,14 @@ function modalListeners(index) {
 
         $("#super_" + index).click(function () {
             if (markesrsSerives.length > 0) {
+              if (mrkrPlace == 8) {
+                  clearServicesAndReCenter(index);
+              } else {
                 clearServicesAndReCenter(index);
                 getMarkersPlace(index, 8);
-                  changeButtonColor(this.id, index);
+                changeButtonColor(this.id, index);
+              }
             } else {
-              
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 8);
             }

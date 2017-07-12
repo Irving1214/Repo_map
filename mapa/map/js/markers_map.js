@@ -20,7 +20,7 @@ $(document).ready(function(){
                 $("#caja_" + index_id).hide();
             }
         }
-    
+
     });
 */
 });
@@ -103,13 +103,13 @@ function addMarkers(propiedades) {
             clicked = false;
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
-            
-            
-            
-           
-                
-                
-            
+
+
+
+
+
+
+
 
             // Que vote constantemente
             stopOthersMarkers();
@@ -129,20 +129,20 @@ function addMarkers(propiedades) {
             var back = $("#casas").html();
             $("#casas").html('<div class="col-md-6 como_estas" id="caja_' + index_id + '">' + house_selected + '</div>' + back);
 
-            //CENTRAR SCROLL 
-            
+            //CENTRAR SCROLL
+
              var casasContainer = $("#casas");
              var casaScroll = $("#img-thumbnail_" + index_id);
              // SIN ANIMACION SCROLL
              casasContainer.scrollTop(casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop())
-             
+
              //CON ANIMACION SCROLL
              /*casasContainer.animate({
              scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
              }, 'fast', 'linear');*/
-             
+
             //FIN CENTRAR SCROLL
-            
+
             boxListeners();
 
             $("#letrasImagen" + index_id).css({
@@ -161,10 +161,10 @@ function addMarkers(propiedades) {
              */
             closeOthersInfoWindow();
             infowindow.open(map, marker);
-            
-            
-            
-            
+
+
+
+
         });
 
         google.maps.event.addListener(marker, "mouseout", function () {
@@ -559,6 +559,7 @@ function getMarkersPlace(id, action) {
                         radius: radius,
                         types: ['school']
                     }, processResultsEscuelas);
+                    mrkrPlace = action;
                     break;
                 case 2: //Restauran
                     service.nearbySearch({
@@ -566,6 +567,7 @@ function getMarkersPlace(id, action) {
                         radius: radius,
                         types: ['cafe', 'restaurant']
                     }, processResultsResta);
+                    mrkrPlace = action;
                     break;
                 case 6: //Servicios
                     service.nearbySearch({
@@ -573,6 +575,7 @@ function getMarkersPlace(id, action) {
                         radius: radius,
                         types: ['bank', 'library', 'police', 'bus_station', 'airport']
                     }, processResultsServicios);
+                    mrkrPlace = action;
                     break;
                 case 8: //Tiendas
                     service.nearbySearch({
@@ -580,26 +583,26 @@ function getMarkersPlace(id, action) {
                         radius: radius,
                         types: ['shopping_mall', 'store']
                     }, processResultsTiendas);
+                    mrkrPlace = action;
                     break;
-
                 case 5: //Hospitales
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         types: ['hospital', 'pharmacy']
                     }, processResults);
+                    mrkrPlace = action;
                     break;
-
                 case 7: // Parkes
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
                         type: ['park']
                     }, processResultsRecreo);
+                    mrkrPlace = action;
                     break;
             }
 
         }
     }
 }
-
