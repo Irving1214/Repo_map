@@ -192,15 +192,14 @@ h4
 
 .descripcion
 {
-    font-size: 135%;
-
+    font-size: 160%;
     color: #012967;
 }
 
 .des-propiedad
 {
     font-weight: bold;
-
+    font-size: 120%;
     text-align: center;
 }
 .revimexImagen
@@ -209,7 +208,7 @@ h4
 }
 
 .imagen-modal {
-    height: 40%;
+    height: 55%;
     width: 100%;
     padding: 2% 0% 2% 0%;
 }

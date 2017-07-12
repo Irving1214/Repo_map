@@ -125,10 +125,10 @@ function createModal(propiedad, index) {
         '<center>' +
         '<div class="revimexBlue"><br>' +
 
-        '<i class="capitalize">' + nombreMunicipio(propiedad.Municipio__c) + propiedad.Estado__c + '<br>' +
+        '<i class="capitalize" style="font-size: 120%">' + nombreMunicipio(propiedad.Municipio__c) + propiedad.Estado__c + '<br>' +
         '' + propiedad.Calle__c +
         ', Col. ' + propiedad.Colonia__c + '<br>' +
-
+        '</i>' +
         '</div>' +
         '</center>' +
         '</div>' +
@@ -575,7 +575,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/terreno.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + terreno + ' m<sup>2</sup></p>' +
+        '<p class="des-propiedad"> Terreno: '+ terreno + ' m<sup>2</sup></p>' +
         '</div>' +
         '</div>' +
 
@@ -585,7 +585,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/construccion.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + constru + ' m<sup>2</sup></p>' +
+        '<p class="des-propiedad"> Construcción: ' + constru + ' m<sup>2</sup></p>' +
         '</div>' +
         '</div>' +
 
@@ -595,7 +595,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/habitaciones.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + habitaciones + '</p>' +
+        '<p class="des-propiedad">Habitaciones: ' + habitaciones + '</p>' +
         '</div>' +
         '</div>' +
 
@@ -605,7 +605,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/banios.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + banos + '</p>' +
+        '<p class="des-propiedad">Baños: ' + banos + '</p>' +
         '</div>' +
         '</div>' +
 
@@ -615,7 +615,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/patio.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + patios + '</p>' +
+        '<p class="des-propiedad">Patios: ' + patios + '</p>' +
         '</div>' +
         '</div>' +
 
@@ -625,7 +625,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<img class="sm-icon" src="images/iconoModal/estacionamiento.png">' +
         '</div>' +
         '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">' + estacionamientos + '</p>' +
+        '<p class="des-propiedad">Estacionamientos: ' + estacionamientos + '</p>' +
         '</div>' +
         '</div>' +
         '</div>' +
