@@ -10,6 +10,7 @@ var re = /(?:\.([^.]+))?$/;
  */
  var mrkrPlace = '';
 function createModal(propiedad, index) {
+  mrkrPlace = false;
     $("#description-casas").html("");
 
     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: block">' +
@@ -307,7 +308,6 @@ function nombreMunicipio(estado) {
  * Activa los listeners del modal
  */
 function modalListeners(index) {
-  var ctrlPlaces = false;
         $("#card_cubes_" + index + ", #back_to_" + index).click(function () {
             // Sale de la vista de Street maps
             map.getStreetView().setVisible(false);
