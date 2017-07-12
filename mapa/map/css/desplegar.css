@@ -143,7 +143,7 @@ h4
 }
 .direccion
 {
-  font-size: 115%;
+  font-size: 120%;
     color: #012967;
 }
 .precio
@@ -192,7 +192,7 @@ h4
 
 .descripcion
 {
-    font-size: 20px;
+    font-size: 135%;
 
     color: #012967;
 }
@@ -210,7 +210,8 @@ h4
 
 .imagen-modal {
     height: 40%;
-    width: auto;
+    width: 100%;
+    padding: 2% 0% 2% 0%;
 }
 
 .casitaImagen
