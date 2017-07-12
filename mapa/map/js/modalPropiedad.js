@@ -351,8 +351,10 @@ function modalListeners(index) {
         $("#escuelas_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
-                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 1);
+                  changeButtonColor(this.id, index);
             } else {
+
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 1);
             }
@@ -361,8 +363,10 @@ function modalListeners(index) {
         $("#restaurantes_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
-                changeButtonColor(this.id, index);
+                getMarkersPlace(index, 2);
+                  changeButtonColor(this.id, index);
             } else {
+
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 2);
             }
@@ -373,18 +377,23 @@ function modalListeners(index) {
         $("#hospitales_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
+                getMarkersPlace(index, 5);
                 changeButtonColor(this.id, index);
             } else {
+
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 5);
+
             }
         });
 
         $("#cormercio_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
+                getMarkersPlace(index, 6);
                   changeButtonColor(this.id, index);
             } else {
+
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 6);
             }
@@ -393,8 +402,10 @@ function modalListeners(index) {
         $("#parques_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
-                hangeButtonColor(this.id, index);
+                getMarkersPlace(index, 7);
+                  changeButtonColor(this.id, index);
             } else {
+
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 7);
             }
@@ -403,8 +414,10 @@ function modalListeners(index) {
         $("#super_" + index).click(function () {
             if (markesrsSerives.length > 0) {
                 clearServicesAndReCenter(index);
-                hangeButtonColor(this.id, index);
+                getMarkersPlace(index, 8);
+                  changeButtonColor(this.id, index);
             } else {
+              
                 changeButtonColor(this.id, index);
                 getMarkersPlace(index, 8);
             }
