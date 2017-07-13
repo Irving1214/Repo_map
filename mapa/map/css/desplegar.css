@@ -298,7 +298,7 @@ div#title-header
 .navbar-inverse
 {
 
-    background-color: rgba(0, 41, 103, .52)!important;
+    background-color: rgba(0, 41, 103, .52);
     z-index: 0;
 }
 .tipo

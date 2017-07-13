@@ -1,0 +1,167 @@
+
+.navbar-inverse {
+    background-color: #002967;
+    border-color: #002967;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover
+{
+    color: #02bdee;
+}
+
+/* Estilo de pantalla Favoritos (Propiedades) */
+
+.encabezado {
+    text-align-last: center;
+    padding: 10px 0px;
+    background-color: #e6e6e6;
+}
+
+.encabezado p{
+    margin-top: 10px;
+    font-size: 25px;
+    color: #002967;
+    font-weight: bold;
+    letter-spacing: -1px;
+    padding-right: 0px;   
+}
+
+.scrollable {
+    height: 70%;
+    overflow-y: auto;
+    border-style: solid;
+}
+
+.box {
+    margin-top: 35px;
+    border-style: solid;
+    border-color: #46beef;
+    height: 225px;
+    width: 80%;
+    border-radius: 2px;
+    border-width: 2px;
+}
+
+.thumbnail-fav {
+    margin: 10px 10px 0px 10px;
+    border-style: solid;
+    border-color: #002967;
+    height: 160px;
+    /*width: 80%;*/
+    border-radius: 2px;
+    border-width: 2px;
+}
+
+
+@media screen and (min-width:768px)
+{
+    .encabezado p{
+        font-size: 40px;
+        color: #002967;
+        font-weight: bold;
+        padding-right: 65px;
+    }
+}
+
+/* FIN -> Estilo de pantalla Favoritos (Propiedades) */
+
+b,
+strong
+{
+    font-weight: 35px !important;
+}
+
+.logos.redes_sociales
+{
+    margin-right: 13%;
+}
+
+
+/* The side navigation menu */
+.sidenav
+{
+    position: absolute;
+    z-index: +10;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+
+    width: 0;
+    height: 100%;
+    padding-top: 60px;
+
+    transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
+
+    background-color: rgba(0, 41, 103, .52) !important; /* azul */
+}
+
+/* The navigation menu links */
+.sidenav a
+{
+    font-size: 25px;
+
+    display: block;
+
+    padding: 5px 5px 5px 5px;
+
+    transition: .3s
+    z-index: 10;
+    text-decoration: none;
+
+    color: #f1f1f1;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.offcanvas a:focus
+{
+    color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn
+{
+    font-size: 36px;
+
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 25px;
+
+    margin-left: 50px;
+}
+
+#main
+{
+    padding: 20px;
+
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px)
+{
+    .sidenav
+    {
+        padding-top: 15px;
+    }
+
+    .sidenav a
+    {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 800px)
+{
+    div#mySidenav
+    {
+        display: none;
+    }
+}
+
+.modal-backdrop
+{
+    opacity: .6 !important;
+}
