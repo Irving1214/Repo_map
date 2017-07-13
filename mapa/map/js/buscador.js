@@ -1,7 +1,12 @@
 /**
  * Created by @HackeaMesta on 10/07/17.
  */
-var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol '];
+var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrada las Margaritas ",  "Ampliacion Rinconada de las Brisas ", "Anahuac ",  "Arcos del Sol (csl) ", 'Astilleros ',  "Benito Juarez (qr) ", "Bosque la Loma ",
+                  "Bosques del Centinela ", "Brisas del Pacifico ", "Centro (ppn) ", "Cerrito Colorado ", "Chapultepec Ii Poligono Iv ", "Ciudad Galaxia los Reyes ", "Costa Dorada (jal) ",
+                  "Costa Dorada (vrz) ", "Cuchilla ", "Del Valle ", "El Centenario ", "El Laurel (bc) ",  "El Pueblito de San Angel I ",  "Enrique Olivares Santana ", "Francisco Villa (bc) ",
+                  "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
+                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz "];
+excepciones.push( );
 
 $(document).ready(function () {
     $("#pac-input").on("keydown", function (event) {
@@ -77,7 +82,7 @@ function returnColonia(el) {
     };
 }
 
-function moveMap(lat, lng, zoom, place) {
+function moveMap(lat, lng, zoom, place) { // comparar lat y lng
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({
         address: $("#pac-input").val()
@@ -99,6 +104,7 @@ function moveMap(lat, lng, zoom, place) {
                 }
             });
         } else {
+          alert('Else moveMap');
             myMoveMap(lat, lng, zoom, place, results);
         }
     });
@@ -450,7 +456,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.56053,
                 "longitude": -103.531433,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -466,7 +472,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.7755196,
                 "longitude": -108.9912777,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -498,7 +504,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 21.121209,
                 "longitude": -86.877861,
-                "zoom": 17
+                "zoom": 19
             }
         },
         {
@@ -562,7 +568,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.42410881185,
                 "longitude": -98.87899377395,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -600,8 +606,8 @@ function getZoom(place) {
         {
             "Colonia__c": "Del Valle ",
             "center": {
-                "latitude": 24.7752405,
-                "longitude": -104.08202005,
+                "latitude": 23.9935382,
+                "longitude": -104.6442068,
                 "zoom": 17
             }
         },
@@ -610,7 +616,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 23.993490846895,
                 "longitude": -104.66829603189,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -666,7 +672,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.4896125,
                 "longitude": -103.3598615,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -682,7 +688,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.382462394956,
                 "longitude": -99.939939955017,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -698,7 +704,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 28.685211,
                 "longitude": -106.10358,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -770,7 +776,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.33398692285,
                 "longitude": -113.5396239941,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -794,7 +800,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.613604,
                 "longitude": -103.488164,
-                "zoom": 17
+                "zoom": 19
             }
         },
         {
