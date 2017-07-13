@@ -181,29 +181,27 @@ function createModal(propiedad, index) {
         '<div class="col-md-6" align="center"><br>' +
         '<p class="bg-primary">Lugares cercanos</p>' +
         '<br>' +
-        '<div class="row" align="center">' +
-        '<div class="col-md-4">' +
-        '<button id="restaurantes_' + index + '" class="btn btn-default"><img id="img_restaurantes_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
-        '</div>' +
-
-        '<div class="col-md-4">' +
-        '<button id="escuelas_' + index + '" class="btn btn-default"><img id="img_escuelas_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
-        '</div>' +
-
-        '<div class="col-md-4">' +
-        '<button id="hospitales_' + index + '" class="btn btn-default"><img id="img_hospitales_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
-        '</div>' +
-        '</div>' +
-        '</br></br>' +
-        '<div class="row" align="center">' +
+        '<div class="row" align="center">' +     
         '<div class="col-md-4">' +
         '<button id="cormercio_' + index + '" class="btn btn-default"><img id="img_cormercio_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-
+        '<div class="col-md-4">' +
+        '<button id="escuelas_' + index + '" class="btn btn-default"><img id="img_escuelas_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
+        '</div>' +
         '<div class="col-md-4">' +
         '<button id="super_' + index + '" class="btn btn-default"><img id="img_super_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-
+        '</div>' +
+        
+        '</br></br>' +
+        
+        '<div class="row" align="center">' +
+        '<div class="col-md-4">' +
+        '<button id="hospitales_' + index + '" class="btn btn-default"><img id="img_hospitales_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
+        '</div>' +
+        '<div class="col-md-4">' +
+        '<button id="restaurantes_' + index + '" class="btn btn-default"><img id="img_restaurantes_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
+        '</div>' +
         '<div class="col-md-4">' +
         '<button id="parques_' + index + '" class="btn btn-default"><img id="img_parques_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
