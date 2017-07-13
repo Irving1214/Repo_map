@@ -5,7 +5,9 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Bosques del Centinela ", "Brisas del Pacifico ", "Centro (ppn) ", "Cerrito Colorado ", "Chapultepec Ii Poligono Iv ", "Ciudad Galaxia los Reyes ", "Costa Dorada (jal) ",
                   "Costa Dorada (vrz) ", "Cuchilla ", "Del Valle ", "El Centenario ", "El Laurel (bc) ",  "El Pueblito de San Angel I ",  "Enrique Olivares Santana ", "Francisco Villa (bc) ",
                   "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
-                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz "];
+                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
+                  "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
+                  "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ",];
 excepciones.push( );
 
 $(document).ready(function () {
@@ -912,14 +914,14 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.3343492201,
                 "longitude": -113.5332564779,
-                "zoom": 17
+                "zoom":17
             }
         },
         {
             "Colonia__c": "Los Altos (bcs) ",
             "center": {
-                "latitude": 22.8859445,
-                "longitude": -109.944361,
+                "latitude": 32.526142,
+                "longitude": -117.077937,
                 "zoom": 17
             }
         },
@@ -934,25 +936,25 @@ function getZoom(place) {
         {
             "Colonia__c": "Los Angeles Ii ",
             "center": {
-                "latitude": 28.0637058,
-                "longitude": -110.72848425,
-                "zoom": 17
+                "latitude": 29.14868,
+                "longitude": -110.966311,
+                "zoom": 9
             }
         },
         {
             "Colonia__c": "Los Heroes (edo) ",
             "center": {
-                "latitude": 19.3301184302,
-                "longitude": -98.8756126058,
-                "zoom": 17
+                "latitude": 19.325541,
+                "longitude": -98.872119,
+                "zoom":16
             }
         },
         {
             "Colonia__c": "Los Heroes Tecamac ",
             "center": {
-                "latitude": 19.63051151555,
-                "longitude": -99.0305244619,
-                "zoom": 17
+                "latitude": 19.629815,
+                "longitude": -99.037761,
+                "zoom": 15
             }
         },
         {
@@ -972,7 +974,7 @@ function getZoom(place) {
             }
         },
         {
-            "Colonia__c": "Los Nogales (qro) ",
+            "Colonia__c": "Fraccionamiento los Nogales (qro) ",
             "center": {
                 "latitude": 20.4164809177,
                 "longitude": -99.9990962884,
@@ -1008,7 +1010,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.606565,
                 "longitude": -103.4931005,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1022,9 +1024,9 @@ function getZoom(place) {
         {
             "Colonia__c": "Monterreal ",
             "center": {
-                "latitude": 25.508028,
-                "longitude": -103.355776,
-                "zoom": 17
+                "latitude": 25.50989,
+                "longitude": -103.354397,
+                "zoom": 16
             }
         },
         {
@@ -1038,9 +1040,9 @@ function getZoom(place) {
         {
             "Colonia__c": "Paraiso Cancun ",
             "center": {
-                "latitude": 21.128595072,
-                "longitude": -86.8849223042,
-                "zoom": 17
+                "latitude": 21.152759,
+                "longitude": -86.849405,
+                "zoom": 19
             }
         },
         {
