@@ -594,6 +594,21 @@ function stateCenter(index) {
                         //map.setCenter(results[0].geometry.location);
                         map.setCenter(latlng);
                         map.setZoom(13);
+
+                        /*
+                         * Vuelve a mostrar las propiedades visibles
+                         */
+                        var bounds = map.getBounds();
+                        for (var i = 0; i< allMarkers.length ; i++) {
+                            var marker_id = allMarkers[i].id;
+                            var index_id = marker_id.replace("marker", "");
+
+                            if (bounds.contains(allMarkers[i].getPosition())) {
+                                $("#caja_" + index_id).show();
+                            } else {
+                                $("#caja_" + index_id).hide();
+                            }
+                        }
                     } else {
                         alert("Could not find location: " + location);
                     }

@@ -104,13 +104,6 @@ function addMarkers(propiedades) {
             var marker_id = marker.id;
             var index_id = marker_id.replace("marker", "");
 
-
-
-
-
-
-
-
             // Que vote constantemente
             stopOthersMarkers();
             jumping = setInterval(function() {
