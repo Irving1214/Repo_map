@@ -508,6 +508,7 @@ function iLikeIt(id) {
             },
             success: function (respuesta) {
                 notificaction("La propiedad se agrego a tus favoritos", "success");
+                heart.attr("src", "images/ICON-PIC-HEART-RED.png");
                 $('#modalFavoritos' + id).show();
             },
             error: function (respuesta) {
