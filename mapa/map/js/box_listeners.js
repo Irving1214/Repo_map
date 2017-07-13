@@ -116,6 +116,22 @@ function out(id) {
 }
 
 function propiedadesCercanas(id) {
+    var priceRange = slider.noUiSlider.get();
+    var precio_min = priceRange[0];
+    precio_min = precio_min.replace(',', '');
+    precio_min = precio_min.replace(',', '');
+    precio_min = precio_min.replace('.', '');
+    precio_min = parseInt(precio_min) / 100;
+
+    var precio_max = priceRange[1];
+    precio_max = precio_max.replace(',', '');
+    precio_max = precio_max.replace(',', '');
+    precio_max = precio_max.replace('.', '');
+    precio_max = parseInt(precio_max) / 100;
+
+    if (precio_max == var_max) {
+        precio_max = null;
+    }
 
     var propiedad_id = null;
     for (var i = 0; i < allMarkers.length; i++) {
@@ -129,7 +145,9 @@ function propiedadesCercanas(id) {
         url: url + "/propiedades/cercanas",
         type: "POST",
         data: {
-            id: propiedad_id
+            id: propiedad_id,
+            min: precio_min,
+            max: precio_max
         },
         dataType: "JSON",
         beforeSend: function () {

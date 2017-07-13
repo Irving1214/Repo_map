@@ -203,7 +203,7 @@ function load_propiedades(latitud, longitud) {
                         main_photo = propiedad.fotoPrincipal;
                     }
 
-                    var casa_card = '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
+                    var casa_card = '<div class="col-md-6 como_estas" data-price="' + propiedad.PrecioVenta__c + '" id="caja_' + index + '">' +
                         '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
                         '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
@@ -422,7 +422,20 @@ function showOnlySomeCards(propies, className) {
     displayboxes(className);
 }
 
+/*
+ * ALV
+ */
+function cleanCercanas() {
+    var others = Array.from(document.querySelectorAll('*[id^="caja_"]'));
+    others.forEach(function (item) {
+        $(item).removeClass("search");
+        $(item).removeClass("precio");
+        $(item).removeClass("cerca");
+    });
+}
+
 function showOnlyCercanas(propies, className) {
+    cleanCercanas();
     hideCajas(className);
 
     for (var j = 0; j < propies.length; j++) {
