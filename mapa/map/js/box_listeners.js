@@ -38,6 +38,7 @@ function boxListeners() {
             getMarker(aiDi[1]);
 
             $("html, body").animate({ scrollTop: 90 }, "slow");
+            slider.setAttribute('disabled', true);
         });
     });
 }

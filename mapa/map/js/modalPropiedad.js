@@ -343,7 +343,8 @@ function modalListeners(index) {
             }
 
             stopOthersMarkers();
-            stopOthersClickedMarkers()
+            stopOthersClickedMarkers();
+            slider.removeAttribute('disabled');
         });
 
         $("#heart_" + index).click(function () {
