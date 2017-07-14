@@ -110,7 +110,7 @@ p.bg-primary.casa
 
 img.imgt
 {
-    height: 300px !important;
+    height: 300px /*!important*/;
     object-fit: cover;
 }
 
