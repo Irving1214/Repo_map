@@ -8,7 +8,7 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
                   "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
                   "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
-                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Rancho la Capilla ","Real de Costitlan "] ;
+                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Rancho la Capilla ","Morelia ","Puerto Penasco ","Tultepec ","Veracruz ","San Luis Potosi ","Tonala ","Real de Costitlan "] ;
 excepciones.push( );
 
 $(document).ready(function () {
@@ -343,7 +343,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.32607961005,
                 "longitude": -113.53646028305,
-                "zoom": 13
+                "zoom": 14
             }
         },
         {
@@ -367,7 +367,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 22.1565651,
                 "longitude": -100.9854628,
-                "zoom": 8
+                "zoom": 13
             }
         },
         {
@@ -447,7 +447,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 18.6048135,
                 "longitude": -95.4163635,
-                "zoom": 13
+                "zoom": 9
             }
         }
     ];
