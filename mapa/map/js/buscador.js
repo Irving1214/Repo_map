@@ -7,13 +7,8 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
                   "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
                   "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
-<<<<<<< Updated upstream
                   "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
                  "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Rancho la Capilla ","Real de Costitlan "] ;
-=======
-                  "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ","Lerdo ",
-                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Matamoros ","Morelia ","Tlajomulco ","Tonala ","Tultepec ","Vallarta ","Veracruz ",] ;
->>>>>>> Stashed changes
 excepciones.push( );
 
 $(document).ready(function () {
@@ -42,7 +37,7 @@ $(document).ready(function () {
             terms.push("");
             this.value = terms.join("");
             moveMap(ui.item.lat, ui.item.lng, ui.item.zoom, ui.item.value);
-
+   stopOthersClickedMarkers();
             return false;
         }
     });
@@ -292,7 +287,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 24.781755942654,
                 "longitude": -104.08202005,
-                "zoom": 16
+                "zoom": 14
             }
         },
         {
@@ -308,7 +303,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.860291494801,
                 "longitude": -97.544759084367,
-                "zoom": 14
+                "zoom": 13
             }
         },
         {
@@ -332,7 +327,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.763491,
                 "longitude": -101.103608,
-                "zoom": 11
+                "zoom": 13
             }
         },
         {
@@ -404,7 +399,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.4736865,
                 "longitude": -103.44793140000002,
-                "zoom": 13.
+                "zoom": 15.
             }
         },
         {
@@ -452,7 +447,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 18.6048135,
                 "longitude": -95.4163635,
-                "zoom": 9
+                "zoom": 13
             }
         }
     ];
@@ -471,7 +466,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.857240453013,
                 "longitude": -97.556946241734,
-                "zoom": 16
+                "zoom": 17
             }
         },
         {
@@ -487,7 +482,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 22.905718,
                 "longitude": -109.928852,
-                "zoom": 16
+                "zoom": 17
             }
         },
         {
@@ -495,7 +490,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.213349,
                 "longitude": -96.18594,
-                "zoom": 16
+                "zoom": 17
             }
         },
         {
@@ -503,7 +498,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.4927555,
                 "longitude": -103.4876135,
-                "zoom": 16
+                "zoom": 17
             }
         },
         {
