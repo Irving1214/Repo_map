@@ -5,10 +5,14 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Bosques del Centinela ", "Brisas del Pacifico ", "Centro (ppn) ", "Cerrito Colorado ", "Chapultepec Ii Poligono Iv ", "Ciudad Galaxia los Reyes ", "Costa Dorada (jal) ",
                   "Costa Dorada (vrz) ", "Cuchilla ", "Del Valle ", "El Centenario ", "El Laurel (bc) ",  "El Pueblito de San Angel I ",  "Enrique Olivares Santana ", "Francisco Villa (bc) ",
                   "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
-                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
+                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz  ", "Lopez Portillo (ppe) ",
                   "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
                   "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
-                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Rancho la Capilla ","Morelia ","Puerto Penasco ","Tultepec ","Veracruz ","San Luis Potosi ","Tonala ","Real de Costitlan ","Infonavit C.t.m. San Pablo Tultepec ",] ;
+                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ","Rancho la Capilla ","Morelia ","Puerto Penasco ","Tultepec ","Veracruz ","San Luis Potosi ","Tonala ","Real de Costitlan ",
+                 "Residencial del Bosque (gto) ","Residencial Grand Santa Fe ","Rincon de la Merced ","Rincon las Huertas ","Rincon San Alberto ","Rinconadas Hamburgo ","San Alberto ","San Antonio (dgo) ","San Carlos (dgo) ","San Daniel ","San Gregorio ","San Juan (qro) ",
+                 "San Pablo (son) ","San Rafael Coacalco ","Santa Isabel (ags) ","Sierra Hermosa ","Tabachines ","Valle de Ecatepec ","Valle de Santa Lucia ","Valle del Marquez (jrz) ","Valle Dorado (bc) ","Valle Real (dgo) ","Valle Real (mic) ","Villa de las Flores (dgo) ",
+                  "Villa del Real (edo) ","Villa Residencial del Real (chi) ","Villa Residencial del Real (ens) ","Villanapoles ","Villas de Cortez (sjc) ","Villas de la Hacienda ","Villas de la Joya (coh) ","Villas de Oradel ","Villas de Tulpetlac ","Villas de Zaragoza ",
+                  "Villas del Arte ","Villas del Encanto ","Villas del Refugio ","Villas las Misiones ","Villasol ","Vista Real ","Vistas de Palmillas (tij) "] ;
 excepciones.push( );
 
 $(document).ready(function () {
@@ -779,7 +783,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.33398692285,
                 "longitude": -113.5396239941,
-                "zoom": 14
+                "zoom": 15
             }
         },
         {
@@ -1171,7 +1175,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.5289538,
                 "longitude": -100.8308685,
-                "zoom": 16
+                "zoom": 20
             }
         },
         {
@@ -1179,7 +1183,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 21.128388,
                 "longitude": -86.869411,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1195,7 +1199,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.56609442165,
                 "longitude": -103.531046192,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1215,10 +1219,10 @@ function getZoom(place) {
             }
         },
         {
-            "Colonia__c": "San Alberto ",
+              "Colonia__c": "San Alberto ",
             "center": {
-                "latitude": 25.6111055,
-                "longitude": -103.4854065,
+                "latitude": 25.610283,
+                "longitude": -103.489252,
                 "zoom": 16
             }
         },
@@ -1227,7 +1231,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.5681191162,
                 "longitude": -103.5264424942,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1235,7 +1239,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.5608916929,
                 "longitude": -103.5341612884,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1243,7 +1247,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.5459496,
                 "longitude": -103.5395635319,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1259,7 +1263,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.411552,
                 "longitude": -100.010639,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1275,7 +1279,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.638323,
                 "longitude": -99.084826,
-                "zoom": 16
+                "zoom": 19
             }
         },
         {
@@ -1307,7 +1311,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.7846362,
                 "longitude": -108.979148,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1315,7 +1319,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.5690677454,
                 "longitude": -99.0222848933,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1323,7 +1327,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.7457406,
                 "longitude": -100.3513599,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1331,7 +1335,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.589265,
                 "longitude": -106.425903,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1339,7 +1343,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 32.609505,
                 "longitude": -115.409699,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1387,7 +1391,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.771289,
                 "longitude": -116.569709,
-                "zoom": 16
+                "zoom": 11
             }
         },
         {
@@ -1395,7 +1399,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.5896736,
                 "longitude": -103.49148355,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1419,7 +1423,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.546289,
                 "longitude": -103.346488,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1427,7 +1431,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 27.4708377407,
                 "longitude": -99.61850126218,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1435,7 +1439,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.571829435,
                 "longitude": -99.0592129345,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1451,7 +1455,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 21.122605,
                 "longitude": -86.877795,
-                "zoom": 16
+                "zoom": 18
             }
         },
         {
@@ -1495,11 +1499,11 @@ function getZoom(place) {
             }
         },
         {
-            "Colonia__c": "Vistas de Palmillas ",
+            "Colonia__c": "Vistas de Palmillas (tij) ",
             "center": {
                 "latitude": 32.468508,
                 "longitude": -116.821616,
-                "zoom": 16
+                "zoom":16
             }
         }
     ];
