@@ -7,7 +7,8 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
                   "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
                   "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
-                  "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ",];
+                  "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
+                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando "];
 excepciones.push( );
 
 $(document).ready(function () {
@@ -1048,25 +1049,25 @@ function getZoom(place) {
         {
             "Colonia__c": "Paseo de las Arboledas (ver) ",
             "center": {
-                "latitude": 17.996278,
-                "longitude": -94.616417,
+                "latitude": 19.20613,
+                "longitude": -96.214961,
                 "zoom": 17
             }
         },
         {
             "Colonia__c": "Paseo de las Lomas ",
             "center": {
-                "latitude": 25.64056,
-                "longitude": -100.11449,
+                "latitude": 19.372528,
+                "longitude": -99.266432,
                 "zoom": 17
             }
         },
         {
             "Colonia__c": "Paseo del Pedregal (son) ",
             "center": {
-                "latitude": 29.1745925064,
-                "longitude": -111.02401590215,
-                "zoom": 17
+                "latitude": 29.174187,
+                "longitude": -111.020333,
+                "zoom": 18
             }
         },
         {
@@ -1122,7 +1123,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.570015885307,
                 "longitude": -103.53134858756,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
