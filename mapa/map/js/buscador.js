@@ -38,6 +38,7 @@ $(document).ready(function () {
             this.value = terms.join("");
             moveMap(ui.item.lat, ui.item.lng, ui.item.zoom, ui.item.value);
    stopOthersClickedMarkers();
+            clearServicesAndReCenter();
             return false;
         }
     });

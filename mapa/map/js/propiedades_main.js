@@ -42,6 +42,7 @@ function clickOnSearch() {
         }
     } else {
          stopOthersClickedMarkers();
+        clearServicesAndReCenter();
         getmaploc();
         console.log("2");
         
