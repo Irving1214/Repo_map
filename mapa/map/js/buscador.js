@@ -8,7 +8,7 @@ var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrad
                   "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
                   "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
                   "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
-                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) "] ;
+                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando ","Santa Fe Oro (csl) ","Quintas California (csl) ","Quintas San Isidro ",] ;
 excepciones.push( );
 
 $(document).ready(function () {
@@ -922,7 +922,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 32.526142,
                 "longitude": -117.077937,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1034,7 +1034,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.601519,
                 "longitude": -106.432551,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1050,7 +1050,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.20613,
                 "longitude": -96.214961,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1058,7 +1058,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.372528,
                 "longitude": -99.266432,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1074,7 +1074,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.8248220557,
                 "longitude": -99.207995135,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1082,7 +1082,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.695639,
                 "longitude": -106.422644,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1090,7 +1090,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 22.1275907,
                 "longitude": -100.9386696,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1106,7 +1106,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 29.1593567334,
                 "longitude": -111.0090919368,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1114,7 +1114,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 29.167470015796,
                 "longitude": -111.01348291475,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1130,15 +1130,15 @@ function getZoom(place) {
             "center": {
                 "latitude": 22.886987,
                 "longitude": -109.9329025,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
             "Colonia__c": "Quintas San Isidro ",
             "center": {
-                "latitude": 25.5554794877,
-                "longitude": -103.53937237235,
-                "zoom": 17
+                "latitude": 25.573714,
+                "longitude": -103.41,
+                "zoom": 18
             }
         },
         {
@@ -1282,7 +1282,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 22.9068155,
                 "longitude": -109.92918,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
