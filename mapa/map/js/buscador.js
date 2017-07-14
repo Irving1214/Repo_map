@@ -107,7 +107,6 @@ function moveMap(lat, lng, zoom, place) { // comparar lat y lng
                 }
             });
         } else {
-          alert('Else moveMap');
             myMoveMap(lat, lng, zoom, place, results);
         }
     });
