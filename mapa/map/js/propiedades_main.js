@@ -35,11 +35,16 @@ function clickOnSearch() {
         if (prices[0] != var_min || prices[1] != var_max) {
             reCentrar();
             showPropiedadesByPrecio(prices[0], prices[1]);
+            console.log("3");
         } else {
             location.reload();
+            console.log("1");
         }
     } else {
+         stopOthersClickedMarkers();
         getmaploc();
+        console.log("2");
+        
     }
 }
 
