@@ -15,7 +15,7 @@ function createModal(propiedad, index) {
 
     var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: block">' +
 
-        '<div class="col-md-12">' +
+        '<div class="col-md-12 carr">' +
         '<div id="myCarousel_' + index + '" class="carousel slide" data-ride="carousel">' +
         '<!-- Indicators -->' +
         '<ol class="carousel-indicators">';

@@ -1,7 +1,15 @@
 /**
  * Created by @HackeaMesta on 10/07/17.
  */
-var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol '];
+var excepciones = ['Vallarta ', 'La Paz ', 'Palmas del Sol ', "Ampliacion Cerrada las Margaritas ",  "Ampliacion Rinconada de las Brisas ", "Anahuac ",  "Arcos del Sol (csl) ", 'Astilleros ',  "Benito Juarez (qr) ", "Bosque la Loma ",
+                  "Bosques del Centinela ", "Brisas del Pacifico ", "Centro (ppn) ", "Cerrito Colorado ", "Chapultepec Ii Poligono Iv ", "Ciudad Galaxia los Reyes ", "Costa Dorada (jal) ",
+                  "Costa Dorada (vrz) ", "Cuchilla ", "Del Valle ", "El Centenario ", "El Laurel (bc) ",  "El Pueblito de San Angel I ",  "Enrique Olivares Santana ", "Francisco Villa (bc) ",
+                  "Geovillas de Terranova ", "Gloria ", "Hacienda los Fresnos ",  "Hacienda Quinta Real ",  "Hacienda Real de Tultepec ", "Infonavit C.t.m. San Pablo Tultepec ", "Jardines de la Hacienda (ton) ",
+                  "Jardines de San Jose (edo) ", "Jardines de Santiago ",  "Jardines del Eden (jal) ", "Jose Lopez Portillo (son) ",  "Joyas de Torreon ", "La Amistad ",  "La Floresta (dur) ", "La Paz ", "Lopez Portillo (ppe) ",
+                  "Los Altos (bcs) ","Los Angeles (caj) ","Los Angeles Ii ","Los Heroes (edo) ","Los Heroes Tecamac ","Los Impresionistas ", "Los Molinos (dgo) ","Fraccionamiento los Nogales (qro) ","Los Tejavanes ","Mediterraneo (bc) ",
+                  "Miravalle ","Misiones de Santa Fe (csl) ","Monterreal ","Paraiso Cancun ","Paseo de las Arboledas (ver) ","Paseo de las Lomas ","Paseo del Pedregal (son) ","Portal del Sol ","Pradera Dorada (chi) ","Privada los Azahares ","Pueblo Alegre ",
+                 "Pueblo del Oro ","Puerta del Rey ","Quinta San Fernando "];
+excepciones.push( );
 
 $(document).ready(function () {
     $("#pac-input").on("keydown", function (event) {
@@ -77,7 +85,7 @@ function returnColonia(el) {
     };
 }
 
-function moveMap(lat, lng, zoom, place) {
+function moveMap(lat, lng, zoom, place) { // comparar lat y lng
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({
         address: $("#pac-input").val()
@@ -99,6 +107,7 @@ function moveMap(lat, lng, zoom, place) {
                 }
             });
         } else {
+          alert('Else moveMap');
             myMoveMap(lat, lng, zoom, place, results);
         }
     });
@@ -450,7 +459,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.56053,
                 "longitude": -103.531433,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -466,7 +475,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.7755196,
                 "longitude": -108.9912777,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -498,7 +507,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 21.121209,
                 "longitude": -86.877861,
-                "zoom": 17
+                "zoom": 19
             }
         },
         {
@@ -562,7 +571,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 19.42410881185,
                 "longitude": -98.87899377395,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -600,8 +609,8 @@ function getZoom(place) {
         {
             "Colonia__c": "Del Valle ",
             "center": {
-                "latitude": 24.7752405,
-                "longitude": -104.08202005,
+                "latitude": 23.9935382,
+                "longitude": -104.6442068,
                 "zoom": 17
             }
         },
@@ -610,7 +619,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 23.993490846895,
                 "longitude": -104.66829603189,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -666,7 +675,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.4896125,
                 "longitude": -103.3598615,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -682,7 +691,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 20.382462394956,
                 "longitude": -99.939939955017,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -698,7 +707,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 28.685211,
                 "longitude": -106.10358,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {
@@ -770,7 +779,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.33398692285,
                 "longitude": -113.5396239941,
-                "zoom": 17
+                "zoom": 14
             }
         },
         {
@@ -794,7 +803,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.613604,
                 "longitude": -103.488164,
-                "zoom": 17
+                "zoom": 19
             }
         },
         {
@@ -906,14 +915,14 @@ function getZoom(place) {
             "center": {
                 "latitude": 31.3343492201,
                 "longitude": -113.5332564779,
-                "zoom": 17
+                "zoom":17
             }
         },
         {
             "Colonia__c": "Los Altos (bcs) ",
             "center": {
-                "latitude": 22.8859445,
-                "longitude": -109.944361,
+                "latitude": 32.526142,
+                "longitude": -117.077937,
                 "zoom": 17
             }
         },
@@ -928,25 +937,25 @@ function getZoom(place) {
         {
             "Colonia__c": "Los Angeles Ii ",
             "center": {
-                "latitude": 28.0637058,
-                "longitude": -110.72848425,
-                "zoom": 17
+                "latitude": 29.14868,
+                "longitude": -110.966311,
+                "zoom": 9
             }
         },
         {
             "Colonia__c": "Los Heroes (edo) ",
             "center": {
-                "latitude": 19.3301184302,
-                "longitude": -98.8756126058,
-                "zoom": 17
+                "latitude": 19.325541,
+                "longitude": -98.872119,
+                "zoom":16
             }
         },
         {
             "Colonia__c": "Los Heroes Tecamac ",
             "center": {
-                "latitude": 19.63051151555,
-                "longitude": -99.0305244619,
-                "zoom": 17
+                "latitude": 19.629815,
+                "longitude": -99.037761,
+                "zoom": 15
             }
         },
         {
@@ -966,7 +975,7 @@ function getZoom(place) {
             }
         },
         {
-            "Colonia__c": "Los Nogales (qro) ",
+            "Colonia__c": "Fraccionamiento los Nogales (qro) ",
             "center": {
                 "latitude": 20.4164809177,
                 "longitude": -99.9990962884,
@@ -1002,7 +1011,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.606565,
                 "longitude": -103.4931005,
-                "zoom": 17
+                "zoom": 16
             }
         },
         {
@@ -1016,9 +1025,9 @@ function getZoom(place) {
         {
             "Colonia__c": "Monterreal ",
             "center": {
-                "latitude": 25.508028,
-                "longitude": -103.355776,
-                "zoom": 17
+                "latitude": 25.50989,
+                "longitude": -103.354397,
+                "zoom": 16
             }
         },
         {
@@ -1032,33 +1041,33 @@ function getZoom(place) {
         {
             "Colonia__c": "Paraiso Cancun ",
             "center": {
-                "latitude": 21.128595072,
-                "longitude": -86.8849223042,
-                "zoom": 17
+                "latitude": 21.152759,
+                "longitude": -86.849405,
+                "zoom": 19
             }
         },
         {
             "Colonia__c": "Paseo de las Arboledas (ver) ",
             "center": {
-                "latitude": 17.996278,
-                "longitude": -94.616417,
+                "latitude": 19.20613,
+                "longitude": -96.214961,
                 "zoom": 17
             }
         },
         {
             "Colonia__c": "Paseo de las Lomas ",
             "center": {
-                "latitude": 25.64056,
-                "longitude": -100.11449,
+                "latitude": 19.372528,
+                "longitude": -99.266432,
                 "zoom": 17
             }
         },
         {
             "Colonia__c": "Paseo del Pedregal (son) ",
             "center": {
-                "latitude": 29.1745925064,
-                "longitude": -111.02401590215,
-                "zoom": 17
+                "latitude": 29.174187,
+                "longitude": -111.020333,
+                "zoom": 18
             }
         },
         {
@@ -1114,7 +1123,7 @@ function getZoom(place) {
             "center": {
                 "latitude": 25.570015885307,
                 "longitude": -103.53134858756,
-                "zoom": 17
+                "zoom": 18
             }
         },
         {

@@ -22,6 +22,30 @@ body {
     border-color: #002E6D;
 }
 
+ @media screen and (min-height:2000px) and (min-width: 2000px) {
+            .carr{
+                height: 60%;
+                margin-bottom: -130%;
+            }
+
+            .imgt{
+                margin: 13.5% 0% 0% 0%;
+            }
+
+            .input_borde{
+                margin-top: 5%;
+            }
+
+            
+            .form-group {
+                margin: 5%;
+            }
+
+            .carousel-indicators{
+                bottom: 10%;
+            }
+        }
+
 /* Background images are set within the HTML using inline CSS, not here */
 
 .fill {
