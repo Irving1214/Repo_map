@@ -81,7 +81,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
                 <li class="tipo"><a href="http://www.revimex.mx/">CONÓCENOS </a></li>
-                <li class="tipo"><a href="http://www.revimex.mx/sitio/mapas2.html">PROPIEDADES </a></li>
+                <li class="tipo act"><a href="http://www.revimex.mx/sitio/mapas2.html">PROPIEDADES </a></li>
                 <li class="tipo"><a href="http://www.revimex.mx/inversionistas.php">INVERSIONISTAS </a></li>
             </ul>
 
@@ -99,9 +99,16 @@
 
 
 <div class="encabezado col-xs-12">
-    <p>TUS PROPIEDADES</p>
+    <p class="animated fadeIn delay">TUS PROPIEDADES</p>
 </div>
 
+<div class="col-xs-12 oculto-control fixed" align="center">
+    <button class="btncontrol btn-regresar">Regresar</button>
+
+    <button class="btncontrol btn-eliminar">Eliminar</button>
+
+    <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
+</div>
 
 <div class="col-md-12 scrollable">
     <div class="col-md-3" align="center">
@@ -109,24 +116,133 @@
             <div class="thumbnail-fav">
             </div>
 
-            <button class="btn btn-primary">Detalles</button>        
+            <button class="boton-detalles">Detalles</button>        
         </div>
     </div>
     
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
 
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box red">
+            <div class="thumbnail-fav red">
+                <br>
+                <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
+                <br>
+                <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
+                <br>
+                <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
+                <br>
+                <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
+            </div>
+
+            <button class="boton-detalles red">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <div class="box">
+            <div class="thumbnail-fav">
+            </div>
+
+            <button class="boton-detalles">Detalles</button>        
+        </div>
+    </div>
 </div>
 
 
 
+<div class="col-md-12 rev-oculto" align="center">
+    <button class="btncontrol btn-regresar">Regresar</button>
 
+    <button class="btncontrol btn-eliminar">Eliminar</button>
 
-<!-- <div id="description-casas"></div> -->
-
-<!-- <div class="col-md-12" align="center">
-    <a class="btn btn-info btn-lg" href="mapas2.html" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Regresar</a>
-    <button id="byEmail" class="btn btn-lg btn-info" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Enviar por correo</button>
+    <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
 </div>
- -->
+
+
+<div class="col-md-12" align="center">
+    <button class="btncontrol btn-info">Recibir Información</button>
+</div>
+
 
 <!-- MODAL  -->
 <div class="modal fade" role="dialog"></div>
@@ -136,6 +252,7 @@
 <script src="map/js/nouislider.min.js"></script>
 
 <script src="map/js/favoritos.js"></script>
+
 <div class="loading" id="wait"></div>
 
 <div class="modal fade" id="modalEmail"  style="background-color: #585858" role="">
