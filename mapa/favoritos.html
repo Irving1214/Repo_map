@@ -9,12 +9,13 @@
     <title>Revimex - Propiedades</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="map/css/bootstrap.css" rel="stylesheet">
-    <link href="map/css/full-slider.css" rel="stylesheet">
-    <link href="map/css/animate.css" rel="stylesheet">
-    <link href="map/css/desplegar.css" rel="stylesheet">
-    <link href="map/css/favoritos.css" rel="stylesheet">
-    <link href="map/css/nouislider.min.css" rel="stylesheet">
+    <link href="map/css/bootstrap.css"        rel="stylesheet">
+    <link href="map/css/full-slider.css"      rel="stylesheet">
+    <link href="map/css/animate.css"          rel="stylesheet">
+    <link href="map/css/desplegar.css"        rel="stylesheet">
+    <link href="map/css/favoritos.css"        rel="stylesheet">
+    <link href="map/css/nouislider.min.css"   rel="stylesheet">
+    <link href="map/css/font-awesome.css" rel="stylesheet">
 
     <style>
         .loading {
@@ -33,7 +34,7 @@
 
     <script type="text/javascript">
         $(window).on('load', function () {
-            $('#myModal').modal('show');
+            $('#modalEmail').modal('show');
         });
     </script>
 
@@ -51,233 +52,239 @@
 </head>
 
 <body>
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <img style="height: 80px !important; " src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
-         alt="" class="logo">
-    <a href="http://www.revimex.mx/"><h5>CONÓCENOS </h5></a>
-    <a href="http://www.revimex.mx/sitio/mapas2.html"><h5>PROPIEDADES </h5></a>
-    <a href="http://www.revimex.mx/inversionistas.php"><h5>INVERSIONISTAS</h5></a>
-    <a href="http://www.revimex.mx/sitio/recomendadores.php"><h5>RECOMENDADORES</h5></a>
-    <a href="http://revimex.mx/casos.php"><h5>CASOS DE ÉXITO </h5></a>
-    <a href="http://revimex.mx/sitio/vacantes.php"><h5>VACANTES </h5></a>
-</div>
-<div id="top"></div>
+<!-- SideBar Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img style="height: 80px !important; " src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
+             alt="" class="logo">
+        <a href="http://www.revimex.mx/"><h5>CONÓCENOS </h5></a>
+        <a href="http://www.revimex.mx/sitio/mapas2.html"><h5>PROPIEDADES </h5></a>
+        <a href="http://www.revimex.mx/inversionistas.php"><h5>INVERSIONISTAS</h5></a>
+        <a href="http://www.revimex.mx/sitio/recomendadores.php"><h5>RECOMENDADORES</h5></a>
+        <a href="http://revimex.mx/casos.php"><h5>CASOS DE ÉXITO </h5></a>
+        <a href="http://revimex.mx/sitio/vacantes.php"><h5>VACANTES </h5></a>
+    </div>
+    <div id="top"></div>
+<!-- /SideBar Navigation -->
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div onclick="openNav()" class="navbar-header">
-            <button onclick="openNav()" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-center">
-                <li class="tipo"><a href="http://www.revimex.mx/">CONÓCENOS </a></li>
-                <li class="tipo act"><a href="http://www.revimex.mx/sitio/mapas2.html">PROPIEDADES </a></li>
-                <li class="tipo"><a href="http://www.revimex.mx/inversionistas.php">INVERSIONISTAS </a></li>
-            </ul>
-
-            <a class="navbar-brand-sp logo" href="http://www.revimex.mx/"><img style="height: 80px !important; "
-                                                                               src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
-                                                                               alt="" class="logo"></a>
-            <ul class="nav navbar-nav navbar-center">
-                <li class="tipo"><a href="http://www.revimex.mx/sitio/recomendadores.php">RECOMENDADORES </a></li>
-                <li class="tipo"><a href="http://revimex.mx/casos.php">CASOS DE ÉXITO </a></li>
-                <li class="tipo"><a href="http://revimex.mx/sitio/vacantes.php">VACANTES </a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div>
-</nav>
-
-
-<div class="encabezado col-xs-12">
-    <p class="animated fadeIn delay">TUS PROPIEDADES</p>
-</div>
-
-<div class="col-xs-12 oculto-control fixed" align="center">
-    <button class="btncontrol btn-regresar">Regresar</button>
-
-    <button class="btncontrol btn-eliminar">Eliminar</button>
-
-    <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
-</div>
-
-<div class="col-md-12 scrollable">
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div onclick="openNav()" class="navbar-header">
+                <button onclick="openNav()" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
 
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-    
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="tipo"><a href="http://www.revimex.mx/">CONÓCENOS </a></li>
+                    <li class="tipo act"><a href="http://www.revimex.mx/sitio/mapas2.html">PROPIEDADES </a></li>
+                    <li class="tipo"><a href="http://www.revimex.mx/inversionistas.php">INVERSIONISTAS </a></li>
+                </ul>
+
+                <a class="navbar-brand-sp logo" href="http://www.revimex.mx/"><img style="height: 80px !important; "
+                                                                                   src="images/WEB-JUN2017-LOGO-REVIMEX.jpg"
+                                                                                   alt="" class="logo"></a>
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="tipo"><a href="http://www.revimex.mx/sitio/recomendadores.php">RECOMENDADORES </a></li>
+                    <li class="tipo"><a href="http://revimex.mx/casos.php">CASOS DE ÉXITO </a></li>
+                    <li class="tipo"><a href="http://revimex.mx/sitio/vacantes.php">VACANTES </a></li>
+                </ul>
             </div>
-
-            <button class="boton-detalles">Detalles</button>        
         </div>
-    </div>
+    </nav>
+<!-- /Navigation --> 
 
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box red">
-            <div class="thumbnail-fav red">
-                <br>
-                <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
-                <br>
-                <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
-                <br>
-                <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
-                <br>
-                <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
-            </div>
-
-            <button class="boton-detalles red">Detalles</button>        
-        </div>
+    <div class="encabezado col-xs-12">
+        <p class="animated fadeIn delay">TUS PROPIEDADES</p>
     </div>
 
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
+    <div class="col-xs-12 oculto-control fixed" align="center">
+        <button class="btncontrol btn-regresar">Regresar</button>
 
-            <button class="boton-detalles">Detalles</button>        
-        </div>
+        <button class="btncontrol btn-eliminar">Eliminar</button>
+
+        <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
     </div>
 
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-
-    <div class="col-md-3" align="center">
-        <div class="box">
-            <div class="thumbnail-fav">
-            </div>
-
-            <button class="boton-detalles">Detalles</button>        
-        </div>
-    </div>
-</div>
-
-
-
-<div class="col-md-12 rev-oculto" align="center">
-    <button class="btncontrol btn-regresar">Regresar</button>
-
-    <button class="btncontrol btn-eliminar">Eliminar</button>
-
-    <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
-</div>
-
-
-<div class="col-md-12" align="center">
-    <button class="btncontrol btn-info">Recibir Información</button>
-</div>
-
-
-<!-- MODAL  -->
-<div class="modal fade" role="dialog"></div>
-<!-- Bootstrap Core JavaScript -->
-<script src="map/js/bootstrap.min.js"></script>
-<script src="map/js/printThis.js"></script>
-<script src="map/js/nouislider.min.js"></script>
-
-<script src="map/js/favoritos.js"></script>
-
-<div class="loading" id="wait"></div>
-
-<div class="modal fade" id="modalEmail"  style="background-color: #585858" role="">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header" align="center">
-                <h4 class="modal-title">Ingresa tus datos para recibir tus propiedades</h4>
-            </div>
-
-            <div class="modal-body" align="center">
-                <br>
-                <div class="col-md-12">
-                    <div id="error"></div>
-                    <label for="email">Ingresa tu correo electronico:</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+    <div class="col-md-12 scrollable">
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
                 </div>
 
+                <button class="boton-detalles">Detalles</button>        
             </div>
-            <div class="modal-footer" align="center">
-                <br>
-                <a class="btn btn-info btn-lg" href="mapas2.html" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Regresar</a>
-                <button type="button" id="enviar" class="btn btn-info btn-lg" style="background-color: #002967; margin-left: auto; margin-right: auto;" >Entrar</button>
+        </div>
+        
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box red">
+                <div class="thumbnail-fav red">
+                    <br>
+                    <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
+                    <br>
+                    <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
+                    <br>
+                    <span style="font-weight: bold; font-size: 20px; color: #e85a4e;">Ejemplo</span>
+                    <br>
+                    <span style="font-weight: bold; font-size: 20px; color: white;">Ejemplo</span>
+                </div>
+
+                <button class="boton-detalles red">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
+            </div>
+        </div>
+
+        <div class="col-md-3" align="center">
+            <div class="box">
+                <div class="thumbnail-fav">
+                </div>
+
+                <button class="boton-detalles">Detalles</button>        
             </div>
         </div>
     </div>
-</div>
+
+
+
+    <div class="col-md-12 rev-oculto" align="center">
+        <button class="btncontrol btn-regresar">Regresar</button>
+
+        <button class="btncontrol btn-eliminar">Eliminar</button>
+
+        <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
+    </div>
+
+
+    <div class="col-md-12" align="center">
+        <button class="btncontrol btn-info">Recibir Información</button>
+    </div>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="map/js/bootstrap.min.js"></script>
+    <script src="map/js/printThis.js"></script>
+    <script src="map/js/nouislider.min.js"></script>
+
+    <script src="map/js/favoritos.js"></script>
+
+    <div class="loading" id="wait"></div>
+
 </body>
+
 </html>
+
+
+
+
+<!-- MODAL  [email] -->
+<div class="modal fade" id="modalEmail"  " role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" align="center">
+                
+                    <!-- <div id="error"></div> -->
+                    <p class="modal-text">Ingresa tus datos<br>para ver tus propiedades marcadas</p>
+                    <form action="" method="" name="">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="E-mail">
+                        </div>
+
+                        <a class="privacidad" href="#"><p>Aviso de Privacidad</p></a>
+
+                        <button type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
+                        <br>
+                        <button class="loginBtn btn-facebook"><span class="fa fa-facebook iconfb"></span>&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook</button>
+
+                        <a class="privacidad" href="#"><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
+                    </form>
+            </div>    
+        </div>
+    </div>
+</div>
+<!-- /MODAL  -->
