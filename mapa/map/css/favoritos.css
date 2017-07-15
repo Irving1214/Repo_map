@@ -507,6 +507,19 @@
     font-size: 20px !important;
 }
 
+.modal {
+    position: fixed;
+    top: 7em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
 .modal-content
 {
     position: relative;
@@ -523,11 +536,24 @@
 }
 
 @media screen and (min-width: 768px)
-{
+{   
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
     .modal-dialog
     {
         width: 419px;
-        margin: 20% auto;
+        margin: 17% auto;
     }
 }
 
