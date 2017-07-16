@@ -606,6 +606,11 @@ button.close
     color: #919191;
 }
 
+.privacidad:hover
+{
+    cursor: pointer;
+}
+
 .form-group
 {
     margin-bottom: -7px;
@@ -734,7 +739,7 @@ button.close
     .modal-dialog
     {
         width: 419px;
-        margin: 13em auto;
+        margin: 9em auto;
     }
 
     .modal-text
@@ -773,6 +778,14 @@ button.close
     .iconfb
     {
         font-size: 20px !important;
+    }
+}
+
+@media screen and (min-width: 1800px)
+{
+    .modal-dialog
+    {
+        margin: 13em auto;
     }
 }
 /* ----------- M O D A L */
