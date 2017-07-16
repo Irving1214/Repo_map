@@ -36,6 +36,7 @@
         $(window).on('load', function () {
             $('#modalEmail').modal('show');
             // $('#modalTel').modal('show');
+            // $('#modalaviso').modal('show');
         });
     </script>
 
@@ -284,22 +285,21 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body" align="center">
-                
-                    <!-- <div id="error"></div> -->
-                    <p class="modal-text">Ingresa tus datos<br>para ver tus propiedades marcadas</p>
-                    <form action="" method="" name="">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="E-mail">
-                        </div>
+                <!-- <div id="error"></div> -->
+                <p class="modal-text">Ingresa tus datos<br>para ver tus propiedades marcadas</p>
+                <form action="" method="" name="">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    </div>
 
-                        <a class="privacidad" href="#"><p style="margin-top: 15px;">Aviso de Privacidad</p></a>
+                    <a class="privacidad" href="#"><p style="margin-top: 15px;">Aviso de Privacidad</p></a>
 
-                        <button type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
-                        <br>
-                        <button class="loginBtn btn-facebook"><span class="fa fa-facebook iconfb"></span>&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook</button>
+                    <button type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
+                    <br>
+                    <button class="loginBtn btn-facebook"><span class="fa fa-facebook iconfb"></span>&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook</button>
 
-                        <a class="privacidad" href="#"><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
-                    </form>
+                    <a class="privacidad" href="#"><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
+                </form>
             </div>    
         </div>
     </div>
@@ -311,24 +311,40 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body" align="center">
-                
-                    <!-- <div id="error"></div> -->
-                    <p class="modal-text">Ingresa tu teléfono<br>para ver tus propiedades marcadas</p>
-                    <form class="form-inline" action="" method="" name="">
-                        
-                        <div class="form-group">
-                            <input type="number" class="form-control form-control--lada" id="lada" placeholder="Lada">
-                        </div>
-                        &nbsp;
-                        <div class="form-group">
-                            <input type="number" class="form-control form-control--tel" id="tels" placeholder="Teléfono">
-                        </div>
-                        
+                <!-- <div id="error"></div> -->
+                <p class="modal-text">Ingresa tu teléfono<br>para ver tus propiedades marcadas</p>
+                <form class="form-inline" action="" method="" name="">
+                    
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control--lada" id="lada" placeholder="Lada">
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control--tel" id="tels" placeholder="Teléfono">
+                    </div>
+                    
 
-                        <a class="privacidad" href="#"><p style="margin-top: 10px;">Aviso de Privacidad</p></a>
+                    <a class="privacidad" href="#"><p style="margin-top: 10px;">Aviso de Privacidad</p></a>
 
-                        <button style="margin-bottom: 10px;" type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
-                    </form>
+                    <button style="margin-bottom: 10px;" type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
+                </form>
+            </div>    
+        </div>
+    </div>
+</div>
+<!-- /MODAL  -->
+
+<!-- MODAL  [propiedades.marcadas] -->
+<div class="modal fade" id="modalaviso" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body" align="center">
+                <!-- <div id="error"></div> -->
+                <p class="modal-text" style="margin-top: 2px;">Tus propiedades marcadas<br>han sido enviadas</p>
+                <a class="privacidad" href="#"><p style="margin-top: 10px; margin-bottom: 25px;">Aviso de Privacidad</p></a>    
             </div>    
         </div>
     </div>
