@@ -96,7 +96,8 @@
         margin-top: .3em;
     }
 
-    .vert-align {
+    .vert-align
+    {
         padding-top: 26px;
     }
 }
@@ -166,8 +167,8 @@
 
 .box
 {
-    width: 15em;
-    height: 220px;
+    width: 14em;
+    height: 206px;
     margin-top: 23px;
 
     border-width: 1.5px;
@@ -178,7 +179,7 @@
 
 .thumbnail-fav
 {
-    height: 145px;
+    height: 134px;
     margin: 15px 15px 0 15px;
 
     border-width: 1.5px;
@@ -257,7 +258,7 @@
 
     color: #fff;
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .btn-regresar
@@ -358,12 +359,13 @@
 
     .box
     {
-        height: 230px;
+        width: 13.5em;
+        height: 205px;
     }
 
     .thumbnail-fav
     {
-        height: 153px;
+        height: 130px;
         margin: 15px 15px 0 15px;
 
         border-width: 1.5px;
@@ -398,7 +400,7 @@
 
         color: #fff;
         border: 1px solid transparent;
-        border-radius: 2px;
+        border-radius: 0;
     }
 
     .btncontrol:hover
@@ -431,7 +433,22 @@
     }
 }
 
-/* [pantallas más medianas] */
+/* [pantallas medio medianas] */
+@media screen and (min-width:1100px)
+{
+    .box
+    {
+        width: 15em;
+        height: 230px;
+    }
+
+    .thumbnail-fav
+    {
+        height: 153px;
+    }
+}
+
+/* [pantallas más medianas alv] */
 @media screen and (min-width: 1600px)
 {
     .encabezado
@@ -470,6 +487,7 @@
 
     .box
     {
+        width: 16em;
         height: 240px;
     }
 
