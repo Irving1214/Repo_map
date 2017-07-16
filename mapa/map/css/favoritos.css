@@ -1,7 +1,6 @@
 /* Colores barra de navegación
     !important -> Cambiar si es necesario, yo solo segui los mockups del diseñador ...
  */
-
 .navbar-inverse
 {
     border-color: #002967;
@@ -17,7 +16,6 @@
 }
 
 /* Estilo de pantalla Favoritos (Propiedades) */
-
 .oculto-control
 {
     display: inherit;
@@ -52,7 +50,7 @@
 
 .scrollable
 {
-    margin-top: 125px;
+    margin-top: 7em;
 }
 
 .box
@@ -251,14 +249,7 @@
 
     .box
     {
-        width: 72%;
         height: 230px;
-        margin-top: 23px;
-
-        border-width: 1.5px;
-        border-style: solid;
-        border-color: #46beef;
-        border-radius: 2px;
     }
 
     .thumbnail-fav
@@ -372,14 +363,7 @@
 
     .box
     {
-        width: 45%;
         height: 240px;
-        margin-top: 23px;
-
-        border-width: 1.5px;
-        border-style: solid;
-        border-color: #46beef;
-        border-radius: 2px;
     }
 
     .thumbnail-fav
@@ -394,18 +378,48 @@
         border-radius: 2px;
     }
 }
-
 /* FIN -> Estilo de pantalla Favoritos (Propiedades) */
 
 
 /* M O D A L */
+.modal
+{
+    position: fixed;
+    z-index: 1050;
+    top: 7em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    overflow: hidden;
+
+    outline: 0;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-content
+{
+    position: relative;
+
+    border: 1px solid #999;
+    border: 3px solid rgb(73, 189, 240);
+    border-radius: 0;
+    outline: 0;
+    background-color: #e6e6e6;
+    -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+    /* -webkit-box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+    /* box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+}
 
 .modal-text
 {
     font-size: 15px;
     line-height: 1.3;
 
-    margin-top: 20px;
+    margin-top: 25px;
 
     color: #002967;
 }
@@ -419,6 +433,10 @@
     color: #919191;
 }
 
+.form-group
+{
+    margin-bottom: -7px;
+}
 
 .form-control
 {
@@ -442,6 +460,19 @@
     background-image: none;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.form-control--lada
+{
+    width: 14em !important;
+    margin-top: 14px;
+}
+
+.form-control--tel
+{
+    width: 14em !important;
+    margin-top: 3px;
+    margin-bottom: 25px;
 }
 
 .btn-entrar
@@ -507,53 +538,30 @@
     font-size: 16px !important;
 }
 
-.modal {
-    position: fixed;
-    top: 7em;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1050;
-    display: none;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-}
-
-.modal-content
-{
-    position: relative;
-
-    border: 1px solid #999;
-    border: 3px solid rgb(73, 189, 240);
-    border-radius: 0;
-    outline: 0;
-    background-color: #e6e6e6;
-    -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-    /* -webkit-box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
-    /* box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
-}
 
 @media screen and (min-width: 768px)
-{   
-    .modal {
+{
+    .modal
+    {
         position: fixed;
+        z-index: 1050;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 1050;
+
         display: none;
         overflow: hidden;
-        -webkit-overflow-scrolling: touch;
+
         outline: 0;
+
+        -webkit-overflow-scrolling: touch;
     }
 
     .modal-dialog
     {
         width: 419px;
-        margin: 17% auto;
+        margin: 13em auto;
     }
 
     .modal-text
@@ -564,6 +572,19 @@
     .form-control
     {
         width: 20em;
+    }
+
+    .form-control--lada
+    {
+        width: 6em !important;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .form-control--tel
+    {
+        margin-bottom: 0;
+        margin-bottom: 3px;
     }
 
     .btn-entrar
@@ -581,51 +602,7 @@
         font-size: 20px !important;
     }
 }
-
 /* ----------- M O D A L */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 b,
@@ -731,8 +708,7 @@ strong
 
 
 
-/*ANIMACIONES*/
-
+/* ANIMACIONES */
 .delay
 {
     animation-duration: 1.80s;
