@@ -1,10 +1,37 @@
 /* Colores barra de navegación
     !important -> Cambiar si es necesario, yo solo segui los mockups del diseñador ...
  */
+.navbar
+{
+    min-height: 60px;
+}
+
 .navbar-inverse
 {
     border-color: #002967;
     background-color: #002967;
+}
+
+.navbar-inverse .navbar-toggle
+{
+    border-color: #49bdf0;
+}
+
+.navbar-toggle
+{
+    position: relative;
+
+    float: right;
+
+    margin-top: 12px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    padding: 7px 5px;
+
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: #002967;
+    background-image: none;
 }
 
 .act,
@@ -20,56 +47,67 @@
     padding-left: 0;
 }
 
-.img-revimex {
+.img-revimex
+{
     height: 3.5em;
     margin-top: 1em;
 }
 
-.tipo, 
+.tipo,
 .tipo:focus
 {
     font-size: 9px;
     font-weight: bold;
 
-    color: white;
     transition: all .3s ease-in-out;
+
+    color: white;
 }
 
-.tipo:hover {
+.tipo:hover
+{
     font-size: 9.4px;
-    color: #C3C3C3;
+
     text-decoration: none;
+
+    color: #c3c3c3;
 }
 
 @media screen and (min-width:970px)
 {
-    .tipo {
+    .tipo
+    {
         font-size: 12px;
     }
 
-    .tipo:hover {
+    .tipo:hover
+    {
         font-size: 12.4px;
     }
 
-    .img-revimex {
+    .img-revimex
+    {
         height: 4.5em;
-        margin-top: 0.5em;
+        margin-top: .5em;
     }
 }
 
 @media screen and (min-width:1200px)
 {
-    .tipo {
+    .tipo
+    {
         font-size: 14px;
     }
 
-    .tipo:hover {
+    .tipo:hover
+    {
         font-size: 14.4px;
     }
 
-    .img-revimex {
+    .img-revimex
+    {
         height: 5.6em;
-        margin-top: 0em;
+        margin-top: 0;
     }
 }
 
@@ -691,23 +729,23 @@ strong
 
     transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
 
-    background-color: rgba(0, 41, 103, .52) !important; /* azul */
+    background-color: rgba(0, 41, 103, .83) !important;
 }
 
 /* The navigation menu links */
 .sidenav a
 {
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: bold;
 
     display: block;
 
-    padding: 5px 5px 5px 5px;
+    padding: 24px 5px 5px 26px;
 
-    transition: .3s
-    z-index: 10;
+    transition: .3s z-index: 10;
     text-decoration: none;
 
-    color: #f1f1f1;
+    color: #f1f1f1;;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -724,10 +762,9 @@ strong
 
     position: absolute;
     z-index: 10;
-    top: 0;
-    right: 25px;
+    top: -20px;
 
-    margin-left: 50px;
+    margin-left: -8px;
 }
 
 #main
