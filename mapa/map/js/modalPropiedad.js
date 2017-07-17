@@ -288,6 +288,10 @@ function createModal(propiedad, index) {
         '</br>';
     $("#description-casas").append(modal_casa);
 
+
+    // Si ya esta en favoritos le cambia el color del corazón
+    isFavorite(propiedad.Id, index);
+
     modalListeners(index);
 }
 

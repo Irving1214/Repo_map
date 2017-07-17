@@ -13,6 +13,23 @@ var service;
 var markesrsSerives = [];
 var slider = null;
 var var_min = 0, var_max = 1500000;
+var request = window.indexedDB.open("favoritos", 2);
+var db;
+
+request.onerror = function(event){
+    console.log("Error opening DB", event);
+};
+
+request.onupgradeneeded   = function(event){
+    console.log("Upgrading");
+    db = event.target.result;
+    var objectStore = db.createObjectStore("propiedades", { keyPath : "id" });
+};
+
+request.onsuccess  = function(event){
+    console.log("Success opening DB");
+    db = event.target.result;
+};
 
 $(document).ready(function(){
   set_sliderPrecio();
@@ -217,9 +234,7 @@ function load_propiedades(latitud, longitud) {
                         '</div>';
 
                     $("#casas").append(casa_card);
-
                     index = index + 1;
-
                 });
 
                 addMarkers(respuesta.propiedades);
@@ -476,6 +491,20 @@ var delay = (function () {
     };
 })();
 
+/*
+ * Si la propiedad ya esta en favoritos, cambia el icono del corazón
+ */
+function isFavorite(propiedad_id, index) {
+    var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
+    request.onsuccess = function (event) {
+        request.result.forEach(function (result) {
+            if (result.propiedad.Id == propiedad_id) {
+                $("#heart_" + index).attr("src", "images/ICON-PIC-HEART-RED.png");
+            }
+        });
+    };
+}
+
 function iLikeIt(id) {
     var heart = $("#heart_" + id);
     // TODO remover de favoritos
@@ -484,42 +513,49 @@ function iLikeIt(id) {
         heart.addClass("iDontLoveIt");
         heart.css("color", "rgba(255, 255, 255, 0.62)");
     } else { // agregar a favoritos
-        heart.removeClass("iDontLoveIt");
-        heart.addClass("iloveit");
-        heart.css("color", "rgba(255, 0, 0, 0.62)");
-
         var propiedad_id = null;
         for (var i = 0; i < allMarkers.length; i++) {
             if ("marker" + id == allMarkers[i].id) {
-                propiedad_id = allMarkers[i].propiedad;
+                    propiedad_id = allMarkers[i].propiedad;
                 break;
             }
         }
 
-        $.ajax({
-            url: url + '/favoritos/store',
-            type: 'POST',
-            data: {
-                id: propiedad_id
-            },
-            dataType: 'JSON',
-            beforeSend: function () {
-                $("#wait").show();
-            },
-            success: function (respuesta) {
-                notificaction("La propiedad se agrego a tus favoritos", "success");
-                heart.attr("src", "images/ICON-PIC-HEART-RED.png");
-                $('#modalFavoritos' + id).show();
-            },
-            error: function (respuesta) {
-                console.log(respuesta);
-            },
-            complete: function () {
-                $("#wait").hide();
+        /*
+         * Obtiene la propiedad
+         */
+        var propiedad = null;
+        for (i = 0; i < propiedades.length; i++) {
+            if (propiedad_id == propiedades[i].Id) {
+                propiedad = propiedades[i];
+                break;
             }
-        });
+        }
+
+        /*
+         * Almacena la propiedad en indexeddb
+         */
+        var transaction = db.transaction(["propiedades"], "readwrite");
+        transaction.oncomplete = function(event) {
+            console.log("Success");
+        };
+
+        transaction.onerror = function(event) {
+            console.log("Error");
+        };
+        var objectStore = transaction.objectStore("propiedades");
+
+        objectStore.add({id: propiedad.Id, propiedad: propiedad});
+
+        /*
+         * Notifica, cambia el icono y muestr el modal de favoritos
+         */
+        notificaction("La propiedad se agrego a tus favoritos", "success");
+        heart.attr("src", "images/ICON-PIC-HEART-RED.png");
+        $('#modalFavoritos' + id).show();
     }
 }
+
 function caracteresCorreoValido(email){
     var caract = new RegExp(/^([a-zA-Z0-9\._-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
     if (caract.test(email) == false){
@@ -527,6 +563,7 @@ function caracteresCorreoValido(email){
     } else {
       return true;
     }
+
 }
 function caracteresTelValido(telefono){
     var caract = new RegExp(/^([0-9]{10,10})+$/);
@@ -536,6 +573,7 @@ function caracteresTelValido(telefono){
       return true;
     }
 }
+
 function caracteresNombreValido(nombre){
     var caract = new RegExp(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g);
     if (caract.test(nombre) == false){
@@ -545,6 +583,7 @@ function caracteresNombreValido(nombre){
       return true;
     }
 }
+
 function sendMail(propiedad_id) {
     event.preventDefault();
     var mensaje = '';
