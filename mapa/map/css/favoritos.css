@@ -1,0 +1,902 @@
+/* Colores barra de navegación
+    !important -> Cambiar si es necesario, yo solo segui los mockups del diseñador ...
+ */
+.navbar
+{
+    min-height: 60px;
+}
+
+.navbar-inverse
+{
+    border-color: #002967;
+    background-color: #002967;
+}
+
+.navbar-inverse .navbar-toggle
+{
+    border-color: #49bdf0;
+}
+
+.navbar-toggle
+{
+    position: relative;
+
+    float: right;
+
+    margin-top: 12px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    padding: 7px 5px;
+
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: #002967;
+    background-image: none;
+}
+
+.act,
+.act:hover,
+.act:focus
+{
+    color: #02bdee !important;
+}
+
+.nav-sp
+{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.img-revimex
+{
+    height: 3.5em;
+    margin-top: .4em;
+}
+
+.tipo,
+.tipo:focus
+{
+    font-size: 9px;
+    font-weight: bold;
+
+    transition: all .3s ease-in-out;
+
+    color: white;
+}
+
+.tipo:hover
+{
+    font-size: 9.4px;
+
+    text-decoration: none;
+
+    color: #c3c3c3;
+}
+
+.vert-align
+{
+    padding-top: 23px;
+}
+
+
+
+@media screen and (min-width:970px)
+{
+    .tipo
+    {
+        font-size: 12px;
+    }
+
+    .tipo:hover
+    {
+        font-size: 12.4px;
+    }
+
+    .img-revimex
+    {
+        height: 4.5em;
+        margin-top: .3em;
+    }
+
+    .vert-align
+    {
+        padding-top: 26px;
+    }
+}
+
+@media screen and (min-width:1200px)
+{
+    .tipo
+    {
+        font-size: 14px;
+    }
+
+    .tipo:hover
+    {
+        font-size: 14.4px;
+    }
+
+    .img-revimex
+    {
+        height: 5.6em;
+        margin-top: 0;
+    }
+
+    .vert-align
+    {
+        padding-top: 30px;
+    }
+}
+
+
+/* Estilo de pantalla Favoritos (Propiedades) */
+.oculto-control
+{
+    display: inherit;
+}
+
+.rev-oculto
+{
+    display: none;
+}
+
+.encabezado
+{
+    padding: 1px 0;
+
+    text-align-last: center;
+
+    background-color: #e6e6e6;
+}
+
+.encabezado p
+{
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-top: 10px;
+
+    letter-spacing: -1px;
+
+    color: #002967;
+}
+
+.scrollable
+{
+    margin-top: 7em;
+}
+
+.box
+{
+    width: 14em;
+    height: 206px;
+    margin-top: 23px;
+
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #46beef;
+    border-radius: 2px;
+}
+
+.thumbnail-fav
+{
+    height: 134px;
+    margin: 15px 15px 0 15px;
+
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #002967;
+    /*width: 80%;*/
+    border-radius: 2px;
+}
+
+.boton-detalles
+{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571;
+
+    display: inline-block;
+
+    margin-top: 13px;
+    padding: 4px 26px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border: 1px solid transparent;
+    border-color: #002967;
+    background-color: #002967;
+}
+
+.box.red
+{
+    border-color: #e85a4e;
+    background-color: white;
+}
+
+.thumbnail-fav.red
+{
+    border-color: #e85a4e;
+    background-color: #f3aca6;
+}
+
+.boton-detalles.red
+{
+    border-color: #e85a4e;
+    background-color: #e85a4e;
+}
+
+.btncontrol
+{
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 1.428571;
+
+    display: inline-block;
+
+    width: 90px;
+    height: 30px;
+    margin: 17px 2px 0 2px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    letter-spacing: 1px;
+
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+.btn-regresar
+{
+    transition: all .3s ease-in-out;
+
+    border-color: #49bdf0;
+    background-color: #49bdf0;
+}
+
+.btn-regresar:hover
+{
+    border-color: #47afdd;
+    background-color: #47afdd;
+}
+
+.btn-eliminar
+{
+    transition: all .3s ease-in-out;
+
+    border-color: #e85a4e;
+    background-color: #e85a4e;
+}
+
+.btn-eliminar:hover
+{
+    border-color: #d55348;
+    background-color: #d55348;
+}
+
+.btn-cerrar
+{
+    transition: all .3s ease-in-out;
+
+    border-color: #092f70;
+    background-color: #092f70;
+}
+
+.btn-cerrar:hover
+{
+    border-color: #0d3d8f;
+    background-color: #0d3d8f;
+}
+
+.btn-info
+{
+    width: 245px;
+    height: 40px;
+    margin: 25px 0 15px;
+
+    transition: all .3s ease-in-out;
+
+    color: #092f70;
+    border-color: #cddb00;
+    background-color: #cddb00;
+}
+
+.btn-info:hover
+{
+    width: 243px;
+    height: 38px;
+
+    color: #092f70;
+    border-color: #c2cf00;
+    background-color: #c2cf00;
+}
+
+/* R E S P O N S I V E */
+
+/* [pantallas medianas] */
+@media screen and (min-width:768px)
+{
+    .oculto-control
+    {
+        display: none;
+    }
+
+    .rev-oculto
+    {
+        display: inherit;
+    }
+
+    .encabezado p
+    {
+        font-size: 30px;
+        font-weight: bold;
+
+        color: #002967;
+    }
+
+    .scrollable
+    {
+        overflow-y: auto;
+
+        height: 56%;
+        margin-top: 0;
+    }
+
+    .box
+    {
+        width: 13.5em;
+        height: 205px;
+    }
+
+    .thumbnail-fav
+    {
+        height: 130px;
+        margin: 15px 15px 0 15px;
+
+        border-width: 1.5px;
+        border-style: solid;
+        border-color: #002967;
+        /* width: 80%; */
+        border-radius: 2px;
+    }
+
+    .btncontrol
+    {
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 1.428571;
+
+        display: inline-block;
+
+        width: 170px;
+        height: 40px;
+        margin: 25px 25px 0 25px;
+
+        cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        transition: all .3s ease-in-out;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        letter-spacing: 1px;
+
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 0;
+    }
+
+    .btncontrol:hover
+    {
+        width: 168px;
+        height: 38px;
+    }
+
+    .btn-info
+    {
+        width: 245px;
+        height: 40px;
+        margin: 25px 0 15px;
+
+        transition: all .3s ease-in-out;
+
+        color: #092f70;
+        border-color: #cddb00;
+        background-color: #cddb00;
+    }
+
+    .btn-info:hover
+    {
+        width: 243px;
+        height: 38px;
+
+        color: #092f70;
+        border-color: #c2cf00;
+        background-color: #c2cf00;
+    }
+}
+
+/* [pantallas medio medianas] */
+@media screen and (min-width:1100px)
+{
+    .box
+    {
+        width: 15em;
+        height: 230px;
+    }
+
+    .thumbnail-fav
+    {
+        height: 153px;
+    }
+}
+
+/* [pantallas más medianas alv] */
+@media screen and (min-width: 1600px)
+{
+    .encabezado
+    {
+        padding: 10px 0;
+
+        text-align-last: center;
+
+        background-color: #e6e6e6;
+    }
+
+    .encabezado
+    {
+        padding: 10px 0;
+
+        text-align-last: center;
+
+        background-color: #e6e6e6;
+    }
+
+    .encabezado p
+    {
+        font-size: 40px;
+        font-weight: bold;
+
+        color: #002967;
+    }
+
+    .scrollable
+    {
+        overflow-y: auto;
+
+        height: 70%;
+        margin-top: 0;
+    }
+
+    .box
+    {
+        width: 16em;
+        height: 240px;
+    }
+
+    .thumbnail-fav
+    {
+        height: 165px;
+        margin: 15px 15px 0 15px;
+
+        border-width: 1.5px;
+        border-style: solid;
+        border-color: #002967;
+        /*width: 80%;*/
+        border-radius: 2px;
+    }
+}
+/* FIN -> Estilo de pantalla Favoritos (Propiedades) */
+
+
+/* M O D A L */
+.modal
+{
+    position: fixed;
+    z-index: 1050;
+    top: 7em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    overflow: hidden;
+
+    outline: 0;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-header
+{
+    padding: 6px 16px 0 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-content
+{
+    position: relative;
+
+    border: 1px solid #999;
+    border: 3px solid rgb(73, 189, 240);
+    border-radius: 0;
+    outline: 0;
+    background-color: #e6e6e6;
+    -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+    /* -webkit-box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+    /* box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+}
+
+.modal-text
+{
+    font-size: 15px;
+    line-height: 1.3;
+
+    margin-top: 25px;
+
+    color: #002967;
+}
+
+.modal-header .close
+{
+    margin-top: 1px;
+}
+
+button.close
+{
+    padding: 0 4px;
+
+    cursor: pointer;
+    /* border: 0; */
+
+    border-style: solid;
+    border-color: #49bdf0;
+    border-radius: 50px;
+    background: #49bdf0;
+
+    -webkit-appearance: none;
+}
+
+.close
+{
+    font-size: 16px;
+    line-height: 1;
+
+    float: right;
+
+    transition: all .3s ease-in-out;
+
+    color: #fff;
+
+    filter: alpha(opacity=20);
+}
+
+.close:hover,
+.close:focus
+{
+    color: #002967;
+}
+
+.privacidad
+{
+    font-size: 9px;
+
+    text-decoration: underline;
+
+    color: #919191;
+}
+
+.privacidad:hover
+{
+    cursor: pointer;
+}
+
+.form-group
+{
+    margin-bottom: -7px;
+}
+
+.form-control
+{
+    font-size: 14px;
+    line-height: 1.42857143;
+
+    display: block;
+
+    width: 17em;
+    height: 29px;
+    padding: 6px 12px;
+
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+         -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    color: #555;
+    border: 1px solid #fff;
+    border-radius: 0;
+    background-color: #fff;
+    background-image: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.form-control--lada
+{
+    width: 14em !important;
+    margin-top: 14px;
+}
+
+.form-control--tel
+{
+    width: 14em !important;
+    margin-top: 3px;
+    margin-bottom: 25px;
+}
+
+.btn-entrar
+{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+    padding: 5px 43px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: white;
+    border: 1px solid transparent;
+    /* border-radius: 4px; */
+    background-color: #46beef;
+    background-image: none;
+
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+
+.loginBtn
+{
+    font-size: 13px;
+    line-height: 20px;
+
+    position: relative;
+
+    box-sizing: border-box;
+    margin: .2em;
+    margin: 12px 0 19px 0;
+    padding: 10px 15px 10px 20px;
+
+    transition: all .3s ease-in-out;
+    text-align: left;
+    white-space: nowrap;
+
+    color: #fff;
+    color: #fff;
+    border: 1px solid transparent;
+    border-color: rgba(0,0,0,.2);
+    background-color: #2d4373;
+}
+
+.loginBtn:hover
+{
+    background-color: #3b5998;
+}
+
+.iconfb
+{
+    font-size: 16px !important;
+}
+
+
+@media screen and (min-width: 768px)
+{
+    .modal
+    {
+        position: fixed;
+        z-index: 1050;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: none;
+        overflow: hidden;
+
+        outline: 0;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-dialog
+    {
+        width: 419px;
+        margin: 9em auto;
+    }
+
+    .modal-text
+    {
+        font-size: 18px;
+    }
+
+    .form-control
+    {
+        width: 20em;
+    }
+
+    .form-control--lada
+    {
+        width: 6em !important;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .form-control--tel
+    {
+        margin-bottom: 0;
+        margin-bottom: 3px;
+    }
+
+    .btn-entrar
+    {
+        font-size: 18px;
+    }
+
+    .loginBtn
+    {
+        font-size: 18px;
+    }
+
+    .iconfb
+    {
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (min-width: 1800px)
+{
+    .modal-dialog
+    {
+        margin: 13em auto;
+    }
+}
+/* ----------- M O D A L */
+
+
+b,
+strong
+{
+    font-weight: 35px !important;
+}
+
+.logos.redes_sociales
+{
+    margin-right: 13%;
+}
+
+
+/* The side navigation menu */
+.sidenav
+{
+    position: absolute;
+    z-index: +10;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+
+    width: 0;
+    height: 100%;
+    padding-top: -20px;
+
+    transition: .5s;
+
+    background-color: rgba(0, 41, 103, .83) !important;
+}
+
+/* The navigation menu links */
+.sidenav a
+{
+    font-size: 13px;
+    font-weight: bold;
+
+    display: block;
+
+    padding: 0 5px 40px 42px;
+
+    transition: .3s z-index: 10;
+    text-decoration: none;
+
+    color: #f1f1f1;;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.offcanvas a:focus
+{
+    color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn
+{
+    font-size: 35px;
+
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+
+    margin-left: -27px;
+
+    color: #49bdf0;
+}
+
+#main
+{
+    padding: 20px;
+
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px)
+{
+    .sidenav
+    {
+        padding-top: 15px;
+    }
+
+    .sidenav a
+    {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 800px)
+{
+    div#mySidenav
+    {
+        display: none;
+    }
+}
+
+.modal-backdrop
+{
+    opacity: .6 !important;
+}
+
+
+
+/* ANIMACIONES */
+.delay
+{
+    animation-duration: 1.80s;
+}

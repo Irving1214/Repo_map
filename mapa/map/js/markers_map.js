@@ -550,7 +550,7 @@ function getMarkersPlace(id, action) {
                     service.nearbySearch({
                         location: latLng,
                         radius: radius,
-                        types: ['school']
+                        types: ['school','university']
                     }, processResultsEscuelas);
                     mrkrPlace = action;
                     break;
