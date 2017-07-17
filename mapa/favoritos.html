@@ -32,14 +32,6 @@
     <!-- jQuery -->
     <script src="map/js/jquery.js"></script>
 
-    <script type="text/javascript">
-        $(window).on('load', function () {
-            $('#modalEmail').modal('show');
-            // $('#modalTel').modal('show');
-            // $('#modalaviso').modal('show');
-        });
-    </script>
-
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "210px";
@@ -101,7 +93,7 @@
             
             <div class="col-sm-2 col-md-2 nav-sp" align="center">
                 <a href="http://www.revimex.mx/">
-                    <img class="img-revimex" src="images/WEB-JUN2017-LOGO-REVIMEX.jpg" alt="" class="logo">
+                    <img class="img-revimex logo" src="images/WEB-JUN2017-LOGO-REVIMEX.jpg" alt="">
                     <!-- <img class="img-revimex" src="images/revimex-logo.png" alt="" class="logo"> -->
                 </a>
             </div>
@@ -135,24 +127,9 @@
     </div>
 
     <div class="col-md-12 scrollable">
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-        
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
+        <div id="casas"></div>
+        <div id="description-casas"></div>
+        <!--
         <div class="col-xs-12 col-sm-4 col-md-3" align="center">
             <div class="box">
                 <div class="thumbnail-fav">
@@ -178,81 +155,8 @@
                 <button class="boton-detalles red">Detalles</button>        
             </div>
         </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 col-md-3" align="center">
-            <div class="box">
-                <div class="thumbnail-fav">
-                </div>
-
-                <button class="boton-detalles">Detalles</button>        
-            </div>
-        </div>
+        -->
     </div>
-
-
 
     <div class="col-md-12 rev-oculto" align="center">
         <button class="btncontrol btn-regresar">Regresar</button>
@@ -264,7 +168,7 @@
 
 
     <div class="col-md-12" align="center">
-        <button class="btncontrol btn-info">Recibir Información</button>
+        <button class="btncontrol btn-info" id="enviarPropiedades">Recibir Información</button>
     </div>
 
     <!-- Bootstrap Core JavaScript -->
@@ -288,18 +192,19 @@
             <div class="modal-body" align="center">
                 <!-- <div id="error"></div> -->
                 <p class="modal-text">Ingresa tus datos<br>para ver tus propiedades marcadas</p>
-                <form action="" method="" name="">
+                <div id="error"></div>
+                <form action="#" method="POST">
                     <div class="form-group">
                         <input type="email" class="form-control" id="email" placeholder="E-mail">
                     </div>
 
                     <a class="privacidad" href="#"><p style="margin-top: 15px;">Aviso de Privacidad</p></a>
 
-                    <button type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
+                    <button type="submit" class="btn-entrar" name="enviar" id="enviar">Entrar</button>
                     <br>
                     <button class="loginBtn btn-facebook"><span class="fa fa-facebook iconfb"></span>&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook</button>
 
-                    <a class="privacidad" data-toggle="modal" data-target="#modalTel"><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
+                    <a class="privacidad" id="openPhoneModal" ><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
                 </form>
             </div>    
         </div>
@@ -314,7 +219,8 @@
             <div class="modal-body" align="center">
                 <!-- <div id="error"></div> -->
                 <p class="modal-text">Ingresa tu teléfono<br>para ver tus propiedades marcadas</p>
-                <form class="form-inline" action="" method="" name="">
+                <div id="errorTel"></div>
+                <form class="form-inline" action="#" method="POST">
                     
                     <div class="form-group">
                         <input type="number" class="form-control form-control--lada" id="lada" placeholder="Lada">
@@ -327,7 +233,7 @@
 
                     <a class="privacidad" href="#"><p style="margin-top: 10px;">Aviso de Privacidad</p></a>
 
-                    <button style="margin-bottom: 10px;" type="submit" class="btn-entrar" onclick="" name="" id="">Entrar</button>
+                    <button style="margin-bottom: 10px;" type="submit" class="btn-entrar" id="enviarTelefono">Entrar</button>
                 </form>
             </div>    
         </div>

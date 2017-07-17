@@ -44,11 +44,18 @@ $(document).ready(function () {
      */
     $("#modalEmail").modal({backdrop: 'static', keyboard: false}).show();
 
-    $("#byEmail").click(function () {
-        sendByEmail();
+    /*
+     * Envía las propiedades al email
+     */
+    $("#enviarPropiedades").click(function () {
+        //sendByEmail();
     });
 
+    /*
+     * Recibe el email del usuario
+     */
     $("#enviar").click(function () {
+        event.preventDefault();
         $("#error").fadeIn(1000, function () {
             $("#error").html("");
         });
@@ -86,6 +93,39 @@ $(document).ready(function () {
                 }
             });
         }
+    });
+
+    /*
+     * Recibe el número de teléfono
+     */
+    $("#enviarTelefono").click(function () {
+        event.preventDefault();
+        $("#errorTel").fadeIn(1000, function () {
+            $("#errorTel").html("");
+        });
+
+        if (!$("#tels").val() || !$("#lada").val() ) {
+            if (!$("#tels").val()) {
+                $("#errorTel").fadeIn(1000, function () {
+                    $("#errorTel").html('<div class="alert alert-warning"> &nbsp; Ingresa tu número de teléfono</div>');
+                });
+            } else {
+                $("#errorTel").fadeIn(1000, function () {
+                    $("#errorTel").html('<div class="alert alert-warning"> &nbsp; Ingresa tu lada</div>');
+                });
+            }
+        } else {
+            $("#modalTel").modal('toggle');
+        }
+    });
+
+    /*
+     * Abre el modal del número de teléfono
+     */
+    $("#openPhoneModal").click(function () {
+        $("#modalEmail").modal('toggle');
+        $("#modalTel").modal({backdrop: 'static', keyboard: false}).show();
+
     });
 });
 
@@ -127,10 +167,12 @@ function nombreMunicipio(estado) {
 function load_favoritos() {
     var index = 1;
     if (propiedadesStorage.length > 0) {
-        $('#byEmail').prop('disabled', false);
+        $('#enviarPropiedades').prop('disabled', false);
         $("#casas").html("");
         $("#description-casas").html("");
+
         propiedadesStorage.forEach(function (propiedad) {
+            console.log(propiedad);
             propiedad.index = index;
             propiedades.push(propiedad);
 
@@ -182,7 +224,7 @@ function load_favoritos() {
             var re = /(?:\.([^.]+))?$/;
 
             $("#casas").append(
-                '<div class="col-md-6 como_estas" id="caja_' + index + '">' +
+                '<div class="col-xs-12 col-sm-4 col-md-3 como_estas" id="caja_' + index + '" align="center">' +
                 '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
                 '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
@@ -452,7 +494,7 @@ function load_favoritos() {
             index = index + 1;
         });
     } else {
-        $('#byEmail').prop('disabled', true);
+        $('#enviarPropiedades').prop('disabled', true);
     }
 }
 
