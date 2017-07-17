@@ -305,6 +305,7 @@ function showPropiedadesByPrecio(min, max) {
                         $("#title-header").css({
                             "padding-bottom": ".5%",
                         });
+                        
                     }
 
                     if (min && !max) {
@@ -314,6 +315,7 @@ function showPropiedadesByPrecio(min, max) {
                             "padding-bottom": ".5%",
 
                         });
+                         
                     }
 
                     if (max && !min) {
@@ -323,6 +325,7 @@ function showPropiedadesByPrecio(min, max) {
                             "padding-bottom": ".5%",
 
                         });
+                         
                     }
                     // apartamos el arreglo de propiedades obtenidas
                     var propiedades = response.propiedades;
@@ -333,11 +336,14 @@ function showPropiedadesByPrecio(min, max) {
                             // comparamos para que solo se meustren los markers del resultado de la busqueda
                             if(propiedades[p].Id == allMarkers[m].propiedad){
                                 allMarkers[m].setMap(map);
+                            
+                                
                             }
                         }
                     }
                     hideCurrentDescription();
                     setDefaulBehaviorMarkers();
+                    
                 } else {
 
                     if (min && max) {
@@ -357,6 +363,7 @@ function showPropiedadesByPrecio(min, max) {
                             "padding-bottom": ".5%",
 
                         });
+                         
                     }
 
                     if (max && !min) {
@@ -366,6 +373,7 @@ function showPropiedadesByPrecio(min, max) {
                             "padding-bottom": ".5%",
 
                         });
+                        
                     }
                 }
                 setTimeout(function(){
@@ -373,8 +381,14 @@ function showPropiedadesByPrecio(min, max) {
                     $("#title-header").html("");
                     $("#title-header").css({"padding": "0"});
                 },6000);
+                 console.log(response.propiedades);
+              
 
-                showOnlySomeCards(response.propiedades, "precio");
+                    
+                    showOnlySomeCards(response.propiedades, "precio");
+                    
+               
+                
             },
             error: function (respuesta) {
                 console.log(respuesta);
@@ -406,8 +420,13 @@ function displayboxes(className) {
     others.forEach(function (item) {
         if (!$(item).hasClass(className)) {
             $(item).hide();
+            
         } else {
-            $(item).show();
+            
+                 $(item).show();
+           
+            
+           
         }
     });
 }
@@ -419,14 +438,15 @@ function showOnlySomeCards(propies, className) {
         for (var i = j; i < propiedades.length; i++) {
             var box = $("#caja_" + propiedades[i].index);
 
-            if (box.hasClass("search") || box.hasClass("precio") || box.hasClass("cerca")) {
+            if (box.hasClass("search") && box.hasClass("precio") && box.hasClass("cerca")) {
                 if (box.is(":visible")) {
                     if (propies[j].Id == propiedades[i].Id) {
                         //box.show();
-                        box.addClass(className);
+                        box.addClass(className);    
                         break;
                     } else {
                         box.removeClass(className);
+                        
                         //box.hide();
                     }
                 }
@@ -468,18 +488,22 @@ function showOnlyCercanas(propies, className) {
                     if (propies[j].Id == propiedades[i].Id) {
                         //box.show();
                         box.addClass(className);
+                        
                         break;
                     } else {
                         box.removeClass(className);
+                        
                     }
                 }
             } else {
                 if (propies[j].Id == propiedades[i].Id) {
                     //box.show();
                     box.addClass(className);
+                     
                     break;
                 } else {
                     box.removeClass(className);
+                    
                 }
             }
         }
