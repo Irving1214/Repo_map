@@ -322,10 +322,12 @@ function modalListeners(index) {
             $('#casas').appendTo('#house_cards');
             $("#house_description_" + index).hide();
             $("#house_cards").show();
+             restoreMarkers();
             $('#casas_cercanas').hide();
-            setDefaulBehaviorMarkers();
+            setDefaulBehaviorMarkers(propiedades);
+          
             $("#titulocercanas").hide();
-
+            
             stateCenter(index);
             /*
             if(map.getZoom() == 17){
@@ -335,7 +337,7 @@ function modalListeners(index) {
             }
             */
 
-            changePlazaToColonia(false);
+          
             $("#modalFavoritos" + index).hide();
 
             if (markesrsSerives.length > 0) {
@@ -344,6 +346,7 @@ function modalListeners(index) {
                 }
             }
 
+                       
             stopOthersMarkers();
             stopOthersClickedMarkers();
             slider.removeAttribute('disabled');
