@@ -4,7 +4,11 @@ var click = false;
 var request = window.indexedDB.open("favoritos", 2);
 var db;
 var propiedadesStorage = [];
+var eliminar = true;
 
+/*
+ * Instancia de la BD
+ */
 request.onerror = function (event) {
     console.log("Error opening DB", event);
 };
@@ -65,33 +69,8 @@ $(document).ready(function () {
                 $("#error").html('<div class="alert alert-warning"> &nbsp; Ingresa tu email</div>');
             });
         } else {
-            $.ajax({
-                url: url + "/favoritos/email",
-                type: "POST",
-                data: {
-                    email: $("#email").val()
-                },
-                dataType: "JSON",
-                beforeSend: function () {
-                    $("#wait").show();
-                },
-                success: function (respuesta) {
-                    if (respuesta.status == 1) {
-                        $("#modalEmail").modal('toggle');
-                    } else {
-                        $("#error").fadeIn(1000, function () {
-                            $("#error").html('<div class="alert alert-warning"> &nbsp; ' + respuesta.mensaje + '</div>');
-                        });
-                    }
-                },
-                error: function (respuesta) {
-                    console.log(respuesta);
-                },
-                complete: function () {
-                    boxListeners();
-                    $("#wait").hide();
-                }
-            });
+            email = $("#email").val();
+            $("#modalEmail").modal('toggle');
         }
     });
 
@@ -115,6 +94,7 @@ $(document).ready(function () {
                 });
             }
         } else {
+            telefono = $("#tels").val();
             $("#modalTel").modal('toggle');
         }
     });
@@ -125,9 +105,53 @@ $(document).ready(function () {
     $("#openPhoneModal").click(function () {
         $("#modalEmail").modal('toggle');
         $("#modalTel").modal({backdrop: 'static', keyboard: false}).show();
+    });
 
+    /*
+     * On close session click
+     */
+    $("#closeSession, #closeSession_xs").click(function () {
+        closeSession();
+    });
+
+    /*
+     * Click en eliminar
+     */
+    $("#deleteButton").click(function () {
+        markToDelete();
     });
 });
+
+/*
+ * Pone un borde en rojo a todas las propiedades para poder eliminarlas
+ */
+function markToDelete() {
+    var boxes = Array.from(document.querySelectorAll('*[id^="img-thumbnail_"]'));
+
+    if (eliminar) {
+        boxes.forEach(function (item) {
+            $(item).addClass("box red");
+        });
+        $("#deleteButton").html("Terminar");
+    } else {
+        boxes.forEach(function (item) {
+            $(item).removeClass("box red");
+        });
+        $("#deleteButton").html("Eliminar");
+    }
+
+    eliminar = !eliminar;
+}
+
+/*
+ * Cierra sesión y borra la lista de favoritos
+ */
+function closeSession() {
+    var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").clear();
+    request.onsuccess = function (event) {
+        window.location.href = 'mapas2.html';
+    };
+}
 
 function sendByEmail() {
     $("#error").fadeIn(1000, function () {
@@ -172,7 +196,6 @@ function load_favoritos() {
         $("#description-casas").html("");
 
         propiedadesStorage.forEach(function (propiedad) {
-            console.log(propiedad);
             propiedad.index = index;
             propiedades.push(propiedad);
 
@@ -494,6 +517,7 @@ function load_favoritos() {
             index = index + 1;
         });
     } else {
+        console.log("No hay propiedades");
         $('#enviarPropiedades').prop('disabled', true);
     }
 }

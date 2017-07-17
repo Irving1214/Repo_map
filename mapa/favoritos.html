@@ -37,10 +37,49 @@
             document.getElementById("mySidenav").style.width = "210px";
         }
 
-
-        /* Set the width of the side navigation to 0 */
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+        }
+
+        var telefono = null, email = null;
+    </script>
+    <script>
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
+                testAPI();
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '313836579086207',
+                cookie     : true,  // enable cookies to allow the server to access
+                xfbml      : true,  // parse social plugins on this page
+                version    : 'v2.9' // use graph api version 2.8
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function testAPI() {
+            FB.api('/me', {fields: 'name, email'}, function(response) {
+                if (response.email) {
+                    email = response.email;
+                    $("#modalEmail").modal('toggle');
+                }
+            });
         }
     </script>
 </head>
@@ -116,14 +155,15 @@
 
     <div class="encabezado col-xs-12">
         <p class="animated fadeIn delay">TUS PROPIEDADES</p>
+        <div id="msg"></div>
     </div>
 
     <div class="col-xs-12 oculto-control fixed" align="center">
-        <button class="btncontrol btn-regresar">Regresar</button>
+        <button onclick="window.location.href = 'mapas2.html';" class="btncontrol btn-regresar">Regresar</button>
 
         <button class="btncontrol btn-eliminar">Eliminar</button>
 
-        <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
+        <button class="btncontrol btn-cerrar" id="closeSession_xs">Cerrar Sesión</button>
     </div>
 
     <div class="col-md-12 scrollable">
@@ -159,11 +199,11 @@
     </div>
 
     <div class="col-md-12 rev-oculto" align="center">
-        <button class="btncontrol btn-regresar">Regresar</button>
+        <button onclick="window.location.href = 'mapas2.html';" class="btncontrol btn-regresar">Regresar</button>
 
-        <button class="btncontrol btn-eliminar">Eliminar</button>
+        <button class="btncontrol btn-eliminar" id="deleteButton">Eliminar</button>
 
-        <button class="btncontrol btn-cerrar">Cerrar Sesión</button>
+        <button class="btncontrol btn-cerrar" id="closeSession">Cerrar Sesión</button>
     </div>
 
 
@@ -202,7 +242,12 @@
 
                     <button type="submit" class="btn-entrar" name="enviar" id="enviar">Entrar</button>
                     <br>
-                    <button class="loginBtn btn-facebook"><span class="fa fa-facebook iconfb"></span>&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook</button>
+                    <br>
+
+                    <fb:login-button login_text="&nbsp;&nbsp;&nbsp;&nbsp;Iniciar sesión con Facebook" data-size="large" scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+                    <br>
+                    <br>
 
                     <a class="privacidad" id="openPhoneModal" ><p style="margin-bottom: 20px;">Si no cuentas con e-mail o cuenta de Facebook da clic aqui</p></a>
                 </form>
