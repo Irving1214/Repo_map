@@ -222,6 +222,12 @@
     background-color: white;
 }
 
+.box.yellow
+{
+    border-color: #CFDB00;
+    background-color: white;
+}
+
 .thumbnail-fav.red
 {
     border-color: #e85a4e;
