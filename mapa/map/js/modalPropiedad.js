@@ -670,9 +670,6 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '<div class="col-md-12 divButton" align="center">' +
         '<button class="estiloBton"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
         '</div>' +
-        '<div class="col-md-12 divButton" align="center">' +
-        '<hr>' +
-        '</div>' +
         '</div>' +
         '</div>' +
         '</div>' +

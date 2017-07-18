@@ -114,20 +114,7 @@ img.imgt
     object-fit: cover;
 }
 
-.loading
-{
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
 
-    display: none;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
-}
 
 .col-md-8.pos
 {
@@ -281,12 +268,6 @@ h4
     {
         width: 90%;
         height: 25%;
-    }
-    .imagenres2
-    {
-        width: 100%;
-        height: 100%;
-        border: none;
     }
 }
 
@@ -445,3 +426,333 @@ div#title-header {
     width: 105%;
 }
 }
+
+
+
+
+
+@media (max-width: 4000px) and (min-width:1500px) and (min-height: 700px){
+      textarea.input_borde{
+        margin-top: 30%;
+        width: 285%;
+        margin-left: -177%;
+      }
+      .input_borde{
+          margin-top: 3%;
+      }
+      .form-group {
+        margin: 5%;
+      }
+      .imgt{
+        margin: 6% 0% 6% 0%;
+      }
+      img.imgt{
+        height: 315%;
+      }
+    }
+
+        b, strong {
+            font-weight: 35px !important;
+        }
+
+        .noUi-connect {
+            background: #002967 !important;
+        }
+
+        .logos.redes_sociales {
+            margin-right: 13%;
+        }
+
+        @media (max-width: 1500px) {
+            /*#pac-input {
+                width: 101% !important;
+
+                margin-left: -35% !important;
+
+            }*/
+
+            h3, .h3 {
+                font-size: 20px;
+            }
+            h2{
+                color: white;
+
+            }
+
+            div.scroll {
+                width: 100%;
+                height: 70%;
+            }
+
+            #map {
+
+                margin-left: -3% !important;
+                width: 92% !important;
+                    margin-bottom: 0%;
+
+            }
+
+            .col-md-6.como_estas {
+                width: 49%;
+                /* margin-left: 10%; */
+                margin-right: 1%;
+                /* height: 700px; */
+                /* padding-left: 13%; */
+                padding-right: -18%;
+            }
+
+            .col-md-6.hola_description {
+                width: 41%;
+                height: 120%;
+                margin-left: -1% !important;
+            }
+
+        }
+
+        .col-md-4.col-md-offset-4.detelle {
+            margin-top: 5%;
+        }
+
+        .glyphicon-chevron-left:before {
+            content: "\e079";
+            color: #48BEEF;
+            /* margin-right: 17%; */
+        }
+
+        .glyphicon-chevron-right:before {
+            content: "\e080";
+            color: #48BEEF;
+        }
+
+        div.scroll {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 80%;
+            width: 100%;
+
+            margin-top: 2%;
+        }
+
+         #titulocercanas {
+            width: 80%;
+            margin-left: 10%;
+            top :5%;
+            margin-top: 9%;
+
+        }
+        @media (max-width: 1200px){
+            div.scroll {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 80%;
+            width: 100%;
+
+            margin-top: 2%;
+        }
+         #titulocercanas {
+            width: 80%;
+            margin-left: 10%;
+            top: 5%;
+            margin-top: 9%;
+
+        }
+
+
+
+        }
+
+        .col-md-6.como_estas {
+            width: 50%;
+            /* margin-left: 10%; */
+            margin-right: -1%;
+            /* height: 700px; */
+        }
+
+        .col-md-6.hola_description {
+            width: 44%;
+            margin-left: 5%;
+            height: 120%;
+        }
+
+        .col-md-6.hola_description {
+            width: 41%;
+            height: 120%;
+            margin-left: 10%;
+
+        }
+        @media (max-width: 1250px) {
+          li.tipo {
+            font-size: .75em !important;
+            }
+            #map {
+          margin-left: -7% !important;
+            width: 107% !important;
+           margin-bottom: 0%;
+           }
+
+        }
+        @media (max-width: 1000px) {
+          li.tipo {
+            font-size: .45em !important;
+            }
+
+        }
+
+
+
+        @media (min-width: 1500px) {
+            #map {
+                width: 80% ;
+                margin-bottom: 0%;
+
+
+            }
+
+
+            .col-md-6.hola_description {
+                width: 38%;
+                margin-left: -1%;
+                height: 140%;
+            }
+
+        }
+
+        #map {
+            width: 80%;
+            left: 5%;
+            right: 10%;
+            height: 70% !important;
+            margin-top: 4% !important;
+            margin-left: 6%;
+            margin-bottom: 0%;
+
+        }
+
+       #pac-input {
+
+            /*background-position: right center;
+
+            width: 80%;*/
+            height: 40px;
+            /*margin-left: -16%;
+
+            background-image: url("images/loupe.png");
+
+            background-repeat: no-repeat;*/
+        }
+
+        .cajaDos {
+
+            width: 25%;
+            height: auto;
+            border: 3px solid green;
+            padding: 25px;
+            margin: 25px;
+        }
+
+        .imagenCajaDo {
+            width: 100%;
+            height: auto;
+        }
+
+        .divButton .estiloBton {
+            background-color: #002967; /* blue */
+            border: 1px;
+            color: white;
+            padding: 8px 39px;
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+        .divButton .estiloBton:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .divButton .estiloBton:hover {
+            background-color: #CFDB00;
+        }
+
+       
+        .barra.p{
+            color: white;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+         @media (max-width: 1300px) {
+            #casas_cercanas{
+                margin-top: 5%;
+                height: 65%;
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+            #map {
+                margin-left: -3% !important;
+                width: 100% !important;
+                margin-bottom: 0%;
+            }
+        }
+
+         @media (min-width: 1400px) {
+            #casas_cercanas{
+                height: 80%;
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+                margin-top: 5%;
+            }
+            #titulocercanas {
+                width: 80%;
+                margin-left: 10%;
+                top :5%;
+                margin-top: 12%;
+                margin-top: 5%;
+            }
+        }
+
+
+
+        .search-bar-alv {
+            padding-bottom: 50px;
+        }
+
+        .search-btn {
+            display: inline-block;
+            padding: 7px 11px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border-style: solid;
+            border-radius: 0px 4px 4px 0px;
+            color: #9d9d9d;
+            background-color: #f3f3f3;
+            border-color: #c3c3c3;
+            border-width: 1px 1px 1px 0px;
+            margin-bottom: 13px;
+        }
+
+        @media screen and (min-width:768px) {
+            .search-btn {
+                margin-bottom: 0px;
+            }
+
+             .search-bar-alv {
+                padding-bottom: 35px;
+            }
+        }
