@@ -70,6 +70,7 @@ $(document).ready(function () {
             });
         } else {
             email = $("#email").val();
+            telefono = null;
             $("#modalEmail").modal('toggle');
         }
     });
@@ -95,6 +96,7 @@ $(document).ready(function () {
             }
         } else {
             telefono = $("#tels").val();
+            email = null;
             $("#modalTel").modal('toggle');
         }
     });
@@ -293,6 +295,74 @@ function boxListeners() {
 
 
         $(item).off('click');
+    });
+}
+
+/*
+ * Envía los datos al email o número de teléfono del usuario
+ */
+function sendToUser() {
+    // Lo envia por email
+    if (telefono && !email) {
+        sendToSMS();
+    }
+
+    // Lo envia por email
+    if (email && !telefono) {
+        sendToEmail();
+    }
+}
+
+/*
+ * Envia las propuedades por sms al número del usuario
+ */
+function sendToSMS() {
+    $.ajax({
+        url: url + "/favoritos/msg",
+        type: "POST",
+        data: {
+            lada: "+52",
+            number: telefono
+        },
+        dataType: "JSON",
+        beforeSend: function () {
+            $("#wait").show();
+        },
+        success: function (respuesta) {
+
+        },
+        error: function (respuesta) {
+            console.log(respuesta);
+        },
+        complete: function () {
+            $("#wait").hide();
+        }
+    });
+}
+
+/*
+ * Envia las propuedades por sms al teléfonodel usuario
+ */
+function sendToEmail() {
+    $.ajax({
+        url: url + "/favoritos/msg",
+        type: "POST",
+        data: {
+            email: email
+        },
+        dataType: "JSON",
+        beforeSend: function () {
+            $("#wait").show();
+        },
+        success: function (respuesta) {
+
+        },
+        error: function (respuesta) {
+            console.log(respuesta);
+        },
+        complete: function () {
+            $("#wait").hide();
+        }
     });
 }
 
