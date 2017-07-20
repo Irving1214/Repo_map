@@ -5,6 +5,7 @@ var request = window.indexedDB.open("favoritos", 2);
 var db;
 var propiedadesStorage = [];
 var eliminar = true;
+var serverRequest;
 
 /*
  * Instancia de la BD
@@ -53,6 +54,7 @@ $(document).ready(function () {
      */
     $("#enviarPropiedades").click(function () {
         //sendByEmail();
+        sendToSMS();
     });
 
     /*
@@ -317,19 +319,26 @@ function sendToUser() {
  * Envia las propuedades por sms al número del usuario
  */
 function sendToSMS() {
+    serverRequest = 'lada=+' + $('#lada').val() + '&number=' + $('#tels').val();
+
+    var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
+    request.onsuccess = function (event) {
+        request.result.forEach(function (result) {
+            serverRequest += '&propiedades[]='+result.propiedad.Id;
+        });
+    };
+
     $.ajax({
         url: url + "/favoritos/msg",
         type: "POST",
-        data: {
-            lada: "+52",
-            number: telefono
-        },
+        data: serverRequest,
         dataType: "JSON",
         beforeSend: function () {
+            console.log(serverRequest);
             $("#wait").show();
         },
         success: function (respuesta) {
-
+            console.log(respuesta);
         },
         error: function (respuesta) {
             console.log(respuesta);
@@ -395,5 +404,19 @@ function out(id) {
         "left": "50%",
         "transform": "translate(-50%, -50%)"
     });
+
+}
+
+function setIdsToArrayFavoritos(){
+    // obteniendo ids en indexeddb
+    serverRequest = 'lada=+' + $('#lada').val() + '&number=' + $('#tels').val();
+
+    var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
+    request.onsuccess = function (event) {
+        request.result.forEach(function (result) {
+            serverRequest += '&propiedades[]='+result.propiedad.Id;
+            console.log(serverRequest);
+        });
+    };
 
 }
