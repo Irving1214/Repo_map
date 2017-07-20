@@ -5,7 +5,7 @@ var request = window.indexedDB.open("favoritos", 2);
 var db;
 var propiedadesStorage = [];
 var eliminar = true;
-var serverRequest;
+var serverRequest = "";
 
 /*
  * Instancia de la BD
@@ -54,7 +54,7 @@ $(document).ready(function () {
      */
     $("#enviarPropiedades").click(function () {
         //sendByEmail();
-        sendToSMS();
+        setIdsToArrayFavoritos();
     });
 
     /*
@@ -98,6 +98,7 @@ $(document).ready(function () {
             }
         } else {
             telefono = $("#tels").val();
+            lada = $("#lada").val();
             email = null;
             $("#modalTel").modal('toggle');
         }
@@ -319,22 +320,12 @@ function sendToUser() {
  * Envia las propuedades por sms al número del usuario
  */
 function sendToSMS() {
-    serverRequest = 'lada=+' + $('#lada').val() + '&number=' + $('#tels').val();
-
-    var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
-    request.onsuccess = function (event) {
-        request.result.forEach(function (result) {
-            serverRequest += '&propiedades[]='+result.propiedad.Id;
-        });
-    };
-
     $.ajax({
         url: url + "/favoritos/msg",
         type: "POST",
         data: serverRequest,
         dataType: "JSON",
         beforeSend: function () {
-            console.log(serverRequest);
             $("#wait").show();
         },
         success: function (respuesta) {
@@ -409,14 +400,17 @@ function out(id) {
 
 function setIdsToArrayFavoritos(){
     // obteniendo ids en indexeddb
-    serverRequest = 'lada=+' + $('#lada').val() + '&number=' + $('#tels').val();
+    serverRequest = 'lada=+' + lada + '&number=' + telefono;
 
     var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
     request.onsuccess = function (event) {
         request.result.forEach(function (result) {
-            serverRequest += '&propiedades[]='+result.propiedad.Id;
-            console.log(serverRequest);
+            serverRequest = serverRequest + '&propiedades[]=' + result.propiedad.Id;
         });
-    };
 
+        /*
+         * TODO Meter la validación de email/telefono AQUI
+         */
+        sendToSMS();
+    };
 }
