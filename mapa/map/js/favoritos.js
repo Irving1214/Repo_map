@@ -61,18 +61,26 @@ $(document).ready(function () {
      */
     $("#enviar").click(function () {
         event.preventDefault();
+        // limpia seccion de error
         $("#error").fadeIn(1000, function () {
             $("#error").html("");
         });
-
+        // si campo esta vacío
         if (!$("#email").val()) {
             $("#error").fadeIn(1000, function () {
                 $("#error").html('<div class="alert alert-warning"> &nbsp; Ingresa tu email</div>');
             });
-        } else {
-            email = $("#email").val();
-            telefono = null;
-            $("#modalEmail").modal('toggle');
+        } else { // si no esta vacìo
+            if (!isCorreoValido($("#email").val())) { // si formato de email no es correcto
+                $("#email").val('');
+                $("#error").fadeIn(1000, function () {
+                    $("#error").html('<div class="alert alert-warning"> &nbsp; Escribe tu email correctamente</div>');
+                });
+            } else { // si es correcto
+                email = $("#email").val();
+                telefono = null;
+                $("#modalEmail").modal('toggle');
+            }
         }
     });
 
@@ -80,27 +88,41 @@ $(document).ready(function () {
      * Recibe el número de teléfono
      */
     $("#enviarTelefono").click(function () {
+        var msjError = '';
         event.preventDefault();
+        // limpia seccion de error
         $("#errorTel").fadeIn(1000, function () {
             $("#errorTel").html("");
         });
 
-        if (!$("#tels").val() || !$("#lada").val() ) {
+        if (!$("#tels").val() || !$("#lada").val() ) { // si ambos campos vacios
             if (!$("#tels").val()) {
-                $("#errorTel").fadeIn(1000, function () {
-                    $("#errorTel").html('<div class="alert alert-warning"> &nbsp; Ingresa tu número de teléfono</div>');
-                });
-            } else {
-                $("#errorTel").fadeIn(1000, function () {
-                    $("#errorTel").html('<div class="alert alert-warning"> &nbsp; Ingresa tu lada</div>');
-                });
+                msjError += '&nbsp;<span>*Escriba su telefono</span><br>';
+            }
+            if (!$("#lada").val()) {
+                msjError += '&nbsp;<span>*Escriba su lada</span><br>';
             }
         } else {
-            telefono = $("#tels").val();
-            lada = $("#lada").val();
-            email = null;
-            $("#modalTel").modal('toggle');
+            $("#errorTel").fadeIn(1000, function () {
+                $("#errorTel").html("");
+            });
+            if ( !isTelValido($("#tels").val()) || !isLadaValida($("#lada").val()) ) {
+                if (!isTelValido($("#tels").val()) ) { // si el formato del telefono no es valido
+                    msjError += '&nbsp;<span>*Escriba su telefono correctamente (sólo 10 números)</span><br>';
+                }
+                if (!isLadaValida($("#lada").val()) ) { // si el formato del telefono no es valido
+                    msjError += '&nbsp;<span>*Escriba su lada correctamente (sólo 2 números)</span><br>';
+                }
+            } else {
+                telefono = $("#tels").val();
+                lada = $("#lada").val();
+                email = null;
+                $("#modalTel").modal('toggle');
+            }
         }
+        $("#errorTel").fadeIn(1000, function () {
+            $("#errorTel").html('<div class="alert alert-warning"> &nbsp;' + msjError + '</div>');
+        });
     });
 
     /*
@@ -607,4 +629,31 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>');
 
     pdfModal.modal().toggle();
+}
+
+// validaciones
+function isCorreoValido(email){
+    var caract = new RegExp(/^([a-zA-Z0-9\._-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+    if (caract.test(email) == false){
+        return false;
+    } else {
+      return true;
+    }
+
+}
+function isTelValido(telefono){
+    var caract = new RegExp(/^([0-9]{10,10})+$/);
+    if (caract.test(telefono) == false){
+        return false;
+    } else {
+      return true;
+    }
+}
+function isLadaValida(lada){
+    var caract = new RegExp(/^([0-9]{1,2})+$/);
+    if (caract.test(lada) == false){
+        return false;
+    } else {
+      return true;
+    }
 }
