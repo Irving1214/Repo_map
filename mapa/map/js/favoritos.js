@@ -53,8 +53,7 @@ $(document).ready(function () {
      * Envía las propiedades al email
      */
     $("#enviarPropiedades").click(function () {
-        //sendByEmail();
-        setIdsToArrayFavoritos();
+        sendToUser();
     });
 
     /*
@@ -302,21 +301,6 @@ function boxListeners() {
 }
 
 /*
- * Envía los datos al email o número de teléfono del usuario
- */
-function sendToUser() {
-    // Lo envia por email
-    if (telefono && !email) {
-        sendToSMS();
-    }
-
-    // Lo envia por email
-    if (email && !telefono) {
-        sendToEmail();
-    }
-}
-
-/*
  * Envia las propuedades por sms al número del usuario
  */
 function sendToSMS() {
@@ -329,7 +313,11 @@ function sendToSMS() {
             $("#wait").show();
         },
         success: function (respuesta) {
-            console.log(respuesta);
+            if (respuesta.status == 1) {
+                notificaction(respuesta.mensaje, "success");
+            } else {
+                notificaction(respuesta.mensaje, "warning");
+            }
         },
         error: function (respuesta) {
             console.log(respuesta);
@@ -345,17 +333,19 @@ function sendToSMS() {
  */
 function sendToEmail() {
     $.ajax({
-        url: url + "/favoritos/msg",
+        url: url + "/favoritos/email",
         type: "POST",
-        data: {
-            email: email
-        },
+        data: serverRequest,
         dataType: "JSON",
         beforeSend: function () {
             $("#wait").show();
         },
         success: function (respuesta) {
-
+            if (respuesta.status == 1) {
+                notificaction(respuesta.mensaje, "success");
+            } else {
+                notificaction(respuesta.mensaje, "warning");
+            }
         },
         error: function (respuesta) {
             console.log(respuesta);
@@ -398,9 +388,23 @@ function out(id) {
 
 }
 
-function setIdsToArrayFavoritos(){
-    // obteniendo ids en indexeddb
-    serverRequest = 'lada=+' + lada + '&number=' + telefono;
+
+/*
+ * Envía los datos al email o número de teléfono del usuario
+ * Crear un arreglo con la información de favoritos del usuario
+ */
+function sendToUser() {
+    var sendToMail = true;
+    // Lo envia por email
+    if (telefono && !email) {
+        sendToMail = false;
+        serverRequest = 'lada=+' + lada + '&number=' + telefono;
+    }
+
+    // Lo envia por email
+    if (email && !telefono) {
+        serverRequest = 'email=' + email;
+    }
 
     var request = db.transaction(["propiedades"], "readwrite").objectStore("propiedades").getAll();
     request.onsuccess = function (event) {
@@ -408,9 +412,27 @@ function setIdsToArrayFavoritos(){
             serverRequest = serverRequest + '&propiedades[]=' + result.propiedad.Id;
         });
 
-        /*
-         * TODO Meter la validación de email/telefono AQUI
-         */
-        sendToSMS();
+        if (sendToMail) {
+            sendToEmail();
+        } else {
+            sendToSMS();
+        }
     };
+}
+
+/*
+ * Envia una notiificación al usuario
+ */
+function notificaction(msg, type) {
+    var div = $("#msg");
+    div.html("");
+    div.html('<div class="alert alert-' + type + '"> &nbsp; ' + msg + '</div>');
+
+    setTimeout(function () {
+        div.html("");
+    }, 5000);
+
+    $('html, body').animate({
+        scrollTop: $("#top").offset().top
+    }, 800);
 }
