@@ -102,18 +102,20 @@ $(document).ready(function () {
             if (!$("#lada").val()) {
                 msjError += '&nbsp;<span>*Escriba su lada</span><br>';
             }
-        } else {
+        } else { // si no estan vacios
             $("#errorTel").fadeIn(1000, function () {
                 $("#errorTel").html("");
             });
-            if ( !isTelValido($("#tels").val()) || !isLadaValida($("#lada").val()) ) {
+            if ( !isTelValido($("#tels").val()) || !isLadaValida($("#lada").val()) ) { // si uno de los campos no es valido
                 if (!isTelValido($("#tels").val()) ) { // si el formato del telefono no es valido
+                    $("#tels").val('');
                     msjError += '&nbsp;<span>*Escriba su telefono correctamente (sólo 10 números)</span><br>';
                 }
                 if (!isLadaValida($("#lada").val()) ) { // si el formato del telefono no es valido
+                    $("#lada").val('');
                     msjError += '&nbsp;<span>*Escriba su lada correctamente (sólo 2 números)</span><br>';
                 }
-            } else {
+            } else { // si todos son validos
                 telefono = $("#tels").val();
                 lada = $("#lada").val();
                 email = null;
