@@ -848,3 +848,53 @@ div.scroll {
         margin-left: 70%;
     }
 }
+
+    @media screen and (min-width: 768px){
+        /*.modal-detalles {
+            position: fixed;
+            z-index: 1050;
+            top: 28px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
+            overflow: hidden;
+            outline: 0;
+            -webkit-overflow-scrolling: touch;
+        }*/
+
+        .modal-dialog-detalles {
+            width: 950px;
+            margin: 30px auto;
+        }
+    }
+
+    .modal-content-detalles {
+        position: relative;
+        border: 1px solid #999;
+        border: 3px solid rgb(73, 189, 240);
+        border-radius: 0;
+        outline: 0;
+        background-color: #ffffff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        /* -webkit-box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+        /* box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+    }
+
+    .imagen-modal-detalles {
+        height: 31em;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    .estiloBton-detalles {
+        margin: 10px 0px;
+        background-color: #002967; /* blue */
+        border: 1px;
+        color: white;
+        padding: 8px 39px;
+        text-align: center;
+
+        font-size: 13px;
+    }

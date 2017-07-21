@@ -483,9 +483,9 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
     if (folio == 'null') {
         folio = '';
     }
-    pdfModal.append('<div class="modal-dialog">' +
+    pdfModal.append('<div class="modal-dialog-detalles">' +
 
-        '<div class="modal-content">' +
+        '<div class="modal-content-detalles">' +
 
         '<div class="modal-body">' +
         '<div id="pdf" class="div">' +
@@ -519,7 +519,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
 
         '<div class="row">' +
         '<div class="col-xs-7">' +
-        '<img class="imagen-modal" src="' + imagen + '">' +
+        '<img class="imagen-modal-detalles" src="' + imagen + '">' +
         '</div>' +
 
         '<div class="col-xs-5" style="padding: 0px 0px;">' +
@@ -622,7 +622,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '</div>' +
         '<div class="col-md-12 divButton" align="center">' +
-        '<button class="estiloBton"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
+        '<button class="estiloBton-detalles"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
         '</div>' +
         '</div>' +
         '</div>' +

@@ -242,13 +242,13 @@ function createModal(propiedad, index) {
             
             '<div class="col-xs-12">' +
                 '<p class="ventas-detalle">' +
-                    '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
+                    '<b><img id="heart" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
                 '</p>' +
             '</div>' +
 
             '<div class="col-xs-12">' +
                 '<p class="ventas-detalle">' +
-                    '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
+                    '<b><img id="heart" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
                 '</p>' +
             '</div>' +  
 
@@ -546,9 +546,9 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
     if (folio == 'null') {
         folio = '';
     }
-    $("#pdf-modal").append('<div class="modal-dialog">' +
+    $("#pdf-modal").append('<div class="modal-dialog-detalles">' +
 
-        '<div class="modal-content">' +
+        '<div class="modal-content-detalles">' +
 
         '<div class="modal-body">' +
         '<div id="pdf" class="div">' +
@@ -582,7 +582,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
 
         '<div class="row">' +
         '<div class="col-xs-7">' +
-        '<img class="imagen-modal" src="' + imagen + '">' +
+        '<img class="imagen-modal-detalles" src="' + imagen + '">' +
         '</div>' +
 
         '<div class="col-xs-5" style="padding: 0px 0px;">' +
@@ -685,7 +685,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         '</div>' +
         '</div>' +
         '<div class="col-md-12 divButton" align="center">' +
-        '<button class="estiloBton"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
+        '<button class="estiloBton-detalles"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
         '</div>' +
         '</div>' +
         '</div>' +
