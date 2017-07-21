@@ -239,12 +239,6 @@ h4 {
     border: none;
 }
 
-@media (min-width: 768px) {
-    .imagenres {
-        width: 98%;
-        height: 100%;
-    }
-}
 
 div#title-header {
     margin-bottom: 0;
@@ -495,7 +489,7 @@ div.scroll {
     width: 80%;
     margin-left: 10%;
     top: 5%;
-    margin-top: 9%;
+    margin-top: 8%;
 
 }
 
@@ -711,5 +705,146 @@ div.scroll {
 
     .search-bar-alv {
         padding-bottom: 35px;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------
+   ----------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------- */
+
+@media (max-width: 2560px){
+    .icon-map {
+        position: absolute;
+        z-index: 4;
+        padding-right: 0px;
+        padding-top: 4em;
+        margin-left: 87%;
+    }
+
+    .detalle {
+        margin-top: -4%;
+    }
+
+    .ventas-detalle {
+        font-size: 15px; 
+        margin-top: 9%;
+    }
+
+    .res-ventas {
+        padding-left: 0%;
+    }
+
+    .logos-rs {
+        height: 33px;
+        width: 33px;
+    }
+}
+
+@media (max-width: 768px)
+{
+    #map {
+        margin-left: 0% !important;
+        width: 100% !important;
+        margin-bottom: 0%;
+        left: 0%;
+        right: 0%;
+    }
+
+    .thumbnail {
+        margin-bottom: 20px;
+        height: 15.5em;
+    }
+
+    .texto_card {
+        font-size: 14px;
+        width: 100%;
+        height: 3.5em;
+        margin-top: 5px;
+    }
+
+    #casas_cercanas {
+        margin-top: 7%;
+        height: 60%;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    div.scroll {
+        height: 95%;
+    }
+
+    .col-md-6.hola_description {
+        width: 100%;
+        height: 120%;
+        margin-left: 10%;
+    }
+
+    .icon-map {
+        position: absolute;
+        z-index: 4;
+        padding-right: 0px;
+        padding-top: 3em;
+        margin-left: 75%;
+    }
+
+    .detalle {
+        margin-top: 5%;
+    }
+
+    .ventas-detalle {
+        margin-top: 0%;
+    }
+
+    .res-ventas {
+        margin-top: 20px;
+    }
+
+    .ventas-detalleII {
+        margin-bottom: 65px;
+    }
+
+    .input_borde {
+        padding: 3px;
+        width: 100%;
+        margin-left: 0%;
+        text-decoration: none;
+        border: 2px solid #cfdb00;
+        margin-top: 5px;
+    }
+
+    textarea.input_borde {
+        width: 100%;
+        height: 76px;
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 400px)
+{
+    .thumbnail {
+        height: 14.5em;
+    }
+
+    .texto_card{
+        font-size: 11px;
+        width: 100%;
+        height: 3.5em;
+        margin-top: 2px;
+    }
+
+    .divButton .estiloBton {
+        background-color: #002967;
+        border: 1px;
+        color: white;
+        padding: 8px 21px;
+        text-align: center; 
+        font-size: 12px;
+    }
+
+    .icon-map {
+        padding-top: 3.5em;
+        margin-left: 70%;
     }
 }

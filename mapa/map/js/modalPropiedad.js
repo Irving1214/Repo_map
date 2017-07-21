@@ -182,13 +182,13 @@ function createModal(propiedad, index) {
         '<p class="bg-primary">Lugares cercanos</p>' +
         '<br>' +
         '<div class="row" align="center">' +     
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="cormercio_' + index + '" class="btn btn-default"><img id="img_cormercio_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_COMERCIALES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="escuelas_' + index + '" class="btn btn-default"><img id="img_escuelas_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_ESCUELAS-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="super_' + index + '" class="btn btn-default"><img id="img_super_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_SUPER-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
         '</div>' +
@@ -196,13 +196,13 @@ function createModal(propiedad, index) {
         '</br></br>' +
         
         '<div class="row" align="center">' +
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="hospitales_' + index + '" class="btn btn-default"><img id="img_hospitales_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_HOSPITALES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="restaurantes_' + index + '" class="btn btn-default"><img id="img_restaurantes_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_RESTAURANTES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
-        '<div class="col-md-4">' +
+        '<div class="col-xs-4 col-md-4">' +
         '<button id="parques_' + index + '" class="btn btn-default"><img id="img_parques_' + index + '" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB_PARQUES-OFF.png"></button><i class="numTarjeta"></i>' +
         '</div>' +
         '</div>' +
@@ -210,7 +210,7 @@ function createModal(propiedad, index) {
         '</div>' +
 
         '<div class="row" align="center">' +
-        '<div class="col-md-4 col-md-offset-4 detelle" style="margin-top: -4%;">' +
+        '<div class="col-md-4 col-md-offset-4 detalle">' +
         '<button class="boton_detalles_auto"  class="btn btn-primary" onclick="modal_variables(\'' +
         propiedad.Calle__c +
         '\', \'' + propiedad.Colonia__c +
@@ -238,26 +238,43 @@ function createModal(propiedad, index) {
         '<p class="bg-primary" align="center">Ejecutivo de Ventas</p>' +
         '<div class="row revimexBlue" style="margin-top: -4%;">' +
         '<br><div id="msg_form"></div>' +
-        '<div class="col-md-7" style="padding-left: 0%;">' +
-        '<p  style="font-size: 15px; margin-top:13%;">' +
+        '<div class="col-md-7" class="res-ventas">' +
+            
+            '<div class="col-xs-12">' +
+                '<p class="ventas-detalle">' +
+                    '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
+                '</p>' +
+            '</div>' +
 
+            '<div class="col-xs-12">' +
+                '<p class="ventas-detalle">' +
+                    '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
+                '</p>' +
+            '</div>' +  
 
-        '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-MAIL.png">&nbsp; &nbsp;<a href="mailto:info@revimex.mx" style="font-size:.78em; text-transform:lowercase;font-size: 16px;">info@revimex.mx</a></b><br><br>' +
+            '<div class="col-xs-12" align="center">' +
+                '<div class="ventas-detalleII">' +
 
-        '<b><img id="heart" class="logos" src="images/CONTACT-PROPIEDADES-WEB-PHONE.png">&nbsp; &nbsp;01 800 200 0440</b><br><br>' +
+                    '<div class="col-xs-3" align="center">' +
+                        '<b><a target="_blank" href="https://www.facebook.com/REVIMEXOFICIAL/"><img id="facebook" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-FACEBOOK.png""></a>' +
+                    '</div>' + 
 
-        '<b><a target="_blank" href="https://www.facebook.com/REVIMEXOFICIAL/"><img id="facebook" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-FACEBOOK.png""></a>' +
+                    '<div class="col-xs-3" align="center">' +
+                        '<b><a target="_blank" href="https://www.instagram.com/revimex_oficial/"><img id="instagram" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-INSTAGRAM.png""></a>' +
+                    '</div>' +
 
-        '<b><a target="_blank" href="https://www.instagram.com/revimex_oficial/"><img id="instagram" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-INSTAGRAM.png""></a>' +
+                    '<div class="col-xs-3" align="center">' +
+                        '<b><a target="_blank" href="https://twitter.com/oficialrevimex"><img id="twitter" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-TWITTER.png""></a>' +
+                    '</div>' +
 
-        '<b><a target="_blank" href="https://twitter.com/oficialrevimex"><img id="twitter" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-TWITTER.png""></a>' +
+                    '<div class="col-xs-3" align="center">' +
+                        '<b><a target="_blank" href="https://www.youtube.com/channel/UCdn2VMwAvrJ_Te9nJqFYHYg/videos"><img id="youtube" class="logos-rs" src="images/CONTACT-PROPIEDADES-WEB-YOUTUBE.png""></a>' +
+                    '</div>' +
 
-        '<b><a target="_blank" href="https://www.youtube.com/channel/UCdn2VMwAvrJ_Te9nJqFYHYg/videos"><img id="youtube" class="logos redes_sociales" src="images/CONTACT-PROPIEDADES-WEB-YOUTUBE.png""></a>' +
+                '</div>' +
+            '</div>' + 
 
-
-        '<br>' +
-
-        '</p>' +
+            '<br>' +
         '</div>' +
 
         '<div class="col-md-5">' +

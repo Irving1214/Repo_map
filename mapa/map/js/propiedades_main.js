@@ -226,15 +226,15 @@ function load_propiedades(latitud, longitud) {
                         main_photo = propiedad.fotoPrincipal;
                     }
 
-                    var casa_card = '<div class="col-md-6 como_estas" data-price="' + propiedad.PrecioVenta__c + '" id="caja_' + index + '">' +
+                    var casa_card = '<div class="col-xs-12 col-md-6 como_estas" data-price="' + propiedad.PrecioVenta__c + '" id="caja_' + index + '">' +
                         '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
                         '<img class="imagenres" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
 
                         '<div class="caption">' +
                         '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Ciudad<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
                         '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
-                        '<center><b><div style="color: #002967" ">Ciudad: <span style="color: #002967">' + propiedad.Plaza__c + '</span></div></center></b>' +
-                        '<br><div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
+                        '<center><b><div class="texto_card" style="color: #002967" ">Ciudad: <span class="texto2_card">' + propiedad.Plaza__c + '</span></div></center></b>' +
+                        '<div align="center" class="divButton"><button class="estiloBton">Ver más</button></div><br>' +
                         '</div>' +
                         '</div>' +
                         '</div>';

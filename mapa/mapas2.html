@@ -13,7 +13,8 @@
     <link href="map/css/full-slider.css" rel="stylesheet">
     <link href="map/css/animate.css" rel="stylesheet">
     <link href="map/css/desplegar.css" rel="stylesheet">
-    <link href="map/css/favoritos.css"        rel="stylesheet">
+    <link href="map/css/favoritos.css" rel="stylesheet">
+    
     <link href="map/css/nouislider.min.css" rel="stylesheet">
     <link rel="stylesheet" href="map/css/jquery-ui.css">
 
@@ -35,6 +36,48 @@
 
             background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
         }
+
+        @media screen and (min-width: 768px){
+            .modal {
+                position: fixed;
+                z-index: 1050;
+                top: 28px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: none;
+                overflow: hidden;
+                outline: 0;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        @media screen and (min-width: 768px){
+            .modal-dialog {
+                width: 1100px;
+                margin: 30px auto;
+            }
+        }
+
+        .modal-content {
+            position: relative;
+            border: 1px solid #999;
+            border: 3px solid rgb(73, 189, 240);
+            border-radius: 0;
+            outline: 0;
+            background-color: #ffffff;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            /* -webkit-box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+            /* box-shadow: 0 5px 15px rgba(0, 40, 0, .5); */
+        }
+
+        .imagen-modal {
+            height: 31em;
+            width: 100%;
+            padding: 0% 0% 0% 0%;
+        }
+
     </style>
     <script>
         function openNav() {
@@ -155,9 +198,7 @@
 <div class="row" style=" margin-right: 0px;  margin-left: 0px;">
     <div id="msg"></div>
     <div class="col-md-7">
-        <div id="icon_pic_return_container"
-             style="position: absolute; z-index: 4; padding-right: 0;: 15px; padding-top: 6%; margin-left: 83%; display: none">
-
+        <div id="icon_pic_return_container" class="icon-map" style="display: none">
             <a onclick="event.preventDefault(); location.reload();"> <img src="images/ICON-PIC-MAP.png"> </a>
         </div>
         <div id="map">
