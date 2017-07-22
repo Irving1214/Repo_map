@@ -47,12 +47,12 @@ function createModal(propiedad, index) {
         '</ol>' +
 
         '<!-- CorazÃ³n de Like -->' +
-        '<div style="position: absolute; z-index: 4; padding-right: : 10px; padding-top: 15px; margin-left: 90%">' +
+        '<div style="cursor: pointer; position: absolute; z-index: 4; padding-right: : 10px; padding-top: 15px; margin-left: 90%">' +
         '<img height="13%" id="heart_' + index + '" src="images/ICON-PIC-HEART.png" "></i>' +
         '</div>' +
 
         '<!-- Regreso a Cards -->' +
-        '<div style="position: absolute; z-index: 4; padding-left: 15px; padding-top: 15px;">' +
+        '<div style="cursor: pointer; position: absolute; z-index: 4; padding-left: 15px; padding-top: 15px;">' +
         '<img height="13%" id="card_cubes_' + index + '" src="images/ICON-PIC-RETURN.png" "></i>' +
         '</div>' +
 
@@ -547,149 +547,156 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
         folio = '';
     }
     $("#pdf-modal").append('<div class="modal-dialog-detalles">' +
+            '<div class="modal-content-detalles">' +
+                '<div class="modal-body">' +
 
-        '<div class="modal-content-detalles">' +
+                '<div id="pdf" class="div">' +
 
-        '<div class="modal-body">' +
-        '<div id="pdf" class="div">' +
-        '<div class="row">' +
-        '<div class="col-xs-7" style="padding: 0px 0px;">' +
-        '<div class="row azulRevimex" align="center">' +
-        '<img  class="revimexImagen" src="images/revimex-logo.png">' +
-        '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-xs-12 col-md-7" style="padding: 0px 0px;">' +
+                            '<div class="row azulRevimex" align="center">' +
+                                '<img  class="revimexImagen" src="images/revimex-logo.png">' +
+                            '</div>' +
 
-        '<div class="row arenaRevimex" align="center">' +
-        '<div class="separador"></div>' +
-        '<span class="titulo" style="margin-top: 80px;">Detalles</span>' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '</div>' +
+                            '<div class="row arenaRevimex" align="center">' +
+                                '<div class="separador"></div>' +
+                                    '<span class="titulo" style="margin-top: 80px;">Detalles</span>' +
+                                '<div class="separador"></div>' +
+                            '</div>' +
+                        '</div>' +
 
-        '<div class="col-xs-5" style="padding: 0px 0px;">' +
-        '<div class="row arenaRevimex" align="center">' +
-        '<h4>Contacto: 01 800 200 04440</h4>' +
-        '</div>' +
+                        '<div class="col-xs-12 col-md-5" style="padding: 0px 0px;">' +
+                            '<div class="col-xs-6 col-md-12 arenaRevimex mod-resp" align="center">' +
+                                '<span class="titulo-contacto">Contacto: 01 800 200 04440</span>' +
+                            '</div>' +
 
-        '<div class="row arenaClara" align="center">' +
-        '<div class="separador"></div>' +
-        '<span class="titulo">' + folio + '</span>' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
+                            '<div class="col-xs-6 col-md-12 arenaClara mod-resp" align="center">' +
+                                '<div class="separador"></div>' +
+                                    '<span class="titulo-resp">' + folio + '</span>' +
+                                '<div class="separador"></div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
 
-        '<div class="separador"></div>' +
+                    '<div class="separador"></div>' +
 
-        '<div class="row">' +
-        '<div class="col-xs-7">' +
-        '<img class="imagen-modal-detalles" src="' + imagen + '">' +
-        '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-xs-12 col-md-7">' +
+                            '<img class="imagen-modal-detalles" src="' + imagen + '">' +
+                        '</div>' +
 
-        '<div class="col-xs-5" style="padding: 0px 0px;">' +
-        '<div class="row arenaClara">' +
-        '<br>' +
-        '<p class="direccion" align="center">' +
-        'Calle: ' + calle +
-        ' Colonia: ' + colonia +
-        ' Municipio: ' + municipio +
-        ' Estado: ' + estado +
-        '</p>' +
-        '</div>' +
+                        '<div class="col-xs-12 col-md-5" style="padding: 0px 0px;">' +
+                            '<div class="row arenaClara">' +
+                                '<br>' +
+                                '<p class="direccion" align="center">' +
+                                'Calle: '      + calle +
+                                ' Colonia: '   + colonia +
+                                ' Municipio: ' + municipio +
+                                ' Estado: '    + estado +
+                                '</p>' +
+                            '</div>' +
 
-        '<div class="row highlight">' +
-        '<div class="separador"></div>' +
-        '<div class="col-xs-2">' +
-        '<img class="casitaImagen" src="images/icono-casa-modal.png">' +
-        '<div class="separador"></div>' +
-        '</div>' +
-        '<div class="col-xs-9 style="padding: 0px 0px;"" align="center">' +
-        '<div class="separador"></div>' +
-        '<p class="descripcion">Descripción de propiedad</p>' +
-        '</div>' +
-        '</div>' +
+                            '<div class="row highlight">' +
+                                '<div class="separador"></div>' +
+                                '<div class="col-xs-2 col-md-2">' +
+                                    '<img class="casitaImagen" src="images/icono-casa-modal.png">' +
+                                    '<div class="separador"></div>' +
+                                '</div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2 style="padding: 0px 0px;""></div>' +
-        '<div class="col-xs-8 style="padding: 0px 0px;"">' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/terreno.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad"> Terreno: '+ terreno + ' m<sup>2</sup></p>' +
-        '</div>' +
-        '</div>' +
+                                '<div class="col-md-9 style="padding: 0px 0px;"" align="center">' +
+                                    '<div class="separador"></div>' +
+                                    '<p class="descripcion">Descripción de propiedad</p>' +
+                                '</div>' +
+                            '</div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/construccion.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad"> Construcción: ' + constru + ' m<sup>2</sup></p>' +
-        '</div>' +
-        '</div>' +
+                            '<div class="separador"></div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/habitaciones.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">Habitaciones: ' + habitaciones + '</p>' +
-        '</div>' +
-        '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-xs-1 col-md-2 style="padding: 0px 0px;""></div>' +
+                                '<div class="col-xs-10 col-md-8 style="padding: 0px 0px;"">' +
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/terreno.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                            '<p class="des-propiedad"> Terreno: '+ terreno + ' m<sup>2</sup></p>' +
+                                        '</div>' +
+                                    '</div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/banios.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">Baños: ' + banos + '</p>' +
-        '</div>' +
-        '</div>' +
+                                    '<div class="separador"></div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/patio.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">Patios: ' + patios + '</p>' +
-        '</div>' +
-        '</div>' +
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/construccion.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                        '   <p class="des-propiedad"> Construcción: ' + constru + ' m<sup>2</sup></p>' +
+                                        '</div>' +
+                                    '</div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row">' +
-        '<div class="col-xs-2" style="padding: 0px 0px;">' +
-        '<img class="sm-icon" src="images/iconoModal/estacionamiento.png">' +
-        '</div>' +
-        '<div class="col-xs-10 verdeRevimex" style="padding: 0px 0px;">' +
-        '<p class="des-propiedad">Estacionamientos: ' + estacionamientos + '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
+                                    '<div class="separador"></div>' +
 
-        '<div class="col-xs-2" style="padding: 0px 0px;"></div>' +
-        '</div>' +
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/habitaciones.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                            '<p class="des-propiedad">Habitaciones: ' + habitaciones + '</p>' +
+                                        '</div>' +
+                                    '</div>' +
 
-        '<div class="separador"></div>' +
-        '<div class="row arenaClara">' +
-        '<br>' +
-        '<p class="precio" align="center">' +
-        '$ ' + precio +
-        '</p>' +
-        '<div class="separador"></div>' +
+                                    '<div class="separador"></div>' +
+                    
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/banios.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                            '<p class="des-propiedad">Baños: ' + banos + '</p>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="separador"></div>' +
+
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/patio.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                            '<p class="des-propiedad">Patios: ' + patios + '</p>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="separador"></div>' +
+
+                                    '<div class="row">' +
+                                        '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
+                                            '<img class="sm-icon" src="images/iconoModal/estacionamiento.png">' +
+                                        '</div>' +
+                                        '<div class="col-xs-10 col-md-10 verdeRevimex" style="padding: 0px 0px;">' +
+                                            '<p class="des-propiedad">Estacionamientos: ' + estacionamientos + '</p>' +
+                                        '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-2" style="padding: 0px 0px;"></div>' +
+                                '</div>' +
+
+                                '<div class="separador"></div>' +
+                                
+                                '<div class="row arenaClara">' +
+                                    '<p class="precio" align="center">' +
+                                    '$ ' + precio +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>' +
+
+                        '<div class="col-md-12 divButton" align="center">' +
+                            '<button class="estiloBton-detalles"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
         '</div>' +
-        '</div>' +
-        '<div class="col-md-12 divButton" align="center">' +
-        '<button class="estiloBton-detalles"  class="btn btn-primary" data-toggle="modal" data-target="#pdf-modal" >Cerrar</button>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>');
+    '</div>');
 }
