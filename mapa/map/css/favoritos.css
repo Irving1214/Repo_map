@@ -224,7 +224,7 @@
 
 .box.yellow
 {
-    border-color: #CFDB00;
+    border-color: #cfdb00;
     background-color: white;
 }
 
@@ -508,6 +508,41 @@
         border-color: #002967;
         /*width: 80%;*/
         border-radius: 2px;
+    }
+}
+
+@media screen and (min-width: 1200px)
+{
+    .tipo
+    {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1900px)
+{
+    .tipo
+    {
+        font-size: 19px;
+    }
+}
+
+@media screen and (min-width: 2000px)
+{
+    .box
+    {
+        width: 18em;
+        height: 276px;
+    }
+
+    .thumbnail-fav
+    {
+        height: 196px;
+    }
+
+    .boton-detalles
+    {
+        font-size: 17px;
     }
 }
 /* FIN -> Estilo de pantalla Favoritos (Propiedades) */
