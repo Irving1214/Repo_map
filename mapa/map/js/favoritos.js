@@ -648,8 +648,8 @@ function isCorreoValido(email){
     } else {
       return true;
     }
-
 }
+
 function isTelValido(telefono){
     var caract = new RegExp(/^([0-9]{10,10})+$/);
     if (caract.test(telefono) == false){
@@ -658,6 +658,7 @@ function isTelValido(telefono){
       return true;
     }
 }
+
 function isLadaValida(lada){
     var caract = new RegExp(/^([0-9]{1,2})+$/);
     if (caract.test(lada) == false){

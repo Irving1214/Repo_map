@@ -6,14 +6,27 @@
 var re = /(?:\.([^.]+))?$/;
 
 /*
+ * True si el tamaño de pantalla es el de un móvil
+ */
+function isMobile() {
+    return $(window).width() <= 800;
+}
+
+/*
  + Construe el modal para una propiedad
  */
  var mrkrPlace = '';
 function createModal(propiedad, index) {
   mrkrPlace = false;
-    $("#description-casas").html("");
+    $("#description-casas, #description-casas-mobile").html("");
 
-    var modal_casa = '<div class="col-md-6 hola_description" id="house_description_' + index + '" style="display: block">' +
+    var modal_size = "col-md-6";
+
+    if ( isMobile() ) {
+        modal_size = "col-md-12";
+    }
+
+    var modal_casa = '<div class="' + modal_size + ' hola_description" id="house_description_' + index + '" style="display: block">' +
 
         '<div class="col-md-12 carr">' +
         '<div id="myCarousel_' + index + '" class="carousel slide" data-ride="carousel">' +
@@ -303,8 +316,12 @@ function createModal(propiedad, index) {
         '</div>' +
 
         '</br>';
-    $("#description-casas").append(modal_casa);
 
+    if ( isMobile() ) {
+        $("#description-casas-mobile").append(modal_casa);
+    } else {
+        $("#description-casas").append(modal_casa);
+    }
 
     // Si ya esta en favoritos le cambia el color del corazón
     isFavorite(propiedad.Id, index);
