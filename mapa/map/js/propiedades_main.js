@@ -52,17 +52,44 @@ function clickOnSearch() {
         if (prices[0] != var_min || prices[1] != var_max) {
             reCentrar();
             showPropiedadesByPrecio(prices[0], prices[1]);
-            console.log("3");
         } else {
             location.reload();
-            console.log("1");
         }
     } else {
-         stopOthersClickedMarkers();
-        clearServicesAndReCenter();
-        getmaploc();
-        console.log("2");
-        
+         $.ajax({
+             url: url + "/propiedades/places",
+             type: "POST",
+             data: {
+                 search: $("#pac-input").val()
+             },
+             dataType: "JSON",
+             beforeSend: function () {
+                 $("#wait").show();
+             },
+             success: function (respuesta) {
+                 if (respuesta.places.length > 0) {
+                     var ui = respuesta.places[0];
+
+                     if (ui.is_plaza == 1) {
+                         ui = returnCity(ui);
+                     } else {
+                         ui = returnColonia(ui);
+                     }
+
+                     moveMap(ui.lat, ui.lng, ui.zoom, ui.value);
+                     stopOthersClickedMarkers();
+                     clearServicesAndReCenter();
+                 } else {
+                    console.log("Prueba");
+                 }
+             },
+             error: function (respuesta) {
+                 console.log(respuesta);
+             },
+             complete: function () {
+                 $("#wait").hide();
+            }
+         });
     }
 }
 
