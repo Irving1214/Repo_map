@@ -247,7 +247,7 @@ function createModal(propiedad, index) {
 
         //SECCION GERENTE
         '<div class="row">' +
-        '<div class="col-md-12" style="margin-top: -3%;">' +
+        '<div class="col-md-12 gerente">' +
         '<p class="bg-primary" align="center">Ejecutivo de Ventas</p>' +
         '<div class="row revimexBlue" style="margin-top: -4%;">' +
         '<br><div id="msg_form"></div>' +
