@@ -52,7 +52,7 @@ $(document).ready(function () {
     /*
      * Envía las propiedades al email
      */
-    $("#enviarPropiedades").click(function () {
+    $("#enviarPropiedades, #enviarPropiedades_xs").click(function () {
         sendToUser();
     });
 
@@ -145,7 +145,7 @@ $(document).ready(function () {
     /*
      * Click en eliminar
      */
-    $("#deleteButton").click(function () {
+    $("#deleteButton, #deleteButton_xs").click(function () {
         markToDelete();
     });
 });
@@ -161,13 +161,13 @@ function markToDelete() {
         boxes.forEach(function (item) {
             $(item).addClass("red");
         });
-        $("#deleteButton").html("Terminar");
+        $("#deleteButton, #deleteButton_xs").html("Terminar");
     } else {
         deleteListeners(false);
         boxes.forEach(function (item) {
             $(item).removeClass("red");
         });
-        $("#deleteButton").html("Eliminar");
+        $("#deleteButton, #deleteButton_xs").html("Eliminar");
     }
 
     eliminar = !eliminar;
@@ -222,7 +222,7 @@ function closeSession() {
 function load_favoritos() {
     var index = 1;
     if (propiedadesStorage.length > 0) {
-        $('#enviarPropiedades').prop('disabled', false);
+        $('#enviarPropiedades, #enviarPropiedades_xs').prop('disabled', false);
         $("#casas").html("");
         $("#description-casas").html("");
 
@@ -312,7 +312,7 @@ function load_favoritos() {
             boxListeners();
         });
     } else {
-        $('#enviarPropiedades').prop('disabled', true);
+        $('#enviarPropiedades, #enviarPropiedades_xs').prop('disabled', true);
     }
 }
 
