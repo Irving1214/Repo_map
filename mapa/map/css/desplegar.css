@@ -857,17 +857,37 @@ div.scroll
     margin-top: -3%;
 }
 
-@media (max-width: 2560px)
-{
-    .icon-map
+.icon-map
     {
         position: absolute;
         z-index: 4;
-
-        margin-left: 87%;
-        padding-top: 4em;
         padding-right: 0;
     }
+
+@media (min-width: 1900px)
+{
+    .icon-map {
+        position: absolute;
+        z-index: 4;
+        margin-left: 81% !important;
+        padding-top: 7em !important;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1900px)
+{
+    .icon-map {
+        position: absolute;
+        z-index: 4;
+        margin-left: 81% !important;
+        padding-top: 7em !important;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 2560px)
+{
 
     .detalle
     {
@@ -955,8 +975,8 @@ div.scroll
         position: absolute;
         z-index: 4;
 
-        margin-left: 75%;
-        padding-top: 3em;
+        margin-left: 75% !important;
+        padding-top: 3em !important;
         padding-right: 0;
     }
 
@@ -1049,7 +1069,7 @@ div.scroll
     }
 }
 
-@media screen and (min-width: 768px)
+@media screen and (min-width: 800px)
 {
     .modal-detalles
     {
@@ -1071,6 +1091,32 @@ div.scroll
     .modal-dialog-detalles
     {
         width: 950px;
+        margin: 30px auto;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .modal-detalles
+    {
+        position: fixed;
+        z-index: 1050;
+        top: 28px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: none;
+        overflow: hidden;
+
+        outline: 0;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-dialog-detalles
+    {
+        width: auto;
         margin: 30px auto;
     }
 }
@@ -1260,20 +1306,7 @@ div.scroll
     }
 }
 
-@media (max-width: 500px)
-{
-    div.scroll
-    {
-        width: 100%;
-        height: 95%;
-        margin-left: 0;
-    }
 
-    .icon-map
-    {
-        margin-left: 75% !important;
-    }
-}
 
 
 @media (max-width: 800px)
@@ -1311,6 +1344,37 @@ div.scroll
 
     .icon-map
     {
-        margin-left: 86%;
+        margin-left: 86% !important;
     }
 }
+
+@media (max-width: 500px)
+{
+    div.scroll
+    {
+        width: 100% !important;
+        height: 95% !important;
+        margin-left: 0 !important;
+    }
+
+    .icon-map
+    {
+        margin-left: 75% !important;
+    }
+    
+    .logos-rs {
+        width: 37px !important;
+        height: 37px !important;
+    }
+
+
+@media (max-width: 350px)
+{
+    .icon-map
+    {
+        margin-left: 70% !important;
+    }
+
+}
+
+
