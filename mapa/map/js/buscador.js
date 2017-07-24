@@ -91,6 +91,7 @@ function returnColonia(el) {
 }
 
 function moveMap(lat, lng, zoom, place) { // comparar lat y lng
+    slider.removeAttribute('disabled');
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({
         address: $("#pac-input").val()
