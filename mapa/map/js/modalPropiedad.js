@@ -296,7 +296,7 @@ function createModal(propiedad, index) {
         '<br><br>' +
         '<input type="text" class="input_borde" class="form-control" id="form_nombre_' + propiedad.Id + '" placeholder="  Nombre" aria-describedby="sizing-addon2" maxlength="140">' +
         '<br></br>' +
-        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Telefono" aria-describedby="sizing-addon2" maxlength="10">' +
+        '<input type="text" class="input_borde" class="form-control" id="form_telefono_' + propiedad.Id + '" placeholder="  Teléfono" aria-describedby="sizing-addon2" maxlength="10">' +
         '<br></br>' +
         '<input type="text" class="input_borde" class="form-control" placeholder="  E-mail" id="form_email_' + propiedad.Id + '" aria-describedby="sizing-addon2">' +
         '<br></br></br>' +
@@ -584,7 +584,7 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
 
                         '<div class="col-xs-12 col-md-5" style="padding: 0px 0px;">' +
                             '<div class="col-xs-6 col-md-12 arenaRevimex mod-resp" align="center">' +
-                                '<span class="titulo-contacto">Contacto: 01 800 200 04440</span>' +
+                                '<span class="titulo-contacto">Contacto: 01 800 200 0440</span>' +
                             '</div>' +
 
                             '<div class="col-xs-6 col-md-12 arenaClara mod-resp" align="center">' +
