@@ -43,6 +43,9 @@ $(document).ready(function () {
             moveMap(ui.item.lat, ui.item.lng, ui.item.zoom, ui.item.value);
    stopOthersClickedMarkers();
             clearServicesAndReCenter();
+            slider.noUiSlider.updateOptions({
+                start: [0, 1500000]
+            });
             return false;
         }
     });

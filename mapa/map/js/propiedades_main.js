@@ -36,6 +36,9 @@ $(document).ready(function(){
   load_propiedades(null, null);
   $("#lupaSearch").click(function() {
         clickOnSearch();
+       slider.noUiSlider.updateOptions({
+                start: [0, 1500000]
+            });
    });
 });
 
