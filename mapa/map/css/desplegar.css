@@ -109,10 +109,41 @@ p.bg-primary.casa
 
 img.imgt
 {
-    height: 300px /*!important*/;
-
     object-fit: cover;
 }
+
+
+@media(max-height: 400px)
+{
+    img.imgt {
+        height: 100px !important;
+    }
+}
+
+@media(max-width: 2800px)
+{
+    img.imgt {
+        height: 300px /*!important*/;
+    }
+}
+
+
+@media(max-width: 450px)
+{
+    img.imgt {
+        height: 200px /*!important*/;
+    }
+}
+
+@media(max-width: 320px)
+{
+    img.imgt {
+        height: 180px /*!important*/;
+    }
+}
+
+
+
 
 .col-md-8.pos
 {
