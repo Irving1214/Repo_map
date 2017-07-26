@@ -5,59 +5,214 @@
  */
 
 html,
-body {
+body
+{
     height: 100%;
 }
 
 .carousel,
 .item,
-.active {
+.active
+{
     height: 22em;
 }
 
-.carousel-inner {
+.carousel-inner
+{
     height: 100%;
+
     border: 2px;
     border-style: solid;
-    border-color: #002E6D;
+    border-color: #002e6d;
 }
 
- @media screen and (min-height:2000px) and (min-width: 2000px) {
-            .carr{
-                height: 60%;
-                margin-bottom: -130%;
-            }
+@media screen and (min-height:2000px) and (min-width: 2000px)
+{
+    .carr
+    {
+        height: 60%;
+        margin-bottom: -130%;
+    }
 
-            .imgt{
-                margin: 13.5% 0% 0% 0%;
-            }
+    .imgt
+    {
+        margin: 13.5% 0 0 0;
+    }
 
-            .input_borde{
-                margin-top: 5%;
-            }
+    .input_borde
+    {
+        margin-top: 5%;
+    }
 
-            
-            .form-group {
-                margin: 5%;
-            }
 
-            .carousel-indicators{
-                bottom: 10%;
-            }
-        }
+    .form-group
+    {
+        margin: 5%;
+    }
+
+    .carousel-indicators
+    {
+        bottom: 10%;
+    }
+}
 
 /* Background images are set within the HTML using inline CSS, not here */
 
-.fill {
+.fill
+{
     width: 100%;
     height: 100%;
+
     background-position: center;
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
-footer {
+footer
+{
     margin: 50px 0;
+}
+
+.botonFav
+{
+    color: #fff;
+    border-style: solid;
+    border-color: #002967;
+    background-color: #002967;
+}
+
+.botonFav:hover
+{
+    border-color: #cfdb00;
+    background-color: #cfdb00;
+}
+
+.captionFav
+{
+    position: absolute;
+    z-index: 3;
+
+    border-style: solid;
+    border-color: rgb(73, 190, 239);
+    background-color: white;
+}
+
+/*Mobile S*/
+@media (min-width: 200px)
+{
+    .captionFav
+    {
+        width: 129px;
+        height: 132px;
+        margin-top: 6%;
+        margin-left: 20%;
+    }
+
+    .botonFav
+    {
+        font-size: 12px;
+
+        width: 105px;
+        height: 26px;
+    }
+}
+
+/*Mobile M*/
+@media (min-width: 321px)
+{
+    .captionFav
+    {
+        width: 147px;
+        height: 137px;
+        margin-top: 6%;
+        margin-left: 24%;
+    }
+
+    .botonFav
+    {
+        font-size: 12px;
+
+        width: 105px;
+        height: 26px;
+    }
+}
+
+/*Mobile L*/
+@media (min-width: 376px)
+{
+    .captionFav
+    {
+        width: 160px;
+        height: 145px;
+        margin-top: 3%;
+        margin-left: 26%;
+    }
+
+    .botonFav
+    {
+        font-size: 12px;
+
+        width: 105px;
+        height: 26px;
+    }
+}
+
+/*Tablet*/
+@media (min-width: 450px)
+{
+    .captionFav
+    {
+        width: 167px;
+        height: 150px;
+        margin-top: 4%;
+        margin-left: 38%;
+    }
+
+    .botonFav
+    {
+        font-size: 13px;
+
+        width: 120px;
+        height: 29px;
+    }
+}
+
+@media (min-width: 1000px)
+{
+    .captionFav
+    {
+        width: 167px;
+        height: 150px;
+        margin-top: 8%;
+        margin-left: 26%;
+    }
+
+    .botonFav
+    {
+        font-size: 13px;
+
+        width: 120px;
+        height: 29px;
+    }
+}
+
+@media (min-width: 1400px)
+{
+    .captionFav
+    {
+        width: 180px;
+        height: 160px;
+        margin-top: 8%;
+        margin-left: 33%;
+    }
+
+    .botonFav
+    {
+        font-size: 14px;
+
+        width: 120px;
+        height: 35px;
+    }
 }

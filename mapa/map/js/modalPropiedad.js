@@ -72,14 +72,14 @@ function createModal(propiedad, index) {
         '<!-- Wrapper for slides -->' +
         '<div class="carousel-inner">' +
 
-        '<div class="caption" id="modalFavoritos' + index + '" style="background-color:White;display:none;position:absolute;z-index:3;margin-left: 38%;margin-top:8%; height:200px;width:180px;border-style:solid;border-color:#49BEEF">' +
+        '<div class="captionFav" id="modalFavoritos' + index + '" style="display:none;">' +
         '<center>' +
         '<br>' +
-        '<button id = "GoToFavorites_' + index + '" class="bg-primary">Ir a favoritos</button>' +
+        '<button id = "GoToFavorites_' + index + '" class="botonFav">Ir a favoritos</button>' +
         '<br>' +
         '<br>' +
         '<br>' +
-        '<button id = "KeepWhatching_' + index + '" class="bg-primary">Seguir viendo</button>' +
+        '<button id = "KeepWhatching_' + index + '" class="botonFav">Seguir viendo</button>' +
         '</center>' +
         '</div>';
 
