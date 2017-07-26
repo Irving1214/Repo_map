@@ -291,6 +291,8 @@ function createModal(propiedad, index) {
         '</div>' +
 
         '<div class="col-md-5">' +
+
+        '<div class="col-xs-12">' +
         '<form id="form_EjecutivoVtas">' +
         '<div class="form-group">' +
         '<br><br>' +
@@ -306,6 +308,7 @@ function createModal(propiedad, index) {
         '</div>' +
         '</div>' +
         '<br>' +
+        '</div>' +
         '</div>' +
         '</div>' +
 
