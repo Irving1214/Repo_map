@@ -110,10 +110,17 @@ $(document).ready(function () {
                 if (!isTelValido($("#tels").val()) ) { // si el formato del telefono no es valido
                     $("#tels").val('');
                     msjError += '&nbsp;<span>*Escriba su telefono correctamente (sólo 10 números)</span><br>';
+                    if (!$("#lada").val()) {
+                        msjError += '&nbsp;<span>*Escriba su lada</span><br>';
+                    }
                 }
                 if (!isLadaValida($("#lada").val()) ) { // si el formato del telefono no es valido
                     $("#lada").val('');
                     msjError += '&nbsp;<span>*Escriba su lada correctamente (sólo 2 números)</span><br>';
+
+                    if (!$("#tels").val()) {
+                        msjError += '&nbsp;<span>*Escriba su telefono</span><br>';
+                    }
                 }
             } else { // si todos son validos
                 telefono = $("#tels").val();
@@ -147,6 +154,18 @@ $(document).ready(function () {
      */
     $("#deleteButton, #deleteButton_xs").click(function () {
         markToDelete();
+    });
+    /*
+     *  Si se presionan teclas !numericas
+     */
+    $('#lada, #tels').keypress(function() {
+        var pushedKey = window.event ? window.event.keyCode:e.which;
+        if( ($('#lada').val() < 10) || ($('#tels').val().length < 10))
+        {
+            return /\d/.test(String.fromCharCode(pushedKey));
+        }else{
+            return false;
+        }
     });
 });
 
@@ -585,7 +604,6 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
                                     '</div>' +
 
                                     '<div class="separador"></div>' +
-                    
                                     '<div class="row">' +
                                         '<div class="col-xs-2 col-md-2" style="padding: 0px 0px;">' +
                                             '<img class="sm-icon" src="images/iconoModal/banios.png">' +
@@ -622,7 +640,6 @@ function modal_variables(calle, colonia, municipio, estado, terreno, constru, ha
                                 '</div>' +
 
                                 '<div class="separador"></div>' +
-                                
                                 '<div class="row arenaClara">' +
                                     '<p class="precio" align="center">' +
                                     '$ ' + precio +
