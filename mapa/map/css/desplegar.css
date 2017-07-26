@@ -55,8 +55,30 @@ div.scroll
     height: 200px;
 }
 
+.deleteProperty {
+    position: absolute;
+    top: 8%;
+    right: 22%;
+    z-index: 100;
+    padding: 5px 2px 2px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
 @media (min-width: 768px)
 {
+    .deleteProperty {
+        position: absolute;
+        top: 8%;
+        right: 13%;
+        z-index: 100;
+        padding: 5px 2px 2px;
+        color: red;
+        font-weight: bold;
+        display: none;
+    }
+
     .thumbnail
     {
         font-size: 15px;
