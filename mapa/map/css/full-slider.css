@@ -185,8 +185,8 @@ footer
     {
         width: 167px;
         height: 150px;
-        margin-top: 8%;
-        margin-left: 26%;
+        margin-top: 5%;
+        margin-left: 28%;
     }
 
     .botonFav
@@ -204,7 +204,7 @@ footer
     {
         width: 180px;
         height: 160px;
-        margin-top: 8%;
+        margin-top: 5%;
         margin-left: 33%;
     }
 
@@ -214,5 +214,22 @@ footer
 
         width: 120px;
         height: 35px;
+    }
+}
+
+@media (min-width: 1900px)
+{
+    .captionFav {
+        width: 233px;
+        height: 227px;
+        margin-top: 12%;
+        margin-left: 32%;
+    }
+
+    .botonFav {
+        font-size: 17px;
+        width: 140px;
+        height: 47px;
+        margin-top: 12px;
     }
 }
