@@ -134,37 +134,89 @@ img.imgt
     object-fit: cover;
 }
 
+/*Laptop > 1800px*/
+@media screen and (max-width: 2500px) and (max-height: 2000px)
+{
+    img.imgt {
+        height: 410px !important;
+    }
+}
 
-@media(max-height: 400px)
+/*Laptop*/
+@media screen and (max-width: 1800px) and (max-height: 1500px)
+{
+    img.imgt {
+        height: 300px !important;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width: 1400px) and (max-height: 1000px)
+{
+    img.imgt {
+        height: 230px !important;
+    }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 1000px)
+{
+    img.imgt {
+        height: 210px !important;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-height: 1001px)
+{
+    img.imgt {
+        height: 260px !important;
+    }
+}
+
+/*L Mobile*/
+@media screen and (max-width: 800px) and (max-height: 450px)
 {
     img.imgt {
         height: 100px !important;
     }
 }
 
-@media(max-width: 2800px)
+@media screen and (max-width: 500px) and (max-height: 1000px)
 {
     img.imgt {
-        height: 300px /*!important*/;
+        height: 185px !important;
     }
 }
 
-
-@media(max-width: 450px)
+/*M Mobile*/
+@media screen and (max-width: 800px) and (max-height: 400px)
 {
     img.imgt {
-        height: 200px /*!important*/;
+        height: 95px !important;
     }
 }
 
-@media(max-width: 320px)
+@media screen and (max-width: 400px) and (max-height: 1000px)
 {
     img.imgt {
-        height: 180px /*!important*/;
+        height: 165px !important;
+    }
+} 
+
+
+/*S Mobile*/
+@media screen and (max-width: 320px) and (max-height: 1000px)
+{
+    img.imgt {
+        height: 140px !important;
     }
 }
 
-
+@media screen and (max-width: 800px) and (max-height: 320px)
+{
+    img.imgt {
+        height: 80px !important;
+    }
+}
 
 
 .col-md-8.pos
@@ -516,7 +568,7 @@ textarea.input_borde
     }
 }
 
-@media (max-width: 4000px) and (min-width: 1500px) and (min-height: 700px)
+@media (max-width: 4000px) and (min-height: 700px)
 {
     textarea.input_borde
     {
@@ -542,7 +594,7 @@ textarea.input_borde
 
     img.imgt
     {
-        height: 315%;
+        height: 600px;
     }
 }
 
