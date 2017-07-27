@@ -189,7 +189,7 @@ img.imgt
 @media screen and (max-width: 1800px) and (max-height: 1500px)
 {
     img.imgt {
-        height: 300px !important;
+        height: 220px !important;
     }
 }
 
@@ -226,7 +226,7 @@ img.imgt
 @media screen and (max-width: 500px) and (max-height: 1000px)
 {
     img.imgt {
-        height: 185px !important;
+        height: 220px !important;
     }
 }
 
@@ -241,7 +241,7 @@ img.imgt
 @media screen and (max-width: 400px) and (max-height: 1000px)
 {
     img.imgt {
-        height: 165px !important;
+        height: 210px !important;
     }
 }
 
@@ -250,7 +250,7 @@ img.imgt
 @media screen and (max-width: 320px) and (max-height: 1000px)
 {
     img.imgt {
-        height: 140px !important;
+        height: 206px !important;
     }
 }
 
