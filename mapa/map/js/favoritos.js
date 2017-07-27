@@ -182,6 +182,22 @@ function markToDelete() {
         });
         $(".deleteProperty").show();
         $("#deleteButton, #deleteButton_xs").html("Terminar");
+
+        // Estilos al eliminar
+        $(".imagenres2").css({
+            "filter": "brightness(0.30)"
+        });
+
+        $(".letrasImagen").css({
+            "opacity": "1",
+            "color": "#fff",
+            "posistion": "relative",
+            "z-index": "532"
+        });
+
+        $(".boton-detalles").css({
+            "background-color": "#e85a4e"
+        });
     } else {
         deleteListeners(false);
         boxes.forEach(function (item) {
@@ -189,6 +205,23 @@ function markToDelete() {
         });
         $(".deleteProperty").hide();
         $("#deleteButton, #deleteButton_xs").html("Eliminar");
+
+        // Estilos al eliminar
+        $(".imagenres2").css({
+            "filter": ""
+        });
+
+        $(".letrasImagen").css({
+            "opacity": "0",
+            "position": "absolute",
+            "top": "30%",
+            "left": "50%",
+            "transform": "translate(-50%, -50%)"
+        });
+
+        $(".boton-detalles").css({
+            "background-color": "#002967"
+        });
     }
 
     eliminar = !eliminar;
@@ -299,11 +332,11 @@ function load_favoritos() {
             $("#casas").append(
                 '<div class="col-xs-12 col-sm-4 col-md-3" id="caja_' + index + '" align="center" data-id="' + propiedad.Id + '">'+
                 '<div class="box" id="img-thumbnail_' + index + '">'+
-                '<span class="deleteProperty" onMouseOver="this.style.cursor=\'pointer\'">&times;</span>'+
+                '<span class="deleteProperty" onMouseOver="this.style.cursor=\'pointer\'"><div class="numberCircle"><div style="margin-top: -80%; margin-left: -23.2%;">&times;</div></div></span>'+
                 '<div class="thumbnail-fav">'+
                 '<img class="imagenres2" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
                 '<div class="caption">' +
-                '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" class="letrasImagen" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
                 '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
                 '</div>' +
 
