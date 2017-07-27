@@ -214,7 +214,7 @@ function markToDelete() {
         $(".letrasImagen").css({
             "opacity": "0",
             "position": "absolute",
-            "top": "30%",
+            "top": "40%",
             "left": "50%",
             "transform": "translate(-50%, -50%)"
         });
@@ -336,7 +336,7 @@ function load_favoritos() {
                 '<div class="thumbnail-fav">'+
                 '<img class="imagenres2" id="image_main_thumbnail_' + index + '" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="' + main_photo + '" src="' + main_photo + '" >' +
                 '<div class="caption">' +
-                '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);" class="letrasImagen" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Plaza<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
+                '<center><h4 style="font-size: 17px; opacity: 0; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);" class="letrasImagen" id="letrasImagen' + index + '"><div id="display_plaza_' + index + '"><div style="color: #CFDB00; ">Ciudad<br> <span style="color: #FFFFFF">' + propiedad.Plaza__c + '</span> </div></div><div id="display_colonia_' + index + '" style="display: none"><div style="color: #CFDB00; ">Colonia<br> <span style="color: #FFFFFF">' + propiedad.Colonia__c + ' </span></div></div><div style="color: #CFDB00; ">Precio<br><b> ' +
                 '<span style="color: #FFFFFF">$' + propiedad.PrecioVenta__c + '</span></center></div></b></h4>' +
                 '</div>' +
 
@@ -474,7 +474,7 @@ function out(id) {
     $("#letrasImagen" + id).css({
         "opacity": "0",
         "position": "absolute",
-        "top": "30%",
+        "top": "40%",
         "left": "50%",
         "transform": "translate(-50%, -50%)"
     });

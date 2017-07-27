@@ -80,17 +80,46 @@ div.scroll
     font: 14px Arial, sans-serif;
 }
 
+@media (min-width: 448px) {
+    .deleteProperty {
+        right: 32%;
+    }
+}
+
+@media (min-width: 500px) {
+    .deleteProperty {
+        right: 37%;
+    }
+}
+
+@media (min-width: 700px) {
+    .deleteProperty {
+        right: 39%;
+    }
+}
+
+@media (min-width: 970px) {
+    .deleteProperty {
+        right: 40%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .deleteProperty {
+        right: 35%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .deleteProperty {
+        right: 19%;
+    }
+}
+
 @media (min-width: 768px)
 {
     .deleteProperty {
-        position: absolute;
-        top: 17%;
-        right: 21%;
-        z-index: 100;
-        padding: 5px 2px 2px;
-        color: red;
-        font-weight: bold;
-        display: none;
+        right: 28%;
     }
 
     .thumbnail
