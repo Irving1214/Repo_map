@@ -119,7 +119,7 @@ div.scroll
 @media (min-width: 768px)
 {
     .deleteProperty {
-        right: 28%;
+        right: 20%;
     }
 
     .thumbnail
@@ -141,6 +141,30 @@ div.scroll
     {
         width: 100%;
         height: 200px;
+    }
+}
+
+@media (min-width: 1500px){
+    .deleteProperty {
+        right: 23%;
+    }
+}
+
+@media (min-width: 1800px){
+    .deleteProperty {
+        right: 24%;
+    }
+}
+
+@media (min-width: 2500px){
+    .deleteProperty {
+        right: 26%;
+    }
+}
+
+@media (min-width: 3000px){
+    .deleteProperty {
+        right: 28%;
     }
 }
 
