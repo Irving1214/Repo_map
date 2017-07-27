@@ -220,16 +220,26 @@ footer
 @media (min-width: 1900px)
 {
     .captionFav {
-        width: 233px;
-        height: 227px;
-        margin-top: 12%;
-        margin-left: 32%;
+        width: 260px;
+        height: 281px;
+        margin-top: 8%;
+        margin-left: 30%;
     }
 
     .botonFav {
-        font-size: 17px;
-        width: 140px;
-        height: 47px;
-        margin-top: 12px;
+        font-size: 20px;
+        width: 162px;
+        height: 55px;
+        margin-top: 27px;
+    }
+}
+
+@media (min-width: 2500px)
+{
+    .captionFav {
+        width: 260px;
+        height: 281px;
+        margin-top: 8%;
+        margin-left: 36%;
     }
 }
