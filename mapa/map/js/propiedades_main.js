@@ -40,6 +40,23 @@ $(document).ready(function(){
                 start: [0, 1500000]
             });
    });
+
+  var a = document.cookie.split(';');
+    for(i=0;i<=a.length;i++){
+        if((typeof a[i] != 'undefined') && (a[i].indexOf("=")!=0)){
+            var v = a[i].split('=');
+            if(v[0].indexOf( "location")>0){
+                 $("#pac-input").val(v[1] + " ");
+            }
+        }
+    }
+    setTimeout(function() {
+        if($("#pac-input").val()){
+            $("#lupaSearch").trigger( "click" );
+        }
+    }, 2000);
+    document.cookie = 'location=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
 });
 
 /*
