@@ -158,7 +158,7 @@ $(document).ready(function () {
     /*
      *  Si se presionan teclas !numericas
      */
-    $('#lada, #tels').keypress(function() {
+    $('#lada, #tels').keypress(function(e) {
         var pushedKey = window.event ? window.event.keyCode:e.which;
         if( ($('#lada').val() < 10) || ($('#tels').val().length < 10))
         {

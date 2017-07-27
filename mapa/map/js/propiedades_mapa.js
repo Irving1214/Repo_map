@@ -4,9 +4,16 @@ var radius = 5000;
 var jumping = null;
 /* CARGA EL MAPA */
 function initMap() {
-    var mx = {lat: 24.2436666, lng: -102.4551421};
+    var mx = {lat: 23.2436666, lng: -102.0551421};
+    var responsiveZoom = '';
+    if ( isMobile() ) {
+        responsiveZoom = 4;
+        $('.col-md-7').css({'padding-left': '4px', 'padding-right': '4px'});
+    } else {
+        responsiveZoom = 5;
+    }
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 5,
+        zoom: responsiveZoom,
         center: mx,
         scrollwheel: false,
         disableDoubleClickZoom: true,
@@ -371,26 +378,30 @@ function initMap() {
 
 function zoomLevels(ubicacion) {
     var zoom_default = true;
+    var fixMobileZoom = 0;
+    if ( isMobile() ) { // si es un dispositivo movil se diminuye el zoom en 1
+        fixMobileZoom = -1;
+    }
     //Gómez palacios, Torreón, Aguascalientes, Ciudad de México, Estado de México (Tecamac,Chapa de Mota),Huimilpan	 Queretaro, Veracruz Jáltipan
     if (ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI" || ubicacion.place_id == "ChIJNdBqxVEAKoQRqXI-fdOzRWc"
         || ubicacion.place_id == "ChIJUT-QGF0cKoQRC0ThotRJwL4" || ubicacion.place_id == "ChIJ81fdg_t1goYRhwQtPLxkqKY" || ubicacion.place_id == "ChIJB3UJ2yYAzoURQeheJnYQBlQ"
         || ubicacion.place_id == "ChIJJyk1sTYAzoURW4rR6E6e_d4" || ubicacion.place_id == "ChIJE0xwqWGuKIQRrALQftSl2K8" || ubicacion.place_id == "ChIJhbc-7drs0YURlEUtP8V7oU8"
         || ubicacion.place_id == "ChIJW2g7hQDDYoYRxse9Oun-WKY" || ubicacion.place_id == "ChIJ_8vl92FH0oURD15IqMtrVOA" || ubicacion.place_id == "ChIJ8c3K9m9A04URxv09vLG_wYc"
         || ubicacion.place_id == "ChIJk-aVLdgf6oURjX7H2Dji-Xc") {
-        map.setZoom(12);
+        map.setZoom(12 + fixMobileZoom);
 
         zoom_default = false;
     }
 
     //Baja California Norte y Sur, QuintanaRoo,sonora,tamaulipas
     if (ubicacion.place_id == "ChIJ0913qAxw14ARjt4YA5_9pPw" || ubicacion.place_id == "ChIJyR6itTnTr4YRGFmnqTqz33E" || ubicacion.place_id == "ChIJlSbD6vD8T48RnI1MSCrF8MQ" || ubicacion.place_id == "ChIJWSQe265TeYYRJRnoNVqfhTM" || ubicacion.place_id == "ChIJD9JN52kpmIYRdOO7_Br_Vs0" || ubicacion.place_id == "ChIJKR6Opr1yiIYROXrNFNeaAGQ") {
-        map.setZoom(7);
+        map.setZoom(7 + fixMobileZoom);
 
         zoom_default = false;
     }
     //Comondu BCS, Mulege BCS, Michoacan , queretaro ,
     if (ubicacion.place_id == "ChIJj809JiiHs4YRQbvAdUpuXxY" || ubicacion.place_id == "ChIJBXXEtigGNYEREX41__43rKE" || ubicacion.place_id == "ChIJt1yzHj5fKoQR1OBL8wxlxzs" || ubicacion.place_id == "ChIJVZJb3I9b04URL4MbVqqUsJc" || ubicacion.place_id == "ChIJbRNrF5Yz-IURRGLylUyOPek") {
-        map.setZoom(9);
+        map.setZoom(9 + fixMobileZoom);
 
         zoom_default = false;
     }
@@ -398,7 +409,7 @@ function zoomLevels(ubicacion) {
     if (ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg" || ubicacion.place_id == "ChIJWUmnKJRTn4YR71--DXbfe5w" || ubicacion.place_id == "ChIJZ85Xl7REjYURFdYZRoIzAM8" || ubicacion.place_id == "ChIJc9-8GKW3m4YR1EpsOqaO3b8") {
         zoom_default = false;
 
-        map.setZoom(8);
+        map.setZoom(8+  fixMobileZoom);
     }
 
     //Los Cabos , Nuevo leon, yucatan, Hidalgo, SLP Salinas,Sonora (Villa Pesqueira, Rosario, General Plutarco Elías Calles, México), Sonora Bácum,
@@ -406,7 +417,7 @@ function zoomLevels(ubicacion) {
         || ubicacion.place_id == "ChIJuTjrjtASz4YRQERzAiM2mk4" || ubicacion.place_id == "ChIJ0yHMgWozxoYR0pCD0Hb6LUM" || ubicacion.place_id == "ChIJ0UmBXRjFKoERnJgFanz2tYc" || ubicacion.place_id == "ChIJxeIgXHJPyIYROn_m0017jiY") {
         zoom_default = false;
 
-        map.setZoom(10);
+        map.setZoom(10 + fixMobileZoom);
     }
 
 
@@ -418,7 +429,7 @@ function zoomLevels(ubicacion) {
         || ubicacion.place_id == "ChIJS_kh7Bp10oUR7R7x9VUnDiE" || ubicacion.place_id == "ChIJd4pEP6ihKoQR4VMDvJIKkZA") {
         zoom_default = false;
 
-        map.setZoom(14);
+        map.setZoom(14 + fixMobileZoom);
     }
     //tlaquepaque, Tlajomulco de Zúñiga (jalisco),Estado de Mexico (Chicoloapan, Cuautitlán Izcalli, Naucalpan de Juárez, Nezahualcóyotl, Ecatepec de Morelos), Morelia (Michoacan),SLP (Zaragoza, Soledad de Graciano Sánchez), Sonora Guaymas,cancun
     if (ubicacion.place_id == "ChIJA0pBpoezKIQREKq-cByLC14" || ubicacion.place_id == "ChIJk0R9BvdTL4QRL95OIvTG3_k" || ubicacion.place_id == "ChIJReN4bmzh0YURFUI1P18AqsM"
@@ -426,24 +437,24 @@ function zoomLevels(ubicacion) {
         || ubicacion.place_id == "ChIJE1GbkUq0KoQR1HGQzqitdPk" || ubicacion.place_id == "ChIJ7x3QuPQVyYYRhPkF6AJU2ZY"|| ubicacion.place_id == "ChIJ51aIjKdQr4YRTlrn2oWX7t0"|| ubicacion.place_id == "ChIJoQjlifNKr4YRaLiiwWLfpEs" || ubicacion.place_id == "ChIJ21P2rgUrTI8Ris1fYjy3Ms4") {
         zoom_default = false;
 
-        map.setZoom(13);
+        map.setZoom(13 + fixMobileZoom);
     }
     //cabo corrientes(jalisco), Monterrey, tlaxcala, nayarit,Hidalgo (Michoacan), Sonora (Quiriego), Tamaulipas (Guerrero, Río Bravo), Veracruz(Veracruz),
     if (ubicacion.place_id == "ChIJ32f63CPeI4QRXw0LQ0pIuxA" || ubicacion.place_id == "ChIJ74hS7tlp0oURTL_vhuAJEhM" || ubicacion.place_id == "ChIJR9s-5pyoIIQROdKUhqL1yMI" || ubicacion.place_id == "ChIJ9fg3tDGVYoYRlJjIasrT06M" || ubicacion.place_id == "ChIJE2EAHD_Zz4UR4L181Friujg"
         || ubicacion.place_id == "ChIJZ3eaCsvL0oUR71cnLMg63nM" || ubicacion.place_id == "ChIJj5BTOebox4YR1XMAujfOkA8" || ubicacion.place_id == "ChIJEX-8asZeYYYRgCaiC-QpIXw" || ubicacion.place_id == "ChIJT8OQoodDZYYRGyKC5nStVu0" || ubicacion.place_id == "ChIJxXjKRUJBw4URmwE26ULWpBg") {
         zoom_default = false;
 
-        map.setZoom(11);
+        map.setZoom(11 + fixMobileZoom);
     }
     //Tonanitla, (Estado México)
     if (ubicacion.place_id == "ChIJ9ahdi_3y0YURnRVIwHqIKkU") {
         zoom_default = false;
 
-        map.setZoom(15);
+        map.setZoom(15 + fixMobileZoom);
     }
 
     if (zoom_default === true) {
-        map.setZoom(10);
+        map.setZoom(10 + fixMobileZoom);
     }
 }
 
